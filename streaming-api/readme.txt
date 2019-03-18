@@ -15,7 +15,7 @@ The objective of this program is to develop a solution that allow streaming of d
 - A generic JSON reader to parse a file with log events stored in JSON format
 - The logic is to only store event after we have determine its duration (after received both start/end events).- We flag any events that exceed a certain threshold
 
-2) Processing User record to demonstrate the flexibility of the design to allow us to plug in another entity, streaming api, and different transformation strategies.
+2) Processing User records to demonstrate the flexibility of the design to allow us to plug in another entity, streaming api, and different transformation strategies.
 - Stream CSV file using string reader and string transformation to User using RxJava
 - Stream CSV file using byte array reader and byte array transformation to User using Java stream
 - Stream Rest end point using JSON reader and remove id during transformation to User using LMAX Distruptor
