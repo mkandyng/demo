@@ -12,7 +12,7 @@ Note, this is NOT a wrapper to these streaming API, more like 'Hello World' to a
 (SpringBatch) https://spring.io/projects/spring-batch
 (Java 8 Stream) https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html
 
-The objective of this program is to develop a solution that allow streaming of data from any source to any destination, allowing the flexibility to plug in any data filtering and transformation pipeline. This project demonstrate:
+The objective of this program is to develop a solution that allow streaming of data from any source to any destination, allowing the flexibility to plug in any data filtering and transformation pipeline.
 
 1) Process log messages in JSON and persist to DB (JPA,Hibernate) using each of the different streaming API.
 
@@ -20,18 +20,16 @@ The objective of this program is to develop a solution that allow streaming of d
 
 From the above requirements, the source code should demonstrate:
 
-1) Leverage Design Patterns (Adapter, Strategy, Observable, template methods) 
-2) Reactive message processing with Producer->Consumer pattern
+1) Design Patterns (Adapter, Strategy, Observable, template methods) to embrace Open/Close principle 
+2) Message processing with Producer->Consumer to embrace 'Reactive Stream' processing
 3) Concurrency Programming using Single Writer principle to embrace 'Mechanical Sympathy'
-4) Low level coding demonstrate custom implemention of Ring Buffer, and processing byte array
+4) Low level coding demonstrate custom implemention of Ring Buffer and processing byte array
 5) Test automation, adhere to testing triangle strategy of unit, integration, and end-2-end tests
-6) Technique to handle concurrency testings 
-7) Technique to switch end-2-end tests to perform load tests
+6) Technique to handle concurrency testings and scale end-2-end test to perform load tests 
 
 Key design to look out for:
 1) All the different technologies are abstracted consistently to provide similar API processing pipleline
 - producer->batch->filter->transform->consumer->publisher->repository
-2) A clear pattern following open/closed principle to add new streaming technology, new entity type, and new data transformation requirements
-3) DataRecordIteratorTest demonstrate reliable concurrency tests
-4) All the tests under stream package can switch to load tests by changing test.properties
-5) Enable parallel processing of file by fixed batch chunk in Java 8 stream by extending splitIterator
+2) A clear pattern applying open/closed principle to add new streamer, new entity, and new transformation 
+3) All the tests under stream package can switch to load tests by changing test.properties
+4) Custom SplitIterator to leverage Java8 parallel stream
