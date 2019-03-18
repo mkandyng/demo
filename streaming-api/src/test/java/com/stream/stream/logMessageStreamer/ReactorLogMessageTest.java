@@ -1,16 +1,15 @@
 package com.stream.stream.logMessageStreamer;
 
 import com.stream.entitytype.logMessage.LogMessage;
+import com.stream.entitytype.logMessage.streamer.LogMessageReactorStreamer;
 import com.stream.stream.ResourceStreamer;
-import com.stream.entitytype.logMessage.streamer.LogMessageAkkaStreamer;
-import org.junit.BeforeClass;
 
 import javax.inject.Inject;
 
-public class AkkaLogMessageTest extends AbstractLogMessageTestStreamer {
+public class ReactorLogMessageTest extends AbstractLogMessageTestStreamer {
 
     @Inject
-    private LogMessageAkkaStreamer streamer;
+    private LogMessageReactorStreamer streamer;
 
     @Override
     public ResourceStreamer<LogMessage, LogMessage> getStreamer() {

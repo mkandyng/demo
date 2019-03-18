@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3bd0f97a-c8d7-4995-8b2a-87e542d28b69" name="Default Changelist" comment="">
+    <list default="true" id="3bd0f97a-c8d7-4995-8b2a-87e542d28b69" name="Default Changelist" comment="Update Javadoc on MessagePublishingConsumer">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stream/entitytype/logMessage/streamer/LogMessageReactorStreamer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stream/stream/BaseReactiveStream.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stream/stream/Reactor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/stream/stream/logMessageStreamer/ReactorLogMessageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileContent/annotation-processors.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/annotation-processors.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/ApplicationSpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/ApplicationSpringConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/consumer/MessagePublishingConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/consumer/MessagePublishingConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/entitytype/logMessage/streamer/LogMessageAkkaStreamer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/entitytype/logMessage/streamer/LogMessageAkkaStreamer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/producer/DataRecordIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/producer/DataRecordIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/stream/AkkaStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/stream/AkkaStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/stream/LmaxDistruptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/stream/LmaxDistruptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/stream/RxJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/stream/RxJava.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Javastream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Javastream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/stream/springbatch/SpringBatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/stream/springbatch/SpringBatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stream/consumer/MessagePublishingConsumerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stream/consumer/MessagePublishingConsumerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stream/producer/DataRecordIteratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stream/producer/DataRecordIteratorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stream/stream/logMessageStreamer/AkkaLogMessageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stream/stream/logMessageStreamer/AkkaLogMessageTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -16,6 +42,9 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/streaming_api$All_in_streaming_api_test__1_.ic" NAME="All in streaming-api_test (1) Coverage Results" MODIFIED="1552867631553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/streaming_api$MainApplicationIntegrationTest_shouldProcessedLogMessageStreamersAndPersist.ic" NAME="MainApplicationIntegrationTest.shouldProcessedLogMessageStreamersAndPersist Coverage Results" MODIFIED="1552914185479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.stream.*</FILTER>
+    </SUITE>
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="273" />
@@ -41,6 +70,11 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="streaming-api" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="streaming-api" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
@@ -60,57 +94,161 @@
     <session id="-1153344462">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.17" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="iml" value="2" />
-          <entry key="java" value="13" />
+          <entry key="gradle" value="2" />
+          <entry key="iml" value="4" />
+          <entry key="java" value="74" />
+          <entry key="log" value="1" />
+          <entry key="properties" value="5" />
+          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="IDEA_MODULE" value="2" />
-          <entry key="JAVA" value="13" />
+          <entry key="Groovy" value="2" />
+          <entry key="IDEA_MODULE" value="4" />
+          <entry key="JAVA" value="74" />
+          <entry key="Log" value="1" />
+          <entry key="Properties" value="5" />
+          <entry key="XML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="565" />
-          <entry key="txt" value="32" />
+          <entry key="dummy" value="8" />
+          <entry key="gradle" value="4" />
+          <entry key="java" value="1983" />
+          <entry key="properties" value="11" />
+          <entry key="txt" value="75" />
+          <entry key="xml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="565" />
-          <entry key="PLAIN_TEXT" value="32" />
+          <entry key="Groovy" value="4" />
+          <entry key="JAVA" value="1983" />
+          <entry key="PLAIN_TEXT" value="83" />
+          <entry key="Properties" value="11" />
+          <entry key="XML" value="8" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/MainApplicationIntegrationTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/consumer/MessagePublishingConsumer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
+            <state relative-caret-position="100">
+              <caret line="118" column="56" selection-start-line="118" selection-start-column="56" selection-end-line="118" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3283#3284#0" expanded="true" />
+                <element signature="e#3370#3371#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/producer/DataRecordIteratorTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="105" column="49" selection-start-line="105" selection-start-column="49" selection-end-line="105" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/consumer/MessagePublishingConsumer.java">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/test.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="20" column="81" selection-start-line="20" selection-start-column="81" selection-end-line="20" selection-end-column="81" />
+            <state relative-caret-position="60">
+              <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/entitytype/user/transformer/UserByteArraysTransformer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-44">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/stream/StreamerTestDelegate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/consumer/MessagePublishingConsumerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="134">
+              <caret line="73" column="21" lean-forward="true" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/consumer/MessageConsumer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/springbatch/workflow/SpringBatchStreamReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
+              <folding>
+                <element signature="e#518#519#0" expanded="true" />
+                <element signature="e#558#559#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/MainApplicationIntegrationTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="87" selection-start-line="87" selection-end-line="87" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/MainApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="101">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>empty</find>
+      <find>count</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -308,9 +446,9 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6209754966000" />
+        <entry key="$PROJECT_DIR$" value="6209903699000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="4220599368" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3460352247" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2585518924" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="2471336898" />
       </map>
@@ -520,7 +658,28 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Spliterator/AbstractBatchSpliterator.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/stream/utils/RingBufferTest.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/main/java/BaseStream.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/stream/entitytype/logMessage/streamer/LogMessageAkkaStreamer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/stream/stream/BaseStream.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/logback.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/stream/entitytype/logMessage/streamer/LogMessageReactorStreamer.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/stream/stream/logMessageStreamer/ReactorLogMessageTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/stream/stream/logMessageStreamer/AkkaLogMessageTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/stream/ApplicationSpringConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/stream/stream/BaseReactiveStream.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/stream/stream/AkkaStream.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/stream/stream/LmaxDistruptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/stream/stream/RxJava.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/stream/stream/Reactor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/stream/stream/springbatch/SpringBatch.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Javastream.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/stream/producer/DataRecordIterator.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/stream/consumer/MessagePublishingConsumerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/stream/consumer/MessagePublishingConsumer.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/stream/producer/DataRecordIteratorTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/stream/stream/StreamerTestDelegate.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/test.properties" />
       </list>
     </option>
   </component>
@@ -555,6 +714,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -604,7 +765,19 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="stream" type="462c0819:PsiDirectoryNode" />
+              <item name="entitytype" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="stream" type="462c0819:PsiDirectoryNode" />
+              <item name="entitytype" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="transformer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
@@ -614,27 +787,13 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="stream" type="462c0819:PsiDirectoryNode" />
               <item name="stream" type="462c0819:PsiDirectoryNode" />
-              <item name="javastream" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
               <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-              <item name="javastream" type="462c0819:PsiDirectoryNode" />
-              <item name="Spliterator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
@@ -671,36 +830,35 @@
               <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-              <item name="userStreamer" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="Message&#9;PSI&#9;JAVA://com.stream.consumer.MessagePublishingConsumer" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552896141561" />
+    <property name="SearchEverywhereHistoryKey" value="close&#9;PSI&#9;JAVA://com.stream.stream.springbatch.workflow.SpringBatchStreamReader#close&#10;Message&#9;PSI&#9;JAVA://com.stream.consumer.MessagePublishingConsumer" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552919330125" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.externalDependencies" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.stream.stream.logMessageStreamer" />
+      <recent name="com.stream.entitytype.logMessage.streamer" />
+      <recent name="" />
+      <recent name="com.stream.stream" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -715,28 +873,16 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.All in streaming-api_test">
-    <configuration name="streaming-api [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="bootRun" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method v="2" />
-    </configuration>
-    <configuration name="All in streaming-api_test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AkkaLogMessageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="streaming-api_test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stream.stream.logMessageStreamer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stream.stream.logMessageStreamer" />
+      <option name="MAIN_CLASS_NAME" value="com.stream.stream.logMessageStreamer.AkkaLogMessageTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -745,6 +891,36 @@
       <module name="streaming-api_test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LmaxDistruptorLogMessageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="streaming-api_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stream.stream.logMessageStreamer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stream.stream.logMessageStreamer" />
+      <option name="MAIN_CLASS_NAME" value="com.stream.stream.logMessageStreamer.LmaxDistruptorLogMessageTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainApplicationIntegrationTest.shouldProcessedLogMessageStreamersAndPersist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="streaming-api_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stream.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stream" />
+      <option name="MAIN_CLASS_NAME" value="com.stream.MainApplicationIntegrationTest" />
+      <option name="METHOD_NAME" value="shouldProcessedLogMessageStreamersAndPersist" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -764,17 +940,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.streaming-api [bootRun]" />
       <item itemvalue="JUnit.All in streaming-api_test" />
-      <item itemvalue="JUnit.All in streaming-api_test (1)" />
       <item itemvalue="JUnit.RingBufferTest" />
+      <item itemvalue="JUnit.AkkaLogMessageTest" />
+      <item itemvalue="JUnit.LmaxDistruptorLogMessageTest" />
+      <item itemvalue="JUnit.MainApplicationIntegrationTest.shouldProcessedLogMessageStreamersAndPersist" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in streaming-api_test" />
+        <item itemvalue="JUnit.MainApplicationIntegrationTest.shouldProcessedLogMessageStreamersAndPersist" />
+        <item itemvalue="JUnit.LmaxDistruptorLogMessageTest" />
+        <item itemvalue="JUnit.AkkaLogMessageTest" />
         <item itemvalue="JUnit.RingBufferTest" />
-        <item itemvalue="JUnit.All in streaming-api_test (1)" />
-        <item itemvalue="Gradle.streaming-api [bootRun]" />
       </list>
     </recent_temporary>
   </component>
@@ -803,23 +981,45 @@
       <option name="project" value="LOCAL" />
       <updated>1552892172997</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update Javadoc on MessagePublishingConsumer">
+      <created>1552896184890</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1552896184890</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_streaming-api_test - 2019.03.17 at 23h 49m 50s.xml">
+    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 05m 20s.xml">
       <configuration name="All in streaming-api_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_streaming-api_test_(1) - 2019.03.18 at 00h 08m 13s.xml">
-      <configuration name="All in streaming-api_test (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="RingBufferTest - 2019.03.18 at 06h 48m 49s.xml">
-      <configuration name="RingBufferTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 06h 50m 38s.xml">
+    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 05m 53s.xml">
       <configuration name="All in streaming-api_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 06h 58m 25s.xml">
+    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 06m 28s.xml">
+      <configuration name="All in streaming-api_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 07m 05s.xml">
+      <configuration name="All in streaming-api_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 07m 43s.xml">
+      <configuration name="All in streaming-api_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 08m 19s.xml">
+      <configuration name="All in streaming-api_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 10m 23s.xml">
+      <configuration name="All in streaming-api_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 26m 34s.xml">
+      <configuration name="All in streaming-api_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 27m 28s.xml">
+      <configuration name="All in streaming-api_test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 28m 03s.xml">
       <configuration name="All in streaming-api_test" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -827,78 +1027,78 @@
     <frame x="0" y="23" width="1280" height="726" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Build Variants" side_tool="true" />
-      <window_info id="Image Layers" />
-      <window_info id="DB Browser" />
-      <window_info id="UI Designer" />
-      <window_info id="Project Explorer" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Capture Tool" />
-      <window_info id="Job Explorer" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.33602583" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29644588" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="DB Execution Console" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Build" weight="0.3289689" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" weight="0.3289689" />
-      <window_info anchor="bottom" id="Console" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Build Variants" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="DB Browser" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Project Explorer" order="7" weight="0.32956383" />
+      <window_info id="Favorites" order="8" side_tool="true" />
+      <window_info id="Capture Tool" order="9" />
+      <window_info id="Job Explorer" order="10" weight="0.32956383" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.37806875" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.497545" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="right" id="Gradle" sideWeight="0.18372093" weight="0.66397417" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Coverage" sideWeight="0.81627905" side_tool="true" weight="0.66397417" />
+      <window_info anchor="bottom" id="DB Execution Console" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50080776" side_tool="true" weight="0.37806875" />
+      <window_info anchor="bottom" id="Build" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49919224" weight="0.3289689" />
+      <window_info anchor="bottom" id="Console" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Coverage" order="4" sideWeight="0.81627905" side_tool="true" weight="0.66397417" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Gradle" order="7" sideWeight="0.18372093" weight="0.66397417" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
     <layout-to-restore>
-      <window_info id="Designer" order="0" />
-      <window_info id="Build Variants" order="1" side_tool="true" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="DB Browser" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Project Explorer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Capture Tool" order="7" />
-      <window_info id="Job Explorer" order="8" />
-      <window_info active="true" content_ui="combo" id="Project" order="9" visible="true" weight="0.33602583" />
-      <window_info id="Structure" order="10" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Console" order="0" />
-      <window_info anchor="bottom" id="DB Execution Console" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="4" weight="0.3289689" />
-      <window_info anchor="bottom" id="Version Control" order="5" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Message" order="7" />
-      <window_info anchor="bottom" id="Find" order="8" />
-      <window_info anchor="bottom" id="Run" order="9" visible="true" weight="0.37806875" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Maven Projects" order="2" />
-      <window_info anchor="right" id="Gradle" order="3" sideWeight="0.18372093" weight="0.66397417" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Coverage" order="6" sideWeight="0.81627905" side_tool="true" weight="0.66397417" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29644588" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Build Variants" order="3" side_tool="true" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="DB Browser" order="5" />
+      <window_info id="UI Designer" order="6" />
+      <window_info id="Project Explorer" order="7" />
+      <window_info id="Favorites" order="8" side_tool="true" />
+      <window_info id="Capture Tool" order="9" />
+      <window_info id="Job Explorer" order="10" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.3846154" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="DB Execution Console" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50080776" side_tool="true" weight="0.37806875" />
+      <window_info anchor="bottom" id="Build" order="10" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49919224" weight="0.3289689" />
+      <window_info anchor="bottom" id="Console" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="13" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Coverage" order="4" sideWeight="0.81627905" side_tool="true" weight="0.66397417" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Gradle" order="7" sideWeight="0.18372093" weight="0.66397417" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -906,20 +1106,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add more tests on RingBuffer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add more tests on RingBuffer" />
+    <MESSAGE value="Update Javadoc on MessagePublishingConsumer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Javadoc on MessagePublishingConsumer" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/entitytype/user/streamer/UserByteArrayJavastreamStreamer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/MainApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -951,9 +1145,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/streaming-api.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/utils/RingBuffer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -966,17 +1157,294 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/MainApplicationIntegrationTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/utils/FakePublisher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/logMessage.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/streaming-api.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.projectreactor/reactor-core/3.0.5.RELEASE/f5ab52c565028d0c64096efe52fa67465dd32a51/reactor-core-3.0.5.RELEASE-sources.jar!/reactor/core/publisher/Flux.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2581">
+          <caret line="908" column="30" selection-start-line="908" selection-start-column="30" selection-end-line="908" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/entitytype/logMessage/streamer/LogMessageRxJavaStreamer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/entitytype/logMessage/streamer/LogMessageAkkaStreamer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/entitytype/logMessage/streamer/LogMessageReactorStreamer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-49">
+          <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/stream/logMessageStreamer/AkkaLogMessageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/stream/logMessageStreamer/JavastreamLogMessageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/stream/logMessageStreamer/LmaxDistruptorLogMessageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/stream/logMessageStreamer/SpringBatchLogMessageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/stream/logMessageStreamer/RxJavaLogMessageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/stream/logMessageStreamer/ReactorLogMessageTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/ApplicationSpringConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="48" column="45" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/stream/BaseStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="63" column="17" selection-start-line="63" selection-start-column="17" selection-end-line="63" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/AkkaStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/LmaxDistruptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/RxJava.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/Reactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/springbatch/SpringBatch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/BaseReactiveStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Javastream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="21" column="45" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/producer/DataRecordIterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="61" column="46" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/ResourceStreamer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/MainApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/utils/ThrowingConsumer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
-          <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
+          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="1256" selection-start-line="1256" selection-end-line="1256" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/MainApplicationIntegrationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/springbatch/workflow/SpringBatchStreamReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
+          <folding>
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/consumer/MessagePublishingConsumerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="73" column="21" lean-forward="true" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/consumer/MessageConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/consumer/MessagePublishingConsumer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="20" column="81" selection-start-line="20" selection-start-column="81" selection-end-line="20" selection-end-column="81" />
+        <state relative-caret-position="100">
+          <caret line="118" column="56" selection-start-line="118" selection-start-column="56" selection-end-line="118" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3283#3284#0" expanded="true" />
+            <element signature="e#3370#3371#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/producer/DataRecordIteratorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="105" column="49" selection-start-line="105" selection-start-column="49" selection-end-line="105" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/stream/StreamerTestDelegate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/entitytype/user/transformer/UserByteArraysTransformer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-44">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/test.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
         </state>
       </provider>
     </entry>

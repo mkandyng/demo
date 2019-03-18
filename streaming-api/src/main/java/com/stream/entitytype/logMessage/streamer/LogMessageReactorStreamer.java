@@ -1,20 +1,21 @@
 package com.stream.entitytype.logMessage.streamer;
 
 import com.stream.consumer.MessageConsumer;
-import com.stream.stream.AkkaStream;
 import com.stream.entitytype.logMessage.LogMessage;
+import com.stream.stream.Reactor;
 import org.springframework.stereotype.Component;
+
 import java.io.InputStream;
 
 /**
- * Streaming LogMessage with AKKA
+ * Streaming LogMessage with Reactor
  */
 @Component
-public class LogMessageAkkaStreamer extends LogMessageBaseStreamer {
+public class LogMessageReactorStreamer extends LogMessageBaseStreamer {
 
     @Override
     public void streamData(InputStream inputStream, MessageConsumer<LogMessage> messageConsumer) {
-        AkkaStream.from(getIterator(inputStream, messageConsumer), getTransformer())
+        Reactor.from(getIterator(inputStream, messageConsumer), getTransformer())
                     .batchSize(getBatchSize())
                     .filter(getFilter())
                     .publish(messageConsumer);

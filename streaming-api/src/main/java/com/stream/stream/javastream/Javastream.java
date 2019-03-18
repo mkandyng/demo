@@ -1,11 +1,11 @@
 package com.stream.stream.javastream;
 
 import com.stream.consumer.MessageConsumer;
+import com.stream.producer.CloseableStreamIterator;
+import com.stream.stream.BaseReactiveStream;
 import com.stream.stream.javastream.Spliterator.InputStreamSpliterator;
 import java.util.Iterator;
-import java.util.Optional;
 import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -16,35 +16,19 @@ import java.util.stream.StreamSupport;
  * @param <T>, input data type
  * @param <R>, target data type, which is going to be an entity for persistent
  */
-public final class Javastream<T,R>  {
-    private final Iterator<T> iterator;
-    private final Function<T,R> transformer;
-    private Predicate<T> filter;
-    private int batchSize;
+public final class Javastream<T,R> extends BaseReactiveStream<T,R> {
 
-    private Javastream(Iterator<T> iterator,
-                       Function<T,R> transformer) {
-        this.iterator = iterator;
-        this.transformer =  transformer;
-        this.filter = e->true;
-        this.batchSize = 1;
+    protected Javastream(CloseableStreamIterator<T> iterator,
+                         Function<T, R> transformer) {
+        super(iterator, transformer);
     }
 
-    public static<T,R> Javastream<T,R> from(Iterator<T> iterator,
+    public static<T,R> Javastream<T,R> from(CloseableStreamIterator<T> iterator,
                                             Function<T,R> transformer) {
         return new Javastream<>(iterator, transformer);
     }
 
-    public Javastream<T,R> filter(Predicate<T> filter) {
-        this.filter = filter;
-        return this;
-    }
-
-    public Javastream<T,R> batchSize(int batchSize) {
-        this.batchSize = batchSize;
-        return this;
-    }
-
+    @Override
     public void publish(MessageConsumer<R> messageConsumer) {
         Stream<T> stream = getStream(messageConsumer);
         stream.parallel().filter(filter)

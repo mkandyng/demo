@@ -1,15 +1,12 @@
 package com.stream.stream;
 
-
 import com.stream.consumer.MessageConsumer;
 import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.dsl.Disruptor;
 import com.lmax.disruptor.util.DaemonThreadFactory;
-import java.util.Iterator;
-import java.util.Optional;
+import com.stream.producer.CloseableStreamIterator;
 import java.util.Spliterators;
 import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -21,35 +18,17 @@ import java.util.stream.StreamSupport;
  * @param <R>, target data type, which is going to be an entity for persistent
  */
 
-public class LmaxDistruptor<T,R> {
-    private final Iterator<T> iterator;
-    private final Function<T,R> transformer;
-    private Predicate<T> filter;
-    private int batchSize;
+public class LmaxDistruptor<T,R> extends BaseReactiveStream<T,R> {
 
-    private LmaxDistruptor(Iterator<T> iterator,
-                           Function<T,R> transformer) {
-        this.iterator = iterator;
-        this.filter = e->true;
-        this.transformer =  transformer;
-        // Specify the size of the ring buffer, must be power of 2
-        this.batchSize = 1;
+    protected LmaxDistruptor(CloseableStreamIterator<T> iterator, Function<T, R> transformer) {
+        super(iterator, transformer);
     }
 
-    public static<T,R> LmaxDistruptor<T,R> from(Iterator<T> iterator, Function<T,R> transformer) {
+    public static<T,R> LmaxDistruptor<T,R> from(CloseableStreamIterator<T> iterator, Function<T,R> transformer) {
         return new LmaxDistruptor<>(iterator, transformer);
     }
 
-    public LmaxDistruptor<T,R> filter(Predicate<T> filter) {
-        this.filter = filter;
-        return this;
-    }
-
-    public LmaxDistruptor<T,R> batchSize(int batchSize) {
-        this.batchSize = batchSize;
-        return this;
-    }
-
+    @Override
     public void publish(MessageConsumer<R> messageConsumer) {
         // Construct the Disruptor
         Disruptor<MessageEventHolder> disruptor = null;

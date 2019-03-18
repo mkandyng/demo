@@ -103,7 +103,7 @@ public class DataRecordIteratorTest {
                 onErrorHandler,
                 () -> {
                     try {
-                        TimeUnit.MINUTES.sleep(1);
+                        TimeUnit.MINUTES.sleep(10);
                     } catch (InterruptedException e) {
                         Thread.currentThread().interrupt();
                     }

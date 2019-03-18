@@ -59,7 +59,7 @@ public class DataRecordIterator<RECORD> implements CloseableStreamIterator<RECOR
                         break;
                     }
                 }
-                TimeUnit.MILLISECONDS.sleep(100);
+                TimeUnit.MILLISECONDS.sleep(10);
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

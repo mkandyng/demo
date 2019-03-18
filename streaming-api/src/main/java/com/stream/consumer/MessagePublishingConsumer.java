@@ -34,8 +34,8 @@ public class MessagePublishingConsumer<T> implements MessageConsumer<T> {
     private MessagePublisher<T> messagePublisher;
     private int batchSize = 100;
     private long dequeueFrequence = TimeUnit.MILLISECONDS.toMillis(1000);
-    private final Future<Boolean> futureShutdownStatus;
     private LongAdder counter;
+    private volatile boolean isRunning;
 
     public MessagePublishingConsumer(MessagePublisher<T> messagePublisher, int threadPoolSize) {
         this(messagePublisher, threadPoolSize, DEFAULT_QUEUE_SIZE);
@@ -54,7 +54,8 @@ public class MessagePublishingConsumer<T> implements MessageConsumer<T> {
 
         deQueueTask = new DequeTask();
         deQueueExecutorService = Executors.newSingleThreadExecutor();
-        futureShutdownStatus = deQueueExecutorService.submit(deQueueTask);
+        isRunning=true;
+        deQueueExecutorService.submit(deQueueTask);
     }
 
     public synchronized MessagePublishingConsumer<T> batchSize(int batchSize) {
@@ -80,13 +81,12 @@ public class MessagePublishingConsumer<T> implements MessageConsumer<T> {
 
     @Override
     public void onError(Throwable t) {
-        close();
         throw new RuntimeException("Error when processing stream, aborting", t);
     }
 
     @Override
     public void close() {
-        if (deQueueTask.terminate(deQueueExecutorService, futureShutdownStatus)) {
+        if (deQueueTask.terminate(deQueueExecutorService)) {
             logger.info("Successfully shutdown message consumer");
         } else {
             logger.error("Failed shutdown message consumer");
@@ -95,41 +95,39 @@ public class MessagePublishingConsumer<T> implements MessageConsumer<T> {
         }
     }
 
-    private class DequeTask implements Callable<Boolean> {
+    private class DequeTask implements Runnable {
         private final ExecutorService executorService;
         DequeTask() {
             executorService = Executors.newFixedThreadPool(threadPoolSize);
         }
 
         @Override
-        public Boolean call() {
-            try {
-                logger.info("Started DequeTaskThread, with [{}] ms delay favouring writer to accumulate batch", dequeueFrequence);
-                while (!Thread.currentThread().isInterrupted()) {
+        public void run() {
+            logger.info("Started DequeTaskThread, with [{}] ms delay favouring writer", dequeueFrequence);
+            while (isRunning) {
+                try {
                     TimeUnit.MILLISECONDS.sleep(dequeueFrequence);
                     submitBatchesToThreadPool();
+                } catch (InterruptedException ex) {
+                    Thread.currentThread().interrupt();
                 }
-            } catch (InterruptedException ex) {
-                submitFinalBatches();
             }
+            submitFinalBatches();
             executorService.shutdown();
-            return true;
         }
 
-        boolean terminate(ExecutorService deQueueService, Future<Boolean> future) {
+        boolean terminate(ExecutorService deQueueService) {
             try {
-                logger.info("Shutting down thread pool");
-                // Need to delay for small batch as there could be
-                // thread calling close
-                if(counter.longValue() < 1000) {
-                    TimeUnit.MILLISECONDS.sleep(1000);
+                if(!isRunning) {
+                    return true;
                 }
+                logger.info("Shutting down thread pool");
                 while(!queue.isEmpty()) {
-                    // Only shutdown after we drain the queue
+                    // Only shutdown after we have drained the queue
                     TimeUnit.MILLISECONDS.sleep(dequeueFrequence);
                 }
+                isRunning=false;
                 logger.info("Queue is drained, ready to initiate shutdown, total received {}", counter);
-                future.cancel(true);
                 // Give it a long time before aborting wait to allow it to finish all the job
                 executorService.awaitTermination(1, TimeUnit.MINUTES);
                 deQueueService.shutdown();
@@ -139,8 +137,7 @@ public class MessagePublishingConsumer<T> implements MessageConsumer<T> {
             }
             return executorService.isTerminated() &&
                     deQueueService.isTerminated() &&
-                    queue.isEmpty() &&
-                    future.isCancelled();
+                    queue.isEmpty();
         }
 
         private void submitFinalBatches() {
@@ -156,7 +153,6 @@ public class MessagePublishingConsumer<T> implements MessageConsumer<T> {
                 if(threadCount++>=threadPoolSize) {
                     break;
                 }
-                Thread.yield();
             }
         }
 

@@ -58,17 +58,12 @@ public class MessagePublishingConsumerTest {
         assertThat(stubPublisher.getTotal()).isEqualTo(messages.size());
     }
 
-    @Test
+    @Test(expected = RuntimeException.class)
     public void shouldCloseAndThrowExceptionOnError() {
         // Given
 
         // When
-        try {
-            consumer.onError(new RuntimeException("Failed to process"));
-            fail("Should have throw exception");
-        } catch (RuntimeException ex) {
-            verify(consumer).close();
-        }
+        consumer.onError(new RuntimeException("Failed to process"));
     }
 
     @Test
