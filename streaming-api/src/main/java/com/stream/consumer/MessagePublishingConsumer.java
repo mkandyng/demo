@@ -17,8 +17,8 @@ import java.util.concurrent.atomic.LongAdder;
  * This MessagePublisherConsumer is inspired by the Distruptor design which uses the
  * Single Writer principle and with the usage of RingBuffer and SpinLock to achieve Mechanical Sympathy.
  *
- * In fact in this design the reader contention also eleminate reader contention (single reader) so worker
- * threads are truely parallel and will mostly be blocked by IO to persistent.
+ * In fact in this design the reader contention also eliminate reader contention (single reader) so worker
+ * threads are truly parallel and only worker thread that persist to DB will be blocked by IO during persistent.
  *
  * https://mechanical-sympathy.blogspot.com/2011/09/single-writer-principle.html
  *
