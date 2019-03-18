@@ -9,7 +9,7 @@ A number of popular data streaming API was used to demonstrate the ability to st
 (SpringBatch) https://spring.io/projects/spring-batch
 (Java 8 Stream) https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html
 
-The objective of this program is to develop a solution that allow streaming of data from any source to any destination, allowing the flexibility to plug in any data filtering and transformation pipeline. In this project, we have demonstrate:
+The objective of this program is to develop a solution that allow streaming of data from any source to any destination, allowing the flexibility to plug in any data filtering and transformation pipeline. This project demonstrate:
 
 1) Processing log messages and persist to DB using each of the different streaming API, persist to HSQL DB.
 - A generic JSON reader to parse a file with log events stored in JSON format
