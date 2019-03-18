@@ -23,13 +23,6 @@ public abstract class AbstractBatchSpliterator<T> implements Spliterator<T> {
     public AbstractBatchSpliterator(int characteristics, int batchSize) {
         this(characteristics, batchSize, Long.MAX_VALUE);
     }
-    public AbstractBatchSpliterator(int characteristics) {
-        this(characteristics, 128, Long.MAX_VALUE);
-    }
-
-    public AbstractBatchSpliterator() {
-        this(IMMUTABLE | ORDERED | NONNULL);
-    }
 
     @Override public Spliterator<T> trySplit() {
         final MessageConsumer holder = new MessageConsumer();

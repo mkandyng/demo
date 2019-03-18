@@ -2,68 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3bd0f97a-c8d7-4995-8b2a-87e542d28b69" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/ApplicationSpringConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/MainApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/consumer/EntityRepositoryPublisher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/consumer/MessageConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/consumer/MessagePublisher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/consumer/MessagePublishingConsumer$DequeTask.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/consumer/MessagePublishingConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/logMessage/LogMessage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/logMessage/LogMessageFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/logMessage/LogMessageRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/logMessage/LogMessageSpringConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/logMessage/LogMessageTransformer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/logMessage/streamer/LogMessageAkkaStreamer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/logMessage/streamer/LogMessageBaseStreamer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/logMessage/streamer/LogMessageJavastreamStreamer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/logMessage/streamer/LogMessageLmaxDistruptorStreamer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/logMessage/streamer/LogMessageRxJavaStreamer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/logMessage/streamer/LogMessageSpringBatchStreamer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/user/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/user/UserRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/user/UserSpringConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/user/streamer/UserByteArrayJavastreamStreamer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/user/streamer/UserStringRxJavaStreamer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/user/streamer/UserWebLmaxDistruptorStreamer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/user/streamer/base/UserByteArrayBaseStreamer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/user/streamer/base/UserStringBaseStreamer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/user/streamer/base/UserWebUserBaseStreamer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/user/transformer/UserByteArraysTransformer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/user/transformer/UserStringTransformer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/entitytype/user/transformer/UserWebUserTransformer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/producer/CloseableStreamIterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/producer/DataRecordIterator$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/producer/DataRecordIterator$EnqueTask.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/producer/DataRecordIterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/producer/reader/BytesArrayRecordReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/producer/reader/DataRecordReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/producer/reader/JsonRecordReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/producer/reader/StringRecordReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/stream/AkkaStream.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/stream/LmaxDistruptor$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/stream/LmaxDistruptor$MessageEventHolder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/stream/LmaxDistruptor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/stream/ResourceStreamer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/stream/RxJava.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/stream/javastream/Javastream.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/stream/javastream/Spliterator/AbstractBatchSpliterator$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/stream/javastream/Spliterator/AbstractBatchSpliterator$MessageConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/stream/javastream/Spliterator/AbstractBatchSpliterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/stream/javastream/Spliterator/InputStreamSpliterator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/stream/springbatch/SpringBatch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/stream/springbatch/workflow/SpringBatchStreamProcessor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/stream/springbatch/workflow/SpringBatchStreamReader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/stream/springbatch/workflow/SpringBatchStreamWriter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/utils/OptionalConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/utils/RingBuffer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/utils/SpinLock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/stream/utils/ThrowingConsumer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/logback.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Spliterator/AbstractBatchSpliterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Spliterator/AbstractBatchSpliterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/stream/utils/RingBufferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stream/utils/RingBufferTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -78,7 +19,7 @@
     <SUITE FILE_PATH="coverage/streaming_api$All_in_streaming_api_test__1_.ic" NAME="All in streaming-api_test (1) Coverage Results" MODIFIED="1552867631553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="176" />
+    <option name="myElementSize" value="273" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -124,7 +65,63 @@
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="477" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="477" />
+        </counts>
+      </usages-collector>
     </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/utils/RingBuffer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="209" column="5" lean-forward="true" selection-start-line="197" selection-start-column="3" selection-end-line="209" selection-end-column="5" />
+              <folding>
+                <element signature="e#4682#4683#0" expanded="true" />
+                <element signature="e#4723#4724#0" expanded="true" />
+                <element signature="method#drainTo#1;class#RingBuffer#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/utils/RingBufferTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2068">
+              <caret line="293" lean-forward="true" selection-start-line="293" selection-end-line="293" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Spliterator/AbstractBatchSpliterator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="143">
+              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -529,6 +526,14 @@
       </map>
     </option>
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/test/java/com/stream/utils/RingBufferTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Spliterator/AbstractBatchSpliterator.java" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
@@ -576,37 +581,28 @@
               <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
               <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
               <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
               <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="stream" type="462c0819:PsiDirectoryNode" />
-              <item name="consumer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
               <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="stream" type="462c0819:PsiDirectoryNode" />
               <item name="entitytype" type="462c0819:PsiDirectoryNode" />
@@ -615,10 +611,52 @@
               <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
               <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="stream" type="462c0819:PsiDirectoryNode" />
+              <item name="stream" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="stream" type="462c0819:PsiDirectoryNode" />
+              <item name="stream" type="462c0819:PsiDirectoryNode" />
+              <item name="javastream" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="stream" type="462c0819:PsiDirectoryNode" />
+              <item name="stream" type="462c0819:PsiDirectoryNode" />
+              <item name="javastream" type="462c0819:PsiDirectoryNode" />
+              <item name="Spliterator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="stream" type="462c0819:PsiDirectoryNode" />
-              <item name="producer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
@@ -628,16 +666,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="stream" type="462c0819:PsiDirectoryNode" />
               <item name="stream" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-              <item name="logMessageStreamer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
@@ -667,7 +695,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552867743967" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552891930328" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -685,7 +713,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in streaming-api_test (1)">
+  <component name="RunManager" selected="JUnit.All in streaming-api_test">
     <configuration name="streaming-api [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -720,15 +748,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RingBufferTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="streaming-api_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stream.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stream.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.stream.utils.RingBufferTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Gradle.streaming-api [bootRun]" />
       <item itemvalue="JUnit.All in streaming-api_test" />
       <item itemvalue="JUnit.All in streaming-api_test (1)" />
+      <item itemvalue="JUnit.RingBufferTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in streaming-api_test (1)" />
         <item itemvalue="JUnit.All in streaming-api_test" />
+        <item itemvalue="JUnit.RingBufferTest" />
+        <item itemvalue="JUnit.All in streaming-api_test (1)" />
         <item itemvalue="Gradle.streaming-api [bootRun]" />
       </list>
     </recent_temporary>
@@ -753,9 +797,13 @@
     <history-entry file="All_in_streaming-api_test_(1) - 2019.03.18 at 00h 08m 13s.xml">
       <configuration name="All in streaming-api_test (1)" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="RingBufferTest - 2019.03.18 at 06h 48m 49s.xml">
+      <configuration name="RingBufferTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="726" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
@@ -765,7 +813,7 @@
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Capture Tool" />
       <window_info id="Job Explorer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33602583" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33602583" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="DB Execution Console" />
       <window_info anchor="bottom" id="Terminal" />
@@ -776,7 +824,7 @@
       <window_info anchor="bottom" id="Console" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.46153846" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37806875" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -784,10 +832,10 @@
       <window_info anchor="right" id="Palette" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="right" id="Gradle" sideWeight="0.2218845" visible="true" weight="0.66397417" />
+      <window_info anchor="right" id="Gradle" sideWeight="0.18372093" weight="0.66397417" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info anchor="right" id="Theme Preview" />
-      <window_info active="true" anchor="right" id="Coverage" sideWeight="0.7781155" side_tool="true" visible="true" weight="0.66397417" />
+      <window_info anchor="right" id="Coverage" sideWeight="0.81627905" side_tool="true" weight="0.66397417" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -795,6 +843,55 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/entitytype/user/streamer/UserByteArrayJavastreamStreamer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/MainApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/entitytype/user/streamer/UserStringRxJavaStreamer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/utils/RingBuffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="209" column="5" lean-forward="true" selection-start-line="197" selection-start-column="3" selection-end-line="209" selection-end-column="5" />
+          <folding>
+            <element signature="e#4682#4683#0" expanded="true" />
+            <element signature="e#4723#4724#0" expanded="true" />
+            <element signature="method#drainTo#1;class#RingBuffer#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/utils/RingBufferTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2068">
+          <caret line="293" lean-forward="true" selection-start-line="293" selection-end-line="293" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Spliterator/AbstractBatchSpliterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>

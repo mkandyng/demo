@@ -234,6 +234,55 @@ public class RingBufferTest {
         assertThat(queue.size()).isEqualTo(1);
     }
 
+    @Test
+    public void shouldAddElementReturningTrueWhenNotFull() {
+        // Given
+        Integer expectedValue = 9;
+
+        // When
+        boolean success = queue.add(expectedValue);
+
+        // Then
+        assertThat(success).isTrue();
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void shouldThrowIllegalStateExceptionWhenAddingToFullQueue() {
+        // Given
+        populateList(queueCapacity);
+
+        // When
+        boolean offered = queue.add(1);
+
+        // Then
+    }
+
+    @Test
+    public void shouldAddAllElementsWhenQueueHasCapacity() {
+        // Given
+        List<Integer> list = IntStream.range(0, 10).boxed().collect(Collectors.toList());
+
+        // When
+        boolean success = queue.addAll(list);
+
+        // Then
+        assertThat(success).isEqualTo(true);
+        assertThat(queue.size()).isEqualTo(list.size());
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenCapacityIsReached() {
+        // Given
+        List<Integer> list = IntStream.range(0, queueCapacity+1).boxed().collect(Collectors.toList());
+
+        // When
+        try {
+            queue.addAll(list);
+        } catch (IllegalStateException e) {
+            assertThat(queue.size()).isEqualTo(list.size()-1);
+        }
+    }
+
 
     private List<Integer> populateList(int count) {
         List<Integer> intList = IntStream.range(0,count).boxed().collect(Collectors.toList());
