@@ -7,10 +7,10 @@ Note, this is NOT a wrapper to these streaming API, more like 'Hello World' to a
 
 (RxJava) http://reactivex.io 
 (Reactor) https://projectreactor.io
-(LMAX Distruptor) https://www.lmax.com/disruptor
-(AKKA) https://doc.akka.io/docs/akka/2.5.4/scala/stream/index.html
-(SpringBatch) https://spring.io/projects/spring-batch
+(Akka) https://doc.akka.io/docs/akka/2.5.4/scala/stream/index.html
 (Java 8 Stream) https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html
+(Lmax Distruptor) https://www.lmax.com/disruptor
+(SpringBatch) https://spring.io/projects/spring-batch
 
 The objective of this program is to develop a solution that allow streaming of data from any source to any destination, allowing the flexibility to plug in any data filtering and transformation pipeline.
 
@@ -20,16 +20,16 @@ The objective of this program is to develop a solution that allow streaming of d
 
 From the above requirements, the source code should demonstrate:
 
-1) Design Patterns (Adapter, Strategy, Observable, template methods) to embrace Open/Close principle 
-2) Message processing with Producer->Consumer to embrace 'Reactive Stream' processing
-3) Concurrency Programming using Single Writer principle to embrace 'Mechanical Sympathy'
-4) Low level coding demonstrate custom implemention of Ring Buffer and processing byte array
-5) Test automation, adhere to testing triangle strategy of unit, integration, and end-2-end tests
-6) Technique to handle concurrency testings and scale end-2-end test to perform load tests 
+1) Design Patterns (Adapter, Strategy, Observable, template methods) to deliver a flexible implementation.
+2) Message processing with Producer->Consumer to embrace 'Reactive Stream' processing.
+3) Concurrency Programming using Single Writer principle to embrace 'Mechanical Sympathy'.
+4) Low level coding demonstrate custom implemention of Ring Buffer and low level byte array processing.
+5) Test automation embracing testing triangle strategy of unit, integration, and end-2-end tests.
+6) Technique to handle concurrency testings and scale end-2-end test to perform load tests.
 
 Key design to look out for:
-1) All the different technologies are abstracted consistently to provide similar API processing pipleline
+1) Different technologies are abstracted consistently to provide similar API processing pipleline
 - producer->batch->filter->transform->consumer->publisher->repository
-2) A clear pattern applying open/closed principle to add new streamer, new entity, and new transformation 
+2) Open/Closed principle to add new stream, new entity, and new transformation pipeline
 3) All the tests under stream package can switch to load tests by changing test.properties
 4) Custom SplitIterator to leverage Java8 parallel stream
