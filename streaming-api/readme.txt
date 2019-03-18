@@ -14,24 +14,19 @@ Note, this is NOT a wrapper to these streaming API, more like 'Hello World' to a
 
 The objective of this program is to develop a solution that allow streaming of data from any source to any destination, allowing the flexibility to plug in any data filtering and transformation pipeline. This project demonstrate:
 
-1) Processing log messages and persist to DB using each of the different streaming API, persist to HSQL DB using JPA via Hibernate comes with Springboot.
-- A generic JSON reader to parse a file with log events stored in JSON format
-- The logic is to only store event after we have determine its duration (after received both start/end events).- We flag any events that exceed a certain threshold
+1) Process log messages in JSON and persist to DB (JPA,Hibernate) using each of the different streaming API.
 
-2) Processing User records to demonstrate the flexibility of the design to allow us to plug in another entity, streaming api, and different transformation strategies.
-- Stream CSV file using string reader and string transformation to User using RxJava
-- Stream CSV file using byte array reader and byte array transformation to User using Java stream
-- Stream JSON from (https://jsonplaceholder.typicode.com/users) and remove id during transformation to User using LMAX Distruptor stream
+2) Processing User records to demonstrate the flexibility of the design to plug in another entity, streaming api, and different transformation strategies.
 
 From the above requirements, the source code should demonstrate:
 
-1) Consistent use of Design Patterns to provide various design abstractions
-2) Message processing is based on Producer->Consumer pattern align to the Reactive Manifesto
-3) Concurrency Programming using Single Writer principle to reduce locking contention 
-4) Low latency code on implementing Ring Buffer, and bytes array processing on csv data
-5) Test automation, adhere to testing triangle, unit, integration, and end-2-end
-6) Technique to handle concurrency testings
-7) Technique to provide mechnanism for load test
+1) Leverage Design Patterns (Adapter, Strategy, Observable, template methods) 
+2) Reactive message processing with Producer->Consumer pattern
+3) Concurrency Programming using Single Writer principle to embrace 'Mechanical Sympathy'
+4) Low level coding demonstrate custom implemention of Ring Buffer, and processing byte array
+5) Test automation, adhere to testing triangle strategy of unit, integration, and end-2-end tests
+6) Technique to handle concurrency testings 
+7) Technique to switch end-2-end tests to perform load tests
 
 Key design to look out for:
 1) All the different technologies are abstracted consistently to provide similar API processing pipleline
