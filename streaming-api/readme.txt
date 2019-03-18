@@ -26,3 +26,4 @@ Key design to look out for:
 2) A clear pattern following open/closed principle to add new streaming technology, new entity type, and new data transformation requirements
 3) DataRecordIteratorTest demonstrate reliable concurrency tests
 4) All the tests under stream package can switch to load tests by changing test.properties
+5) Enable parallel processing of file by fixed batch chunk in Java 8 stream by extending splitIterator
