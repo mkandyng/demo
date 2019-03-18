@@ -3,7 +3,7 @@ https://www.reactivemanifesto.org/
 
 A number of popular data streaming API was used to demonstrate the ability to structure a program that consists of small unit of testable and readable code, with clear design abstraction and coding style.
 
-Note, this is NOT a wrapper to these streaming API, more like 'Hello World' to allow someone to experiment with a given Streaming technology and with 'out of the box' solution, one can clone this repo and start streaming experiment.
+Note, although I have implemented consistent wrapper to these streaming API, the aim is more of 'Hello World' to showcase how to build a flexible solution that can plug in different technologies to process custom entities and process transformation. 
 
 (RxJava) http://reactivex.io 
 (Reactor) https://projectreactor.io
