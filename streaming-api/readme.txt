@@ -3,6 +3,8 @@ https://www.reactivemanifesto.org/
 
 A number of popular data streaming API was used to demonstrate the ability to structure a program that consists of small unit of testable and readable code, with clear design abstraction and coding style.
 
+Note, this is NOT a wrapper to these streaming API, more like 'Hello World' to allow someone to experiment with a given Streaming technology and with 'out of the box' solution, one can clone this repo and start streaming experiment.
+
 (RxJava) http://reactivex.io 
 (LMAX Distruptor) https://www.lmax.com/disruptor
 (AKKA) https://doc.akka.io/docs/akka/2.5.4/scala/stream/index.html
