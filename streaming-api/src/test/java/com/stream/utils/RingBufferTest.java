@@ -279,6 +279,7 @@ public class RingBufferTest {
         try {
             queue.addAll(list);
         } catch (IllegalStateException e) {
+            // Then
             assertThat(queue.size()).isEqualTo(list.size()-1);
         }
     }

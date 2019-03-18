@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3bd0f97a-c8d7-4995-8b2a-87e542d28b69" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Spliterator/AbstractBatchSpliterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Spliterator/AbstractBatchSpliterator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/stream/utils/RingBufferTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stream/utils/RingBufferTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -67,56 +66,35 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="7" />
+          <entry key="java" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="7" />
+          <entry key="JAVA" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="477" />
+          <entry key="java" value="491" />
+          <entry key="txt" value="32" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="477" />
+          <entry key="JAVA" value="491" />
+          <entry key="PLAIN_TEXT" value="32" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/utils/RingBuffer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="209" column="5" lean-forward="true" selection-start-line="197" selection-start-column="3" selection-end-line="209" selection-end-column="5" />
-              <folding>
-                <element signature="e#4682#4683#0" expanded="true" />
-                <element signature="e#4723#4724#0" expanded="true" />
-                <element signature="method#drainTo#1;class#RingBuffer#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/utils/RingBufferTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2068">
-              <caret line="293" lean-forward="true" selection-start-line="293" selection-end-line="293" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Spliterator/AbstractBatchSpliterator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+            <state relative-caret-position="51">
+              <caret line="281" column="19" selection-start-line="281" selection-start-column="19" selection-end-line="281" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -529,8 +507,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/com/stream/utils/RingBufferTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Spliterator/AbstractBatchSpliterator.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/stream/utils/RingBufferTest.java" />
       </list>
     </option>
   </component>
@@ -692,10 +670,11 @@
       </pane>
       <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552891930328" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552892157448" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -788,6 +767,14 @@
       <option name="presentableId" value="Default" />
       <updated>1552866473937</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add more tests on RingBuffer">
+      <created>1552892015602</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1552892015607</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -800,12 +787,16 @@
     <history-entry file="RingBufferTest - 2019.03.18 at 06h 48m 49s.xml">
       <configuration name="RingBufferTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 06h 50m 38s.xml">
+      <configuration name="All in streaming-api_test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="726" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" />
+      <window_info id="Build Variants" side_tool="true" />
       <window_info id="Image Layers" />
       <window_info id="DB Browser" />
       <window_info id="UI Designer" />
@@ -820,11 +811,11 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Build" weight="0.3289689" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Messages" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Console" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37806875" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.37806875" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -843,6 +834,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add more tests on RingBuffer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add more tests on RingBuffer" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/entitytype/user/streamer/UserByteArrayJavastreamStreamer.java">
@@ -869,7 +864,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/utils/RingBuffer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
-          <caret line="209" column="5" lean-forward="true" selection-start-line="197" selection-start-column="3" selection-end-line="209" selection-end-column="5" />
+          <caret line="209" column="5" selection-start-line="197" selection-start-column="3" selection-end-line="209" selection-end-column="5" />
           <folding>
             <element signature="e#4682#4683#0" expanded="true" />
             <element signature="e#4723#4724#0" expanded="true" />
@@ -878,17 +873,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/utils/RingBufferTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Spliterator/InputStreamSpliterator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2068">
-          <caret line="293" lean-forward="true" selection-start-line="293" selection-end-line="293" />
+        <state relative-caret-position="63">
+          <caret line="29" column="17" lean-forward="true" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Spliterator/AbstractBatchSpliterator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        <state relative-caret-position="142">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/utils/RingBufferTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="281" column="19" selection-start-line="281" selection-start-column="19" selection-end-line="281" selection-end-column="19" />
         </state>
       </provider>
     </entry>
