@@ -26,7 +26,7 @@ From the above requirements, the source code should demonstrate:
 2) Message processing is based on Producer->Consumer pattern align to the Reactive Manifesto
 3) Concurrency Programming using Single Writer principle to reduce locking contention 
 4) Low latency code on implementing Ring Buffer, and bytes array processing on csv data
-5) Test automation, adhere to testing triangle, unit, integration, and end-2-end.
+5) Test automation, adhere to testing triangle, unit, integration, and end-2-end
 6) Technique to handle concurrency testings
 7) Technique to provide mechnanism for load test
 
