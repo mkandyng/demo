@@ -18,7 +18,7 @@ The objective of this program is to develop a solution that allow streaming of d
 2) Processing User records to demonstrate the flexibility of the design to allow us to plug in another entity, streaming api, and different transformation strategies.
 - Stream CSV file using string reader and string transformation to User using RxJava
 - Stream CSV file using byte array reader and byte array transformation to User using Java stream
-- Stream Rest end point using JSON reader and remove id during transformation to User using LMAX Distruptor
+- Stream JSON from (https://jsonplaceholder.typicode.com/users) and remove id during transformation to User using LMAX Distruptor stream
 
 From the above requirements, the source code should demonstrate:
 
