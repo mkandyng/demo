@@ -1,5 +1,6 @@
 package com.stream.producer;
 
+import akka.stream.QueueOfferResult;
 import com.stream.producer.reader.DataRecordReader;
 import com.stream.utils.RingBuffer;
 import org.slf4j.Logger;
@@ -37,7 +38,7 @@ public class DataRecordIterator<RECORD> implements CloseableStreamIterator<RECOR
         this.onErrorHandler = Optional.ofNullable(onErrorHandler)
                                       .orElse((t -> logger.error("Exception found", t)));
         this.reader = reader;
-        this.recordBuffer = new RingBuffer<>(MAX_QUEUE_SIZE);
+        this.recordBuffer = new ArrayBlockingQueue<>(MAX_QUEUE_SIZE);
         excutorService = Executors.newSingleThreadExecutor();
         excutorService.submit(new EnqueTask());
         this.isClosed = false;
@@ -59,7 +60,7 @@ public class DataRecordIterator<RECORD> implements CloseableStreamIterator<RECOR
                         break;
                     }
                 }
-                TimeUnit.MILLISECONDS.sleep(10);
+                TimeUnit.MILLISECONDS.sleep(100);
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
@@ -110,10 +111,11 @@ public class DataRecordIterator<RECORD> implements CloseableStreamIterator<RECOR
                             }
                         }
                         if (record == null) {
-                            logger.info("Total records queued by data Reader {}, isClosed {}", recordCounter, isClosed());
                             close();
+                            logger.info("Total records queued by data Reader {}, isClosed {}", recordCounter, isClosed());
                         }
                     }
+
                     TimeUnit.MILLISECONDS.sleep(100);
                 }
             } catch (InterruptedException e) {

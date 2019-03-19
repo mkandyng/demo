@@ -16,7 +16,7 @@ The objective of this program is to develop a solution that allow streaming of d
 
 1) Process log messages in JSON and persist to DB (JPA,Hibernate) using each of the different streaming API.
 
-2) Processing User records to demonstrate the flexibility of the design to plug in another entity, streaming api, and different transformation strategies.
+2) Processing User records to demonstrate the flexibility of the design to plug in another entity, streaming api, and different transformation strategies, support processing of string, byte array, and JSON from Rest API.
 
 From the above requirements, the source code should demonstrate:
 

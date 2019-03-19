@@ -1,35 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3bd0f97a-c8d7-4995-8b2a-87e542d28b69" name="Default Changelist" comment="Update Javadoc on MessagePublishingConsumer">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/stream/entitytype/logMessage/streamer/LogMessageReactorStreamer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/stream/stream/BaseReactiveStream.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/stream/stream/Reactor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/stream/stream/logMessageStreamer/ReactorLogMessageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileContent/annotation-processors.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/annotation-processors.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+    <list default="true" id="3bd0f97a-c8d7-4995-8b2a-87e542d28b69" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/ApplicationSpringConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/ApplicationSpringConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/consumer/MessagePublishingConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/consumer/MessagePublishingConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/entitytype/logMessage/streamer/LogMessageAkkaStreamer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/entitytype/logMessage/streamer/LogMessageAkkaStreamer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/producer/DataRecordIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/producer/DataRecordIterator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/stream/AkkaStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/stream/AkkaStream.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/stream/LmaxDistruptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/stream/LmaxDistruptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/stream/RxJava.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/stream/RxJava.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Javastream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Javastream.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/stream/stream/springbatch/SpringBatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/stream/stream/springbatch/SpringBatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/stream/consumer/MessagePublishingConsumerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stream/consumer/MessagePublishingConsumerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/stream/producer/DataRecordIteratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stream/producer/DataRecordIteratorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/stream/stream/logMessageStreamer/AkkaLogMessageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/stream/stream/logMessageStreamer/AkkaLogMessageTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -104,9 +80,9 @@
         <counts>
           <entry key="gradle" value="2" />
           <entry key="iml" value="4" />
-          <entry key="java" value="74" />
+          <entry key="java" value="86" />
           <entry key="log" value="1" />
-          <entry key="properties" value="5" />
+          <entry key="properties" value="6" />
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
@@ -114,9 +90,9 @@
         <counts>
           <entry key="Groovy" value="2" />
           <entry key="IDEA_MODULE" value="4" />
-          <entry key="JAVA" value="74" />
+          <entry key="JAVA" value="86" />
           <entry key="Log" value="1" />
-          <entry key="Properties" value="5" />
+          <entry key="Properties" value="6" />
           <entry key="XML" value="2" />
         </counts>
       </usages-collector>
@@ -124,7 +100,7 @@
         <counts>
           <entry key="dummy" value="8" />
           <entry key="gradle" value="4" />
-          <entry key="java" value="1983" />
+          <entry key="java" value="2693" />
           <entry key="properties" value="11" />
           <entry key="txt" value="75" />
           <entry key="xml" value="8" />
@@ -133,7 +109,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="4" />
-          <entry key="JAVA" value="1983" />
+          <entry key="JAVA" value="2693" />
           <entry key="PLAIN_TEXT" value="83" />
           <entry key="Properties" value="11" />
           <entry key="XML" value="8" />
@@ -142,112 +118,15 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/consumer/MessagePublishingConsumer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="118" column="56" selection-start-line="118" selection-start-column="56" selection-end-line="118" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3283#3284#0" expanded="true" />
-                <element signature="e#3370#3371#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/producer/DataRecordIteratorTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="105" column="49" selection-start-line="105" selection-start-column="49" selection-end-line="105" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/test.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/entitytype/user/transformer/UserByteArraysTransformer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-44">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/stream/StreamerTestDelegate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/consumer/MessagePublishingConsumerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="73" column="21" lean-forward="true" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/consumer/MessageConsumer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/springbatch/workflow/SpringBatchStreamReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="39" column="16" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
-              <folding>
-                <element signature="e#518#519#0" expanded="true" />
-                <element signature="e#558#559#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/MainApplicationIntegrationTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="87" selection-start-line="87" selection-end-line="87" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/MainApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>empty</find>
       <find>count</find>
+      <find>waitUntilIteratorIsClosed</find>
+      <find>MAX_BATCH_READ</find>
+      <find>VerifyBeforeAfterClosedDataRecordIterator</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -674,12 +553,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/stream/stream/Reactor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/stream/stream/springbatch/SpringBatch.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/stream/stream/javastream/Javastream.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/stream/producer/DataRecordIterator.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/stream/consumer/MessagePublishingConsumerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/stream/consumer/MessagePublishingConsumer.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/stream/producer/DataRecordIteratorTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/stream/stream/StreamerTestDelegate.java" />
         <option value="$PROJECT_DIR$/src/test/resources/test.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/stream/consumer/MessageConsumer.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/stream/producer/DataRecordIteratorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/stream/producer/DataRecordIterator.java" />
       </list>
     </option>
   </component>
@@ -728,114 +608,6 @@
               <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-              <item name="entitytype" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-              <item name="entitytype" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-              <item name="entitytype" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="transformer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-              <item name="stream" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="streaming-api" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="streaming-api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -845,7 +617,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="close&#9;PSI&#9;JAVA://com.stream.stream.springbatch.workflow.SpringBatchStreamReader#close&#10;Message&#9;PSI&#9;JAVA://com.stream.consumer.MessagePublishingConsumer" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552919330125" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552995308791" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -873,43 +645,68 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.All in streaming-api_test">
-    <configuration name="AkkaLogMessageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="streaming-api_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.stream.stream.logMessageStreamer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.stream.stream.logMessageStreamer" />
-      <option name="MAIN_CLASS_NAME" value="com.stream.stream.logMessageStreamer.AkkaLogMessageTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in streaming-api_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="streaming-api_test" />
       <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LmaxDistruptorLogMessageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataRecordIteratorTest [10]" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true" repeat_count="10" repeat_mode="N Times">
       <module name="streaming-api_test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.stream.stream.logMessageStreamer.*" />
+          <option name="PATTERN" value="com.stream.producer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.stream.stream.logMessageStreamer" />
-      <option name="MAIN_CLASS_NAME" value="com.stream.stream.logMessageStreamer.LmaxDistruptorLogMessageTest" />
+      <option name="PACKAGE_NAME" value="com.stream.producer" />
+      <option name="MAIN_CLASS_NAME" value="com.stream.producer.DataRecordIteratorTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainApplicationIntegrationTest.shouldProcessedLogMessageStreamersAndPersist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataRecordIteratorTest.shouldReturnFalseOnHasNextWhenEmptyAndClosed [10]" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true" repeat_count="10" repeat_mode="N Times">
+      <module name="streaming-api_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stream.producer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stream.producer" />
+      <option name="MAIN_CLASS_NAME" value="com.stream.producer.DataRecordIteratorTest" />
+      <option name="METHOD_NAME" value="shouldReturnFalseOnHasNextWhenEmptyAndClosed" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataRecordIteratorTest.shouldReturnObjectOnNextWhenThereAreRecord [50]" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true" repeat_count="50" repeat_mode="N Times">
+      <module name="streaming-api_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.stream.producer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.stream.producer" />
+      <option name="MAIN_CLASS_NAME" value="com.stream.producer.DataRecordIteratorTest" />
+      <option name="METHOD_NAME" value="shouldReturnObjectOnNextWhenThereAreRecord" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainApplicationIntegrationTest.shouldLogExceptionWhenCustomApplicationProcessingInvalidFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true" repeat_count="10">
       <module name="streaming-api_test" />
       <extension name="coverage">
         <pattern>
@@ -919,40 +716,27 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.stream" />
       <option name="MAIN_CLASS_NAME" value="com.stream.MainApplicationIntegrationTest" />
-      <option name="METHOD_NAME" value="shouldProcessedLogMessageStreamersAndPersist" />
+      <option name="METHOD_NAME" value="shouldLogExceptionWhenCustomApplicationProcessingInvalidFile" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RingBufferTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="streaming-api_test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.stream.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.stream.utils" />
-      <option name="MAIN_CLASS_NAME" value="com.stream.utils.RingBufferTest" />
+      <option name="PARAMETERS" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.DataRecordIteratorTest [10]" />
+      <item itemvalue="JUnit.DataRecordIteratorTest.shouldReturnObjectOnNextWhenThereAreRecord [50]" />
+      <item itemvalue="JUnit.DataRecordIteratorTest.shouldReturnFalseOnHasNextWhenEmptyAndClosed [10]" />
       <item itemvalue="JUnit.All in streaming-api_test" />
-      <item itemvalue="JUnit.RingBufferTest" />
-      <item itemvalue="JUnit.AkkaLogMessageTest" />
-      <item itemvalue="JUnit.LmaxDistruptorLogMessageTest" />
-      <item itemvalue="JUnit.MainApplicationIntegrationTest.shouldProcessedLogMessageStreamersAndPersist" />
+      <item itemvalue="JUnit.MainApplicationIntegrationTest.shouldLogExceptionWhenCustomApplicationProcessingInvalidFile" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in streaming-api_test" />
-        <item itemvalue="JUnit.MainApplicationIntegrationTest.shouldProcessedLogMessageStreamersAndPersist" />
-        <item itemvalue="JUnit.LmaxDistruptorLogMessageTest" />
-        <item itemvalue="JUnit.AkkaLogMessageTest" />
-        <item itemvalue="JUnit.RingBufferTest" />
+        <item itemvalue="JUnit.MainApplicationIntegrationTest.shouldLogExceptionWhenCustomApplicationProcessingInvalidFile" />
+        <item itemvalue="JUnit.DataRecordIteratorTest [10]" />
+        <item itemvalue="JUnit.DataRecordIteratorTest.shouldReturnFalseOnHasNextWhenEmptyAndClosed [10]" />
+        <item itemvalue="JUnit.DataRecordIteratorTest.shouldReturnObjectOnNextWhenThereAreRecord [50]" />
       </list>
     </recent_temporary>
   </component>
@@ -988,46 +772,52 @@
       <option name="project" value="LOCAL" />
       <updated>1552896184890</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update Javadoc on MessagePublishingConsumer">
+      <created>1552919390868</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1552919390868</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 05m 20s.xml">
+    <history-entry file="All_in_streaming-api_test - 2019.03.19 at 11h 27m 30s.xml">
       <configuration name="All in streaming-api_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 05m 53s.xml">
+    <history-entry file="All_in_streaming-api_test_[10] - 2019.03.19 at 11h 30m 40s.xml">
+      <configuration name="All in streaming-api_test [10]" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainApplicationIntegrationTest_shouldLogExceptionWhenCustomApplicationProcessingInvalidFile_[10] - 2019.03.19 at 11h 31m 23s.xml">
+      <configuration name="MainApplicationIntegrationTest.shouldLogExceptionWhenCustomApplicationProcessingInvalidFile [10]" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainApplicationIntegrationTest_shouldLogExceptionWhenCustomApplicationProcessingInvalidFile - 2019.03.19 at 11h 31m 50s.xml">
+      <configuration name="MainApplicationIntegrationTest.shouldLogExceptionWhenCustomApplicationProcessingInvalidFile" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainApplicationIntegrationTest_shouldLogExceptionWhenCustomApplicationProcessingInvalidFile - 2019.03.19 at 11h 32m 04s.xml">
+      <configuration name="MainApplicationIntegrationTest.shouldLogExceptionWhenCustomApplicationProcessingInvalidFile" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainApplicationIntegrationTest_shouldLogExceptionWhenCustomApplicationProcessingInvalidFile - 2019.03.19 at 11h 32m 19s.xml">
+      <configuration name="MainApplicationIntegrationTest.shouldLogExceptionWhenCustomApplicationProcessingInvalidFile" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MainApplicationIntegrationTest_shouldLogExceptionWhenCustomApplicationProcessingInvalidFile - 2019.03.19 at 11h 32m 33s.xml">
+      <configuration name="MainApplicationIntegrationTest.shouldLogExceptionWhenCustomApplicationProcessingInvalidFile" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_streaming-api_test_[1] - 2019.03.19 at 11h 33m 45s.xml">
+      <configuration name="All in streaming-api_test [1]" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="All_in_streaming-api_test - 2019.03.19 at 11h 34m 31s.xml">
       <configuration name="All in streaming-api_test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 06m 28s.xml">
-      <configuration name="All in streaming-api_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 07m 05s.xml">
-      <configuration name="All in streaming-api_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 07m 43s.xml">
-      <configuration name="All in streaming-api_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 08m 19s.xml">
-      <configuration name="All in streaming-api_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 10m 23s.xml">
-      <configuration name="All in streaming-api_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 26m 34s.xml">
-      <configuration name="All in streaming-api_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 27m 28s.xml">
-      <configuration name="All in streaming-api_test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="All_in_streaming-api_test - 2019.03.18 at 14h 28m 03s.xml">
+    <history-entry file="All_in_streaming-api_test - 2019.03.19 at 11h 35m 06s.xml">
       <configuration name="All in streaming-api_test" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="726" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29644588" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22778675" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -1039,9 +829,9 @@
       <window_info id="Capture Tool" order="9" />
       <window_info id="Job Explorer" order="10" weight="0.32956383" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.497545" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.23404256" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49919224" visible="true" weight="0.5270049" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1110,13 +900,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update Javadoc on MessagePublishingConsumer" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/entitytype/user/streamer/UserByteArrayJavastreamStreamer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/entitytype/user/streamer/UserStringRxJavaStreamer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1277,13 +1060,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/AkkaStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/LmaxDistruptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1335,16 +1111,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/producer/DataRecordIterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="61" column="46" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/ResourceStreamer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="31">
@@ -1376,13 +1142,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/MainApplicationIntegrationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/springbatch/workflow/SpringBatchStreamReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -1391,39 +1150,6 @@
             <element signature="e#518#519#0" expanded="true" />
             <element signature="e#558#559#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/consumer/MessagePublishingConsumerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="73" column="21" lean-forward="true" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/consumer/MessageConsumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/consumer/MessagePublishingConsumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="118" column="56" selection-start-line="118" selection-start-column="56" selection-end-line="118" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3283#3284#0" expanded="true" />
-            <element signature="e#3370#3371#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/producer/DataRecordIteratorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="105" column="49" selection-start-line="105" selection-start-column="49" selection-end-line="105" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -1445,6 +1171,106 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/consumer/MessagePublishingConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="17" column="84" selection-start-line="17" selection-start-column="84" selection-end-line="17" selection-end-column="103" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/consumer/MessageConsumer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/entitytype/user/streamer/base/UserByteArrayBaseStreamer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/lang/Runnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="7" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/utils/TestHelperUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/MainApplicationIntegrationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="137" column="39" lean-forward="true" selection-start-line="137" selection-start-column="39" selection-end-line="137" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/producer/DataRecordIterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="112" column="45" lean-forward="true" selection-start-line="112" selection-start-column="45" selection-end-line="112" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/concurrent/CountDownLatch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="209" column="18" selection-start-line="209" selection-start-column="18" selection-end-line="209" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/producer/DataRecordIteratorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/stream/consumer/MessagePublishingConsumerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="73" column="21" lean-forward="true" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/stream/AkkaStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/stream/entitytype/user/streamer/UserByteArrayJavastreamStreamer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>

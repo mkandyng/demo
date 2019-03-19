@@ -30,61 +30,64 @@ public class DataRecordIteratorTest {
     @Mock
     private Consumer<Throwable> onErrorHandler;
 
+    private CountDownLatch beforeCloseLatch;
+    private CountDownLatch afterCloseLatch;
+
 
     @Before
     public void setup() throws IOException {
         given(reader.readRecord()).willReturn(null);
-        dataRecordIterator = new DataRecordIterator<>(reader, onErrorHandler);
+        beforeCloseLatch = new CountDownLatch(1);
+        afterCloseLatch = new CountDownLatch(1);
     }
 
     @Test
-    public void shouldReturnTrueOnHasNextWhenThereAreRecord() throws IOException {
+    public void shouldReturnTrueOnHasNextWhenThereAreRecord() throws IOException, InterruptedException {
         // Given
         given(reader.readRecord()).willReturn("data");
+        dataRecordIterator = new VerifyBeforeAfterClosedDataRecordIterator(reader, onErrorHandler);
+        // When
+        boolean hasNext = dataRecordIterator.hasNext();
 
-        Runnable runnable = () -> {
-            // When
-            boolean hasNext = dataRecordIterator.hasNext();
-
-            // Then
-            assertThat(hasNext).isTrue();
-        };
-
-        dataRecordIterator = new VerifyBeforeClosedDataRecordIterator(reader, onErrorHandler, runnable);
+        // Then
+        assertThat(hasNext).isTrue();
     }
 
     @Test
-    public void shouldReturnObjectOnNextWhenThereAreRecord() throws IOException {
+    public void shouldReturnObjectOnNextWhenThereAreRecord() throws IOException, InterruptedException {
         // Given
         given(reader.readRecord()).willReturn("data");
-        dataRecordIterator = new VerifyBeforeClosedDataRecordIterator(
-                reader,
-                onErrorHandler,
-                () -> {
-                    // When
-                    String item = dataRecordIterator.next();
-
-                    // Then
-                    assertThat(item).isNotNull();
-                });
-    }
-
-    @Test
-    public void shouldReturnNullOnNextWhenEmpty() throws InterruptedException {
-        // Given
-        waitUntilIteratorIsClosed(dataRecordIterator);
-
+        dataRecordIterator = new VerifyBeforeAfterClosedDataRecordIterator(reader, onErrorHandler);
         // When
         String item = dataRecordIterator.next();
+
+        // Then
+        assertThat(item).isNotNull();
+    }
+
+    @Test
+    public void shouldReturnNullOnNextWhenEmpty() throws InterruptedException, IOException {
+        // Given
+        given(reader.readRecord()).willReturn(null);
+        dataRecordIterator = new VerifyBeforeAfterClosedDataRecordIterator(reader, onErrorHandler);
+
+        // When
+        beforeCloseLatch.countDown();
+        String item = dataRecordIterator.next();
+        afterCloseLatch.await();
 
         // Then
         assertThat(item).isNull();
     }
 
     @Test
-    public void shouldReturnFalseOnHasNextWhenEmptyAndClosed() throws InterruptedException {
+    public void shouldReturnFalseOnHasNextWhenEmptyAndClosed() throws InterruptedException, IOException {
         // Given
-        waitUntilIteratorIsClosed(dataRecordIterator);
+        given(reader.readRecord()).willReturn(null);
+        dataRecordIterator = new VerifyBeforeAfterClosedDataRecordIterator(reader, onErrorHandler);
+
+        beforeCloseLatch.countDown();
+        afterCloseLatch.await();
 
         // When
         boolean hasNext = dataRecordIterator.hasNext();
@@ -98,17 +101,7 @@ public class DataRecordIteratorTest {
 
         // Given
         given(reader.readRecord()).willReturn(null);
-        dataRecordIterator = new VerifyBeforeClosedDataRecordIterator(
-                reader,
-                onErrorHandler,
-                () -> {
-                    try {
-                        TimeUnit.MINUTES.sleep(10);
-                    } catch (InterruptedException e) {
-                        Thread.currentThread().interrupt();
-                    }
-                });
-
+        dataRecordIterator = new VerifyBeforeAfterClosedDataRecordIterator(reader, onErrorHandler);
         // When
         Executors.newSingleThreadExecutor().submit(() -> dataRecordIterator.hasNext()).get(100, TimeUnit.MILLISECONDS);
 
@@ -116,48 +109,45 @@ public class DataRecordIteratorTest {
     }
 
     @Test
-    public void shouldCallErrorHandlerOnReadException() throws IOException {
+    public void shouldCallErrorHandlerOnReadException() throws IOException, InterruptedException {
         // Given
         Exception exception = new RuntimeException();
         given(reader.readRecord()).willThrow(exception);
-        dataRecordIterator = new VerifyBeforeClosedDataRecordIterator(
-                reader,
-                onErrorHandler,
-                () -> verify(onErrorHandler).accept(exception));
+        dataRecordIterator = new VerifyBeforeAfterClosedDataRecordIterator(reader, onErrorHandler);
+        beforeCloseLatch.countDown();
+        afterCloseLatch.await();
+        verify(onErrorHandler).accept(exception);
     }
 
     @Test
     public void shouldCallClosedWhenReadReturnNull() throws IOException, InterruptedException {
         // Given
+        given(reader.readRecord()).willReturn(null);
 
         // When
-        waitUntilIteratorIsClosed(dataRecordIterator);
-
+        dataRecordIterator = new VerifyBeforeAfterClosedDataRecordIterator(reader, onErrorHandler);
+        beforeCloseLatch.countDown();
+        afterCloseLatch.await();
         // Then
         verify(reader,atLeastOnce()).close();
     }
 
-
-    private void waitUntilIteratorIsClosed(DataRecordIterator<String> iterator) throws InterruptedException {
-        int count=0;
-        while(!iterator.isClosed() || count++ >=100) {
-            TimeUnit.MILLISECONDS.sleep(100);
-        }
-    }
-
-    private class VerifyBeforeClosedDataRecordIterator extends DataRecordIterator<String> {
-        private final Runnable runnable;
-        public VerifyBeforeClosedDataRecordIterator(DataRecordReader<String> reader,
-                                                    Consumer<Throwable> onErrorHandler,
-                                                    Runnable runnable) {
+    private class VerifyBeforeAfterClosedDataRecordIterator extends DataRecordIterator<String> {
+        public VerifyBeforeAfterClosedDataRecordIterator(DataRecordReader<String> reader,
+                                                         Consumer<Throwable> onErrorHandler) {
             super(reader, onErrorHandler);
-            this.runnable = runnable;
         }
 
         @Override
         public void close() {
-                runnable.run();
+            try {
+                beforeCloseLatch.await();
                 super.close();
+                afterCloseLatch.countDown();
+
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         }
     }
 
