@@ -9,7 +9,7 @@ Note, although I have implemented consistent wrapper to these streaming API, the
 (Reactor) https://projectreactor.io
 (Akka) https://doc.akka.io/docs/akka/2.5.4/scala/stream/index.html
 (Java 8 Stream) https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html
-(Lmax Distruptor) https://www.lmax.com/disruptor
+(Distruptor) https://www.lmax.com/disruptor
 (SpringBatch) https://spring.io/projects/spring-batch
 
 The objective of this program is to develop a solution that allow streaming of data from any source to any destination, allowing the flexibility to plug in any data filtering and transformation pipeline.
