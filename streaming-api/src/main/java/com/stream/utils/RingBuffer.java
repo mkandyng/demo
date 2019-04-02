@@ -1,21 +1,16 @@
 package com.stream.utils;
 
+import sun.misc.Contended;
+
 import java.util.*;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  *
  * This ring buffer uses two indexes to track reader and writer index position
  * Only the key methods are implemented as it is a good solution queue replacement
- * as it uses two locks and it is better performance than queue, especially when
- * we have 1 writer and 1 reader message producer and consumer senario, then it is
- * pretty much lock free.
- *
- * SpinLock is use because locking is very rare and is use for visibility as assess for lock
- * should be quick
  *
  * @param <E>, elementType that the RingBuffer hold
  *
@@ -24,39 +19,36 @@ import java.util.concurrent.locks.ReentrantLock;
 public class RingBuffer<E> implements BlockingQueue<E> {
     private final E[] buffer;
     private final int capacity;
-    private final SpinLock lock;
-    private final Condition notEmpty;
-    private final Condition notFull;
-    private int writeIndex;
-    private int readIndex;
+    private AtomicInteger writeIndex;
+    @Contended
+    private AtomicInteger readIndex;
 
     public RingBuffer(int capacity) {
-        if(capacity <= 0) {
-            throw new IllegalArgumentException("A positive queue capacity is required");
+        if (capacity < 1) {
+            throw new IllegalArgumentException("bufferSize must not be less than 1");
+        } else if (Integer.bitCount(capacity) != 1) {
+            throw new IllegalArgumentException("bufferSize must be a power of 2");
         }
         this.capacity = capacity+1;
-        lock = new SpinLock();
-        notEmpty = lock.newCondition();
-        notFull =  lock.newCondition();
-        writeIndex = 0;
-        readIndex = 0;
+        writeIndex = new AtomicInteger(0);
+        readIndex = new AtomicInteger(0);
         buffer = createBuffer();
     }
 
     @Override
     public int size() {
-        if(writeIndex == 0 && readIndex == 0) {
+        if(writeIndex.get() == 0 && readIndex.get() == 0) {
             return 0;
-        } else if(writeIndex > readIndex) {
-            return writeIndex - readIndex;
+        } else if(writeIndex.get() > readIndex.get()) {
+            return writeIndex.get() - readIndex.get();
         } else {
-            return (capacity - readIndex) + writeIndex;
+            return (capacity - readIndex.get()) + writeIndex.get();
         }
     }
 
     @Override
     public boolean isEmpty() {
-        return !this.isFull() && (writeIndex == readIndex);
+        return !this.isFull() && (writeIndex.get() == readIndex.get());
     }
 
     @Override
@@ -72,16 +64,8 @@ public class RingBuffer<E> implements BlockingQueue<E> {
 
     @Override
     public void put(E element) throws InterruptedException {
-        checkNotNull(element);
-        final ReentrantLock lock = this.lock;
-        lock.lockInterruptibly();
-        try {
-            while (isFull()) {
-                notFull.await();
-            }
-            offer(element);
-        } finally {
-            lock.unlock();
+        while (!offer(element)) {
+            TimeUnit.MILLISECONDS.sleep(1);
         }
     }
 
@@ -92,89 +76,11 @@ public class RingBuffer<E> implements BlockingQueue<E> {
 
     @Override
     public E take() throws InterruptedException {
-        final ReentrantLock lock = this.lock;
-        lock.lockInterruptibly();
-        try {
-            while (isEmpty())
-                notEmpty.await();
-            return deQueue();
-        } finally {
-            lock.unlock();
+        E element;
+        while ((element = poll()) == null) {
+            TimeUnit.MILLISECONDS.sleep(1);
         }
-    }
-
-    @Override
-    public int remainingCapacity() {
-        return (capacity-1) - size();
-    }
-
-    @Override
-    public E peek() {
-        if(isEmpty()) {
-            return null;
-        } else {
-            return buffer[readIndex];
-        }
-    }
-
-    @Override
-    public void clear() {
-        final ReentrantLock lock = this.lock;
-        lock.lock();
-        try {
-            int k = readIndex + writeIndex;
-            if (k > 0) {
-                readIndex = 0;
-                writeIndex = 0;
-                if(lock.hasWaiters(notFull)) {
-                    notFull.signalAll();
-                }
-            }
-        } finally {
-            lock.unlock();
-        }
-    }
-
-    @SuppressWarnings("unchecked")
-    private E[] createBuffer() {
-        return (E[])new Object[this.capacity];
-    }
-
-    private void checkNotNull(E element) {
-        if (element == null) throw new NullPointerException();
-    }
-
-    private boolean isFull() {
-        return readIndex == ((writeIndex + 1) % capacity);
-    }
-
-    private E deQueue() {
-        final ReentrantLock lock = this.lock;
-        lock.lock();
-        try {
-            E element = buffer[readIndex];
-            readIndex = (readIndex + 1) % capacity;
-            if(lock.hasWaiters(notFull)) {
-                notFull.signalAll();
-            }
-            return element;
-        } finally {
-            lock.unlock();
-        }
-    }
-
-    private void enqueue(E element) {
-        final ReentrantLock lock = this.lock;
-        lock.lock();
-        try {
-            buffer[writeIndex] = element;
-            writeIndex = (writeIndex+1) % capacity;
-            if(lock.hasWaiters(notEmpty)) {
-                notEmpty.signalAll();
-            }
-        } finally {
-            lock.unlock();
-        }
+        return element;
     }
 
     @Override
@@ -193,6 +99,53 @@ public class RingBuffer<E> implements BlockingQueue<E> {
             }
         }
         return counter;
+    }
+
+    @Override
+    public int remainingCapacity() {
+        return (capacity-1) - size();
+    }
+
+    @Override
+    public E peek() {
+        if(isEmpty()) {
+            return null;
+        } else {
+            return buffer[readIndex.get()];
+        }
+    }
+
+    @Override
+    public void clear() {
+        int k = readIndex.get() + writeIndex.get();
+        if (k > 0) {
+            readIndex.set(0);
+            writeIndex.set(0);
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    private E[] createBuffer() {
+        return (E[])new Object[this.capacity];
+    }
+
+    private void checkNotNull(E element) {
+        if (element == null) {
+            throw new NullPointerException();
+        }
+    }
+
+    private boolean isFull() {
+        return readIndex.get() == ((writeIndex.get() + 1) % capacity);
+    }
+
+    private E deQueue() {
+        E element = buffer[readIndex.getAndSet((readIndex.get() + 1) % capacity)];
+        return element;
+    }
+
+    private void enqueue(E element) {
+        buffer[writeIndex.getAndSet((writeIndex.get()+1) % capacity)] = element;
     }
 
     @Override

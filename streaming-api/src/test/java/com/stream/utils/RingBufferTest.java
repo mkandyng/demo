@@ -15,7 +15,7 @@ public class RingBufferTest {
 
     @Before
     public void init() {
-        queueCapacity = 100;
+        queueCapacity = 128;
         queue = new RingBuffer<>(queueCapacity);
     }
 
@@ -25,8 +25,8 @@ public class RingBufferTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void shouldThrowExceptionWithCapacityOfLessZero() {
-        queue = new RingBuffer<>((new Random()).nextInt(Integer.MAX_VALUE) * -1);
+    public void shouldThrowExceptionWithCapacityNotPowerOfTwo() {
+        queue = new RingBuffer<>(100);
     }
 
     @Test
