@@ -1,8 +1,6 @@
 package com.stream.producer;
 
-import akka.stream.QueueOfferResult;
 import com.stream.producer.reader.DataRecordReader;
-import com.stream.utils.RingBuffer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.io.IOException;
