@@ -1,0 +1,324 @@
+* {
+   box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  background: #54545d;
+}
+
+ul.header {
+  border-radius: 10px;
+  background: #f7f7f7;
+  padding: 0;
+  margin-left:5px;
+  margin-right:5px;
+  margin-bottom: 3px;
+}
+
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+
+ul.header li a {
+  color:#9895a2;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+}
+
+ul.header li a.active {
+  color:black;
+}
+
+
+.content {
+  background: #54545d;
+}
+
+
+.content h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.content li {
+  margin-bottom: 10px;
+}
+
+
+#topLayout {
+  display: flex;
+  min-height: calc(100vh - 50vh);
+  background: #54545d;
+}
+
+#topLayout > #marketdata {
+  flex: 1;
+}
+
+#topLayout > #ticket {
+  flex: 0;
+}
+
+#topLayout > #ticket {
+  order: -1;
+}
+
+#bottomLayout, #marketdata, #ticket {
+  padding: 5px;
+}
+
+#ticket form {
+  border-radius: 15px;
+  padding: 5px;
+  width: 350px;
+  height: 100%;
+  font-size: 12px;
+  background: white;
+}
+
+#ticket form * {
+  box-sizing: border-box;
+}
+
+#ticket form label {
+  padding: 0;
+  text-align: right;
+  display: block;
+}
+
+#ticket form input,
+#ticket form select,
+#ticket form textarea {
+  margin-left: 2em;
+  float: right;
+  width: 20em;
+  border: 1px solid #ccc;
+  font-size: 0.8em;
+  padding: 0.3em;
+}
+
+#ticket form textarea {
+  height: 60px;
+}
+
+#ticket form button {
+  border-radius: 0.5em;
+  border: none;
+  font-weight: bold;
+}
+
+#buySell {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  float: left;
+}
+
+#sellButton {
+  margin-left:20px;
+  margin-right:10px;
+  float: left;
+}
+
+#ticket form #sellButton label {
+  color: #e6577c;
+  text-align: center; 
+  margin-bottom: 5px;
+}
+
+#ticket form #buyButton label {
+  color: blue;
+  text-align: center; 
+  margin-bottom: 5px;
+}
+
+#sellButton button {
+  width: 130px;
+  height: 40px;
+  background: #e25d5d;
+  color: white;
+}
+
+#buyButton {
+  margin-left:20px;
+  float: left;
+}
+
+#buyButton button {
+  width: 130px;
+  height: 40px;
+  background: #6e6ed0;
+  color: white;
+}
+
+#instrumentSearch label {
+  display: block;
+  margin: 5px 0;
+}
+
+input {
+  border-radius: 5px;
+}
+
+#instrumentSearch input {
+  margin: 4px;
+  height: 27px;
+}
+
+#instrumentSearch code {
+  padding: .2em .5em;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+#instrumentSearch .menu {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #cccccc;
+}
+
+#instrumentSearch {
+  margin-bottom:2px;
+  position: relative;
+  z-index: 1;
+}
+
+#marketdata .item {
+  padding: 2px 6px;
+  cursor: default;
+}
+
+#marketdata .item-header {
+  background-color: #eeeeee;
+  color: #454545;
+  font-weight: bold;
+}
+
+#marketdata .ReactTable .rt-thead {
+  height:30px;
+}
+
+#marketdata .ReactTable {
+  border-radius: 5px;
+  background: #fffdfd;
+  font-size: 10px;
+  text-align: center;
+  height: 88%;
+}
+
+#marketdata .ReactTable .rt-th {
+  font-weight: bold;
+  background: #f7f7f7;
+}
+
+#marketdata .ReactTable .rt-tr-group:hover {
+  background: #f7f7f7;
+}
+
+#marketdata .ReactTable .rt-td-group {
+  background: #ece5e5;
+}
+
+#marketdata .ReactTable .instrument-column {
+  text-align: left;
+}
+
+#marketdata .ReactTable span.priceUp {
+	color: blue;
+}
+
+#marketdata .ReactTable span.priceDown {
+	color: red;
+}
+
+#bottomLayout {
+  background: #54545d;
+  padding-top: 0px;
+  height: 40vh;
+}
+
+#bottomLayout .react-tabs {
+  margin: 0px;
+  background-color: #f7f7f7;
+}
+
+#bottomLayout .react-tabs__tab-list {
+  border-bottom: none;
+  background: #54545d;
+}
+
+#bottomLayout .react-tabs__tab {
+  margin: 1px;
+  background: white;
+  color: lightgrey;
+  position: inherit;
+  border-radius: 5px 5px 0 0;
+}
+
+#bottomLayout .react-tabs__tab--selected {
+  margin: 1px;
+  color: black;
+}
+
+#bottomLayout .item {
+  padding: 2px 6px;
+  cursor: default;
+}
+
+#bottomLayout .item-header {
+  background-color: #eeeeee;
+  color: #454545;
+  font-weight: bold;
+}
+
+#bottomLayout .ReactTable {
+  background: #fffdfd;
+  font-size: 10px;
+  text-align: center;
+  height: 88%;
+}
+
+#bottomLayout .ReactTable .rt-th {
+  font-weight: bold;
+  background: #f7f7f7;
+}
+
+#bottomLayout .ReactTable .rt-tr-group:hover {
+  background: #f7f7f7;
+}
+
+#bottomLayout .ReactTable .rt-td-group {
+  background: #ece5e5;
+}
+
+#bottomLayout .ReactTable .instrument-column {
+  text-align: left;
+}
+
+#react-tabs-1 {
+  margin-top:-10px;
+}
+
+.timeSeriesPrices {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%;
+  height:300px;
+  background-color: #f7f7f7;
+}
+
+#documentation {
+  background: #f7f7f7;
+  border-radius: 10px;
+  margin-top:8px;
+  margin-left:5px;
+  margin-right:5px;
+}

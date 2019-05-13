@@ -1,0 +1,10 @@
+{"id":"testdata-1", "state":"STARTED", "type":"APPLICATION_LOG",
+"host":"dev-server1", "timestamp":1491377495212}
+non-json-line
+{"id":"testdata-2", "state":"STARTED", "timestamp":1491377495213}
+{"id":"testdata-3", "state":"FINISHED", "timestamp":1491377495218}
+{"id":"testdata-1", "state":"FINISHED", "type":"APPLICATION_LOG",
+"host":"dev-server1", "timestamp":1491377495217}
+non-json-line
+{"id":"testdata-3", "state":"STARTED", "timestamp":1491377495210}
+{"id":"testdata-2", "state":"FINISHED", "timestamp":1491377495216}
