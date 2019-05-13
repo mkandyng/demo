@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { getRandomInt, toggleOpacity, getDateString } from "../../../libs/utils";
 import { placeOrder } from "../../../store/actions/placeOrder";
 import { updateOrder } from "../../../store/actions/updateOrder";
 import { placeOrderAndGenerateTradeLifeCycle } from "../../../libs/orderbook.js"
+import { getRandomInt, toggleOpacity, getDateString } from "../../../libs/utils";
 
 class Ticket extends React.Component {
     constructor(props) {
@@ -38,7 +38,7 @@ class Ticket extends React.Component {
 	        clearInterval(placeInterval);
 		let buySell = getRandomInt(0,1) === 0 ? "Buy":"Sell";
 		this.validateAndPlaceOrder(buySell, instrument, instrument.price, false);
-	    }, getRandomInt(500,30000));
+	    }, getRandomInt(500,15000));
 	};
 
 	const interval = setInterval(() => {
@@ -180,11 +180,12 @@ class Ticket extends React.Component {
     return (
         <div id="ticket">
             <form>
-                <p>
+		<p>
 		    <label>Symbol:
 			<input type="text" 
 			       name="symbol" 
-			       value={symbol}/>
+			       value={symbol}
+			       onChange={this.symbolChange}/>
 		    </label>
 		</p>
 		<p>
@@ -238,7 +239,7 @@ class Ticket extends React.Component {
 			<textarea name="note" maxLength="100" onChange={this.noteChange} value={this.state.note}></textarea>
 		    </label>
 		</p>
-		<p>
+		<div>
                     <div id="buySell">
 		        <div id="sellButton" onClick={this.handleOnSubmit}>
 			    <label>{bidPrice}</label>
@@ -249,7 +250,7 @@ class Ticket extends React.Component {
 			    <button id="sell">Buy</button>
 		        </div>
                     </div>
-		</p>
+		</div>
 	   </form>
 	</div>
     )

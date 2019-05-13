@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { createStore, applyMiddleware } from "redux";
 import { createEpicMiddleware } from "redux-observable";
 import { Provider } from "react-redux";
-import { rootReducer } from "./store/reducers/root";
+import rootReducer from "./store/reducers/rootReducer";
 import { rootEpic } from "./store/epics";
 import App from "./components/App";
 import "react-table/react-table.css";

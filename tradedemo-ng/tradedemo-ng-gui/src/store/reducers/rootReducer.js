@@ -50,24 +50,24 @@ import {
    UPDATE_ORDER 
 } from "../actions/updateOrder";
 
-export const rootReducer = function(state = initialState, action) {
+export default function otherReducers(state = initialState, action) {
     switch (action.type) {
-        case FETCH_INSTRUMENTS:
+	case FETCH_INSTRUMENTS:
             return {
                 ...state,
-		isLoading: false,
+                isLoading: false,
                 error: null
             };
         case FETCH_INSTRUMENTS_SUCCESS:
             return {
-		...state,
+                ...state,
                 instruments: [...action.payload],
-		isLoading: true,
+                isLoading: true,
                 error: null
             };
         case FETCH_INSTRUMENTS_FAILURE:
             return {
-		...state,
+                ...state,
                 instruments: [],
                 isLoading: false,
                 error: action.payload
