@@ -9,9 +9,9 @@ function Technologies(props) {
 	    <ul>
 	        <li>Web application with <a href="https://github.com/facebook/react" alt="React">React</a> (UI Layer),<span> </span>
 	        <a href="https://redux.js.org/introduction/getting-started" alt="Redux">Redux</a> (Flux architecture),<span> </span>
-	        <a href="https://redux-observable.js.org/docs/basics/Epics.html" alt="edux-observable">Redux Observable</a> (Epics for remote access).
+	        <a href="https://redux-observable.js.org/docs/basics/Epics.html" alt="edux-observable">Redux Observable</a> (Epics using <a href="https://rxjs-dev.firebaseapp.com/">RxJs</a> for async processing).
 		</li>
-	        <li>Microservices delivering Rest API with <a href="https://spring.io/proje/spring-boot" alt="Springboot">Springboot</a>.</li>
+	        <li>Microservices delivering Rest API for marketdata with <a href="https://spring.io/proje/spring-boot" alt="Springboot">Springboot</a>.</li>
 	        <li>Cloud-Native application running as <a href="https://www.docker.com/">Docker container</a> orchestrated by <a href="https://kubernetes.io/">Kubernetes</a> in <a href="https://cloud.google.com/" alt="Google Cloud">Google Cloud Platform</a>.</li>
 	    </ul>
 	</div>

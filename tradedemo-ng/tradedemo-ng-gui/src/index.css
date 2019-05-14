@@ -52,7 +52,6 @@ ul.header li a.active {
 
 #topLayout {
   display: flex;
-  min-height: calc(100vh - 50vh);
   background: #54545d;
 }
 
@@ -76,7 +75,7 @@ ul.header li a.active {
   border-radius: 15px;
   padding: 5px;
   width: 350px;
-  height: 100%;
+  height: 310px;
   font-size: 12px;
   background: white;
 }
@@ -209,7 +208,7 @@ input {
   background: #fffdfd;
   font-size: 10px;
   text-align: center;
-  height: 88%;
+  height: 270px;
 }
 
 #marketdata .ReactTable .rt-th {
@@ -240,7 +239,6 @@ input {
 #bottomLayout {
   background: #54545d;
   padding-top: 0px;
-  height: 40vh;
 }
 
 #bottomLayout .react-tabs {

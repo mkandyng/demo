@@ -23,7 +23,7 @@ function OrderBlotter(props) {
 
     return (
 	    <ReactTable
-		defaultPageSize={8}
+		defaultPageSize={10}
 		showPageSizeOptions={false}
   		data={props.orderbook} 
 		columns={columns}
