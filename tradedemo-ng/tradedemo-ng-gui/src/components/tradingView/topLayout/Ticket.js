@@ -38,13 +38,14 @@ class Ticket extends React.Component {
 	        clearInterval(placeInterval);
 		let buySell = getRandomInt(0,1) === 0 ? "Buy":"Sell";
 		this.validateAndPlaceOrder(buySell, instrument, instrument.price, false);
-	    }, getRandomInt(500,15000));
+	    }, getRandomInt(500,50000));
 	};
 
 	const interval = setInterval(() => {
+	   const maxInstrumentsForDemo = 30;
 	   if(this.props.marketfeedInstruments.length > 0) {
 		clearInterval(interval);
-		for(let i=0; i<this.props.maxMarketfeedInstruments; i++) {
+		for(let i=0; i<maxInstrumentsForDemo; i++) {
 		    this.props.marketfeedInstruments.forEach(instrument => {
 			placeOrder(instrument);	
 		    });

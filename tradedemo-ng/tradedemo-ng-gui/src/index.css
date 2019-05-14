@@ -4,7 +4,7 @@
 
 body {
   margin: 0;
-  background: #54545d;
+  background: black;
 }
 
 ul.header {
@@ -35,11 +35,6 @@ ul.header li a.active {
 }
 
 
-.content {
-  background: #54545d;
-}
-
-
 .content h2 {
   padding: 0;
   margin: 0;
@@ -52,7 +47,6 @@ ul.header li a.active {
 
 #topLayout {
   display: flex;
-  background: #54545d;
 }
 
 #topLayout > #marketdata {
@@ -237,7 +231,7 @@ input {
 }
 
 #bottomLayout {
-  background: #54545d;
+  background-image: url("/img/sitebackground.jpg");
   padding-top: 0px;
 }
 
@@ -248,7 +242,7 @@ input {
 
 #bottomLayout .react-tabs__tab-list {
   border-bottom: none;
-  background: #54545d;
+  background: black;
 }
 
 #bottomLayout .react-tabs__tab {
