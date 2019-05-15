@@ -231,7 +231,6 @@ input {
 }
 
 #bottomLayout {
-  background-image: url("/img/sitebackground.jpg");
   padding-top: 0px;
 }
 
@@ -303,7 +302,7 @@ input {
   box-sizing: border-box;
   padding: 10px;
   width: 100%;
-  height:300px;
+  height:340px;
   background-color: #f7f7f7;
 }
 
