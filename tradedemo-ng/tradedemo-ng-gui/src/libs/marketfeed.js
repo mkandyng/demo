@@ -41,7 +41,7 @@ export const generateMarketDataMovement = function(instrument) {
              currency: instrument.currency,
              last: last.toFixed(2),
 	     open: open.toFixed(2), 
-             bid: upDownPrice(newPrice, open, bid),
+	     bid: upDownPrice(newPrice, open, bid),
              ask: upDownPrice(newPrice, open, ask),
              chg: upDownPrice(newPrice, open, chg + "%")
     };
