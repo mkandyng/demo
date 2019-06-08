@@ -18,15 +18,15 @@ export const fetchInstrumentDailyTimeSeriesEpic = function(action$) {
         .switchMap((action) => {
             return ajax
                 .getJSON(instrumentServiceUrl + "/dailyPrices/" + action.instrument.symbol)
-		.map(jsonPayload => jsonPayload.slice(0, maxRecords).reverse())
-		.map(requiredTimeSeries => requiredTimeSeries.map((series) => {
-                                 return { name: series.dateTime,
-                                          open: series["open"],
-					  high: series["high"],
-					  low: series["low"],
-                                          close: series["close"]
-                                        }
-                }))
+                .map(jsonPayload => jsonPayload.slice(0, maxRecords).reverse())
+                .map(requiredTimeSeries => requiredTimeSeries.map((series) => {
+                          return { name: series.dateTime,
+                                   open: series["open"],
+                                   high: series["high"],
+                                   low: series["low"],
+                                   close: series["close"]
+                          };
+                }));
         })
         .map(timeSeries => fetchInstrumentDailyTimeSeriesSuccess(timeSeries))
         .catch(error => {fetchInstrumentDailyTimeSeriesFailure(error.message)})

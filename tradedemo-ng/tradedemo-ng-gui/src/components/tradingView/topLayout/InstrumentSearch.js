@@ -23,14 +23,14 @@ class InstrumentSearch extends Component {
         this.renderItem = this.renderItem.bind(this);
         this.addItem = this.addItem.bind(this);
         this.selectDisplayInstruments = this.selectDisplayInstruments.bind(this);
-	this.populateMarketfeed = this.populateMarketfeed.bind(this);
+        this.populateMarketfeed = this.populateMarketfeed.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchInstruments();
-	this.populateMarketfeed();
+        this.populateMarketfeed();
     }
-    
+
     populateMarketfeed() {
         if(this.props.marketfeedInstruments.length === 0) {
             let isAddedToMarketfeed = false;
@@ -39,13 +39,13 @@ class InstrumentSearch extends Component {
                     if(!isAddedToMarketfeed) {
                         isAddedToMarketfeed = true;
                         addMarketfeedInstruments(this.props);
-			// Call it a couple of times to generate more price movements
+                        // Call it a couple of times to generate more price movements
                         setInterval(() => {
                         	flashPriceUpdate(this.props.marketfeedInstruments, this.props.updateInstrumentToMarketfeed);
                         }, 1000);
                     }
                     if(this.props.marketfeedInstruments.length > 0) {
-			const selectedIndex = 0;
+                        const selectedIndex = 0;
                         if(selectMarketfeedInstrument(this.props, this.props.marketfeedInstruments[selectedIndex].symbol, selectedIndex)) {
                             clearInterval(interval);
                         }
@@ -56,7 +56,7 @@ class InstrumentSearch extends Component {
     }
 
     onChange(e) {
-  	this.setState({
+  	   this.setState({
             value: e.target.value
         });
     }
@@ -69,10 +69,10 @@ class InstrumentSearch extends Component {
 
     renderItem(item, highlighted){
         return (
-	    <div key={item.id} style={{ backgroundColor: highlighted?"#eee":"transparent"}} >
+           <div key={item.id} style={{ backgroundColor: highlighted?"#eee":"transparent"}} >
             	{item.label}
-            </div>
-        ); 
+           </div>
+        );
     }
 
     getItemValue(item){
@@ -80,52 +80,53 @@ class InstrumentSearch extends Component {
     }
 
     matchStocks(state, value) {
-	return (state.label.toLowerCase().indexOf(value.toLowerCase()) !== -1);
+       return (state.label.toLowerCase().indexOf(value.toLowerCase()) !== -1);
     }
 
     selectDisplayInstruments(instruments) {
-	let maxRecords = 10;
-	return instruments.slice(0, maxRecords)
-		   .map(instrument => {
-			const symbol = instrument.symbol;
-                	const name = instrument.name;
-                	return {
-                    		value: symbol,
-                    		label: "(" + symbol +  ") " +  name
-                	}
-	});
+       let maxRecords = 10;
+       return instruments.slice(0, maxRecords)
+                         .map(instrument => {
+                              const symbol = instrument.symbol;
+                	            const name = instrument.name;
+                	            return {
+                    		          value: symbol,
+                    		          label: "(" + symbol +  ") " +  name
+                	            }
+                         });
     }
 
     addItem(event) {
     	event.preventDefault();
     	const selectedValue = this.state.value;
-        if(addInstrumentToMarketfeed(this.props, selectedValue)) {
-	    const interval = setInterval(() => {
-		const selectedIndex = 0;
-                if(selectMarketfeedInstrument(this.props, selectedValue, selectedIndex)) {
-                    clearInterval(interval);
-                }
-            },500);
-	    this.setState({value: ""});
-	}
+      if(addInstrumentToMarketfeed(this.props, selectedValue)) {
+         const interval = setInterval(() => {
+             const selectedIndex = 0;
+             if(selectMarketfeedInstrument(this.props, selectedValue, selectedIndex)) {
+               clearInterval(interval);
+             }
+         },500);
+         this.setState({value: ""});
+      }
     }
 
     render() {
-        return (
-	    <div id="instrumentSearch">
-		<form>
-      		    <ReactAutocomplete
-        		items={this.selectDisplayInstruments(this.props.instruments)}
-                        getItemValue={this.getItemValue}
-			shouldItemRender={this.matchStocks}
-                        renderItem={this.renderItem}
-        		value={this.state.value}
-        		onChange={this.onChange}
-        		onSelect={this.onSelect} />
-		    <input type="submit" value="Add" onClick={this.addItem}/>
-		</form>
-            </div>
-        )
+      return (
+        <div id="instrumentSearch">
+             <form>
+      		       <ReactAutocomplete
+        		         items={this.selectDisplayInstruments(this.props.instruments)}
+                     getItemValue={this.getItemValue}
+                     shouldItemRender={this.matchStocks}
+                     renderItem={this.renderItem}
+        		         value={this.state.value}
+        		         onChange={this.onChange}
+        		         onSelect={this.onSelect}
+                 />
+                 <input type="submit" value="Add" onClick={this.addItem}/>
+             </form>
+        </div>
+      )
     }
 }
 

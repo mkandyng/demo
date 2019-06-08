@@ -4,17 +4,17 @@ import {LineChart,
         YAxis,
         CartesianGrid,
         Tooltip,
-	ResponsiveContainer,
+        ResponsiveContainer,
         Legend } from "recharts";
 
 export const getDateString = function (date, format) {
     const dateTimeMills = date.toISOString();
     if(format === "dateOnly") {
-	return dateTimeMills.substr(0,10);
+       return dateTimeMills.substr(0,10);
     } else if(format === "dateTimeFormat") {
-	return dateTimeMills.replace("T"," ").replace("Z","");
+       return dateTimeMills.replace("T"," ").replace("Z","");
     }
-}
+};
 
 export const toggleOpacity = function (selectedValue, opacityValue, equalsCompare) {
     if(equalsCompare) {
@@ -32,20 +32,20 @@ export const getRandomInt = function (min, max) {
 
 export const TimeSeries = function (props) {
     return (
-        <div className="timeSeriesPrices">
-	    <ResponsiveContainer>	
-            <LineChart  
+      <div className="timeSeriesPrices">
+         <ResponsiveContainer>
+            <LineChart
                         data={props.timeSeries.chartData}
                         margin={{top: 5, right: 20, left: 0, bottom: 5}}>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="name" />
-                        <YAxis interval="preserveStartEnd" domain={[props.timeSeries.minValue, props.timeSeries.maxValue]} />
+                        <YAxis interval="preserveStartEnd"
+                               domain={[props.timeSeries.minValue, props.timeSeries.maxValue]} />
                         <Tooltip />
                         <Legend />
                         {props.childElements}
             </LineChart>
-	    </ResponsiveContainer>
-         </div>
+         </ResponsiveContainer>
+       </div>
     )
 };
-

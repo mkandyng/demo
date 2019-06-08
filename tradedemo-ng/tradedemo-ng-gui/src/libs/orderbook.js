@@ -28,20 +28,20 @@ export const updateOrderWithFill = function(updateFunc, endStatus, order) {
 
     let status = ORDERBOOK_STATUS.partFilled;
     if(executed === order.quantity) {
-	status = ORDERBOOK_STATUS.filled;
+       status = ORDERBOOK_STATUS.filled;
     }
 
     const updatedOrder = { ...order,
-		 	   status: status.displayName,
-		 	   avgPrice: avgPrice.toFixed(2), 
-                 	   executed: executed 
-	       		 };
+     	   status: status.displayName,
+     	   avgPrice: avgPrice.toFixed(2),
+         executed: executed
+    };
 
     const interval = setInterval(() => {
         clearInterval(interval);
         updateFunc(updatedOrder);
         if((updatedOrder.status !== endStatus.displayName) && updatedOrder.executed < updatedOrder.quantity) {
-	    updateOrderWithFill(updateFunc, endStatus, updatedOrder);	
+           updateOrderWithFill(updateFunc, endStatus, updatedOrder);
         }
     }, getRandomInt(500,2000));
 }
@@ -49,32 +49,33 @@ export const updateOrderWithFill = function(updateFunc, endStatus, order) {
 export const placeOrderAndGenerateTradeLifeCycle = function(props, order) {
     const orderEndStatus = getRandomFinalOrderStatus();
     const createdDate = getDateString(new Date(), "dateTimeFormat");
-    let updatedOrder = { ...order, 
-			 created: createdDate,
-			 lastUpdated: createdDate 
-		       };
+    let updatedOrder = { ...order,
+       created: createdDate,
+       lastUpdated: createdDate
+    };
+
     props.placeOrder(updatedOrder);
 
     const workingInterval = setInterval(() => {
-	clearInterval(workingInterval);	
-	let nextStatus = ORDERBOOK_STATUS.working;
-        if(orderEndStatus.displayName === ORDERBOOK_STATUS.rejected.displayName) {
-	    nextStatus = ORDERBOOK_STATUS.rejected;
-        } else if((order.expiryType === "FOK") && (orderEndStatus.displayName === ORDERBOOK_STATUS.cancelled.displayName)) {
-	    nextStatus = ORDERBOOK_STATUS.cancelled;
-        }
-	
-	props.updateOrder({
-			    ...updatedOrder, 
-			    status: nextStatus.displayName
-			  });
+       clearInterval(workingInterval);
+           let nextStatus = ORDERBOOK_STATUS.working;
+           if(orderEndStatus.displayName === ORDERBOOK_STATUS.rejected.displayName) {
+              nextStatus = ORDERBOOK_STATUS.rejected;
+           } else if((order.expiryType === "FOK") && (orderEndStatus.displayName === ORDERBOOK_STATUS.cancelled.displayName)) {
+              nextStatus = ORDERBOOK_STATUS.cancelled;
+           }
 
-        // Only fill the rest if it is working
-	if(nextStatus.displayName === ORDERBOOK_STATUS.working.displayName) { 
-    	    if((orderEndStatus.displayName !== ORDERBOOK_STATUS.working.displayName) || 
-       	       (order.orderType === "Market")) {
-    	        updateOrderWithFill(props.updateOrder, orderEndStatus, updatedOrder);
-    	    }
-	}
+           props.updateOrder({
+                ...updatedOrder,
+                status: nextStatus.displayName
+           });
+
+           // Only fill the rest if it is working
+           if(nextStatus.displayName === ORDERBOOK_STATUS.working.displayName) {
+    	        if((orderEndStatus.displayName !== ORDERBOOK_STATUS.working.displayName) ||
+       	        (order.orderType === "Market")) {
+    	             updateOrderWithFill(props.updateOrder, orderEndStatus, updatedOrder);
+    	        }
+           }
     }, getRandomInt(300,700));
 }

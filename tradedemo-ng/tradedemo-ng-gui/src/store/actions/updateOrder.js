@@ -5,7 +5,6 @@ export const UPDATE_ORDER = "UPDATE_ORDER";
 export const updateOrder = (order) => ({
     type: UPDATE_ORDER,
     order: { ...order,
-	     lastUpdated: getDateString(new Date(), "dateTimeFormat")
-	   }
+       lastUpdated: getDateString(new Date(), "dateTimeFormat")
+     }
 });
-

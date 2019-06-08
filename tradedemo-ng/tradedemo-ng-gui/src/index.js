@@ -11,9 +11,7 @@ import "react-tabs/style/react-tabs.css";
 import "./index.css";
 
 const epicMiddleware = createEpicMiddleware();
-
 const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
-
 epicMiddleware.run(rootEpic);
 
 const appWithProvider = (

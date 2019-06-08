@@ -12,29 +12,29 @@ import { fetchInstrumentIntradayTimeSeries} from "../../../store/actions/fetchIn
 import { fetchInstrumentDailyTimeSeries} from "../../../store/actions/fetchInstrumentDailyTimeSeries";
 
 const MarketData = function(props) {
-    	return (
-    		<div id="marketdata">
-			<InstrumentSearch 
-				instruments={props.instruments}
-				maxMarketfeedInstruments={props.maxMarketfeedInstruments}
-				marketfeedInstruments={props.marketfeedInstruments}
-				addInstrumentToMarketfeed={props.addInstrumentToMarketfeed}
-				updateInstrumentToMarketfeed={props.updateInstrumentToMarketfeed}
-				selectInstrumentToMarketfeed={props.selectInstrumentToMarketfeed}
-				fetchInstruments={props.fetchInstruments} 
-				fetchInstrumentIntradayTimeSeries={props.fetchInstrumentIntradayTimeSeries}
-				fetchInstrumentDailyTimeSeries={props.fetchInstrumentDailyTimeSeries} />
-			<MarketDataGrid 
-				instruments={props.instruments}
-				maxMarketfeedInstruments={props.maxMarketfeedInstruments}
-				marketfeedInstruments={props.marketfeedInstruments}
-				selectedMarketfeedIndex={props.selectedMarketfeedIndex}
-				selectInstrumentToMarketfeed={props.selectInstrumentToMarketfeed}
-				fetchInstrumentIntradayTimeSeries={props.fetchInstrumentIntradayTimeSeries}
-				fetchInstrumentDailyTimeSeries={props.fetchInstrumentDailyTimeSeries}
-				deleteInstrumentToMarketfeed={props.deleteInstrumentToMarketfeed} />
-		</div>
-    	)
+  return (
+    <div id="marketdata">
+      <InstrumentSearch
+        instruments={props.instruments}
+        maxMarketfeedInstruments={props.maxMarketfeedInstruments}
+        marketfeedInstruments={props.marketfeedInstruments}
+        addInstrumentToMarketfeed={props.addInstrumentToMarketfeed}
+        updateInstrumentToMarketfeed={props.updateInstrumentToMarketfeed}
+        selectInstrumentToMarketfeed={props.selectInstrumentToMarketfeed}
+        fetchInstruments={props.fetchInstruments}
+        fetchInstrumentIntradayTimeSeries={props.fetchInstrumentIntradayTimeSeries}
+        fetchInstrumentDailyTimeSeries={props.fetchInstrumentDailyTimeSeries} />
+      <MarketDataGrid
+        instruments={props.instruments}
+        maxMarketfeedInstruments={props.maxMarketfeedInstruments}
+        marketfeedInstruments={props.marketfeedInstruments}
+        selectedMarketfeedIndex={props.selectedMarketfeedIndex}
+        selectInstrumentToMarketfeed={props.selectInstrumentToMarketfeed}
+        fetchInstrumentIntradayTimeSeries={props.fetchInstrumentIntradayTimeSeries}
+        fetchInstrumentDailyTimeSeries={props.fetchInstrumentDailyTimeSeries}
+        deleteInstrumentToMarketfeed={props.deleteInstrumentToMarketfeed} />
+    </div>
+  )
 }
 
 const mapStateToProps = state => ({ ...state });
@@ -56,4 +56,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(MarketData);
-

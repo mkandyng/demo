@@ -4,14 +4,13 @@ export const initialState = {
     marketfeedInstruments: [],
     selectedBottomLayoutTab: 0,
     intradayTimeSeries: {chartData: [],
-			minValue: 0,
-			maxValue: 0},
+    minValue: 0,
+    maxValue: 0},
     dailyTimeSeries: {chartData: [],
-		      minValue: 0,
-		      maxValue: 0},
+    minValue: 0,
+    maxValue: 0},
     orderbook: [],
     isLoading: false,
     selectedMarketfeedIndex: 0,
     error: null
 }
-

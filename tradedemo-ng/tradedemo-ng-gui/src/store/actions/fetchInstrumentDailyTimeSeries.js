@@ -16,4 +16,3 @@ export const fetchInstrumentDailyTimeSeriesFailure = errorMessage => ({
     type: FETCH_INSTRUMENT_DAILY_TIMESERIES_FAILURE,
     error: errorMessage
 });
-

@@ -5,5 +5,3 @@ export const deleteInstrumentToMarketfeed = (instrument) => ({
     instrument: instrument,
     selectedMarketfeedIndex: 0
 });
-
-

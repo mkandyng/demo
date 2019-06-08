@@ -16,4 +16,3 @@ export const addInstrumentToMarketfeedFailure = (message) => ({
     type: ADD_INSTRUMENT_TO_MARKETFEED_FAILURE,
     payload: message
 });
-

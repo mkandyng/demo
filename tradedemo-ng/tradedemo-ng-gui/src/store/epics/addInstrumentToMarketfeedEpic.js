@@ -19,16 +19,17 @@ export const addInstrumentToMarketfeedEpic = function(action$) {
             return ajax
                 .getJSON(instrumentServiceUrl + "/instrumentQuote/" + action.instrument.symbol)
                 .map(data => {
-			let instrument = {symbol: 	action.instrument.symbol,
-				      	  name: 	action.instrument.name,
-				      	  currency: 	action.instrument.currency,
-				      	  price: 	data["price"],
-				      	  open: 	data["open"]}
-			return ( 
-			   generateMarketDataMovement(instrument) 
-			)
-		})
-	 })
-        .map(instrument => {return addInstrumentToMarketfeedSuccess(instrument)})
-        .catch(error => {addInstrumentToMarketfeedFailure(error.message)})
+                     let instrument = {
+                            symbol: action.instrument.symbol,
+              	            name: action.instrument.name,
+              	            currency: action.instrument.currency,
+              	            price: data["price"],
+              	            open: data["open"]};
+                     return (
+                          generateMarketDataMovement(instrument)
+                     )
+                });
+        })
+      .map(instrument => {return addInstrumentToMarketfeedSuccess(instrument)})
+      .catch(error => {addInstrumentToMarketfeedFailure(error.message)})
 }

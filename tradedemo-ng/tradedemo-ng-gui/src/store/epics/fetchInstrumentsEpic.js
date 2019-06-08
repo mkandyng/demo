@@ -17,14 +17,14 @@ export const fetchInstrumentsEpic = function(action$) {
         .switchMap((action) => {
             return ajax
                 .getJSON(instrumentServiceUrl + "/instruments")
-		.map(payload => payload.map((instrument) => {
-		    let object = {
-			symbol: instrument["symbol"],
-			name: instrument["name"],
-			currency: instrument["currency"]
-		    }
-		    return object;
-		}))
+                .map(payload => payload.map((instrument) => {
+                    let object = {
+                         symbol: instrument["symbol"],
+                         name: instrument["name"],
+                         currency: instrument["currency"]
+                    };
+                    return object;
+            }));
         })
         .map(instruments => fetchInstrumentsSuccess(instruments))
         .catch(error => {fetchInstrumentsFailure(error.message)})
