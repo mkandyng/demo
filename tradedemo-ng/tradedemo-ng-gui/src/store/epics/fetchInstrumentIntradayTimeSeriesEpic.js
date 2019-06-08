@@ -20,8 +20,8 @@ export const fetchInstrumentIntradayTimeSeriesEpic = function(action$) {
                 .getJSON(instrumentServiceUrl + "/intradayPrices/" + action.instrument.symbol)
 		.map(jsonPayload => jsonPayload.slice(0, maxRecords).reverse())
 	 	.map(requiredTimeSeries => requiredTimeSeries.map(series => {
-                    let high = series["2. high"];
-                    let low = series["3. low"];
+                    let high = series["high"];
+                    let low = series["low"];
                     let price  = Math.round(((high + low)/2)*100)/100;
                     let hourMin = series.dateTime.substr(11,5);
 

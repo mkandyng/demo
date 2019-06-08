@@ -17,13 +17,13 @@ export const addInstrumentToMarketfeedEpic = function(action$) {
         .ofType(ADD_INSTRUMENT_TO_MARKETFEED)
         .concatMap((action) => {
             return ajax
-                .getJSON(instrumentServiceUrl + "/instrument/" + action.instrument.symbol)
+                .getJSON(instrumentServiceUrl + "/instrumentQuote/" + action.instrument.symbol)
                 .map(data => {
 			let instrument = {symbol: 	action.instrument.symbol,
 				      	  name: 	action.instrument.name,
 				      	  currency: 	action.instrument.currency,
-				      	  price: 	data["05. price"],
-				      	  open: 	data["02. open"]}
+				      	  price: 	data["price"],
+				      	  open: 	data["open"]}
 			return ( 
 			   generateMarketDataMovement(instrument) 
 			)

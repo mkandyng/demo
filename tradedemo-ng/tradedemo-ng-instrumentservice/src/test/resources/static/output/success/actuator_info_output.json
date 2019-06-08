@@ -1,0 +1,8 @@
+{
+  "app":
+  {
+    "name":"TradeDemo-NG InstrumentService",
+    "description":"Service provides Delay Instrument Market Data",
+    "version":"1.0.1"
+  }
+}

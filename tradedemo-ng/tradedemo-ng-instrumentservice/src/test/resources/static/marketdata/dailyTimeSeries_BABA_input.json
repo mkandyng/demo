@@ -1,0 +1,39 @@
+{
+  "Meta Data": {
+    "1. Information": "Daily Prices (open, high, low, close) and Volumes",
+    "2. Symbol": "BABA",
+    "3. Last Refreshed": "2019-06-03",
+    "4. Output Size": "Compact",
+    "5. Time Zone": "US/Eastern"
+  },
+  "Time Series (Daily)": {
+    "2019-06-03": {
+      "1. open": "149.6000",
+      "2. high": "151.7700",
+      "3. low": "148.8450",
+      "4. close": "149.9100",
+      "5. volume": "23161054"
+    },
+    "2019-05-31": {
+      "1. open": "149.6300",
+      "2. high": "150.6800",
+      "3. low": "147.9500",
+      "4. close": "149.2600",
+      "5. volume": "26881219"
+    },
+    "2019-05-30": {
+      "1. open": "152.3600",
+      "2. high": "153.3700",
+      "3. low": "150.2500",
+      "4. close": "151.0700",
+      "5. volume": "17344653"
+    },
+    "2019-05-29": {
+      "1. open": "153.5800",
+      "2. high": "154.3850",
+      "3. low": "150.7100",
+      "4. close": "152.4800",
+      "5. volume": "30073136"
+    }
+  }
+}

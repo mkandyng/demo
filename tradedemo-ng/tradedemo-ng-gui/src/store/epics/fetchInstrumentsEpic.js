@@ -19,9 +19,9 @@ export const fetchInstrumentsEpic = function(action$) {
                 .getJSON(instrumentServiceUrl + "/instruments")
 		.map(payload => payload.map((instrument) => {
 		    let object = {
-			symbol: instrument["1. symbol"],
-			name: instrument["2. name"],
-			currency: instrument["8. currency"]
+			symbol: instrument["symbol"],
+			name: instrument["name"],
+			currency: instrument["currency"]
 		    }
 		    return object;
 		}))

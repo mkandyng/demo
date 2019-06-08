@@ -4,7 +4,7 @@ function Technologies(props) {
     return (
 	<div>
 	    <p>
-	        TradeDemo-NG is a skeleton trading application to demonstrate how to deliver a Cloud-Native <a href="https://en.m.wikipedia.org/wiki/Single-page_application" alt="SPA">Single Page Application</a>.
+	        TradeDemo-NG is a skeleton trading application with <a href="https://github.com/mkandyng/demo/tree/master/tradedemo-ng">source code</a> to demonstrate how to deliver a Cloud-Native <a href="https://en.m.wikipedia.org/wiki/Single-page_application" alt="SPA">Single Page Application</a>.
 	    </p>
 	    <ul>
 	        <li>Web application with <a href="https://github.com/facebook/react" alt="React">React</a> (UI Layer),<span> </span>

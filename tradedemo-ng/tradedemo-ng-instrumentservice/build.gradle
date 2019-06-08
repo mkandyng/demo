@@ -1,0 +1,69 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE")
+        classpath('se.transmode.gradle:gradle-docker:1.2')
+    }
+}
+
+
+group = 'eu.gcr.io/tradedemo-ng-services'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'docker'
+
+project.version = '1.0'
+
+bootRun {
+    // support passing -Dsystem.property=value to bootRun task
+    systemProperties = System.properties
+}
+
+bootJar {
+    baseName = 'instrumentservice'
+    version = '1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+task copyJar(type: Copy) {
+    dependsOn   'build'
+    from        "build/libs/instrumentservice-${project.version}.jar"
+    into        'build/docker'
+}
+
+task buildDocker(type: Docker, dependsOn: copyJar) {
+    baseImage "java:8"
+    runCommand("mkdir instrumentservice")
+    addFile("instrumentservice-${project.version}.jar","instrumentservice/")
+    workingDir("/instrumentservice")
+    runCommand("unzip -q instrumentservice-${project.version}.jar")
+    entryPoint(["java","-Xms128m","-Xmx1024m","org.springframework.boot.loader.JarLauncher"])
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'com.fasterxml.jackson.core:jackson-databind'
+    compile 'javax.inject:javax.inject:1'
+    compile 'com.google.code.gson:gson:2.8.5'
+    compile 'com.google.guava:guava:27.1-jre'
+    compile 'org.skyscreamer:jsonassert:1.5.0'
+    compile 'org.springframework.boot:spring-boot-starter-actuator:2.1.5.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-security:2.1.5.RELEASE'
+    testCompile 'junit:junit'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile 'com.jayway.jsonpath:json-path:2.2.0'
+    testCompile 'org.springframework:spring-test:5.1.7.RELEASE'
+    
+}

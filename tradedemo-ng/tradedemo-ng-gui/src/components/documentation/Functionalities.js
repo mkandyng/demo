@@ -4,7 +4,7 @@ function Functionalities(props) {
     return (
 	<div>
 	    <p>
- 	        This skeleton trading system provided the following functionalities:
+ 	        This skeleton trading application provided the following functionalities:
 	    </p>
 	    <ul>
 	        <li>Rest API to fetch real (delay) stock market instruments and market data from <a href="https://www.alphavantage.co/" alt="alpavantage">Alpha Vantage</a>.</li> 

@@ -1,0 +1,34 @@
+[
+  { "symbol":"MSFT",
+    "name":"Microsoft Corporation",
+    "currency":"USD"
+  },
+  { "symbol":"MCHP",
+    "name":"Microchip Technology Incorporated",
+    "currency":"USD"
+  },
+  { "symbol":"BABA",
+    "name":"Alibaba Group Holding Limited",
+    "currency":"USD"
+  },
+  { "symbol":"AMD",
+    "name":"Advanced Micro Devices Inc.",
+    "currency":"USD"
+  },
+  { "symbol":"BIDU",
+    "name":"Baidu Inc.",
+    "currency":"USD"
+  },
+  { "symbol":"BA",
+    "name":"The Boeing Company",
+    "currency":"USD"
+  },
+  { "symbol":"BAC",
+    "name":"Bank of America Corporation",
+    "currency":"USD"
+  },
+  { "symbol":"MU",
+    "name":"Micron Technology Inc.",
+    "currency":"USD"
+  }
+]

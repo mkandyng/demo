@@ -21,10 +21,10 @@ export const fetchInstrumentDailyTimeSeriesEpic = function(action$) {
 		.map(jsonPayload => jsonPayload.slice(0, maxRecords).reverse())
 		.map(requiredTimeSeries => requiredTimeSeries.map((series) => {
                                  return { name: series.dateTime,
-                                          open: series["1. open"],
-					  high: series["2. high"],
-					  low: series["3. low"],
-                                          close: series["4. close"]
+                                          open: series["open"],
+					  high: series["high"],
+					  low: series["low"],
+                                          close: series["close"]
                                         }
                 }))
         })

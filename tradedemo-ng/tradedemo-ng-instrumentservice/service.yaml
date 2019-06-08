@@ -1,0 +1,35 @@
+ apiVersion: extensions/v1beta1
+ kind: Deployment
+ metadata:
+   name: instrument-service
+ spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: instrument-service
+  template:
+    metadata:
+      labels:
+        app: instrument-service
+    spec:
+      containers:
+      - name: instrument-service
+        image: eu.gcr.io/tradedemo-ng-services/instrumentservice:1.0
+        ports:
+        - containerPort: 8080
+        env:
+        - name: marketdataApikey
+          valueFrom:
+            secretKeyRef:
+              name: tradedemo-ng-secret
+              key: marketdataApikey
+        - name: adminuser
+          valueFrom:
+            secretKeyRef:
+              name: tradedemo-ng-secret
+              key: adminuser
+        - name: adminpassword
+          valueFrom:
+            secretKeyRef:
+              name: tradedemo-ng-secret
+              key: adminpassword

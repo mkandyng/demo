@@ -1,0 +1,48 @@
+{
+  "bestMatches": [
+    {
+      "1. symbol": "BA",
+      "2. name": "The Boeing Company",
+      "3. type": "Equity",
+      "4. region": "United States",
+      "5. marketOpen": "09:30",
+      "6. marketClose": "16:00",
+      "7. timezone": "UTC-04",
+      "8. currency": "USD",
+      "9. matchScore": "1.0000"
+    },
+    {
+      "1. symbol": "BABA",
+      "2. name": "Alibaba Group Holding Limited",
+      "3. type": "Equity",
+      "4. region": "United States",
+      "5. marketOpen": "09:30",
+      "6. marketClose": "16:00",
+      "7. timezone": "UTC-04",
+      "8. currency": "USD",
+      "9. matchScore": "0.6667"
+    },
+    {
+      "1. symbol": "BAC",
+      "2. name": "Bank of America Corporation",
+      "3. type": "Equity",
+      "4. region": "United States",
+      "5. marketOpen": "09:30",
+      "6. marketClose": "16:00",
+      "7. timezone": "UTC-04",
+      "8. currency": "USD",
+      "9. matchScore": "0.4000"
+    },
+    {
+      "1. symbol": "BIDU",
+      "2. name": "Baidu Inc.",
+      "3. type": "Equity",
+      "4. region": "United States",
+      "5. marketOpen": "09:30",
+      "6. marketClose": "16:00",
+      "7. timezone": "UTC-04",
+      "8. currency": "USD",
+      "9. matchScore": "0.4000"
+    }
+  ]
+}
