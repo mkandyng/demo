@@ -5,7 +5,7 @@ function Functionalities(props) {
      <div>
         <p>This skeleton trading application provided the following functionalities:</p>
         <ul>
-            <li>Rest API to fetch real (delay) stock market instruments and market data from
+            <li>Rest API to fetch real (delay) stock market instruments and market data from&nbsp;
               <a href="https://www.alphavantage.co/" alt="alpavantage">Alpha Vantage</a>.</li>
             <li>Pre populate a number of instruments to the market feed.</li>
             <li>Simulation of price movements on instruments.</li>
