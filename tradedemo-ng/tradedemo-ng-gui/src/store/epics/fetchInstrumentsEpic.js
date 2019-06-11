@@ -1,9 +1,11 @@
 import "rxjs/add/operator/switchMap";
+import "rxjs/add/operator/concatMap";
 import "rxjs/add/operator/map";
 import "rxjs/add/observable/of";
 import "rxjs/add/operator/catch";
 import { ajax } from "rxjs/observable/dom/ajax";
-import {instrumentServiceUrl } from "../../libs/resources";
+import { instrumentServiceUrl } from "../../common/libs/resources";
+import { MAX_MARKET_FEED_INSTRUMENTS } from "../../common/libs/marketfeed";
 
 import {
     FETCH_INSTRUMENTS,
@@ -11,21 +13,33 @@ import {
     fetchInstrumentsFailure
 } from "../actions/fetchInstruments";
 
+import {
+    addInstrumentToMarketfeed
+} from "../actions/addInstrumentToMarketfeed";
+
 export const fetchInstrumentsEpic = function(action$) {
+    const fetchInstruments = () => {
+      return ajax
+          .getJSON(instrumentServiceUrl + "/instruments")
+          .map(payload => payload.map((instrument) => {
+              let object = {
+                  symbol: instrument["symbol"],
+                  name: instrument["name"],
+                  currency: instrument["currency"]
+              }
+              return object;
+          }));
+    }
+
     return action$
         .ofType(FETCH_INSTRUMENTS)
-        .switchMap((action) => {
-            return ajax
-                .getJSON(instrumentServiceUrl + "/instruments")
-                .map(payload => payload.map((instrument) => {
-                    let object = {
-                         symbol: instrument["symbol"],
-                         name: instrument["name"],
-                         currency: instrument["currency"]
-                    };
-                    return object;
-            }));
-        })
-        .map(instruments => fetchInstrumentsSuccess(instruments))
-        .catch(error => {fetchInstrumentsFailure(error.message)})
+        .switchMap(action =>
+            fetchInstruments()
+            .concatMap(instruments => [
+              fetchInstrumentsSuccess(instruments),
+              ...instruments.slice(0,MAX_MARKET_FEED_INSTRUMENTS)
+                    .map(instrument => addInstrumentToMarketfeed(instrument))
+            ])
+            .catch(error => {fetchInstrumentsFailure(error.message)})
+        )
 }

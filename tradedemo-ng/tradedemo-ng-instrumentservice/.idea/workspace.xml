@@ -1,25 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ab28960f-05a1-44f9-93e9-f2c39d69b903" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/mankwanng.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../streaming-api/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../streaming-api/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../streaming-api/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../streaming-api/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../streaming-api/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../streaming-api/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../streaming-api/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../streaming-api/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/documentation/Functionalities.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/documentation/Functionalities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/documentation/Technologies.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/documentation/Technologies.js" afterDir="false" />
+    <list default="true" id="f292c9d8-b3ce-48b0-8e23-ac8caa4d340c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/documentation/DocumentationContainer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/documentation/Functionalities.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/documentation/FutureDevelopment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/documentation/Technologies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/tradingView/topLayout/InstrumentSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/tradingView/topLayout/InstrumentSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/tradingView/topLayout/MarketData.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/tradingView/topLayout/MarketData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/marketfeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/marketfeed.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/resources.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/resources.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/addInstrumentToMarketfeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/addInstrumentToMarketfeed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/deleteInstrumentToMarketfeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/deleteInstrumentToMarketfeed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/fetchInstruments.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/fetchInstruments.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/placeOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/placeOrder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/selectBottomLayoutTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/selectBottomLayoutTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/selectInstrumentToMarketfeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/selectInstrumentToMarketfeed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/updateInstrumentToMarketfeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/updateInstrumentToMarketfeed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/updateOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/updateOrder.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/addInstrumentToMarketfeedEpic.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/addInstrumentToMarketfeedEpic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/fetchInstrumentDailyTimeSeriesEpic.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/fetchInstrumentDailyTimeSeriesEpic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/fetchInstrumentIntradayTimeSeriesEpic.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/fetchInstrumentIntradayTimeSeriesEpic.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/fetchInstrumentsEpic.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/fetchInstrumentsEpic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/reducers/initialState.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/reducers/rootReducer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,9 +47,6 @@
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
     <option name="PARALLEL_COMPILATION" value="true" />
   </component>
-  <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/instrumentservice$All_in_instrumentservice_test.ic" NAME="All in instrumentservice_test Coverage Results" MODIFIED="1560008785514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-  </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -42,12 +55,26 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="instrumentservice" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="instrumentservice" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="instrumentservice" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -60,25 +87,43 @@
     <session id="-1041415839">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.7" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gradle" value="1" />
+          <entry key="java" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Groovy" value="1" />
+          <entry key="JAVA" value="6" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mkandyng/instrumentservice/quote/Quote.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mkandyng/instrumentservice/quote/QuoteRetrieverService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-391">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -321,7 +366,6 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="6237027777000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="3102296278" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2585518924" />
@@ -589,7 +633,6 @@
         <entry key="$PROJECT_DIR$/../../instrumentservice" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../../logging-persister" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../../streaming-api" value="PREVIEW" />
-        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
         <entry key="$PROJECT_DIR$/../../../test/demo/logging-persister" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../../../tools/streaming/logging-persister" value="PREVIEW" />
         <entry key="$PROJECT_DIR$/../../../tools/streaming/spring-batch" value="PREVIEW" />
@@ -624,57 +667,64 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="instrumentservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tradedemo-ng-instrumentservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="tradedemo-ng-instrumentservice" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="instrumentservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tradedemo-ng-instrumentservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="tradedemo-ng-instrumentservice" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="instrumentservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tradedemo-ng-instrumentservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="tradedemo-ng-instrumentservice" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
-              <item name="instrumentservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tradedemo-ng-instrumentservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="tradedemo-ng-instrumentservice" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="instrumentservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tradedemo-ng-instrumentservice" type="b2602c69:ProjectViewProjectNode" />
               <item name="tradedemo-ng-instrumentservice" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="instrumentservice" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="tradedemo-ng-instrumentservice" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tradedemo-ng-instrumentservice" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="instrumentservice" type="462c0819:PsiDirectoryNode" />
+              <item name="quote" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560010053000" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560290841519" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -693,17 +743,27 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="All in instrumentservice_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="instrumentservice_test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="tradedemo-ng-instrumentservice [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="-DmarketdataApikey=I59UIQHKFD0GA0E9" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootRun" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in instrumentservice_test" />
+        <item itemvalue="Gradle.tradedemo-ng-instrumentservice [bootRun]" />
       </list>
     </recent_temporary>
   </component>
@@ -712,21 +772,17 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ab28960f-05a1-44f9-93e9-f2c39d69b903" name="Default Changelist" comment="" />
-      <created>1560008717541</created>
+      <changelist id="f292c9d8-b3ce-48b0-8e23-ac8caa4d340c" name="Default Changelist" comment="" />
+      <created>1560237167601</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1560008717541</updated>
+      <updated>1560237167601</updated>
     </task>
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="All_in_instrumentservice_test - 2019.06.08 at 16h 47m 15s.xml">
-      <configuration name="All in instrumentservice_test" configurationId="JUnit" />
-    </history-entry>
-  </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="716" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
@@ -736,7 +792,7 @@
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Capture Tool" />
       <window_info id="Job Explorer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.39499193" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3231018" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="DB Execution Console" />
       <window_info anchor="bottom" id="Terminal" />
@@ -744,11 +800,10 @@
       <window_info anchor="bottom" id="Problems" />
       <window_info anchor="bottom" id="Build" weight="0.3294509" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Console" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.28785357" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33943427" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -756,10 +811,9 @@
       <window_info anchor="right" id="Palette" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="right" id="Gradle" weight="0.32956383" />
+      <window_info anchor="right" id="Gradle" visible="true" weight="0.20193861" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.32956383" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -769,10 +823,31 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mkandyng/instrumentservice/dataprovider/AlphaVantageRestAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-61">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mkandyng/instrumentservice/dataprovider/MarketDataProviderRestAPI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mkandyng/instrumentservice/quote/Quote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mkandyng/instrumentservice/quote/QuoteRetrieverService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
         </state>
       </provider>
     </entry>
