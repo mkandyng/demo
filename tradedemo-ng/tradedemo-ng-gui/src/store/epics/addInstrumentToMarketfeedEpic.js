@@ -1,23 +1,16 @@
-import { Observable } from 'rxjs/Observable';
 import "rxjs/add/operator/concatMap";
 import "rxjs/add/operator/map";
 import "rxjs/add/observable/of";
 import "rxjs/add/operator/catch";
 import { ajax } from "rxjs/observable/dom/ajax";
-import { concatMap, catchError } from 'rxjs/operators';
-import { ofType } from 'redux-observable';
-import { of, throwError } from "rxjs";
 import { instrumentServiceUrl } from "../../common/libs/resources";
-import { MAX_MARKET_FEED_INSTRUMENTS } from "../../common/libs/marketfeed";
 
 import {
-         generateMarketDataMovement,
-         flashInstrumentPriceUpdate
+         generateMarketDataMovement
 } from "../../common/libs/marketfeed";
 
 import {
     ADD_INSTRUMENT_TO_MARKETFEED,
-    ADD_INSTRUMENT_TO_MARKETFEED_FAILURE,
     addInstrumentToMarketfeedSuccess,
     addInstrumentToMarketfeedFailure
 } from "../actions/addInstrumentToMarketfeed";

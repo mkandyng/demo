@@ -13,8 +13,6 @@ import OrderBookView from "./OrderBookView";
 
 const BottomLayoutContainer = function(props) {
   const { marketfeed,
-          marketfeedInstruments,
-          selectedMarketfeedIndex,
           selectedBottomLayoutTab,
           selectBottomLayoutTab,
           orderbook,

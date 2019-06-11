@@ -28,7 +28,6 @@ export default function InstrumentSearchView(props) {
 
     const addSelectedInstrumentToMarketfeed = symbol => {
        const instrument = props.instruments.find(inst => inst.symbol === symbol);
-       let errorMessage = "";
        if(instrument !== undefined) {
           if(props.marketfeed.instruments.length >= MAX_MARKET_FEED_INSTRUMENTS) {
                alert("Max " + MAX_MARKET_FEED_INSTRUMENTS + " instruments, please remove an one to add [" + symbol + "]");

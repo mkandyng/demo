@@ -11,6 +11,7 @@ export default function IntradayPricesView({ timeSeries }) {
   return (
     <TimeSeries
       timeSeries={timeSeries}
+      margin={margin}
       childElements={childElements}
     />
   )
