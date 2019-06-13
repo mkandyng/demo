@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { createStore, applyMiddleware } from "redux";
 import { createEpicMiddleware } from "redux-observable";
 import { Provider } from "react-redux";
-import { combinedEpics } from "./store/combinedEpics";
+import combinedEpics from "./store/combinedEpics";
 import combinedReducers from "./store/combinedReducers";
 import App from "./App";
 import "react-table/react-table.css";

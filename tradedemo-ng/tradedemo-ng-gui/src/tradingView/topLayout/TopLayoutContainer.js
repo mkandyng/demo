@@ -16,12 +16,6 @@ import { addInstrumentToMarketfeed,
  */
 
 const TopLayoutContainer = function(props) {
-  const { instruments,
-          marketfeed,
-          fetchInstruments,
-          addInstrumentToMarketfeed,
-          deleteInstrumentToMarketfeed,
-          selectInstrumentToMarketfeed} = props;
 
    const flashPriceUpdate = (marketfeedInstruments) => {
         const flashCount = 2;
@@ -50,27 +44,20 @@ const TopLayoutContainer = function(props) {
   const [ flashCounter, flashPrice ] = useState(0);
 
   useEffect( () => {
-      fetchInstruments();
-  }, [fetchInstruments]);
+      props.fetchInstruments();
+  }, [props.fetchInstruments]);
 
   useEffect( () => {
       setTimeout(() => flashPrice(flashCounter+1), getRandomInt(1000,3000));
-      flashPriceUpdate(marketfeed.instruments);
+      flashPriceUpdate(props.marketfeed.instruments);
   }, [flashCounter]);
 
   return (
       <div id="topLayout">
           <Ticket/>
           <div id="marketdata">
-            <InstrumentSearch
-              instruments={instruments}
-              marketfeed={marketfeed}
-              addInstrumentToMarketfeed={addInstrumentToMarketfeed}/>
-            <MarketDataView
-              instruments={instruments}
-              marketfeed={marketfeed}
-              selectInstrumentToMarketfeed={selectInstrumentToMarketfeed}
-              deleteInstrumentToMarketfeed={deleteInstrumentToMarketfeed} />
+            <InstrumentSearch {...props} />
+            <MarketDataView {...props} />
           </div>
       </div>
   )

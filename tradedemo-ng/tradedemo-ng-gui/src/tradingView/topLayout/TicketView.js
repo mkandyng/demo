@@ -4,6 +4,10 @@ import { bindActionCreators } from "redux";
 import { placeOrder, updateOrder } from "../../store/orderbook/orderbookActions";
 import { placeOrderAndGenerateTradeLifeCycle } from "../../common/libs/orderbook"
 import { getRandomInt, toggleOpacity, getDateString } from "../../common/libs/utils";
+import BuySellButton from "../../common/components/BuySellButton";
+import SelectionDropDown from "../../common/components/SelectionDropDown";
+import LabelInput from "../../common/components/LabelInput";
+import LabelTextArea from "../../common/components/LabelTextArea";
 
 /**
  * Ticket component to place order
@@ -188,86 +192,69 @@ class Ticket extends React.Component {
     return (
         <div id="ticket">
           <form>
-            <p>
-                <label>Symbol:
-                     <input type="text"
-                            name="symbol"
-                            value={symbol}
-                            onChange={this.symbolChange}/>
-                </label>
-            </p>
-            <p>
-                <label>Quantity:
-                     <input type="number"
-                            name="quantity"
-                            step="5"
-                            onChange={this.quantityChange}
-                            value={this.state.quantity} />
-                </label>
-           </p>
-           <p>
-                <label>Order Type:
-                    <select id="orderType" name="order_type" onChange={this.orderTypeChange}>
-                         <option value="Market">Market</option>
-                         <option value="Limit">Limit</option>
-                         <option value="Stop">Stop</option>
-                         <option value="Stop Limit" >Stop Limit</option>
-                    </select>
-                </label>
-           </p>
-           <p style={this.state.priceStyle}>
-               <label>Price:
-                   <input type="number"
-                          name="price"
-                          step="0.1"
-                          onChange={this.priceChange}
-                          value={this.state.price} />
-              </label>
-           </p>
-           <p>
-               <label>ExpiryType:
-                   <select name="expiryType" onChange={this.expiryTypeChange}>
-                       <option value="Day">Day</option>
-                       <option value="GTD">GTD</option>
-                       <option value="GTC">GTC</option>
-                       <option value="FOK">FOK</option>
-                   </select>
-              </label>
-           </p>
-           <p style={this.state.expiryDateStyle}>
-               <label>Expiry Date:
-                    <input type="date"
-                           name="expiryDate"
-                           onChange={this.expiryDateChange}
-                           value={this.state.expiryDate}/>
-              </label>
-          </p>
-          <p>
-              <label>Note
-                   <textarea
-                     name="note"
-                     maxLength="100"
-                     onChange={this.noteChange}
-                     value={this.state.note}/>
-              </label>
-          </p>
+            <LabelInput label="Symbol"
+                        name="symbol"
+                        type="text"
+                        value={symbol}
+                        handleOnChange={this.symbolChange} />
+            <LabelInput label="Quantity"
+                        name="quantity"
+                        type="number"
+                        step="5"
+                        value={this.state.quantity}
+                        handleOnChange={this.quantityChange} />
+            <SelectionDropDown id="orderType"
+                              label="Order Type"
+                              name="orderType"
+                              list={["Market","Limit","Stop","Stop Limit"]}
+                              handleOnChange={this.orderTypeChange} />
+            <LabelInput style={this.state.priceStyle}
+                        label="Price"
+                        name="price"
+                        type="number"
+                        step="0.1"
+                        value={this.state.price}
+                        handleOnChange={this.priceChange} />
+           <SelectionDropDown id="expiryType"
+                             label="Expiry Type"
+                             name="expiryType"
+                             list={["Day","GTD","GTC","FOK"]}
+                             handleOnChange={this.expiryTypeChange} />
+           <LabelInput style={this.state.expiryDateStyle}
+                       label="Expiry Date"
+                       name="expiryDate"
+                       type="date"
+                       step="0.1"
+                       value={this.state.expiryDate}
+                       handleOnChange={this.expiryDateChange} />
+                      <LabelTextArea
+                       label="Note"
+                       name="note"
+                       maxLength="100"
+                       value={this.state.note}
+                       handleOnChange={this.noteChange} />
+
           <div>
             <div id="buySell">
-                <div id="sellButton" onClick={this.handleOnSubmit}>
-                     <label>{bidPrice}</label>
-                     <button id="buy">Sell</button>
-                </div>
-                <div id="buyButton" onClick={this.handleOnSubmit}>
-                     <label>{askPrice}</label>
-                     <button id="sell">Buy</button>
-               </div>
-           </div>
+                <BuySellButton containerId="sellButton"
+                               handleOnClick={this.handleOnSubmit}
+                               label={bidPrice}
+                               id="sell"
+                               buttonName="Sell" />
+                <BuySellButton containerId="buyButton"
+                               handleOnClick={this.handleOnSubmit}
+                               label={askPrice}
+                               id="buy"
+                               buttonName="Buy" />
+            </div>
          </div>
         </form>
        </div>
     )
   }
 }
+
+
 
 const mapStateToProps = state => ({ ...state });
 

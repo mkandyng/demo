@@ -5,7 +5,7 @@ import { fetchDailyTimeSeriesEpic } from "./dailyTimeSeries/dailyTimeSeriesEpic"
 import { addInstrumentToMarketfeedEpic,
          selectInstrumentToMarketfeedEpic } from "./marketfeed/marketfeedEpic";
 
-export const combinedEpics = combineEpics(
+export default combineEpics(
              fetchInstrumentsEpic,
              fetchIntradayTimeSeriesEpic,
              fetchDailyTimeSeriesEpic,

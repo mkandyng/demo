@@ -2,42 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f292c9d8-b3ce-48b0-8e23-ac8caa4d340c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/common/libs/orderbook.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/common/libs/orderbook.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/documentation/Functionalities.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/documentation/FutureDevelopment.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/documentation/Technologies.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/documentation/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/documentation/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/addInstrumentToMarketfeed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/deleteInstrumentToMarketfeed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/fetchInstrumentDailyTimeSeries.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/fetchInstrumentIntradayTimeSeries.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/fetchInstruments.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/placeOrder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/selectBottomLayoutTab.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/selectInstrumentToMarketfeed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/updateInstrumentToMarketfeed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/updateOrder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/addInstrumentToMarketfeedEpic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/fetchInstrumentDailyTimeSeriesEpic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/fetchInstrumentIntradayTimeSeriesEpic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/fetchInstrumentsEpic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/selectInstrumentToMarketfeedEpic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/reducers/dailyTimeSeries.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/reducers/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/reducers/instruments.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/reducers/intradayTimeSeries.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/reducers/marketfeed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/reducers/orderbook.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/reducers/selectedBottomLayoutTab.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/bottomLayout/BottomLayoutContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/bottomLayout/BottomLayoutContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/bottomLayout/OrderBookView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/bottomLayout/OrderBookView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/topLayout/InstrumentSearchView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/topLayout/InstrumentSearchView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/topLayout/MarketDataView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/topLayout/MarketDataView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/topLayout/TicketView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/topLayout/TicketView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/topLayout/TopLayoutContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/topLayout/TopLayoutContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -626,7 +592,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="716" />
@@ -708,7 +674,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560436503136" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560448488389" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -765,7 +731,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="716" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="716" extended-state="1" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
