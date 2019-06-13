@@ -8,14 +8,14 @@ import { instrumentServiceUrl } from "../../common/libs/resources";
 import { MAX_MARKET_FEED_INSTRUMENTS } from "../../common/libs/marketfeed";
 
 import {
-    FETCH_INSTRUMENTS,
+    INSTRUMENTS,
     fetchInstrumentsSuccess,
     fetchInstrumentsFailure
-} from "../actions/fetchInstruments";
+} from "./instrumentsActions";
 
 import {
     addInstrumentToMarketfeed
-} from "../actions/addInstrumentToMarketfeed";
+} from "../marketfeed/marketfeedActions";
 
 export const fetchInstrumentsEpic = function(action$) {
     const fetchInstruments = () => {
@@ -32,7 +32,7 @@ export const fetchInstrumentsEpic = function(action$) {
     }
 
     return action$
-        .ofType(FETCH_INSTRUMENTS)
+        .ofType(INSTRUMENTS.FETCH_INSTRUMENTS)
         .switchMap(action =>
             fetchInstruments()
             .concatMap(instruments => [

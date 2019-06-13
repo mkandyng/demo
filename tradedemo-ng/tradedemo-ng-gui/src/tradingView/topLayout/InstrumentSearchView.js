@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import ReactAutocomplete from "react-autocomplete";
 import { MAX_MARKET_FEED_INSTRUMENTS } from "../../common/libs/marketfeed";
 
+/**
+ * InstrumentSearch component, context sensitive search
+ */
 export default function InstrumentSearchView(props) {
     const [value, setSelectItem] = useState("");
 
@@ -45,10 +48,10 @@ export default function InstrumentSearchView(props) {
        let maxRecords = 10;
        return instruments.slice(0, maxRecords)
                          .map(instrument => {
-                	            return {
-                    		          value: instrument.symbol,
-                    		          label: "(" + instrument.symbol +  ") " +  instrument.name
-                	            }
+                              return {
+                                  value: instrument.symbol,
+                                  label: "(" + instrument.symbol +  ") " +  instrument.name
+                              }
                          });
     };
 

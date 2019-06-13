@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Functionalities() {
+export default function FunctionalitiesView() {
   return (
      <div>
         <p>This skeleton trading application provided the following functionalities:</p>

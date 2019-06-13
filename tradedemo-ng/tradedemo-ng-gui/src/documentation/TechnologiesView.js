@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Technologies() {
+export default function TechnologiesView() {
   return (
     <div>
       <p>

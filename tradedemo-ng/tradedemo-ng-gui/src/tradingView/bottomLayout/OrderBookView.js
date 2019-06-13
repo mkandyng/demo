@@ -25,11 +25,11 @@ export default function OrderBookView({ orderbook }) {
     ];
 
     return (
-	    <ReactTable
+      <ReactTable
         defaultPageSize={10}
-	      showPageSizeOptions={false}
-		    data={orderbook}
-	      columns={columns}
+        showPageSizeOptions={false}
+        data={orderbook}
+        columns={columns}
         getTheadThProps={() => {
               return {
                 style: {
@@ -39,17 +39,17 @@ export default function OrderBookView({ orderbook }) {
             }
         }
         getTrProps={(state, rowInfo, column) => {
-		         const orderStatus = rowInfo?getOrderStatus(rowInfo.original.status):undefined
-	           const backgroundColor = orderStatus ? orderStatus.backgroundColor: "white";
-		         const color = orderStatus ? orderStatus.color: "black";
-  		       return {
-    			        style: {
-      		            backgroundColor: backgroundColor,
-		                  color: color
-    			        }
-  		       }
-		       }
+             const orderStatus = rowInfo?getOrderStatus(rowInfo.original.status):undefined
+             const backgroundColor = orderStatus ? orderStatus.backgroundColor: "white";
+             const color = orderStatus ? orderStatus.color: "black";
+             return {
+                  style: {
+                      backgroundColor: backgroundColor,
+                      color: color
+                  }
+             }
+           }
         }
-	    />
+      />
     );
 }

@@ -32,8 +32,8 @@ export const updateOrderWithFill = function(updateFunc, endStatus, order) {
     }
 
     const updatedOrder = { ...order,
-     	   status: status.displayName,
-     	   avgPrice: avgPrice.toFixed(2),
+          status: status.displayName,
+          avgPrice: avgPrice.toFixed(2),
          executed: executed
     };
 
@@ -72,10 +72,10 @@ export const placeOrderAndGenerateTradeLifeCycle = function(props, order) {
 
            // Only fill the rest if it is working
            if(nextStatus.displayName === ORDERBOOK_STATUS.working.displayName) {
-    	        if((orderEndStatus.displayName !== ORDERBOOK_STATUS.working.displayName) ||
-       	        (order.orderType === "Market")) {
-    	             updateOrderWithFill(props.updateOrder, orderEndStatus, updatedOrder);
-    	        }
+              if((orderEndStatus.displayName !== ORDERBOOK_STATUS.working.displayName) ||
+                 (order.orderType === "Market")) {
+                   updateOrderWithFill(props.updateOrder, orderEndStatus, updatedOrder);
+              }
            }
     }, getRandomInt(300,700));
 }

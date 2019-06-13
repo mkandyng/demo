@@ -2,76 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f292c9d8-b3ce-48b0-8e23-ac8caa4d340c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/addInstrumentToMarketfeedEpic.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/addInstrumentToMarketfeedEpic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/selectInstrumentToMarketfeedEpic.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/selectInstrumentToMarketfeedEpic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/common/libs/orderbook.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/common/libs/orderbook.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/documentation/Functionalities.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/documentation/FutureDevelopment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/documentation/Technologies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/documentation/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/documentation/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/addInstrumentToMarketfeed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/deleteInstrumentToMarketfeed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/fetchInstrumentDailyTimeSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/fetchInstrumentIntradayTimeSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/fetchInstruments.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/placeOrder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/selectBottomLayoutTab.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/selectInstrumentToMarketfeed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/updateInstrumentToMarketfeed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/actions/updateOrder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/addInstrumentToMarketfeedEpic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/fetchInstrumentDailyTimeSeriesEpic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/fetchInstrumentIntradayTimeSeriesEpic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/fetchInstrumentsEpic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/epics/selectInstrumentToMarketfeedEpic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/reducers/dailyTimeSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/reducers/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/reducers/instruments.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/reducers/intradayTimeSeries.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/reducers/marketfeed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/reducers/orderbook.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/store/reducers/selectedBottomLayoutTab.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/bottomLayout/BottomLayoutContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/bottomLayout/BottomLayoutContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/bottomLayout/OrderBookView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/bottomLayout/OrderBookView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/topLayout/InstrumentSearchView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/topLayout/InstrumentSearchView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/topLayout/MarketDataView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/topLayout/MarketDataView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/topLayout/TicketView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/topLayout/TicketView.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/topLayout/TopLayoutContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/tradingView/topLayout/TopLayoutContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/Application.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/ApplicationConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/MarketDataProviderConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/dataprovider/AlphaVantageRestAPI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/dataprovider/MarketDataProviderRestAPI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/exception/CustomExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/exception/ExceptionResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/exception/InvalidRequestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/exception/ResourceNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/filter/CustomCORSFilter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/instrument/Instrument.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/instrument/InstrumentRequestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/instrument/InstrumentRequestResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/instrument/InstrumentRetrieverService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/quote/Quote.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/quote/QuoteRequestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/quote/QuoteRequestResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/quote/QuoteRetrieverService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/quote/QuoteRetrieverService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/security/ActuatorSecurity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/timeSeries/BasePriceTimeSeriesRequestResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/timeSeries/BasePriceTimeSeriesRetrieverService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/timeSeries/BasePriceTimeSeriesRetrieverService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/timeSeries/TimeSeries.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/timeSeries/TimeSeriesRequestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/timeSeries/dailyPrice/DailyPriceTimeSeriesRequestResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/timeSeries/dailyPrice/DailyPriceTimeSeriesRetrieverService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/timeSeries/intradayPrice/IntradayPriceTimeSeriesRequestResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/com/mkandyng/instrumentservice/timeSeries/intradayPrice/IntradayPriceTimeSeriesRetrieverService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/TestHelperUtils$MockAppender.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/TestHelperUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/dataprovider/AlphaVantageRestAPITest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/exception/CustomExceptionHandlerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/exception/InvalidRequestControllerIntTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/exception/InvalidRequestControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/filter/CustomCORSFilterTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/instrument/InstrumentRequestControllerIntTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/instrument/InstrumentRequestResultTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/instrument/InstrumentRetrieverServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/quote/QuoteRequestControllerIntTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/quote/QuoteRequestResultTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/quote/QuoteRetrieverServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/regressionTests/FakeMarketDataProviderRestAPI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/regressionTests/InstrumentServiceEnd2EndIntTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/regressionTests/MarketDataProviderConfigOverride.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/regressionTests/TestCaseEnum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/timeSeries/BasePriceTimeSeriesRequestResultTest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/timeSeries/BasePriceTimeSeriesRequestResultTest$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/timeSeries/BasePriceTimeSeriesRequestResultTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/timeSeries/BasePriceTimeSeriesRetrieverServiceTest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/timeSeries/BasePriceTimeSeriesRetrieverServiceTest$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/timeSeries/BasePriceTimeSeriesRetrieverServiceTest$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/timeSeries/BasePriceTimeSeriesRetrieverServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/timeSeries/TimeSeriesRequestControllerIntTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/timeSeries/dailyPrice/DailyPriceTimeSeriesRequestResultTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/timeSeries/dailyPrice/DailyPriceTimeSeriesRetrieverServiceTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/timeSeries/intradayPrice/IntradayPriceTimeSeriesRequestResultTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/com/mkandyng/instrumentservice/timeSeries/intradayPrice/IntradayPriceTimeSeriesRetrieverServiceTest.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -742,7 +708,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560292590319" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560436503136" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />

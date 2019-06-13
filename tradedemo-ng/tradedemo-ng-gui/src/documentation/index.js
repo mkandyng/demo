@@ -1,8 +1,8 @@
 import React from "react";
 
-import Technologies from "./Technologies";
-import Functionalities from "./Functionalities";
-import FutureDevelopment from "./FutureDevelopment";
+import TechnologiesView from "./TechnologiesView";
+import FunctionalitiesView from "./FunctionalitiesView";
+import FutureDevelopmentView from "./FutureDevelopmentView";
 
 export default function Documentation() {
   return (
@@ -10,9 +10,9 @@ export default function Documentation() {
       <div style={{padding: "20px"}}>
         <h3>TradeDemo-NG</h3>
         <hr/>
-        <Technologies/>
-        <Functionalities/>
-        <FutureDevelopment/>
+        <TechnologiesView/>
+        <FunctionalitiesView/>
+        <FutureDevelopmentView/>
       </div>
     </div>
   );

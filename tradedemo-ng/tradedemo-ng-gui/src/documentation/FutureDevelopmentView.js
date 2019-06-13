@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function FutureDevelopment() {
+export default function FutureDevelopmentView() {
   return (
     <div>
       <p>The focus of this demo is on ReactJS.The next phase are Java server side microservices to demonstrate modern distributed reactive architecture.

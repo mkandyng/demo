@@ -15,7 +15,7 @@ export default function MarketDataView(props) {
       { Header: "Ask", accessor: "ask", width: 70 },
       { Header: "Last", accessor: "last", width: 70 },
       { Header: "Open", accessor: "open", width: 70},
-  	  { Header: "Chg", accessor: "chg", width: 70 }
+      { Header: "Chg", accessor: "chg", width: 70 }
     ];
     const removeColumnHeader = (column) => column.Header === "Remove";
 

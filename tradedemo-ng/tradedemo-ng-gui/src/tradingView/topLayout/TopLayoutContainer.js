@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { getRandomInt } from "../../common/libs/utils";
@@ -6,34 +6,27 @@ import { generateMarketDataMovement } from "../../common/libs/marketfeed";
 import Ticket from "./TicketView";
 import InstrumentSearch from "./InstrumentSearchView";
 import MarketDataView from "./MarketDataView";
-import { fetchInstruments } from "../../store/actions/fetchInstruments";
-import { addInstrumentToMarketfeed } from "../../store/actions/addInstrumentToMarketfeed";
-import { selectInstrumentToMarketfeed } from "../../store/actions/selectInstrumentToMarketfeed";
-import { updateInstrumentToMarketfeed } from "../../store/actions/updateInstrumentToMarketfeed";
-import { deleteInstrumentToMarketfeed } from "../../store/actions/deleteInstrumentToMarketfeed";
-import { fetchInstrumentIntradayTimeSeries} from "../../store/actions/fetchInstrumentIntradayTimeSeries";
-import { fetchInstrumentDailyTimeSeries} from "../../store/actions/fetchInstrumentDailyTimeSeries";
-
+import { fetchInstruments } from "../../store/instruments/instrumentsActions";
+import { addInstrumentToMarketfeed,
+         selectInstrumentToMarketfeed,
+         updateInstrumentToMarketfeed,
+         deleteInstrumentToMarketfeed } from "../../store/marketfeed/marketfeedActions";
 /**
  * TopLayout root container component
  */
-class TopLayoutContainer extends React.Component {
-    constructor(props) {
-    	super(props)
-      this.flashPriceUpdate = this.flashPriceUpdate.bind(this);
-    }
 
-    componentDidMount() {
-         this.props.fetchInstruments();
-         setInterval(() => {
-             this.flashPriceUpdate();
-         }, 1000);
-    }
+const TopLayoutContainer = function(props) {
+  const { instruments,
+          marketfeed,
+          fetchInstruments,
+          addInstrumentToMarketfeed,
+          deleteInstrumentToMarketfeed,
+          selectInstrumentToMarketfeed} = props;
 
-    flashPriceUpdate(){
+   const flashPriceUpdate = (marketfeedInstruments) => {
         const flashCount = 2;
-        const instrumentIndex = getRandomInt(0, this.props.marketfeed.instruments.length);
-        const randomInstrument = this.props.marketfeed.instruments[instrumentIndex];
+        const instrumentIndex = getRandomInt(0, marketfeedInstruments.length);
+        const randomInstrument = marketfeedInstruments[instrumentIndex];
         if(randomInstrument !== undefined) {
             const generatedInstrument = generateMarketDataMovement(randomInstrument);
             if(generatedInstrument.open !== undefined) {
@@ -48,35 +41,39 @@ class TopLayoutContainer extends React.Component {
                             instrumentPrice = {...instrumentPrice, bid:"", ask:"" };
                         }
                     }
-                    this.props.updateInstrumentToMarketfeed(instrumentPrice);
+                    props.updateInstrumentToMarketfeed(instrumentPrice);
                 }, 500);
             }
         }
-    };
+  };
 
-    render() {
-      const { instruments,
-              marketfeed,
-              addInstrumentToMarketfeed,
-              deleteInstrumentToMarketfeed,
-              selectInstrumentToMarketfeed} = this.props;
-        return (
-            <div id="topLayout">
-                <Ticket/>
-                <div id="marketdata">
-                  <InstrumentSearch
-                    instruments={instruments}
-                    marketfeed={marketfeed}
-                    addInstrumentToMarketfeed={addInstrumentToMarketfeed}/>
-                  <MarketDataView
-                    instruments={instruments}
-                    marketfeed={marketfeed}
-                    selectInstrumentToMarketfeed={selectInstrumentToMarketfeed}
-                    deleteInstrumentToMarketfeed={deleteInstrumentToMarketfeed} />
-                </div>
-            </div>
-        )
-    }
+  const [ flashCounter, flashPrice ] = useState(0);
+
+  useEffect( () => {
+      fetchInstruments();
+  }, [fetchInstruments]);
+
+  useEffect( () => {
+      setTimeout(() => flashPrice(flashCounter+1), getRandomInt(1000,3000));
+      flashPriceUpdate(marketfeed.instruments);
+  }, [flashCounter]);
+
+  return (
+      <div id="topLayout">
+          <Ticket/>
+          <div id="marketdata">
+            <InstrumentSearch
+              instruments={instruments}
+              marketfeed={marketfeed}
+              addInstrumentToMarketfeed={addInstrumentToMarketfeed}/>
+            <MarketDataView
+              instruments={instruments}
+              marketfeed={marketfeed}
+              selectInstrumentToMarketfeed={selectInstrumentToMarketfeed}
+              deleteInstrumentToMarketfeed={deleteInstrumentToMarketfeed} />
+          </div>
+      </div>
+  )
 }
 
 const mapStateToProps = state => ({ ...state });
@@ -86,8 +83,6 @@ const mapDispatchToProps = dispatch =>
     bindActionCreators({
        addInstrumentToMarketfeed,
        fetchInstruments,
-       fetchInstrumentIntradayTimeSeries,
-       fetchInstrumentDailyTimeSeries,
        selectInstrumentToMarketfeed,
        updateInstrumentToMarketfeed,
        deleteInstrumentToMarketfeed

@@ -1,14 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { placeOrder } from "../../store/actions/placeOrder";
-import { updateOrder } from "../../store/actions/updateOrder";
+import { placeOrder, updateOrder } from "../../store/orderbook/orderbookActions";
 import { placeOrderAndGenerateTradeLifeCycle } from "../../common/libs/orderbook"
 import { getRandomInt, toggleOpacity, getDateString } from "../../common/libs/utils";
 
+/**
+ * Ticket component to place order
+ */
 class Ticket extends React.Component {
     constructor(props) {
-    	super(props)
+      super(props)
       this.state = {
            symbol: undefined,
            orderId:1,
@@ -21,7 +23,7 @@ class Ticket extends React.Component {
            priceStyle: {opacity: "0.5"},
            expiryDateStyle: {opacity: "0.5"}
       }
- 	    this.symbolChange = this.symbolChange.bind(this);
+      this.symbolChange = this.symbolChange.bind(this);
       this.orderTypeChange = this.orderTypeChange.bind(this);
       this.expiryTypeChange = this.expiryTypeChange.bind(this);
       this.expiryDateChange = this.expiryDateChange.bind(this);
@@ -56,7 +58,7 @@ class Ticket extends React.Component {
 
   handleOnSubmit(e) {
      e.preventDefault();
-   	 const buySell = e.target.innerText;
+      const buySell = e.target.innerText;
      const instrument = this.props.marketfeed.selected;
      this.validateAndPlaceOrder(buySell, instrument, Number(this.state.price), true);
   }
@@ -69,22 +71,22 @@ class Ticket extends React.Component {
        }
 
        if(this.state.expiryType === "GTD") {
-  		    var today = new Date();
-  		    today.setHours(1,0,0,0);
-  		    var inputDate = new Date(this.state.expiryDate);
-  		    if(inputDate < today) {
-  		        alert("GTD date must be greater or equals to today [" + getDateString(today, "dateOnly") + "]");
-  		        return false;
-  		    }
-  	   }
+          var today = new Date();
+          today.setHours(1,0,0,0);
+          var inputDate = new Date(this.state.expiryDate);
+          if(inputDate < today) {
+              alert("GTD date must be greater or equals to today [" + getDateString(today, "dateOnly") + "]");
+              return false;
+          }
+       }
 
        if(this.state.orderType !== "Market") {
-  	      const instrument = this.props.marketfeed.selected;
-  		    if(Math.abs(this.state.price - instrument.price) > (instrument.price * 0.05)) {
-  		        alert("Price " + this.state.price + " is outside 5% of midPrice [" + instrument.price.toFixed(2) + "]");
-  		        return false;
-  		    }
-  	   }
+          const instrument = this.props.marketfeed.selected;
+          if(Math.abs(this.state.price - instrument.price) > (instrument.price * 0.05)) {
+              alert("Price " + this.state.price + " is outside 5% of midPrice [" + instrument.price.toFixed(2) + "]");
+              return false;
+          }
+       }
        return true;
     }
 
@@ -97,13 +99,13 @@ class Ticket extends React.Component {
        }
 
        if(confirmedPlaceOrder) {
-      	 const padDigits = function(number, digits) {
-    		    return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
-      	 }
+         const padDigits = function(number, digits) {
+            return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
+         }
 
          placeOrderAndGenerateTradeLifeCycle(this.props, {
-            	orderRef:"XA"+ padDigits(this.state.orderId, 8),
-            	symbol:instrument.symbol,
+              orderRef:"XA"+ padDigits(this.state.orderId, 8),
+              symbol:instrument.symbol,
               instrument: instrument.name,
               ccy: instrument.currency,
               buySell: buySell,
@@ -239,7 +241,7 @@ class Ticket extends React.Component {
                            onChange={this.expiryDateChange}
                            value={this.state.expiryDate}/>
               </label>
-  		    </p>
+          </p>
           <p>
               <label>Note
                    <textarea

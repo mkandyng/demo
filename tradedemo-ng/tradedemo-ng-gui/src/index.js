@@ -3,16 +3,19 @@ import ReactDOM from "react-dom";
 import { createStore, applyMiddleware } from "redux";
 import { createEpicMiddleware } from "redux-observable";
 import { Provider } from "react-redux";
-import rootReducer from "./store/reducers/index";
-import { rootEpic } from "./store/epics";
+import { combinedEpics } from "./store/combinedEpics";
+import combinedReducers from "./store/combinedReducers";
 import App from "./App";
 import "react-table/react-table.css";
 import "react-tabs/style/react-tabs.css";
 import "./index.css";
 
+/**
+ * Application main, wiring up Redux store, Redux-observable
+ */
 const epicMiddleware = createEpicMiddleware();
-const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
-epicMiddleware.run(rootEpic);
+const store = createStore(combinedReducers, applyMiddleware(epicMiddleware));
+epicMiddleware.run(combinedEpics);
 
 const appWithProvider = (
     <Provider store={store}>

@@ -1,0 +1,20 @@
+export const INSTRUMENT_DAILY_TIMESERIES = ({
+    FETCH_INSTRUMENT_DAILY_TIMESERIES: "FETCH_INSTRUMENT_DAILY_TIMESERIES",
+    FETCH_INSTRUMENT_DAILY_TIMESERIES_SUCCESS: "FETCH_INSTRUMENT_DAILY_TIMESERIES_SUCCESS",
+    FETCH_INSTRUMENT_DAILY_TIMESERIES_FAILURE: "FETCH_INSTRUMENT_DAILY_TIMESERIES_FAILURE",
+});
+
+export const fetchInstrumentDailyTimeSeries = instrument => ({
+    type: INSTRUMENT_DAILY_TIMESERIES.FETCH_INSTRUMENT_DAILY_TIMESERIES,
+    instrument: instrument
+});
+
+export const fetchInstrumentDailyTimeSeriesSuccess = timeSeries => ({
+    type: INSTRUMENT_DAILY_TIMESERIES.FETCH_INSTRUMENT_DAILY_TIMESERIES_SUCCESS,
+    dailyTimeSeries: timeSeries
+});
+
+export const fetchInstrumentDailyTimeSeriesFailure = errorMessage => ({
+    type: INSTRUMENT_DAILY_TIMESERIES.FETCH_INSTRUMENT_DAILY_TIMESERIES_FAILURE,
+    error: errorMessage
+});

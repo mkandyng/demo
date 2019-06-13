@@ -1,38 +1,24 @@
 import {
-    ADD_INSTRUMENT_TO_MARKETFEED_SUCCESS,
-    ADD_INSTRUMENT_TO_MARKETFEED_FAILURE
-} from "../actions/addInstrumentToMarketfeed";
-
-import {
-    SELECT_INSTRUMENT_TO_MARKETFEED
-} from "../actions/selectInstrumentToMarketfeed";
-
-import {
-    UPDATE_INSTRUMENT_TO_MARKETFEED
-} from "../actions/updateInstrumentToMarketfeed";
-
-import {
-    DELETE_INSTRUMENT_TO_MARKETFEED
-} from "../actions/deleteInstrumentToMarketfeed";
+    MARKETFEED
+} from "./marketfeedActions";
 
 export default function marketfeed(state = {instruments:[],selected:{}}, action) {
     let instruments = state.instruments;
     switch (action.type) {
-      case ADD_INSTRUMENT_TO_MARKETFEED_SUCCESS:
+      case MARKETFEED.ADD_INSTRUMENT_TO_MARKETFEED_SUCCESS:
           instruments = [action.payload, ...state.instruments];
           return {
             instruments: instruments,
             selected: instruments[0]
           };
-      case ADD_INSTRUMENT_TO_MARKETFEED_FAILURE:
-         alert(action.payload);
+      case MARKETFEED.ADD_INSTRUMENT_TO_MARKETFEED_FAILURE:
          return state;
-      case SELECT_INSTRUMENT_TO_MARKETFEED:
+      case MARKETFEED.SELECT_INSTRUMENT_TO_MARKETFEED:
           return {
             ...state,
             selected: action.instrument
           };
-      case UPDATE_INSTRUMENT_TO_MARKETFEED:
+      case MARKETFEED.UPDATE_INSTRUMENT_TO_MARKETFEED:
           return {
             ...state,
             instruments: instruments.map(instrument => {
@@ -40,7 +26,7 @@ export default function marketfeed(state = {instruments:[],selected:{}}, action)
                                              action.instrument: instrument;
             })
           };
-      case DELETE_INSTRUMENT_TO_MARKETFEED:
+      case MARKETFEED.DELETE_INSTRUMENT_TO_MARKETFEED:
           instruments = instruments.filter(
                           instrument => instrument.symbol !== action.instrument.symbol
                         );

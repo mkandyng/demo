@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {Tab, Tabs, TabList, TabPanel} from "react-tabs";
-import {selectBottomLayoutTab} from "../../store/actions/selectBottomLayoutTab";
+import {selectBottomLayoutTab} from "../../store/bottomLayoutTab/bottomLayoutTabActions";
 import DailyPricesView from "./DailyPricesView";
 import IntradayPricesView from "./IntradayPricesView";
 import OrderBookView from "./OrderBookView";
@@ -44,7 +44,7 @@ const mapStateToProps = state => ({
 
 // Map Redux actions to component props
 const mapDispatchToProps = dispatch => bindActionCreators({
-  selectBottomLayoutTab
+   selectBottomLayoutTab
 }, dispatch);
 
 // The HOC
