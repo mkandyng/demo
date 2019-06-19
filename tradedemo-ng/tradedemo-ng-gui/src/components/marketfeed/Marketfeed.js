@@ -2,8 +2,8 @@ import React, {useState, useEffect} from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import MarketfeedView from "./MarketfeedView"
-import { getRandomInt } from "../../common/libs/utils";
-import { generateMarketDataMovement } from "../../common/libs/marketfeed";
+import { getRandomInt } from "../../common/utils";
+import { generateMarketDataMovement } from "../../common/marketfeed";
 import { selectInstrumentToMarketfeed,
          updateInstrumentToMarketfeed,
          deleteInstrumentToMarketfeed } from "../../store/marketfeed/marketfeedActions";
@@ -12,8 +12,7 @@ import { selectInstrumentToMarketfeed,
  */
 function Marketfeed(props) {
 
-    const {
-            marketfeed,
+    const { marketfeed,
             selectInstrumentToMarketfeed,
             deleteInstrumentToMarketfeed,
             updateInstrumentToMarketfeed } = props;

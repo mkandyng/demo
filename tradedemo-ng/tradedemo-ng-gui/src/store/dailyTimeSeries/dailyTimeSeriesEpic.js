@@ -3,7 +3,7 @@ import "rxjs/add/operator/map";
 import "rxjs/add/observable/of";
 import "rxjs/add/operator/catch";
 import { ajax } from "rxjs/observable/dom/ajax";
-import { instrumentServiceUrl } from "../../common/libs/resources";
+import { instrumentServiceUrl } from "../../common//resources";
 
 import {
     DAILY_TIMESERIES,

@@ -1,4 +1,4 @@
-export const getDateString = function (date, format) {
+export function getDateString(date, format) {
     const dateTimeMills = date.toISOString();
     if(format === "dateOnly") {
        return dateTimeMills.substr(0,10);
@@ -7,7 +7,7 @@ export const getDateString = function (date, format) {
     }
 };
 
-export const toggleOpacity = function (selectedValue, opacityValue, equalsCompare) {
+export function toggleOpacity(selectedValue, opacityValue, equalsCompare) {
     if(equalsCompare) {
         return selectedValue === opacityValue? "0.5": "1.0";
     } else {
@@ -15,7 +15,7 @@ export const toggleOpacity = function (selectedValue, opacityValue, equalsCompar
     }
 };
 
-export const getRandomInt = function (min, max) {
+export function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;

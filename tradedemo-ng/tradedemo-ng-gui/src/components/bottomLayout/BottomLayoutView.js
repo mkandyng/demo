@@ -1,12 +1,16 @@
 import React from "react";
 import {Tab, Tabs, TabList, TabPanel} from "react-tabs";
-import DailyPrices from "../timeSeries/DailyPrices";
-import IntradayPrices from "../timeSeries/IntradayPrices";
 import Orderbook from "../orderbook/Orderbook";
+import TimeSeriesView from "../timeSeries/TimeSeriesView";
 import "./bottomLayout.css";
 
-export default function BottomLayoutView({symbol, selectedTab, updateSelectedTab}) {
-
+export default function BottomLayoutView(props) {
+    const { symbol,
+            orderbook,
+            intradayTimeSeries,
+            dailyTimeSeries,
+            selectedTab,
+            updateSelectedTab } = props;
     return (
         <div id="bottomLayout">
             <Tabs selectedIndex={selectedTab}
@@ -16,9 +20,9 @@ export default function BottomLayoutView({symbol, selectedTab, updateSelectedTab
                   <Tab>{"Intraday Prices " + symbol}</Tab>
                   <Tab>{"Daily Prices " + symbol}</Tab>
                 </TabList>
-                <TabPanel><Orderbook/></TabPanel>
-                <TabPanel><IntradayPrices/></TabPanel>
-                <TabPanel><DailyPrices/></TabPanel>
+                <TabPanel><Orderbook orderbook={orderbook}/></TabPanel>
+                <TabPanel><TimeSeriesView timeSeries={intradayTimeSeries}/></TabPanel>
+                <TabPanel><TimeSeriesView timeSeries={dailyTimeSeries}/></TabPanel>
             </Tabs>
         </div>
     );

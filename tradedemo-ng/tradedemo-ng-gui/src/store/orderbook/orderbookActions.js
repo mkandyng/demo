@@ -1,5 +1,5 @@
-import { ORDERBOOK_STATUS } from "../../common/libs/orderbook";
-import { getDateString } from "../../common/libs/utils";
+import { ORDERBOOK_STATUS } from "../../common//orderbook";
+import { getDateString } from "../../common//utils";
 
 export const ORDERBOOK = ({
     PLACE_ORDER: "PLACE_ORDER",

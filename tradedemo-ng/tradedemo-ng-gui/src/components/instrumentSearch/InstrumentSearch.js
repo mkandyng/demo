@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { MAX_MARKET_FEED_INSTRUMENTS } from "../../common/libs/marketfeed";
-import { fetchInstruments } from "../../store/instruments/instrumentsActions";
-import { addInstrumentToMarketfeed } from "../../store/marketfeed/marketfeedActions";
+import { MAX_MARKET_FEED_INSTRUMENTS } from "../../common/marketfeed";
 import InstrumentSearchView from "./InstrumentSearchView"
 
 /**
  * InstrumentSearch container component
  */
-function InstrumentSearch(props) {
+export default function InstrumentSearch(props) {
 
     const { instruments,
             marketfeed,
-            fetchInstruments,
-            addInstrumentToMarketfeed} = props;
+            addInstrumentToMarketfeed,
+            fetchInstruments} = props;
+
     const [ value, setSelectItem ] = useState("");
 
     useEffect(() => {
@@ -85,19 +82,3 @@ function InstrumentSearch(props) {
                     eventHandler={eventHandler} />
     )
 }
-
-const mapStateToProps = state => ({ instruments: state.instruments,
-                                    marketfeed: state.marketfeed});
-
-// Map Redux actions to component props
-const mapDispatchToProps = dispatch =>
-    bindActionCreators({
-        addInstrumentToMarketfeed,
-        fetchInstruments,
-    }, dispatch);
-
-// The HOC
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(InstrumentSearch);

@@ -1,14 +1,17 @@
 import React from "react";
-import { connect } from "react-redux";
-import { getOrderStatus } from "../../common/libs/orderbook";
+import { ORDERBOOK_STATUS } from "../../common/orderbook";
 import OrderbookView from "./OrderbookView";
 
 /**
  * Component to display Orderbook
  */
-function Orderbook(props) {
-
+export default function Orderbook(props) {
     const { orderbook } = props;
+
+    const getOrderStatus = function(displayName) {
+        const status = Object.keys(ORDERBOOK_STATUS).find(status => ORDERBOOK_STATUS[status].displayName === displayName);
+        return ORDERBOOK_STATUS[status];
+    }
 
     const eventHandler = {
         getTheadThProps: () => {
@@ -36,10 +39,3 @@ function Orderbook(props) {
                      eventHandler={eventHandler} />
     );
 }
-
-const mapStateToProps = state => ({ orderbook: state.orderbook });
-
-// The HOC
-export default connect(
-    mapStateToProps
-)(Orderbook);

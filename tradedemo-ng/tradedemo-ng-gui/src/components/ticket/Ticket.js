@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { placeOrderAndGenerateTradeLifeCycle } from "../../common/libs/orderbook"
-import { getRandomInt, toggleOpacity, getDateString } from "../../common/libs/utils";
+import { validateAndPlaceOrder } from "../../common/orderbook"
+import { getRandomInt, toggleOpacity, getDateString } from "../../common/utils";
 import { placeOrder, updateOrder } from "../../store/orderbook/orderbookActions"
 import TicketView from "./TicketView";
 
@@ -74,74 +74,6 @@ function Ticket(props) {
                   instrument={instrument}
                   eventHandler={eventHandler} />
     )
-}
-
-function validateAndPlaceOrder(props) {
-    const { ticket,
-            instrument,
-            buySell,
-            price,
-            confirmOrder,
-            placeOrder,
-            updateOrder } = props;
-
-    const validateOrder = () => {
-        if(ticket.quantity === 0) {
-            alert("Quantity must be greater than 0");
-            return false;
-        }
-
-        if(ticket.expiryType === "GTD") {
-            var today = new Date();
-            today.setHours(1,0,0,0);
-            var inputDate = new Date(ticket.expiryDate);
-            if(inputDate < today) {
-                alert("GTD date must be greater or equals to today [" + getDateString(today, "dateOnly") + "]");
-                return false;
-            }
-        }
-
-        if(ticket.orderType !== "Market") {
-            if(Math.abs(ticket.price - instrument.price) > (instrument.price * 0.05)) {
-                alert("Price " + ticket.price + " is outside 5% of midPrice [" + instrument.price.toFixed(2) + "]");
-                return false;
-            }
-        }
-        return true;
-    }
-
-    if(validateOrder()) {
-        const priceInfo = ticket.orderType === "Market" ? "Market price": ticket.orderType + " (" + this.state.price + ")";
-        let confirmedPlaceOrder = true;
-        if(confirmOrder) {
-            //eslint-disable-next-line
-            confirmedPlaceOrder = confirm(buySell + " " + ticket.quantity + " " + instrument.name + " @ " + priceInfo);
-        }
-
-        if(confirmedPlaceOrder) {
-            const padDigits = function(number, digits) {
-                return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
-            }
-
-            placeOrderAndGenerateTradeLifeCycle({placeOrder, updateOrder}, {
-                orderRef:"XA"+ padDigits(ticket.orderId, 8),
-                executed: 0,
-                buySell: buySell,
-                symbol: instrument.symbol,
-                instrument: instrument.name,
-                ccy: instrument.currency,
-                midPrice: instrument.price,
-                expiryType: ticket.expiryType,
-                expiryDate: ticket.expiryDate,
-                orderType: ticket.orderType,
-                price: ticket.orderType === "Market" ? "": price,
-                quantity: ticket.quantity,
-                note: ticket.note
-            });
-            return true;
-        }
-        return false;
-    }
 }
 
 const mapStateToProps = state => ({ instrument: state.marketfeed.selected });

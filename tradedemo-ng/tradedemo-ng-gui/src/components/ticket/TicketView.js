@@ -1,8 +1,8 @@
 import React from "react";
-import BuySellButton from "../../common/components/BuySellButton";
-import SelectionDropDown from "../../common/components/SelectionDropDown";
-import LabelInput from "../../common/components/LabelInput";
-import LabelTextArea from "../../common/components/LabelTextArea";
+import BuySellButton from "./BuySellButton";
+import SelectionDropDown from "./SelectionDropDown";
+import LabelInput from "./LabelInput";
+import LabelTextArea from "./LabelTextArea";
 import "./ticket.css";
 
 export default function TicketView({ticket, instrument, eventHandler}) {
