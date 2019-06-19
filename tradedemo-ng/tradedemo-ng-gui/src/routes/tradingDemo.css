@@ -1,0 +1,16 @@
+
+#topLayout {
+  display: flex;
+}
+
+#topLayout > #marketfeed {
+  flex: 1;
+}
+
+#topLayout > #ticket {
+  flex: 0;
+}
+
+#topLayout > #ticket {
+  order: -1;
+}

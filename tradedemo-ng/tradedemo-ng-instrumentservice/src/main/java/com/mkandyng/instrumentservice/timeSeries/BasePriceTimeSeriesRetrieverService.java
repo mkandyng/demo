@@ -6,7 +6,6 @@ import com.google.common.cache.LoadingCache;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.client.RestTemplate;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -31,7 +30,7 @@ public abstract class BasePriceTimeSeriesRetrieverService {
     public BasePriceTimeSeriesRetrieverService(RestTemplate restTemplate, int maxRetry) {
         this.restTemplate = restTemplate;
         this.maxRetry = maxRetry;
-        this.timeSeriesCache = setupTimeSeriesCache(TimeUnit.HOURS.toHours(12));
+        this.timeSeriesCache = setupTimeSeriesCache(TimeUnit.HOURS.toHours(2));
     }
 
     public List<TimeSeries> getTimeSeries(String symbol) {

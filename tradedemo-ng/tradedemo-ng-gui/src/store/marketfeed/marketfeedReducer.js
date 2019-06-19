@@ -19,12 +19,15 @@ export default function marketfeed(state = {instruments:[],selected:{}}, action)
             selected: action.instrument
           };
       case MARKETFEED.UPDATE_INSTRUMENT_TO_MARKETFEED:
+          const selected = state.selected.symbol === action.instrument.symbol?
+                                  action.instrument:state.selected;
           return {
             ...state,
             instruments: instruments.map(instrument => {
                 return instrument.symbol === action.instrument.symbol ?
                                              action.instrument: instrument;
-            })
+            }),
+            selected: selected
           };
       case MARKETFEED.DELETE_INSTRUMENT_TO_MARKETFEED:
           instruments = instruments.filter(

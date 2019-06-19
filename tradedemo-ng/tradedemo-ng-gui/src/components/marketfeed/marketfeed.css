@@ -1,0 +1,47 @@
+#marketfeed .item {
+  padding: 2px 6px;
+  cursor: default;
+}
+
+#marketfeed .item-header {
+  background-color: #eeeeee;
+  color: #454545;
+  font-weight: bold;
+}
+
+#marketfeed .ReactTable .rt-thead {
+  height:30px;
+}
+
+#marketfeed .ReactTable {
+  border-radius: 5px;
+  background: #fffdfd;
+  font-size: 10px;
+  text-align: center;
+  height: 270px;
+}
+
+#marketfeed .ReactTable .rt-th {
+  font-weight: bold;
+  background: #f7f7f7;
+}
+
+#marketfeed .ReactTable .rt-tr-group:hover {
+  background: #f7f7f7;
+}
+
+#marketfeed .ReactTable .rt-td-group {
+  background: #ece5e5;
+}
+
+#marketfeed .ReactTable .instrument-column {
+  text-align: left;
+}
+
+#marketfeed .ReactTable span.priceUp {
+  color: blue;
+}
+
+#marketfeed .ReactTable span.priceDown {
+  color: red;
+}

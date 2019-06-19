@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class AlphaVantageRestAPITest {
 
-    private MarketDataProviderRestAPI instrumentDataProviderRestAPI;
+    /*private MarketDataProviderRestAPI instrumentDataProviderRestAPI;
     private String apiKey;
 
     @Before
@@ -76,5 +76,5 @@ public class AlphaVantageRestAPITest {
         assertThat(url).startsWith(AlphaVantageRestAPI.API_PREFIX);
         assertThat(url).contains(symbol);
         assertThat(url).endsWith(apiKey);
-    }
+    }*/
 }

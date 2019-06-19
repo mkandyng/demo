@@ -6,18 +6,18 @@ import { instrumentServiceUrl } from "../../common/libs/resources";
 import { ajax } from "rxjs/observable/dom/ajax";
 
 import {
-    INSTRUMENT_INTRADAY_TIMESERIES,
-    fetchInstrumentIntradayTimeSeriesSuccess,
-    fetchInstrumentIntradayTimeSeriesFailure,
+    INTRADAY_TIMESERIES,
+    fetchIntradayTimeSeriesSuccess,
+    fetchIntradayTimeSeriesFailure,
 } from "./intradayTimeSeriesActions";
 
 export const fetchIntradayTimeSeriesEpic = function(action$) {
     const maxRecords = 15;
     return action$
-        .ofType(INSTRUMENT_INTRADAY_TIMESERIES.FETCH_INSTRUMENT_INTRADAY_TIMESERIES)
+        .ofType(INTRADAY_TIMESERIES.FETCH_INTRADAY_TIMESERIES)
         .switchMap((action) => {
             return ajax
-                .getJSON(instrumentServiceUrl + "/intradayPrices/" + action.instrument.symbol)
+                .getJSON(instrumentServiceUrl + "/intradayPrices/" + action.symbol)
                 .map(jsonPayload => jsonPayload.slice(0, maxRecords).reverse())
                  .map(requiredTimeSeries => requiredTimeSeries.map(series => {
                     let high = series["high"];
@@ -29,6 +29,6 @@ export const fetchIntradayTimeSeriesEpic = function(action$) {
                     };
                 }));
         })
-        .map(timeSeries => fetchInstrumentIntradayTimeSeriesSuccess(timeSeries))
-        .catch(error => {fetchInstrumentIntradayTimeSeriesFailure(error.message)})
+        .map(timeSeries => fetchIntradayTimeSeriesSuccess(timeSeries))
+        .catch(error => {fetchIntradayTimeSeriesFailure(error.message)})
 }

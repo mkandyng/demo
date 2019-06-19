@@ -9,14 +9,14 @@ export const ORDERBOOK_STATUS = {
     rejected: {displayName: "Rejected", backgroundColor: "#F92E05", color: "white"},
 }
 
-export const getRandomFinalOrderStatus = function() {
-    const arrayOrderbookStatus = Object.keys(ORDERBOOK_STATUS);
-    const status = arrayOrderbookStatus[getRandomInt(0,arrayOrderbookStatus.length-1)];
+export const getOrderStatus = function(displayName) {
+    const status = Object.keys(ORDERBOOK_STATUS).find(status => ORDERBOOK_STATUS[status].displayName === displayName);
     return ORDERBOOK_STATUS[status];
 }
 
-export const getOrderStatus = function(displayName) {
-    const status = Object.keys(ORDERBOOK_STATUS).find(status => ORDERBOOK_STATUS[status].displayName === displayName);
+export const getRandomFinalOrderStatus = function() {
+    const arrayOrderbookStatus = Object.keys(ORDERBOOK_STATUS);
+    const status = arrayOrderbookStatus[getRandomInt(0,arrayOrderbookStatus.length-1)];
     return ORDERBOOK_STATUS[status];
 }
 

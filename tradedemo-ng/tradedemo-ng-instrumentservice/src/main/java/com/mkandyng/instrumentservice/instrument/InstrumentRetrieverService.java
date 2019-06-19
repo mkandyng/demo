@@ -49,7 +49,7 @@ public class InstrumentRetrieverService {
     private Set<Instrument> loadInstruments(String[] instrumentPrefixList) {
         Set<Instrument> instrumentSet = Arrays.stream(instrumentPrefixList)
                 .map(marketDataProviderRestAPI::getInstrumentsSearchUrl)
-                .peek(url -> logger.info("Loading instruments from remote rest service {}", url))
+                .peek(url -> logger.info("Loading instruments from remote service {}", url))
                 .map(url -> restTemplate.getForObject(url, InstrumentRequestResult.class))
                 .filter(retrieveInstruments -> retrieveInstruments != null)
                 .filter(retrieveInstruments -> retrieveInstruments.getInstruments() != null)

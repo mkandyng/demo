@@ -12,17 +12,8 @@ import {
 import {
     MARKETFEED,
     addInstrumentToMarketfeedSuccess,
-    addInstrumentToMarketfeedFailure,
-    selectInstrumentToMarketfeed
+    addInstrumentToMarketfeedFailure
 } from "./marketfeedActions";
-
-import {
-  fetchInstrumentIntradayTimeSeries
-} from "../../store/intradayTimeSeries/intradayTimeSeriesActions";
-
-import {
-  fetchInstrumentDailyTimeSeries
-} from "../../store/dailyTimeSeries/dailyTimeSeriesActions";
 
 export const addInstrumentToMarketfeedEpic = function(action$) {
     const fetchInstrumentQuote = action => {
@@ -39,25 +30,14 @@ export const addInstrumentToMarketfeedEpic = function(action$) {
                   )
           });
     }
-    
+
     return action$
         .ofType(MARKETFEED.ADD_INSTRUMENT_TO_MARKETFEED)
         .concatMap(action => fetchInstrumentQuote(action)
           .concatMap(instrument => [
               addInstrumentToMarketfeedSuccess(instrument),
-              selectInstrumentToMarketfeed(instrument)
             ]
           )
           .catch(error => {addInstrumentToMarketfeedFailure(error)})
     )
-}
-
-export const selectInstrumentToMarketfeedEpic = function(action$) {
-    return action$
-        .ofType(MARKETFEED.SELECT_INSTRUMENT_TO_MARKETFEED)
-        .concatMap(action => [
-              fetchInstrumentIntradayTimeSeries(action.instrument),
-              fetchInstrumentDailyTimeSeries(action.instrument)
-            ]
-        )
 }

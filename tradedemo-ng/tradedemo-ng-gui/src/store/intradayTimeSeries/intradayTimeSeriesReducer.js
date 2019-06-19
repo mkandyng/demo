@@ -1,10 +1,10 @@
 import {
-    INSTRUMENT_INTRADAY_TIMESERIES
+    INTRADAY_TIMESERIES
 } from "./intradayTimeSeriesActions";
 
 export default function intradayTimeSeriesReducer(state = {}, action) {
     switch (action.type) {
-      case INSTRUMENT_INTRADAY_TIMESERIES.FETCH_INSTRUMENT_INTRADAY_TIMESERIES_SUCCESS:
+      case INTRADAY_TIMESERIES.FETCH_INTRADAY_TIMESERIES_SUCCESS:
           return {
               chartData: action.intradayTimeSeries,
               maxValue: Math.max.apply(Math, action.intradayTimeSeries.map(o =>  o.price)),

@@ -68,7 +68,7 @@ public class QuoteRetrieverService {
         };
 
         return CacheBuilder.newBuilder()
-                .expireAfterWrite(1, TimeUnit.HOURS)
+                .expireAfterWrite(2, TimeUnit.HOURS)
                 .build(loader);
     }
 

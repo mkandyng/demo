@@ -5,10 +5,10 @@ import { createEpicMiddleware } from "redux-observable";
 import { Provider } from "react-redux";
 import combinedEpics from "./store/combinedEpics";
 import combinedReducers from "./store/combinedReducers";
-import App from "./App";
 import "react-table/react-table.css";
 import "react-tabs/style/react-tabs.css";
 import "./index.css";
+import App from "./App";
 
 /**
  * Application main, wiring up Redux store, Redux-observable

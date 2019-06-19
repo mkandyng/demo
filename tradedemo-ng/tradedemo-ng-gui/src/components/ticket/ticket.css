@@ -1,0 +1,83 @@
+
+#ticket form {
+  border-radius: 15px;
+  padding: 5px;
+  width: 350px;
+  height: 310px;
+  font-size: 12px;
+  background: white;
+}
+
+#ticket form * {
+  box-sizing: border-box;
+}
+
+#ticket form label {
+  padding: 0;
+  text-align: right;
+  display: block;
+}
+
+#ticket form input,
+#ticket form select,
+#ticket form textarea {
+  margin-left: 2em;
+  float: right;
+  width: 20em;
+  border: 1px solid #ccc;
+  font-size: 0.8em;
+  padding: 0.3em;
+}
+
+#ticket form textarea {
+  height: 60px;
+}
+
+#ticket form button {
+  border-radius: 0.5em;
+  border: none;
+  font-weight: bold;
+}
+
+#buySell {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  float: left;
+}
+
+#sellButton {
+  margin-left:20px;
+  margin-right:10px;
+  float: left;
+}
+
+#ticket form #sellButton label {
+  color: #e6577c;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#ticket form #buyButton label {
+  color: blue;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#sellButton button {
+  width: 130px;
+  height: 40px;
+  background: #e25d5d;
+  color: white;
+}
+
+#buyButton {
+  margin-left:20px;
+  float: left;
+}
+
+#buyButton button {
+  width: 130px;
+  height: 40px;
+  background: #6e6ed0;
+  color: white;
+}

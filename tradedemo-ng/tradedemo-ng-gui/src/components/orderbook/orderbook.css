@@ -1,0 +1,23 @@
+#bottomLayout .ReactTable {
+  background: #fffdfd;
+  font-size: 10px;
+  text-align: center;
+  height: 88%;
+}
+
+#bottomLayout .ReactTable .rt-th {
+  font-weight: bold;
+  background: #f7f7f7;
+}
+
+#bottomLayout .ReactTable .rt-tr-group:hover {
+  background: #f7f7f7;
+}
+
+#bottomLayout .ReactTable .rt-td-group {
+  background: #ece5e5;
+}
+
+#bottomLayout .ReactTable .instrument-column {
+  text-align: left;
+}

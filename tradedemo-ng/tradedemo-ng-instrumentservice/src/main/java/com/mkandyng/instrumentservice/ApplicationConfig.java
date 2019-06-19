@@ -29,7 +29,7 @@ public class ApplicationConfig {
     }
 
     @Bean
-    public InstrumentRetrieverService instrumentsRetrieverService(
+    public InstrumentRetrieverService instrumentsRetrieverService (
             RestTemplate restTemplate,
             MarketDataProviderRestAPI marketDataProviderRestAPI,
             @Value("${instrumentPrefixList}") String instrumentPrefixListProp) {
