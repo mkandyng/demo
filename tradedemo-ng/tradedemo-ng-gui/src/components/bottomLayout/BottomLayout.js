@@ -54,6 +54,8 @@ function BottomLayout(props) {
     );
 }
 
+export const UnwrapBottomLayout = BottomLayout;
+
 const mapStateToProps = state => (
                         { symbol: state.marketfeed.selected.symbol,
                           orderbook: state.orderbook,

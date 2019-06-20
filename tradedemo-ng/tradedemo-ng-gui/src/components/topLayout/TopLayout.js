@@ -29,6 +29,8 @@ function TopLayout(props) {
   )
 }
 
+export const UnWrapTopLayout = TopLayout;
+
 const mapStateToProps = state => ({ instruments: state.instruments,
                                     instrument: state.marketfeed.selected,
                                     marketfeed: state.marketfeed,

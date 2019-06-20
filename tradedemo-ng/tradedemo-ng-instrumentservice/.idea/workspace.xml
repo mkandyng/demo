@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f292c9d8-b3ce-48b0-8e23-ac8caa4d340c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/bottomLayout/BottomLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/bottomLayout/BottomLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/bottomLayout/BottomLayoutView.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/ticket/BuySellButton.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/ticket/LabelInput.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/ticket/LabelTextArea.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/ticket/SelectionDropDown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/ticket/TicketView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/ticket/TicketView.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/common/resources.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/common/resources.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -778,7 +770,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561019792093" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561049050090" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />

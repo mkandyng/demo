@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TradingDemo should render component comparing with previous snapshot shallow markup 1`] = `
+<div>
+  <Connect(TopLayout) />
+  <Connect(BottomLayout) />
+</div>
+`;

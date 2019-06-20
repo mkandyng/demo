@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UnWrapTopLayout should render component comparing with previous snapshot shallow markup 1`] = `
+<div
+  id="topLayout"
+>
+  <Ticket
+    instrument={
+      Object {
+        "symbol": "symbol",
+      }
+    }
+    instruments={
+      Array [
+        Object {
+          "symbol": "symbol",
+        },
+      ]
+    }
+    marketfeed={
+      Object {
+        "instruments": Array [
+          Object {
+            "symbol": "symbol",
+          },
+        ],
+        "selected": Object {
+          "symbol": "symbol",
+        },
+      }
+    }
+  />
+  <div
+    id="marketfeed"
+  >
+    <InstrumentSearch
+      instrument={
+        Object {
+          "symbol": "symbol",
+        }
+      }
+      instruments={
+        Array [
+          Object {
+            "symbol": "symbol",
+          },
+        ]
+      }
+      marketfeed={
+        Object {
+          "instruments": Array [
+            Object {
+              "symbol": "symbol",
+            },
+          ],
+          "selected": Object {
+            "symbol": "symbol",
+          },
+        }
+      }
+    />
+    <Connect(Marketfeed)
+      instrument={
+        Object {
+          "symbol": "symbol",
+        }
+      }
+      instruments={
+        Array [
+          Object {
+            "symbol": "symbol",
+          },
+        ]
+      }
+      marketfeed={
+        Object {
+          "instruments": Array [
+            Object {
+              "symbol": "symbol",
+            },
+          ],
+          "selected": Object {
+            "symbol": "symbol",
+          },
+        }
+      }
+    />
+  </div>
+</div>
+`;

@@ -11,7 +11,7 @@ import "./marketfeed.css";
 /**
  * Component to display MarketData
  */
-function Marketfeed(props) {
+export function Marketfeed(props) {
 
     const { marketfeed,
             selectInstrumentToMarketfeed,
@@ -131,17 +131,25 @@ function Marketfeed(props) {
     };
 
     return (
+      <MarketfeedView instruments={marketfeed.instruments}
+                      columnHeaders={columnHeaders}
+                      eventHandler={eventHandler} />
+   );
+}
+
+export function MarketfeedView({instruments, columnHeaders, eventHandler}) {
+    return (
       <ReactTable
           defaultPageSize={5}
           sortable={false}
           showPaginationTop={false}
           showPaginationBottom={false}
           showPageSizeOptions={false}
-          data={marketfeed.instruments}
+          data={instruments}
           columns={columnHeaders}
           getTdProps={eventHandler.handleTableColumn}
           getTrProps={eventHandler.handleTableRow} />
-   );
+    );
 }
 
 const mapStateToProps = state => ({ instruments: state.instruments,

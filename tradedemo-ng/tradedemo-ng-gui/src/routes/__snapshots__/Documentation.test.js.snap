@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Documentation should render component comparing with previous snapshot shallow markup 1`] = `
+<Documentation>
+  <div
+    id="documentation"
+  >
+    <div
+      style={
+        Object {
+          "padding": "20px",
+        }
+      }
+    >
+      <h3>
+        TradeDemo-NG
+      </h3>
+      <hr />
+      <TechnologiesView>
+        <div>
+          <p>
+            TradeDemo-NG is a skeleton trading application with 
+            <a
+              href="https://github.com/mkandyng/demo/tree/master/tradedemo-ng"
+            >
+              source code
+            </a>
+             to demonstrate how to deliver a Cloud-Native 
+            <a
+              alt="SPA"
+              href="https://en.m.wikipedia.org/wiki/Single-page_application"
+            >
+              Single Page Application
+            </a>
+            .
+          </p>
+          <ul>
+            <li>
+              Web application with 
+              <a
+                alt="React"
+                href="https://github.com/facebook/react"
+              >
+                React
+              </a>
+               (UI Layer), 
+              <a
+                alt="Redux"
+                href="https://redux.js.org/introduction/getting-started"
+              >
+                Redux
+              </a>
+               (Flux architecture), 
+              <a
+                alt="edux-observable"
+                href="https://redux-observable.js.org/docs/basics/Epics.html"
+              >
+                Redux Observable
+              </a>
+               (Epics using 
+              <a
+                href="https://rxjs-dev.firebaseapp.com/"
+              >
+                RxJs
+              </a>
+               for async processing).
+            </li>
+            <li>
+              Microservices delivering Rest API for marketdata with 
+              <a
+                alt="Springboot"
+                href="https://spring.io/proje/spring-boot"
+              >
+                Springboot
+              </a>
+              .
+            </li>
+            <li>
+              Cloud-Native application running as 
+              <a
+                href="https://www.docker.com/"
+              >
+                Docker container
+              </a>
+               orchestrated by 
+              <a
+                href="https://kubernetes.io/"
+              >
+                Kubernetes
+              </a>
+               in 
+              <a
+                alt="Google Cloud"
+                href="https://cloud.google.com/"
+              >
+                Google Cloud Platform
+              </a>
+              .
+            </li>
+          </ul>
+        </div>
+      </TechnologiesView>
+      <FunctionalitiesView>
+        <div>
+          <p>
+            This skeleton trading application provided the following functionalities:
+          </p>
+          <ul>
+            <li>
+              Rest API to fetch real (delay) stock market instruments and market data from 
+              <a
+                alt="alpavantage"
+                href="https://www.alphavantage.co/"
+              >
+                Alpha Vantage
+              </a>
+              .
+            </li>
+            <li>
+              Pre populate a number of instruments to the market feed.
+            </li>
+            <li>
+              Simulation of price movements on instruments.
+            </li>
+            <li>
+              Allow users to add and delete instruments from market feed
+            </li>
+            <li>
+              Context sensitive search to find tradeable instruments to add to maket feed.
+            </li>
+            <li>
+              Select an instrument from market feed to trade and display in order blotter.
+            </li>
+            <li>
+              Simulation of order life cycle of trade events in order blotter.
+            </li>
+            <li>
+              Charts showing Intraday and previous open/close prices.
+            </li>
+          </ul>
+        </div>
+      </FunctionalitiesView>
+      <FutureDevelopmentView>
+        <div>
+          <p>
+            The focus of this demo is on ReactJS.The next phase are Java server side microservices to demonstrate modern distributed reactive architecture.
+          </p>
+          <ul>
+            <li>
+              Mock exchange communicate via 
+              <a
+                href="https://www.fixtrading.org/what-is-fix/"
+              >
+                FIX
+              </a>
+               for order placement and executions.
+            </li>
+            <li>
+              Microservices that adhered to 
+              <a
+                href="https://12factor.net/"
+              >
+                12 Factor App
+              </a>
+               and 
+              <a
+                href="https://www.reactivemanifesto.org/"
+              >
+                Reactive Manifesto
+              </a>
+               to deliver components for market data, instrument static, and order blotter services.
+            </li>
+            <li>
+              Persistent with JPA, Hibernate, MySQL.
+            </li>
+            <li>
+              Distributed In Memory Data Grid with 
+              <a
+                href="https://hazelcast.org/"
+              >
+                Hazlecast
+              </a>
+              .
+            </li>
+            <li>
+              High performance messaging system with 
+              <a
+                href="https://kafka.apache.org/"
+              >
+                Apache Kafka
+              </a>
+              .
+            </li>
+            <li>
+              Delivering functionalities to mobile devices with 
+              <a
+                href="https://facebook.github.io/react-native/"
+              >
+                React Native
+              </a>
+              .
+            </li>
+          </ul>
+        </div>
+      </FutureDevelopmentView>
+    </div>
+  </div>
+</Documentation>
+`;

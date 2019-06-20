@@ -54,6 +54,14 @@ export default function Orderbook(props) {
     };
 
     return (
+        <OrderbookView orderbook={orderbook}
+                   columns={columns}
+                   eventHandler={eventHandler} />
+    );
+}
+
+export function OrderbookView({orderbook, columns, eventHandler}) {
+    return (
         <ReactTable
             defaultPageSize={10}
             showPageSizeOptions={false}
