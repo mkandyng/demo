@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectableTabs should render component comparing with previous snapshot shallow markup 1`] = `
+<div
+  id="bottomLayout"
+>
+  <Tabs
+    defaultFocus={false}
+    defaultIndex={null}
+    forceRenderTabPanel={false}
+    onSelect={[Function]}
+    selectedIndex={1}
+  >
+    <TabList
+      className="react-tabs__tab-list"
+    >
+      <Tab
+        className="react-tabs__tab"
+        disabledClassName="react-tabs__tab--disabled"
+        focus={false}
+        id={null}
+        key="name1"
+        panelId={null}
+        selected={false}
+        selectedClassName="react-tabs__tab--selected"
+      >
+        name1
+      </Tab>
+      <Tab
+        className="react-tabs__tab"
+        disabledClassName="react-tabs__tab--disabled"
+        focus={false}
+        id={null}
+        key="name2"
+        panelId={null}
+        selected={false}
+        selectedClassName="react-tabs__tab--selected"
+      >
+        name2
+      </Tab>
+    </TabList>
+    <TabPanel
+      className="react-tabs__tab-panel"
+      forceRender={false}
+      key="name1"
+      selectedClassName="react-tabs__tab-panel--selected"
+    >
+      <p
+        key="1"
+      >
+        Panel
+      </p>
+    </TabPanel>
+    <TabPanel
+      className="react-tabs__tab-panel"
+      forceRender={false}
+      key="name2"
+      selectedClassName="react-tabs__tab-panel--selected"
+    >
+      <p
+        key="1"
+      >
+        Panel1
+      </p>
+      <p
+        key="2"
+      >
+        Panel2
+      </p>
+    </TabPanel>
+  </Tabs>
+</div>
+`;

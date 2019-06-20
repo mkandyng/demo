@@ -7,12 +7,10 @@ import {LineChart,
         ResponsiveContainer,
         Legend } from "recharts";
 
-import "./timeSeries.css";
-
 /**
  * Generic component to display timeSeries
  */
-export default function TimeSeriesView({ timeSeries }) {
+export default function TimeSeries({ timeSeries }) {
     const margin = {top: 5, right: 20, left: 0, bottom: 5};
     return (
       <div className="timeSeriesPrices">

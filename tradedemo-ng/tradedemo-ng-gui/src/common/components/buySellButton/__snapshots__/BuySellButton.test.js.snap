@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BuySellButton should render component comparing with previous snapshot shallow markup 1`] = `
+<div
+  id="divId"
+  onClick={[MockFunction]}
+>
+  <label>
+    label
+  </label>
+  <button
+    id="id"
+  >
+    buttonName
+  </button>
+</div>
+`;

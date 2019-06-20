@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LabelTextArea should render component comparing with previous snapshot shallow markup 1`] = `
+<p>
+  <label>
+    label
+    <textarea
+      maxLength={100}
+      name="name"
+      onChange={[MockFunction]}
+      value="value"
+    />
+  </label>
+</p>
+`;

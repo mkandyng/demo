@@ -1,8 +1,8 @@
 import React from "react";
 
-import TechnologiesView from "../components/documentation/TechnologiesView";
-import FunctionalitiesView from "../components/documentation/FunctionalitiesView";
-import FutureDevelopmentView from "../components/documentation/FutureDevelopmentView";
+import TechnologiesView from "../components/documentation/Technologies";
+import FunctionalitiesView from "../components/documentation/Functionalities";
+import FutureDevelopmentView from "../components/documentation/FutureDevelopment";
 import "./documentation.css";
 
 export default function Documentation() {

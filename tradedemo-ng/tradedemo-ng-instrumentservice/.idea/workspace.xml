@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f292c9d8-b3ce-48b0-8e23-ac8caa4d340c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/bottomLayout/BottomLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/bottomLayout/BottomLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/bottomLayout/BottomLayoutView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/bottomLayout/BottomLayoutView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/timeSeries/DailyPrices.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/timeSeries/IntradayPrices.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/timeSeries/TimeSeriesView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/timeSeries/TimeSeriesView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/bottomLayout/BottomLayoutView.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/ticket/BuySellButton.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/ticket/LabelInput.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/ticket/LabelTextArea.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/ticket/SelectionDropDown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/ticket/TicketView.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/ticket/TicketView.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -669,7 +666,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="716" />
@@ -781,7 +778,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560972410841" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561019792093" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -932,7 +929,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="716" extended-state="1" />
+    <frame x="0" y="23" width="1280" height="716" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33360258" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

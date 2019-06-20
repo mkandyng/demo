@@ -4,7 +4,10 @@ import { bindActionCreators } from "redux";
 import {Line} from "recharts";
 import {fetchIntradayTimeSeries} from "../../store/intradayTimeSeries/intradayTimeSeriesActions";
 import {fetchDailyTimeSeries} from "../../store/dailyTimeSeries/dailyTimeSeriesActions";
-import BottomLayoutView from "./BottomLayoutView";
+import SelectableTabs from "../../common/components/selectableTabs/SelectableTabs"
+import Orderbook from "../orderbook/Orderbook";
+import TimeSeries from "../../common/components/timeSeries/TimeSeries";
+import "./bottomLayout.css";
 
 
 /**
@@ -34,13 +37,20 @@ function BottomLayout(props) {
         }
     },[symbol, selectedTab, fetchIntradayTimeSeries, fetchDailyTimeSeries])
 
+    const tabs = [
+        { name: "Orderbook",
+          panel: <Orderbook orderbook={orderbook}/>},
+        { name: "Intraday Prices " + selectedSymbol,
+          panel: <TimeSeries timeSeries={intradayTimeSeries}/>},
+        { name: "Dailyday Prices " + selectedSymbol,
+          panel: <TimeSeries timeSeries={dailyTimeSeries}/>},
+    ]
+
     return (
-        <BottomLayoutView symbol={selectedSymbol}
-                          orderbook={orderbook}
-                          intradayTimeSeries={intradayTimeSeries}
-                          dailyTimeSeries={dailyTimeSeries}
+          <SelectableTabs containerId="bottomLayout"
                           selectedTab={selectedTab}
-                          updateSelectedTab={updateSelectedTab} />
+                          updateSelectedTab={updateSelectedTab}
+                          tabs={tabs} />
     );
 }
 
@@ -49,7 +59,7 @@ const mapStateToProps = state => (
                           orderbook: state.orderbook,
                           intradayTimeSeries: {
                               data: state.intradayTimeSeries,
-                              childElements: <Line type="monotone" dataKey="price" stroke="#8884d8" activeDot={{r: 8}}/>
+                              childElements: [<Line type="monotone" dataKey="price" stroke="#8884d8" activeDot={{r: 8}}/>]
                           },
                           dailyTimeSeries: {
                               data: state.dailyTimeSeries,

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MAX_MARKET_FEED_INSTRUMENTS } from "../../common/marketfeed";
-import InstrumentSearchView from "./InstrumentSearchView"
+import ReactAutocomplete from "react-autocomplete";
+import "./instrumentSearch.css"
 
 /**
  * InstrumentSearch container component
@@ -76,9 +77,19 @@ export default function InstrumentSearch(props) {
     }
 
     return (
-        <InstrumentSearchView
-                    value={value}
-                    instruments={instruments}
-                    eventHandler={eventHandler} />
+      <div id="instrumentSearch">
+           <form>
+               <ReactAutocomplete
+                   value={value}
+                   onChange={eventHandler.handleChange}
+                   onSelect={eventHandler.handleSelect}
+                   items={eventHandler.updateSearchDropDown(instruments)}
+                   getItemValue={eventHandler.getItemValue}
+                   shouldItemRender={eventHandler.matchStocks}
+                   renderItem={eventHandler.renderItem}
+               />
+             <input type="submit" value="Add" onClick={eventHandler.addItem}/>
+           </form>
+      </div>
     )
 }

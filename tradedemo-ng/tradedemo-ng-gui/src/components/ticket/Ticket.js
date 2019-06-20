@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 import { validateAndPlaceOrder } from "../../common/orderbook"
 import { getRandomInt, toggleOpacity, getDateString } from "../../common/utils";
-import { placeOrder, updateOrder } from "../../store/orderbook/orderbookActions"
-import TicketView from "./TicketView";
+import BuySellButton from "../../common/components/buySellButton/BuySellButton";
+import SelectionDropDown from "../../common/components/selectionDropDown/SelectionDropDown";
+import LabelInput from "../../common/components/labelInput/LabelInput";
+import LabelTextArea from "../../common/components/labelTextArea/LabelTextArea";
+import "./ticket.css";
 
-function Ticket(props) {
+export default function Ticket(props) {
     const { instrument,
             placeOrder,
             updateOrder } = props;
@@ -74,19 +75,69 @@ function Ticket(props) {
                   instrument={instrument}
                   eventHandler={eventHandler} />
     )
+
+    function TicketView({ticket, instrument, eventHandler}) {
+        return (
+              <div id="ticket">
+                <form>
+                  <LabelInput label="Symbol"
+                              name="symbol"
+                              type="text"
+                              value={instrument.symbol}
+                              handleOnChange={eventHandler.symbolChange} />
+                  <LabelInput label="Quantity"
+                              name="quantity"
+                              type="number"
+                              step="5"
+                              value={ticket.quantity}
+                              handleOnChange={eventHandler.quantityChange} />
+                  <SelectionDropDown id="orderType"
+                                    label="Order Type"
+                                    name="orderType"
+                                    list={["Market","Limit","Stop","Stop Limit"]}
+                                    handleOnChange={eventHandler.orderTypeChange} />
+                  <LabelInput style={ticket.priceStyle}
+                              label="Price"
+                              name="price"
+                              type="number"
+                              step="0.1"
+                              value={ticket.price}
+                              handleOnChange={eventHandler.priceChange} />
+                 <SelectionDropDown id="expiryType"
+                                    label="Expiry Type"
+                                    name="expiryType"
+                                    list={["Day","GTD","GTC","FOK"]}
+                                    handleOnChange={eventHandler.expiryTypeChange} />
+                 <LabelInput style={ticket.expiryDateStyle}
+                             label="Expiry Date"
+                             name="expiryDate"
+                             type="date"
+                             step="0.1"
+                             value={ticket.expiryDate}
+                             handleOnChange={eventHandler.expiryDateChange} />
+                 <LabelTextArea
+                             label="Note"
+                             name="note"
+                             maxLength="100"
+                             value={ticket.note}
+                             handleOnChange={eventHandler.noteChange} />
+
+                <div>
+                  <div id="buySell">
+                      <BuySellButton containerId="sellButton"
+                                     handleOnClick={eventHandler.handleOnSubmit}
+                                     label={instrument.bidPrice}
+                                     id="sell"
+                                     buttonName="Sell" />
+                      <BuySellButton containerId="buyButton"
+                                     handleOnClick={eventHandler.handleOnSubmit}
+                                     label={instrument.askPrice}
+                                     id="buy"
+                                     buttonName="Buy" />
+                  </div>
+               </div>
+              </form>
+             </div>
+          )
+    }
 }
-
-const mapStateToProps = state => ({ instrument: state.marketfeed.selected });
-
-// Map Redux actions to component props
-const mapDispatchToProps = dispatch =>
-     bindActionCreators({
-        placeOrder,
-        updateOrder
-     }, dispatch);
-
-// The HOC
-export default connect(
-     mapStateToProps,
-     mapDispatchToProps
-)(Ticket);

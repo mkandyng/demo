@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LabelInput should render component comparing with previous snapshot shallow markup 1`] = `
+<p
+  style="style"
+>
+  <label>
+    label
+    :
+    <input
+      id="id"
+      name="name"
+      onChange={[MockFunction]}
+      step={1}
+      type="number"
+      value={12}
+    />
+  </label>
+</p>
+`;

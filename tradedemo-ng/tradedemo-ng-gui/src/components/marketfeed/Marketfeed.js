@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import MarketfeedView from "./MarketfeedView"
+import ReactTable from "react-table";
 import { getRandomInt } from "../../common/utils";
 import { generateMarketDataMovement } from "../../common/marketfeed";
 import { selectInstrumentToMarketfeed,
          updateInstrumentToMarketfeed,
          deleteInstrumentToMarketfeed } from "../../store/marketfeed/marketfeedActions";
+import "./marketfeed.css";
 /**
  * Component to display MarketData
  */
@@ -112,15 +113,34 @@ function Marketfeed(props) {
        };
     };
 
+    const columnHeaders = [
+          { Header: "Remove", accessor: "delete", width: 70 },
+          { Header: "Symbol", accessor: "symbol", width: 100 },
+          { Header: "Instrument Name", accessor: "name", className: "instrument-column" },
+          { Header: "Ccy", accessor: "currency", width: 70 },
+          { Header: "Bid", accessor: "bid", width: 70 },
+          { Header: "Ask", accessor: "ask", width: 70 },
+          { Header: "Last", accessor: "last", width: 70 },
+          { Header: "Open", accessor: "open", width: 70},
+          { Header: "Chg", accessor: "chg", width: 70 }
+    ];
+
     const eventHandler = {
         handleTableColumn: handleTableColumn,
         handleTableRow: handleTableRow
     };
 
     return (
-        <MarketfeedView
-            instruments={marketfeed.instruments}
-            eventHandler={eventHandler} />
+      <ReactTable
+          defaultPageSize={5}
+          sortable={false}
+          showPaginationTop={false}
+          showPaginationBottom={false}
+          showPageSizeOptions={false}
+          data={marketfeed.instruments}
+          columns={columnHeaders}
+          getTdProps={eventHandler.handleTableColumn}
+          getTrProps={eventHandler.handleTableRow} />
    );
 }
 

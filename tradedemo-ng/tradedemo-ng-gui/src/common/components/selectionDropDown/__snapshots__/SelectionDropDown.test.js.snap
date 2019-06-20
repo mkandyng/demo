@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectionDropDown should render component comparing with previous snapshot shallow markup 1`] = `
+<p>
+  <label>
+    label
+    :
+    <select
+      id="id"
+      name="name"
+      onChange={[MockFunction]}
+    >
+      <option
+        id="nameitem1"
+        key="nameitem1"
+        value="item1"
+      >
+        item1
+      </option>
+      <option
+        id="nameitem2"
+        key="nameitem2"
+        value="item2"
+      >
+        item2
+      </option>
+    </select>
+  </label>
+</p>
+`;
