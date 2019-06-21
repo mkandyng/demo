@@ -6,7 +6,7 @@ import { ajax } from "rxjs/observable/dom/ajax";
 import { instrumentServiceUrl } from "../../common//resources";
 
 import {
-         generateMarketDataMovement
+         generateMarketfeedMovement
 } from "../../common//marketfeed";
 
 import {
@@ -26,7 +26,7 @@ export const addInstrumentToMarketfeedEpic = function(action$) {
                                           price:    data["price"],
                                           open:     data["open"] };
                   return (
-                     generateMarketDataMovement(newInstrument)
+                     generateMarketfeedMovement(newInstrument)
                   )
           });
     }

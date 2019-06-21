@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import ReactTable from "react-table";
 import { getRandomInt } from "../../common/utils";
-import { generateMarketDataMovement } from "../../common/marketfeed";
+import { generateMarketfeedMovement } from "../../common/marketfeed";
 import { selectInstrumentToMarketfeed,
          updateInstrumentToMarketfeed,
          deleteInstrumentToMarketfeed } from "../../store/marketfeed/marketfeedActions";
@@ -26,7 +26,7 @@ export function Marketfeed(props) {
            const instrumentIndex = getRandomInt(0, marketfeed.instruments.length);
            const randomInstrument = marketfeed.instruments[instrumentIndex];
            if(randomInstrument !== undefined) {
-               const generatedInstrument = generateMarketDataMovement(randomInstrument);
+               const generatedInstrument = generateMarketfeedMovement(randomInstrument);
                if(generatedInstrument.open !== undefined) {
                    let counter = 0;
                    const flashInterval = setInterval(() => {

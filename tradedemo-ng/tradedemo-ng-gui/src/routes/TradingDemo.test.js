@@ -4,7 +4,7 @@ import { shallow } from "enzyme";
 import TradingDemo from "./TradingDemo";
 
 /**
- * This is unit test of TopLayout component
+ * This is unit test of TradingDemo component
  * It leverage snapshot to test the presentation
  */
 

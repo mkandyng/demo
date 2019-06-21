@@ -1,12 +1,11 @@
 import React from "react";
 
 export default function SelectionDropDown(props) {
-    const {
-        id,
-        label,
-        name,
-        list,
-        handleOnChange } = props;
+    const { id,
+            label,
+            name,
+            list,
+            handleOnChange } = props;
     return (
       <p>
          <label>{label}:

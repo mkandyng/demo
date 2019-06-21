@@ -15,15 +15,16 @@ import "./bottomLayout.css";
  */
 
 function BottomLayout(props) {
+  
+   const { symbol,
+          orderbook,
+          intradayTimeSeries,
+          dailyTimeSeries,
+          fetchIntradayTimeSeries,
+          fetchDailyTimeSeries } = props;
+
     const INTRADAY_TIMESERIES_TAB_INDEX = 1;
     const DAILY_TIME_SERIES_TAB_INDEX = 2;
-
-    const { symbol,
-            orderbook,
-            intradayTimeSeries,
-            dailyTimeSeries,
-            fetchIntradayTimeSeries,
-            fetchDailyTimeSeries } = props;
 
     const [ selectedSymbol, updateSelectedSymbol ] = useState("");
     const [ selectedTab, updateSelectedTab ] = useState(0);

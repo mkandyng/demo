@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, NavLink, HashRouter } from "react-router-dom";
-import TradingDemo from "./routes/tradingDemo";
-import Documentation from "./routes/documentation";
+import TradingDemo from "./routes/TradingDemo";
+import Documentation from "./routes/Documentation";
 
 export default function Apps() {
     return (

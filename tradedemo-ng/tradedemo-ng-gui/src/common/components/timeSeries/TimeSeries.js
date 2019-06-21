@@ -10,7 +10,8 @@ import {LineChart,
 /**
  * Generic component to display timeSeries
  */
-export default function TimeSeries({ timeSeries }) {
+export default function TimeSeries(props) {
+    const { timeSeries } = props;
     const margin = {top: 5, right: 20, left: 0, bottom: 5};
     return (
       <div className="timeSeriesPrices">

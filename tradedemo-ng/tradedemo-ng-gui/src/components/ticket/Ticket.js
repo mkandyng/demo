@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { validateAndPlaceOrder } from "../../common/orderbook"
+import { submitOrder } from "./submitOrder"
 import { getRandomInt, toggleOpacity, getDateString } from "../../common/utils";
 import BuySellButton from "../../common/components/buySellButton/BuySellButton";
 import SelectionDropDown from "../../common/components/selectionDropDown/SelectionDropDown";
@@ -8,6 +8,7 @@ import LabelTextArea from "../../common/components/labelTextArea/LabelTextArea";
 import "./ticket.css";
 
 export default function Ticket(props) {
+
     const { instrument,
             placeOrder,
             updateOrder } = props;
@@ -23,19 +24,18 @@ export default function Ticket(props) {
         note: "",
         priceStyle: {opacity: "0.5"},
         expiryDateStyle: {opacity: "0.5"}
-    })
+    });
 
     useEffect ( () => {
         const MAX_ORDER_COUNT = 10;
         if(instrument.symbol !== undefined && ticket.orderId < MAX_ORDER_COUNT) {
             let buySell = getRandomInt(0,1) === 0 ? "Buy":"Sell";
-            if(validateAndPlaceOrder({ ticket: ticket,
-                                       instrument: instrument,
-                                       buySell: buySell,
-                                       price: instrument.price,
-                                       confirmOrder: false,
-                                       placeOrder: placeOrder,
-                                       updateOrder: updateOrder })) {
+            if(submitOrder({ ticket: ticket,
+                             instrument: instrument,
+                             buySell: buySell,
+                             confirmOrder: false,
+                             placeOrder: placeOrder,
+                             updateOrder: updateOrder })) {
                 updateTicket({...ticket, orderId: ticket.orderId+1});
             }
         }
@@ -58,13 +58,12 @@ export default function Ticket(props) {
         handleOnSubmit: e => {
                   e.preventDefault();
                   const buySell = e.target.innerText;
-                  if(validateAndPlaceOrder({ticket:ticket,
-                                            instrument:instrument,
-                                            buySell:buySell,
-                                            price: Number(ticket.price),
-                                            confirmOrder: true,
-                                            placeOrder: placeOrder,
-                                            updateOrder: updateOrder})) {
+                  if(submitOrder({ ticket:ticket,
+                                   instrument:instrument,
+                                   buySell:buySell,
+                                   confirmOrder: true,
+                                   placeOrder: placeOrder,
+                                   updateOrder: updateOrder})) {
                       updateTicket({...ticket, orderId: ticket.orderId+1});
                   }
         }

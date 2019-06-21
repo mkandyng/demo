@@ -3,7 +3,7 @@ import { getRandomInt } from "./utils";
 
 export const MAX_MARKET_FEED_INSTRUMENTS = 5;
 
-export function generateMarketDataMovement(instrument) {
+export function generateMarketfeedMovement(instrument) {
     const calNewPrice = (price,margin,chg) => {
        if(chg > 10) {
           return price-margin;
