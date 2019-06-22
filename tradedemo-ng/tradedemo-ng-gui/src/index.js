@@ -3,12 +3,12 @@ import ReactDOM from "react-dom";
 import { createStore, applyMiddleware } from "redux";
 import { createEpicMiddleware } from "redux-observable";
 import { Provider } from "react-redux";
-import combinedEpics from "./store/combinedEpics";
-import combinedReducers from "./store/combinedReducers";
+import combinedEpics from "./app/combinedEpics";
+import combinedReducers from "./app/combinedReducers";
 import "react-table/react-table.css";
 import "react-tabs/style/react-tabs.css";
 import "./index.css";
-import App from "./App";
+import App from "./app/App";
 
 /**
  * Application main, wiring up Redux store, Redux-observable

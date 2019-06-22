@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BottomLayout should render component comparing with previous snapshot shallow markup 1`] = `
+<SelectableTabs
+  containerId="bottomLayout"
+  selectedTab={0}
+  tabs={
+    Array [
+      Object {
+        "name": "Orderbook",
+        "panel": <Memo(ConnectFunction) />,
+      },
+      Object {
+        "name": "Intraday Prices ",
+        "panel": <Memo(ConnectFunction) />,
+      },
+      Object {
+        "name": "Daily Prices ",
+        "panel": <Memo(ConnectFunction) />,
+      },
+    ]
+  }
+  updateSelectedTab={[Function]}
+/>
+`;
