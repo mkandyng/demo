@@ -118,23 +118,5 @@ exports[`Ticket should render component comparing with previous snapshot shallow
       "symbol": "symbol",
     }
   }
-  ticket={
-    Object {
-      "expiryDate": "",
-      "expiryDateStyle": Object {
-        "opacity": "0.5",
-      },
-      "expiryType": "Day",
-      "note": "",
-      "orderId": 0,
-      "orderType": "Market",
-      "price": 0,
-      "priceStyle": Object {
-        "opacity": "0.5",
-      },
-      "quantity": 5,
-      "symbol": undefined,
-    }
-  }
 />
 `;
