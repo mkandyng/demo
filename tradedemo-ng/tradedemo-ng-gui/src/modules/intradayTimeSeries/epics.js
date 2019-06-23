@@ -5,13 +5,12 @@ import "rxjs/add/operator/catch";
 import { instrumentServiceUrl } from "../../libs/resources";
 import { ajax } from "rxjs/observable/dom/ajax";
 
-import * as types from "./actionTypes";
 import * as actions from "./actions";
 
 export const fetchIntradayTimeSeriesEpic = function(action$) {
     const maxRecords = 15;
     return action$
-        .ofType(types.FETCH_INTRADAY_TIMESERIES)
+        .ofType(actions.types.FETCH_INTRADAY_TIMESERIES)
         .switchMap((action) => {
             return ajax
                 .getJSON(instrumentServiceUrl + "/intradayPrices/" + action.symbol)

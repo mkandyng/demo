@@ -5,10 +5,9 @@ import "rxjs/add/observable/of";
 import "rxjs/add/operator/catch";
 import { ajax } from "rxjs/observable/dom/ajax";
 import { instrumentServiceUrl } from "../../libs/resources";
-import { MAX_MARKET_FEED_INSTRUMENTS } from "../marketfeed/libs";
+import { MAX_MARKET_FEED_INSTRUMENTS } from "../../libs/marketfeed";
 
 import * as actions from "./actions";
-import * as types from "./actionTypes"
 
 import {
     addInstrumentToMarketfeed
@@ -29,7 +28,7 @@ export const fetchInstrumentsEpic = function(action$) {
     }
 
     return action$
-        .ofType(types.FETCH_INSTRUMENTS)
+        .ofType(actions.types.FETCH_INSTRUMENTS)
         .switchMap(action =>
             fetchInstruments()
             .concatMap(instruments => [

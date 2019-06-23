@@ -1,4 +1,8 @@
-import * as types from "./actionTypes";
+export const types = {
+    FETCH_INSTRUMENTS: "instruments/FETCH_INSTRUMENTS",
+    FETCH_INSTRUMENTS_SUCCESS: "instruments/FETCH_INSTRUMENTS_SUCCESS",
+    FETCH_INSTRUMENTS_FAILURE: "instruments/FETCH_INSTRUMENTS_FAILURE",
+}
 
 export const fetchInstruments = callback => ({
     type: types.FETCH_INSTRUMENTS

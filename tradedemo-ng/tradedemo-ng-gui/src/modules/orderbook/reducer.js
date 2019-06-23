@@ -1,12 +1,12 @@
-import * as types from "./actionTypes";
+import * as actions from "./actions";
 
 export const NAME = "orderbook";
 
 export default function reducer(state = [], action) {
     switch (action.type) {
-      case types.PLACE_ORDER:
+      case actions.types.PLACE_ORDER:
           return [action.order, ...state];
-      case types.UPDATE_ORDER:
+      case actions.types.UPDATE_ORDER:
           const remainingOrders = state.filter(order => order.orderRef !== action.order.orderRef);
           return [action.order, ...remainingOrders];
       default:

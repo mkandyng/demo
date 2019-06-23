@@ -1,4 +1,4 @@
-import { getRandomInt } from "../../libs/utils.js"
+import { getRandomInt } from "./utils.js"
 
 export const orderbookStatus = {
     REQUESTED: { displayName: "Requested", backgroundColor: "#575A57", color: "white"},

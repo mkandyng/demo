@@ -1,10 +1,10 @@
-import * as types from './actionTypes';
+import * as actions from './actions';
 
 export const NAME = "intradayTimeSeries";
 
 export default function intradayTimeSeriesReducer(state = {}, action) {
     switch (action.type) {
-      case types.FETCH_INTRADAY_TIMESERIES_SUCCESS:
+      case actions.types.FETCH_INTRADAY_TIMESERIES_SUCCESS:
           return {
               chartData: action.intradayTimeSeries,
               maxValue: Math.max.apply(Math, action.intradayTimeSeries.map(o =>  o.price)),

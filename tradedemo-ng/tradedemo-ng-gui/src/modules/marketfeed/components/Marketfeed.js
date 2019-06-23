@@ -1,22 +1,16 @@
 import React, {useState, useEffect} from "react";
-import {connect} from "react-redux";
-import { bindActionCreators } from "redux";
 import ReactTable from "react-table";
 import { getRandomInt } from "../../../libs/utils";
-import { generateMarketfeedMovement } from "../libs";
-import { selectInstrumentToMarketfeed,
-         updateInstrumentToMarketfeed,
-         deleteInstrumentToMarketfeed } from "../../../modules/marketfeed/actions";
+import { generateMarketfeedMovement } from "../../../libs/marketfeed";
 import "./marketfeed.css";
-/**
- * Component to display MarketData
- */
-export function Marketfeed(props) {
 
-    const { marketfeed,
-            selectInstrumentToMarketfeed,
-            deleteInstrumentToMarketfeed,
-            updateInstrumentToMarketfeed } = props;
+/**
+ * Component to handle Marketfeed view and interaction
+ */
+export default function Marketfeed({ marketfeed,
+                                     selectInstrumentToMarketfeed,
+                                     deleteInstrumentToMarketfeed,
+                                     updateInstrumentToMarketfeed }) {
 
     const [marketfeedCounter, updateMarkfeedCounter] = useState(0);
 
@@ -151,16 +145,3 @@ export function MarketfeedView({instruments, columnHeaders, eventHandler}) {
           getTrProps={eventHandler.handleTableRow} />
     );
 }
-
-const mapStateToProps = state => ({ marketfeed: state.marketfeed });
-
-// Map Redux actions to component props
-const mapDispatchToProps = dispatch =>
-    bindActionCreators({
-      selectInstrumentToMarketfeed,
-      updateInstrumentToMarketfeed,
-      deleteInstrumentToMarketfeed,
-    }, dispatch);
-
-// The HOC
-export default connect(mapStateToProps, mapDispatchToProps)(Marketfeed);

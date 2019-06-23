@@ -1,7 +1,4 @@
-import React, {useState, useEffect} from "react";
-import {connect} from "react-redux";
-import { bindActionCreators } from "redux";
-import { placeOrder, updateOrder } from "../../../modules/orderbook/actions"
+import React, {useEffect} from "react";
 import { submitTicket } from "../submitTicket"
 import { getRandomInt, toggleOpacity, getDateString } from "../../../libs/utils";
 import BuySellButton from "../../../components/buySellButton/BuySellButton";
@@ -10,53 +7,46 @@ import LabelInput from "../../../components/labelInput/LabelInput";
 import LabelTextArea from "../../../components/labelTextArea/LabelTextArea";
 import "./ticket.css";
 
-export function Ticket({ instrument,
-                         placeOrder,
-                         updateOrder }) {
+/**
+ * Component to handle ticket view and interaction
+ */
 
-    const [ticket, updateTicket] = useState( {
-        symbol: undefined,
-        orderId:0,
-        quantity: 5,
-        orderType: "Market",
-        price: 0,
-        expiryType: "Day",
-        expiryDate: "",
-        note: "",
-        priceStyle: {opacity: "0.5"},
-        expiryDateStyle: {opacity: "0.5"}
-    });
+export default function Ticket({ ticket,
+                                 instrument,
+                                 placeOrder,
+                                 updateOrder,
+                                 updateTicket }) {
 
     useEffect ( () => {
         const MAX_ORDER_COUNT = 10;
         if(instrument.symbol !== undefined && ticket.orderId < MAX_ORDER_COUNT) {
             let buySell = getRandomInt(0,1) === 0 ? "Buy":"Sell";
             if(submitTicket({ ticket: ticket,
-                             instrument: instrument,
-                             buySell: buySell,
-                             confirmOrder: false,
-                             placeOrder: placeOrder,
-                             updateOrder: updateOrder })) {
+                              instrument: instrument,
+                              buySell: buySell,
+                              confirmOrder: false,
+                              placeOrder: placeOrder,
+                              updateOrder: updateOrder })) {
                 updateTicket({...ticket, orderId: ticket.orderId+1});
             }
         }
-    }, [instrument, ticket, placeOrder, updateOrder]);
+    }, [instrument, ticket, placeOrder, updateOrder, updateTicket]);
 
     const eventHandler = {
-        symbolChange: e => updateTicket({...ticket, price: instrument.price.toFixed(2)}),
-        expiryDateChange: e => updateTicket({...ticket, expiryDate: e.target.value}),
-        quantityChange: e => updateTicket({...ticket, price: e.target.value}),
-        priceChange: e => updateTicket({...ticket, price: e.target.value}),
-        noteChange: e => updateTicket({...ticket, note: e.target.value}),
-        orderTypeChange: e => updateTicket({...ticket,
+        symbolChange:     e => updateTicket({price: instrument.price.toFixed(2)}),
+        expiryDateChange: e => updateTicket({expiryDate: e.target.value}),
+        quantityChange:   e => updateTicket({price: e.target.value}),
+        priceChange:      e => updateTicket({price: e.target.value}),
+        noteChange:       e => updateTicket({note: e.target.value}),
+        orderTypeChange:  e => updateTicket({
                   priceStyle: {opacity: toggleOpacity(e.target.value, "Market", true)},
                   orderType: e.target.value,
                   price: instrument.price.toFixed(2)}),
-        expiryTypeChange: e => updateTicket({...ticket,
+        expiryTypeChange: e => updateTicket({
                   expiryDateStyle: {opacity: toggleOpacity(e.target.value, "GTD", false)},
                   expiryType: e.target.value,
                   expiryDate: e.target.value === "GTD"?getDateString(new Date(), "dateOnly"):""}),
-        handleOnSubmit: e => {
+        handleOnSubmit:   e => {
                   e.preventDefault();
                   const buySell = e.target.innerText;
                   if(submitTicket({ ticket:ticket,
@@ -65,7 +55,7 @@ export function Ticket({ instrument,
                                    confirmOrder: true,
                                    placeOrder: placeOrder,
                                    updateOrder: updateOrder})) {
-                      updateTicket({...ticket, orderId: ticket.orderId+1});
+                      updateTicket({orderId: ticket.orderId+1});
                   }
         }
     };
@@ -78,9 +68,9 @@ export function Ticket({ instrument,
 }
 
 export function TicketView({ticket, instrument, eventHandler}) {
-      return (
-            <div id="ticket">
-              <form>
+    return (
+        <div id="ticket">
+            <form>
                 <LabelInput label="Symbol"
                             name="symbol"
                             type="text"
@@ -93,10 +83,10 @@ export function TicketView({ticket, instrument, eventHandler}) {
                             value={ticket.quantity}
                             handleOnChange={eventHandler.quantityChange} />
                 <SelectionDropDown id="orderType"
-                                  label="Order Type"
-                                  name="orderType"
-                                  list={["Market","Limit","Stop","Stop Limit"]}
-                                  handleOnChange={eventHandler.orderTypeChange} />
+                                   label="Order Type"
+                                   name="orderType"
+                                   list={["Market","Limit","Stop","Stop Limit"]}
+                                   handleOnChange={eventHandler.orderTypeChange} />
                 <LabelInput style={ticket.priceStyle}
                             label="Price"
                             name="price"
@@ -104,52 +94,40 @@ export function TicketView({ticket, instrument, eventHandler}) {
                             step="0.1"
                             value={ticket.price}
                             handleOnChange={eventHandler.priceChange} />
-               <SelectionDropDown id="expiryType"
-                                  label="Expiry Type"
-                                  name="expiryType"
-                                  list={["Day","GTD","GTC","FOK"]}
-                                  handleOnChange={eventHandler.expiryTypeChange} />
-               <LabelInput style={ticket.expiryDateStyle}
-                           label="Expiry Date"
-                           name="expiryDate"
-                           type="date"
-                           step="0.1"
-                           value={ticket.expiryDate}
-                           handleOnChange={eventHandler.expiryDateChange} />
-               <LabelTextArea
+                <SelectionDropDown id="expiryType"
+                                   label="Expiry Type"
+                                   name="expiryType"
+                                   list={["Day","GTD","GTC","FOK"]}
+                                   handleOnChange={eventHandler.expiryTypeChange} />
+                <LabelInput style={ticket.expiryDateStyle}
+                            label="Expiry Date"
+                            name="expiryDate"
+                            type="date"
+                            step="0.1"
+                            value={ticket.expiryDate}
+                            handleOnChange={eventHandler.expiryDateChange} />
+                <LabelTextArea
                            label="Note"
                            name="note"
                            maxLength="100"
                            value={ticket.note}
                            handleOnChange={eventHandler.noteChange} />
 
-              <div>
-                <div id="buySell">
-                    <BuySellButton containerId="sellButton"
-                                   handleOnClick={eventHandler.handleOnSubmit}
-                                   label={instrument.bidPrice}
-                                   id="sell"
-                                   buttonName="Sell" />
-                    <BuySellButton containerId="buyButton"
-                                   handleOnClick={eventHandler.handleOnSubmit}
-                                   label={instrument.askPrice}
-                                   id="buy"
-                                   buttonName="Buy" />
+                <div>
+                    <div id="buySell">
+                        <BuySellButton containerId="sellButton"
+                                       handleOnClick={eventHandler.handleOnSubmit}
+                                       label={instrument.bidPrice}
+                                       id="sell"
+                                       buttonName="Sell" />
+                        <BuySellButton containerId="buyButton"
+                                       handleOnClick={eventHandler.handleOnSubmit}
+                                       label={instrument.askPrice}
+                                       id="buy"
+                                       buttonName="Buy" />
+                    </div>
                 </div>
-             </div>
             </form>
-           </div>
-        )
-  }
-
-  const mapStateToProps = state => ({ instrument: state.marketfeed.selected });
-
-  // Map Redux actions to component props
-  const mapDispatchToProps = dispatch =>
-      bindActionCreators({
-        placeOrder,
-        updateOrder,
-      }, dispatch);
-
-  // The HOC
-  export default connect(mapStateToProps, mapDispatchToProps)(Ticket);
+        </div>
+    )
+}

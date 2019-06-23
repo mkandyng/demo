@@ -1,5 +1,5 @@
-import { getRandomInt, getDateString } from "../../libs/utils.js"
-import { orderbookStatus } from "../orderbook/libs"
+import { getRandomInt, getDateString } from "../../libs/utils";
+import { orderbookStatus } from "../../libs/orderbook";
 
 export function submitTicket({ ticket,
                                instrument,

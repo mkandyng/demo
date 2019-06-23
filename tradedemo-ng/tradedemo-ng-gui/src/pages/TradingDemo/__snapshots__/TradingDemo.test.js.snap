@@ -2,7 +2,7 @@
 
 exports[`TradingDemo should render component comparing with previous snapshot shallow markup 1`] = `
 <div>
-  <TopLayout />
+  <Connect(TopLayout) />
   <Connect(BottomLayout) />
 </div>
 `;

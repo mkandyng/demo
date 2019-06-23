@@ -1,5 +1,9 @@
 import React from "react";
 
+/**
+ * Presentation component to display html fragment of document future development
+ */
+
 export default function FutureDevelopmentView() {
   return (
     <div>

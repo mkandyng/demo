@@ -1,4 +1,9 @@
-import * as types from './actionTypes';
+export const types = {
+    FETCH_INTRADAY_TIMESERIES: "intradayTimeSeries/FETCH_INTRADAY_TIMESERIES",
+    FETCH_INTRADAY_TIMESERIES_SUCCESS: "intradayTimeSeries/FETCH_INTRADAY_TIMESERIES_SUCCESS",
+    FETCH_INTRADAY_TIMESERIES_FAILURE: "intradayTimeSeries/FETCH_INTRADAY_TIMESERIES_FAILURE"
+}
+
 export const fetchIntradayTimeSeries = symbol => ({
     type: types.FETCH_INTRADAY_TIMESERIES,
     symbol: symbol

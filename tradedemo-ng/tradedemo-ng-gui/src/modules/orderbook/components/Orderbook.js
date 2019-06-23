@@ -1,13 +1,12 @@
 import React from "react";
 import ReactTable from "react-table";
-import {connect} from "react-redux";
-import { orderbookStatus } from "../libs";
+import { orderbookStatus } from "../../../libs/orderbook";
 import "./orderbook.css";
 
 /**
- * Component to display Orderbook
+ * Component to handle orderbook view and interaction
  */
-export function Orderbook(props) {
+export default function Orderbook(props) {
 
     const { orderbook } = props;
 
@@ -69,9 +68,3 @@ export function OrderbookView({orderbook, columns, eventHandler}) {
         />
     );
 }
-
-const mapStateToProps = state => ({ orderbook: state.orderbook});
-
-
-// The HOC
-export default connect(mapStateToProps)(Orderbook);

@@ -8,15 +8,27 @@ exports[`BottomLayout should render component comparing with previous snapshot s
     Array [
       Object {
         "name": "Orderbook",
-        "panel": <Memo(ConnectFunction) />,
+        "panel": <Orderbook
+          orderbook={
+            Array [
+              Object {
+                "symbol": "symbol",
+              },
+            ]
+          }
+        />,
       },
       Object {
         "name": "Intraday Prices ",
-        "panel": <Memo(ConnectFunction) />,
+        "panel": <IntradayTimeSeries
+          timeSeries={Object {}}
+        />,
       },
       Object {
         "name": "Daily Prices ",
-        "panel": <Memo(ConnectFunction) />,
+        "panel": <DailyTimeSeries
+          timeSeries={Object {}}
+        />,
       },
     ]
   }

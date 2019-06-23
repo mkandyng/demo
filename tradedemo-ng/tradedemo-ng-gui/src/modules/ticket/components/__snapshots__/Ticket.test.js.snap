@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ticket should render TicketView component comparing with previous snapshot shallow markup 1`] = `
+<div
+  id="ticket"
+>
+  <form>
+    <LabelInput
+      handleOnChange={[MockFunction]}
+      label="Symbol"
+      name="symbol"
+      type="text"
+      value="symbol"
+    />
+    <LabelInput
+      handleOnChange={[MockFunction]}
+      label="Quantity"
+      name="quantity"
+      step="5"
+      type="number"
+      value={5}
+    />
+    <SelectionDropDown
+      handleOnChange={[MockFunction]}
+      id="orderType"
+      label="Order Type"
+      list={
+        Array [
+          "Market",
+          "Limit",
+          "Stop",
+          "Stop Limit",
+        ]
+      }
+      name="orderType"
+    />
+    <LabelInput
+      handleOnChange={[MockFunction]}
+      label="Price"
+      name="price"
+      step="0.1"
+      type="number"
+      value={0}
+    />
+    <SelectionDropDown
+      handleOnChange={[MockFunction]}
+      id="expiryType"
+      label="Expiry Type"
+      list={
+        Array [
+          "Day",
+          "GTD",
+          "GTC",
+          "FOK",
+        ]
+      }
+      name="expiryType"
+    />
+    <LabelInput
+      handleOnChange={[MockFunction]}
+      label="Expiry Date"
+      name="expiryDate"
+      step="0.1"
+      type="date"
+      value="2019-10-12"
+    />
+    <LabelTextArea
+      handleOnChange={[MockFunction]}
+      label="Note"
+      maxLength="100"
+      name="note"
+      value=""
+    />
+    <div>
+      <div
+        id="buySell"
+      >
+        <BuySellButton
+          buttonName="Sell"
+          containerId="sellButton"
+          handleOnClick={[MockFunction]}
+          id="sell"
+        />
+        <BuySellButton
+          buttonName="Buy"
+          containerId="buyButton"
+          handleOnClick={[MockFunction]}
+          id="buy"
+        />
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Ticket should render component comparing with previous snapshot shallow markup 1`] = `
+<TicketView
+  eventHandler={
+    Object {
+      "expiryDateChange": [Function],
+      "expiryTypeChange": [Function],
+      "handleOnSubmit": [Function],
+      "noteChange": [Function],
+      "orderTypeChange": [Function],
+      "priceChange": [Function],
+      "quantityChange": [Function],
+      "symbolChange": [Function],
+    }
+  }
+  instrument={
+    Object {
+      "expiryDate": "2019-10-12",
+      "expiryType": "Day",
+      "note": "",
+      "orderType": "Market",
+      "price": 0,
+      "quantity": 5,
+      "symbol": "symbol",
+    }
+  }
+  ticket={
+    Object {
+      "expiryDate": "",
+      "expiryDateStyle": Object {
+        "opacity": "0.5",
+      },
+      "expiryType": "Day",
+      "note": "",
+      "orderId": 0,
+      "orderType": "Market",
+      "price": 0,
+      "priceStyle": Object {
+        "opacity": "0.5",
+      },
+      "quantity": 5,
+      "symbol": undefined,
+    }
+  }
+/>
+`;

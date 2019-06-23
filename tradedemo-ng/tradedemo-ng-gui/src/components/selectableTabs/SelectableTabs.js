@@ -22,7 +22,7 @@ export default function SelectableTabs(props) {
                 </TabList>
                   {tabs.map(tab => <TabPanel key={tab.name}>{tab.panel}</TabPanel>)}
             </Tabs>
-      </div>
+        </div>
     );
 }
 

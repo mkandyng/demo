@@ -1,1 +1,1 @@
-export const instrumentServiceUrl = "http://localhost:8080";
+export const instrumentServiceUrl = "http://http://34.77.5.217";

@@ -1,5 +1,9 @@
 import React from "react";
 
+/**
+ * Presentation component to display html fragment of document functionality
+ */
+
 export default function FunctionalitiesView() {
   return (
      <div>

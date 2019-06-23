@@ -4,11 +4,13 @@ import "rxjs/add/observable/of";
 import "rxjs/add/operator/catch";
 import { ajax } from "rxjs/observable/dom/ajax";
 import { instrumentServiceUrl } from "../../libs/resources";
-import { generateMarketfeedMovement } from "./libs";
+import { generateMarketfeedMovement } from "../../libs/marketfeed";
 import intradayTimeSeries from "../intradayTimeSeries";
 import dailyTimeSeries from "../dailyTimeSeries";
-import * as types from "./actionTypes";
-import * as actions from "./actions";
+import { types,
+         addInstrumentToMarketfeedSuccess,
+         selectInstrumentToMarketfeed,
+         addInstrumentToMarketfeedFailure } from "./actions";
 
 export const addInstrumentToMarketfeedEpic = function(action$) {
     const fetchInstrumentQuote = action => {
@@ -30,11 +32,11 @@ export const addInstrumentToMarketfeedEpic = function(action$) {
         .ofType(types.ADD_INSTRUMENT_TO_MARKETFEED)
         .concatMap(action => fetchInstrumentQuote(action)
           .concatMap(instrument => [
-              actions.addInstrumentToMarketfeedSuccess(instrument),
-              actions.selectInstrumentToMarketfeed(instrument)
+              addInstrumentToMarketfeedSuccess(instrument),
+              selectInstrumentToMarketfeed(instrument)
             ]
           )
-          .catch(error => {actions.addInstrumentToMarketfeedFailure(error)})
+          .catch(error => {addInstrumentToMarketfeedFailure(error)})
     )
 }
 

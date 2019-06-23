@@ -1,10 +1,10 @@
-import * as types from './actionTypes';
+import * as actions from './actions';
 
 export const NAME = "dailyTimeSeries";
 
 export default function reducer(state = {}, action) {
     switch (action.type) {
-      case types.FETCH_DAILY_TIMESERIES_SUCCESS:
+      case actions.types.FETCH_DAILY_TIMESERIES_SUCCESS:
           return {
               chartData: action.dailyTimeSeries,
               maxValue: Math.max.apply(Math, action.dailyTimeSeries.map(o => o.high)),

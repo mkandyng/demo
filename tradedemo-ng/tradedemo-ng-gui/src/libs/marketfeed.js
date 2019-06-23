@@ -1,5 +1,5 @@
 import React from "react";
-import { getRandomInt } from "../../libs/utils";
+import { getRandomInt } from "./utils";
 
 export const MAX_MARKET_FEED_INSTRUMENTS = 5;
 

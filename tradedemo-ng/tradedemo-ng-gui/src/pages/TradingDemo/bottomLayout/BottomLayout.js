@@ -9,7 +9,10 @@ import "./bottomLayout.css";
 /**
  * Container for the bottomLayout components
  */
-export function BottomLayout({ symbol }) {
+export function BottomLayout({ symbol,
+                               orderbook,
+                               intradayTimeSeries,
+                               dailyTimeSeries }) {
 
     const [ selectedSymbol, updateSelectedSymbol ] = useState("");
     const [ selectedTab, updateSelectedTab ] = useState(0);
@@ -20,14 +23,15 @@ export function BottomLayout({ symbol }) {
 
     const tabs = [
         { name: "Orderbook",
-          panel: <Orderbook/>},
+          panel: <Orderbook orderbook={orderbook} />},
         { name: "Intraday Prices " + selectedSymbol,
-          panel: <IntradayTimeSeries/>},
+          panel: <IntradayTimeSeries timeSeries={intradayTimeSeries} />},
         { name: "Daily Prices " + selectedSymbol,
-          panel: <DailyTimeSeries/>},
+          panel: <DailyTimeSeries timeSeries={dailyTimeSeries} />},
     ]
 
     return (
+          
           <SelectableTabs containerId="bottomLayout"
                           selectedTab={selectedTab}
                           updateSelectedTab={updateSelectedTab}
@@ -36,8 +40,10 @@ export function BottomLayout({ symbol }) {
 }
 
 const mapStateToProps = state => (
-                        { symbol: state.marketfeed.selected.symbol
-                         });
+                        { symbol: state.marketfeed.selected.symbol,
+                          orderbook: state.orderbook,
+                          intradayTimeSeries: state.intradayTimeSeries,
+                          dailyTimeSeries: state.dailyTimeSeries });
 
 // The HOC
 export default connect(mapStateToProps)(BottomLayout);

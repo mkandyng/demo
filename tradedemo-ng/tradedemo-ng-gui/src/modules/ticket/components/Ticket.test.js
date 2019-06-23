@@ -1,10 +1,10 @@
 import React from "react";
 import toJson from "enzyme-to-json";
 import { shallow } from "enzyme";
-import BuySellButton from "../../common/components/buySellButton/BuySellButton";
-import SelectionDropDown from "../../common/components/selectionDropDown/SelectionDropDown";
-import LabelInput from "../../common/components/labelInput/LabelInput";
-import LabelTextArea from "../../common/components/labelTextArea/LabelTextArea";
+import BuySellButton from "../../../components/buySellButton/BuySellButton";
+import SelectionDropDown from "../../../components/selectionDropDown/SelectionDropDown";
+import LabelInput from "../../../components/labelInput/LabelInput";
+import LabelTextArea from "../../../components/labelTextArea/LabelTextArea";
 import Ticket, { TicketView } from "./Ticket";
 
 /**
@@ -64,7 +64,7 @@ describe("Ticket", () => {
         expect(toJson(component)).toMatchSnapshot();
 
         const form = component.find("form");
-        
+
         expect(form.find(LabelInput).find({ handleOnChange: localProps.eventHandler.symbolChange })
                          .exists()).toBeTruthy();
         expect(form.find(LabelInput).find({ handleOnChange: localProps.eventHandler.quantityChange })

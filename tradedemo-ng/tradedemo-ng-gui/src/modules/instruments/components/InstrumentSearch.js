@@ -1,21 +1,15 @@
 import React, { useState, useEffect } from "react";
-import {connect} from "react-redux";
-import { bindActionCreators } from "redux";
 import ReactAutocomplete from "react-autocomplete";
-import { MAX_MARKET_FEED_INSTRUMENTS } from "../../marketfeed/libs";
-import { fetchInstruments } from "../../../modules/instruments/actions";
-import { addInstrumentToMarketfeed } from "../../../modules/marketfeed/actions";
+import { MAX_MARKET_FEED_INSTRUMENTS } from "../../../libs/marketfeed";
 import "./instrumentSearch.css"
 
 /**
- * Instruments container component
+ * Component for InstrumentSearch drop down, which manage the instruments state
  */
-export function InstrumentSearch(props) {
-
-    const { instruments,
-            marketfeed,
-            addInstrumentToMarketfeed,
-            fetchInstruments } = props;
+export default function InstrumentSearch({ instruments,
+                                   marketfeed,
+                                   addInstrumentToMarketfeed,
+                                   fetchInstruments }) {
 
     const [ value, setSelectItem ] = useState("");
 
@@ -97,18 +91,3 @@ export function InstrumentSearch(props) {
       </div>
     )
 }
-
-
-const mapStateToProps = state => ({ instruments: state.instruments,
-                                    marketfeed: state.marketfeed,
-                                  });
-
-// Map Redux actions to component props
-const mapDispatchToProps = dispatch =>
-    bindActionCreators({
-      addInstrumentToMarketfeed,
-      fetchInstruments
-    }, dispatch);
-
-// The HOC
-export default connect(mapStateToProps, mapDispatchToProps)(InstrumentSearch);

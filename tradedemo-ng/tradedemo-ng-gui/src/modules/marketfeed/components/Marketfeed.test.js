@@ -2,7 +2,7 @@ import React from "react";
 import toJson from "enzyme-to-json";
 import { shallow } from "enzyme";
 import ReactTable from "react-table";
-import { Marketfeed, MarketfeedView } from "./Marketfeed";
+import Marketfeed,{ MarketfeedView } from "./Marketfeed";
 
 /**
  * This is unit test of Marketfeed component
