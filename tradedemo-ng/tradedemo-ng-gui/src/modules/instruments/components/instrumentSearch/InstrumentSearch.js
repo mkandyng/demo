@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import ReactAutocomplete from "react-autocomplete";
-import { MAX_MARKET_FEED_INSTRUMENTS } from "../../../libs/marketfeed";
+import { MAX_MARKET_FEED_INSTRUMENTS } from "../../../../libs/marketfeed";
 import "./instrumentSearch.css"
 
 /**
  * Component for InstrumentSearch drop down, which manage the instruments state
  */
 export default function InstrumentSearch({ instruments,
-                                   marketfeed,
-                                   addInstrumentToMarketfeed,
-                                   fetchInstruments }) {
+                                           marketfeedInstruments,
+                                           addInstrumentToMarketfeed,
+                                           fetchInstruments }) {
 
     const [ value, setSelectItem ] = useState("");
 
@@ -41,7 +41,7 @@ export default function InstrumentSearch({ instruments,
     const addSelectedInstrumentToMarketfeed = symbol => {
        const instrument = instruments.find(inst => inst.symbol === symbol);
        if(instrument !== undefined) {
-          if(marketfeed.instruments.length >= MAX_MARKET_FEED_INSTRUMENTS) {
+          if(marketfeedInstruments.length >= MAX_MARKET_FEED_INSTRUMENTS) {
                alert("Max " + MAX_MARKET_FEED_INSTRUMENTS + " instruments, please remove an one to add [" + symbol + "]");
           } else {
                addInstrumentToMarketfeed(instrument);
@@ -64,29 +64,19 @@ export default function InstrumentSearch({ instruments,
                          });
     };
 
-    const eventHandler = {
-        handleChange: handleChange,
-        handleSelect: handleSelect,
-        updateSearchDropDown: updateSearchDropDown,
-        getItemValue: getItemValue,
-        matchStocks: matchStocks,
-        renderItem: renderItem,
-        addItem: addItem
-    }
-
     return (
       <div id="instrumentSearch">
            <form>
                <ReactAutocomplete
                    value={value}
-                   onChange={eventHandler.handleChange}
-                   onSelect={eventHandler.handleSelect}
-                   items={eventHandler.updateSearchDropDown(instruments)}
-                   getItemValue={eventHandler.getItemValue}
-                   shouldItemRender={eventHandler.matchStocks}
-                   renderItem={eventHandler.renderItem}
+                   onChange={handleChange}
+                   onSelect={handleSelect}
+                   items={updateSearchDropDown(instruments)}
+                   getItemValue={getItemValue}
+                   shouldItemRender={matchStocks}
+                   renderItem={renderItem}
                />
-             <input type="submit" value="Add" onClick={eventHandler.addItem}/>
+             <input type="submit" value="Add" onClick={addItem}/>
            </form>
       </div>
     )

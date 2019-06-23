@@ -1,24 +1,25 @@
 import React, {useState, useEffect} from "react";
 import ReactTable from "react-table";
-import { getRandomInt } from "../../../libs/utils";
-import { generateMarketfeedMovement } from "../../../libs/marketfeed";
+import { getRandomInt } from "../../../../libs/utils";
+import { generateMarketfeedMovement } from "../../../../libs/marketfeed";
 import "./marketfeed.css";
 
 /**
  * Component to handle Marketfeed view and interaction
  */
-export default function Marketfeed({ marketfeed,
-                                     selectInstrumentToMarketfeed,
-                                     deleteInstrumentToMarketfeed,
-                                     updateInstrumentToMarketfeed }) {
+export default function Marketfeed({ marketfeedInstruments,
+                                     instrument,
+                                     selectMarketfeedInstrument,
+                                     deleteMarketfeedInstrument,
+                                     updateMarketfeedInstrument }) {
 
     const [marketfeedCounter, updateMarkfeedCounter] = useState(0);
 
     useEffect(() => {
       const flashPriceUpdate = () => {
            const flashCount = 2;
-           const instrumentIndex = getRandomInt(0, marketfeed.instruments.length);
-           const randomInstrument = marketfeed.instruments[instrumentIndex];
+           const instrumentIndex = getRandomInt(0, marketfeedInstruments.length);
+           const randomInstrument = marketfeedInstruments[instrumentIndex];
            if(randomInstrument !== undefined) {
                const generatedInstrument = generateMarketfeedMovement(randomInstrument);
                if(generatedInstrument.open !== undefined) {
@@ -33,28 +34,26 @@ export default function Marketfeed({ marketfeed,
                                instrumentPrice = {...instrumentPrice, bid:"", ask:"" };
                            }
                        }
-                       updateInstrumentToMarketfeed(instrumentPrice);
+                       updateMarketfeedInstrument(instrumentPrice);
                    }, 500);
                }
            }
       };
 
-      if(marketfeedCounter === marketfeed.instruments.length) {
+      if(marketfeedCounter === marketfeedInstruments.length) {
           updateMarkfeedCounter(counter => counter+1);
           setInterval(() => {
               flashPriceUpdate();
           }, 2000);
       }
 
-    }, [marketfeed.instruments, marketfeedCounter, updateInstrumentToMarketfeed] );
+    }, [marketfeedInstruments, marketfeedCounter, updateMarketfeedInstrument] );
 
     const removeColumnHeader = (column) => column.Header === "Remove";
 
-    const selectMarketfeedInstrument = symbol => {
-        const matchedInstrument = marketfeed.instruments.find(
-                                          e => e.symbol === symbol
-                                  );
-        selectInstrumentToMarketfeed(matchedInstrument);
+    const selectMarketfeed = symbol => {
+        const matchedInstrument = marketfeedInstruments.find(e => e.symbol === symbol);
+        selectMarketfeedInstrument(matchedInstrument);
     };
 
     const handleTableColumn = (state, rowInfo, column) => {
@@ -67,11 +66,11 @@ export default function Marketfeed({ marketfeed,
                       name: rowInfo.original.name,
                       currency: rowInfo.original.currency
                   }
-                  if(marketfeed.instruments.length > 1) {
-                      const nextSymbol = index === 0 ? marketfeed.instruments[1].symbol:
-                                                       marketfeed.instruments[0].symbol;
-                      deleteInstrumentToMarketfeed(instrument);
-                      selectMarketfeedInstrument(nextSymbol);
+                  if(marketfeedInstruments.length > 1) {
+                      const nextSymbol = index === 0 ? marketfeedInstruments[1].symbol:
+                                                       marketfeedInstruments[0].symbol;
+                      deleteMarketfeedInstrument(instrument);
+                      selectMarketfeed(nextSymbol);
                   } else {
                       alert("Must have at least one instrument in the market feed");
                   }
@@ -92,13 +91,13 @@ export default function Marketfeed({ marketfeed,
 
     const handleTableRow = function(state, rowInfo) {
        const index = rowInfo ? rowInfo.index : -1;
-       const matchedPredicate = instrument => instrument.symbol === marketfeed.selected.symbol;
-       const selectedIndex = marketfeed.instruments.findIndex(matchedPredicate);
+       const matchedPredicate = e => e.symbol === instrument.symbol;
+       const selectedIndex = marketfeedInstruments.findIndex(matchedPredicate);
        return {
            onClick: (e) => {
               if(e.target.src === undefined || !e.target.src.indexOf("delete")) {
-                  const symbol = marketfeed.instruments[index].symbol;
-                  selectMarketfeedInstrument(symbol);
+                  const symbol = marketfeedInstruments[index].symbol;
+                  selectMarketfeed(symbol);
               }
            },
            style: {
@@ -125,7 +124,7 @@ export default function Marketfeed({ marketfeed,
     };
 
     return (
-      <MarketfeedView instruments={marketfeed.instruments}
+      <MarketfeedView instruments={marketfeedInstruments}
                       columnHeaders={columnHeaders}
                       eventHandler={eventHandler} />
    );

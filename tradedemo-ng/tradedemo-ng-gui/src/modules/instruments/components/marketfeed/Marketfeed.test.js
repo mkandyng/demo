@@ -31,7 +31,7 @@ describe("Marketfeed", () => {
     it("should registered event handler correctly", () => {
         // Given
         const localProps = {
-            instruments: props.marketfeed.instruments,
+            instruments: props.marketfeedInstruments,
             columnHeaders: [ { Header: "Remove", accessor: "delete", width: 70 },
                              { Header: "Symbol", accessor: "symbol", width: 100 } ],
             eventHandler: {

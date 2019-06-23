@@ -19,7 +19,7 @@ export default function Ticket({ ticket,
 
     useEffect ( () => {
         const MAX_ORDER_COUNT = 10;
-        if(instrument.symbol !== undefined && ticket.orderId < MAX_ORDER_COUNT) {
+        if(instrument !== undefined && ticket.orderId < MAX_ORDER_COUNT) {
             let buySell = getRandomInt(0,1) === 0 ? "Buy":"Sell";
             if(submitTicket({ ticket: ticket,
                               instrument: instrument,
@@ -122,7 +122,7 @@ export function TicketView({ticket, instrument, eventHandler}) {
                                        buttonName="Sell" />
                         <BuySellButton containerId="buyButton"
                                        handleOnClick={eventHandler.handleOnSubmit}
-                                       label={instrument.askPrice}
+                                       label={instrument && instrument.askPrice}
                                        id="buy"
                                        buttonName="Buy" />
                     </div>

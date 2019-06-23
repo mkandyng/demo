@@ -2,14 +2,14 @@ import React from "react";
 import {connect} from "react-redux";
 import { bindActionCreators } from "redux";
 import Ticket from "../../../modules/ticket/components";
-import InstrumentSearch from "../../../modules/instruments/components";
-import Marketfeed from "../../../modules/marketfeed/components";
-import { fetchInstruments } from "../../../modules/instruments/actions";
+import InstrumentSearch from "../../../modules/instruments/components/instrumentSearch";
+import Marketfeed from "../../../modules/instruments/components/marketfeed";
 import { placeOrder, updateOrder } from "../../../modules/orderbook/actions"
-import { addInstrumentToMarketfeed,
-         selectInstrumentToMarketfeed,
-         updateInstrumentToMarketfeed,
-         deleteInstrumentToMarketfeed } from "../../../modules/marketfeed/actions";
+import { fetchInstruments,
+         addInstrumentToMarketfeed,
+         selectMarketfeedInstrument,
+         updateMarketfeedInstrument,
+         deleteMarketfeedInstrument } from "../../../modules/instruments/actions";
 import { updateTicket } from "../../../modules/ticket/actions";
 import "./topLayout.css"
 
@@ -32,9 +32,9 @@ export function TopLayout(props) {
 
 export const UnWrapTopLayout = TopLayout;
 
-const mapStateToProps = state => ({ instruments: state.instruments,
-                                    marketfeed: state.marketfeed,
-                                    instrument: state.marketfeed.selected,
+const mapStateToProps = state => ({ instruments: state.instruments.instruments,
+                                    marketfeedInstruments: state.instruments.marketfeedInstruments,
+                                    instrument: state.instruments.selected,
                                     ticket: state.ticket });
 
 // Map Redux actions to component props
@@ -44,9 +44,9 @@ const mapDispatchToProps = dispatch =>
       placeOrder,
       updateOrder,
       addInstrumentToMarketfeed,
-      selectInstrumentToMarketfeed,
-      updateInstrumentToMarketfeed,
-      deleteInstrumentToMarketfeed,
+      selectMarketfeedInstrument,
+      updateMarketfeedInstrument,
+      deleteMarketfeedInstrument,
       updateTicket
     }, dispatch);
 

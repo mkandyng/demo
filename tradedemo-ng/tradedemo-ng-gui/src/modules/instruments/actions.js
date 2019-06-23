@@ -2,6 +2,12 @@ export const types = {
     FETCH_INSTRUMENTS: "instruments/FETCH_INSTRUMENTS",
     FETCH_INSTRUMENTS_SUCCESS: "instruments/FETCH_INSTRUMENTS_SUCCESS",
     FETCH_INSTRUMENTS_FAILURE: "instruments/FETCH_INSTRUMENTS_FAILURE",
+    ADD_INSTRUMENT_TO_MARKETFEED: "instruments/ADD_INSTRUMENT_TO_MARKETFEED",
+    ADD_INSTRUMENT_TO_MARKETFEED_SUCCESS: "instruments/ADD_INSTRUMENT_TO_MARKETFEED_SUCCESS",
+    ADD_INSTRUMENT_TO_MARKETFEED_FAILURE: "instruments/ADD_INSTRUMENT_TO_MARKETFEED_FAILURE",
+    DELETE_MARKETFEED_INSTRUMENT: "instruments/DELETE_MARKETFEED_INSTRUMENT",
+    SELECT_MARKETFEED_INSTRUMENT: "instruments/SELECT_MARKETFEED_INSTRUMENT",
+    UPDATE_MARKETFEED_INSTRUMENT: "instruments/UPDATE_MARKETFEED_INSTRUMENT"
 }
 
 export const fetchInstruments = callback => ({
@@ -16,4 +22,35 @@ export const fetchInstrumentsSuccess = instruments => ({
 export const fetchInstrumentsFailure = message => ({
     type: types.FETCH_INSTRUMENTS_FAILURE,
     payload: message
+});
+
+export const addInstrumentToMarketfeed = instrument => ({
+    type: types.ADD_INSTRUMENT_TO_MARKETFEED,
+    instrument: instrument
+});
+
+export const addInstrumentToMarketfeedSuccess = instrument => ({
+    type: types.ADD_INSTRUMENT_TO_MARKETFEED_SUCCESS,
+    instrument: instrument
+});
+
+export const addInstrumentToMarketfeedFailure = message => ({
+    type: types.ADD_INSTRUMENT_TO_MARKETFEED_FAILURE,
+    payload: message
+});
+
+export const deleteMarketfeedInstrument = instrument => ({
+    type: types.DELETE_MARKETFEED_INSTRUMENT,
+    instrument: instrument,
+    selectedMarketfeedIndex: 0
+});
+
+export const selectMarketfeedInstrument = instrument => ({
+    type: types.SELECT_MARKETFEED_INSTRUMENT,
+    instrument: instrument
+});
+
+export const updateMarketfeedInstrument = instrument => ({
+    type: types.UPDATE_MARKETFEED_INSTRUMENT,
+    instrument: instrument
 });

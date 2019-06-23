@@ -31,7 +31,7 @@ export function BottomLayout({ symbol,
     ]
 
     return (
-          
+
           <SelectableTabs containerId="bottomLayout"
                           selectedTab={selectedTab}
                           updateSelectedTab={updateSelectedTab}
@@ -40,7 +40,7 @@ export function BottomLayout({ symbol,
 }
 
 const mapStateToProps = state => (
-                        { symbol: state.marketfeed.selected.symbol,
+                        { symbol: state.instruments.selected === undefined?"":state.instruments.selected.symbol,
                           orderbook: state.orderbook,
                           intradayTimeSeries: state.intradayTimeSeries,
                           dailyTimeSeries: state.dailyTimeSeries });
