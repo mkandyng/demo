@@ -47,6 +47,6 @@ input {
   border-radius: 5px;
 }
 
-#bottomLayout, #marketfeed, #ticket {
+#bottomLayout, #instrumentsMarketfeed, #ticket {
   padding: 5px;
 }

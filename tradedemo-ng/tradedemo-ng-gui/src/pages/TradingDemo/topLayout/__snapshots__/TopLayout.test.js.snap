@@ -31,9 +31,9 @@ exports[`UnWrapTopLayout should render component comparing with previous snapsho
     }
   />
   <div
-    id="marketfeed"
+    id="instrumentsMarketfeed"
   >
-    <InstrumentSearch
+    <InstrumentsSearch
       instrument={
         Object {
           "symbol": "symbol",
@@ -59,7 +59,7 @@ exports[`UnWrapTopLayout should render component comparing with previous snapsho
         }
       }
     />
-    <Marketfeed
+    <InstrumentsMarketfeed
       instrument={
         Object {
           "symbol": "symbol",

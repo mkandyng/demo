@@ -2,7 +2,7 @@
   display: flex;
 }
 
-#topLayout > #marketfeed {
+#topLayout > #instrumentsMarketfeed {
   flex: 1;
 }
 

@@ -1,0 +1,6 @@
+{
+  "httpStatus":"NOT_FOUND[404]",
+  "message":"Resource Not Found",
+  "timestamp":"05-06-2019 03:33:34",
+  "details":["No quote found for given symbol [INVALID]"]
+}

@@ -5,9 +5,8 @@ import "rxjs/add/observable/of";
 import "rxjs/add/operator/catch";
 import { ajax } from "rxjs/observable/dom/ajax";
 import { instrumentServiceUrl } from "../../libs/resources";
-import intradayTimeSeries from "../intradayTimeSeries";
-import dailyTimeSeries from "../dailyTimeSeries";
-import { MAX_MARKET_FEED_INSTRUMENTS, generateMarketfeedMovement } from "../../libs/marketfeed";
+import timeSeries from "../timeSeries";
+import { MAX_MARKET_FEED_INSTRUMENTS, generateMarketfeedMovement } from "./marketfeed";
 import * as actions from "./actions";
 
 export const fetchInstrumentsEpic = function(action$) {
@@ -69,8 +68,8 @@ export const selectMarketfeedInstrumentEpic = function(action$) {
     return action$
         .ofType(actions.types.SELECT_MARKETFEED_INSTRUMENT)
         .concatMap(action => [
-              intradayTimeSeries.actions.fetchIntradayTimeSeries(action.instrument.symbol),
-              dailyTimeSeries.actions.fetchDailyTimeSeries(action.instrument.symbol)
+              timeSeries.actions.fetchIntradayTimeSeries(action.instrument.symbol),
+              timeSeries.actions.fetchDailyTimeSeries(action.instrument.symbol)
             ]
         )
 }

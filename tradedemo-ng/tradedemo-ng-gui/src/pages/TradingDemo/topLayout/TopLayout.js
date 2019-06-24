@@ -1,9 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
 import { bindActionCreators } from "redux";
-import Ticket from "../../../modules/ticket/components";
-import InstrumentSearch from "../../../modules/instruments/components/instrumentSearch";
-import Marketfeed from "../../../modules/instruments/components/marketfeed";
+import Ticket from "../../../modules/ticket/Ticket";
+import InstrumentsSearch from "../../../modules/instruments/InstrumentsSearch";
+import InstrumentsMarketfeed from "../../../modules/instruments/InstrumentsMarketfeed";
 import { placeOrder, updateOrder } from "../../../modules/orderbook/actions"
 import { fetchInstruments,
          addInstrumentToMarketfeed,
@@ -22,9 +22,9 @@ export function TopLayout(props) {
   return (
       <div id="topLayout">
           <Ticket {...props} />
-          <div id="marketfeed">
-            <InstrumentSearch {...props} />
-            <Marketfeed {...props} />
+          <div id="instrumentsMarketfeed">
+            <InstrumentsSearch {...props} />
+            <InstrumentsMarketfeed {...props} />
           </div>
       </div>
   )
@@ -35,7 +35,8 @@ export const UnWrapTopLayout = TopLayout;
 const mapStateToProps = state => ({ instruments: state.instruments.instruments,
                                     marketfeedInstruments: state.instruments.marketfeedInstruments,
                                     instrument: state.instruments.selected,
-                                    ticket: state.ticket });
+                                    ticket: state.ticket,
+                                    maxMarketfeedInstruments: state.maxMarketfeedInstruments });
 
 // Map Redux actions to component props
 const mapDispatchToProps = dispatch =>

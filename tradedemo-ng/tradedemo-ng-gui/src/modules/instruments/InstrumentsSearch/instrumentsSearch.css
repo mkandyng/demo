@@ -1,0 +1,30 @@
+#instrumentsSearch label {
+  display: block;
+  margin: 5px 0;
+}
+
+#instrumentsSearch input {
+  border-radius: 5px;
+  margin: 4px;
+  height: 27px;
+}
+
+#instrumentsSearch code {
+  padding: .2em .5em;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+#instrumentsSearch .menu {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #cccccc;
+}
+
+#instrumentsSearch {
+  margin-bottom:2px;
+  position: relative;
+  z-index: 1;
+}

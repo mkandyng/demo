@@ -1,0 +1,47 @@
+#instrumentsMarketfeed .item {
+  padding: 2px 6px;
+  cursor: default;
+}
+
+#instrumentsMarketfeed .item-header {
+  background-color: #eeeeee;
+  color: #454545;
+  font-weight: bold;
+}
+
+#instrumentsMarketfeed .ReactTable .rt-thead {
+  height:30px;
+}
+
+#instrumentsMarketfeed .ReactTable {
+  border-radius: 5px;
+  background: #fffdfd;
+  font-size: 10px;
+  text-align: center;
+  height: 270px;
+}
+
+#instrumentsMarketfeed .ReactTable .rt-th {
+  font-weight: bold;
+  background: #f7f7f7;
+}
+
+#instrumentsMarketfeed .ReactTable .rt-tr-group:hover {
+  background: #f7f7f7;
+}
+
+#instrumentsMarketfeed .ReactTable .rt-td-group {
+  background: #ece5e5;
+}
+
+#instrumentsMarketfeed .ReactTable .instrument-column {
+  text-align: left;
+}
+
+#instrumentsMarketfeed .ReactTable span.priceUp {
+  color: blue;
+}
+
+#instrumentsMarketfeed .ReactTable span.priceDown {
+  color: red;
+}

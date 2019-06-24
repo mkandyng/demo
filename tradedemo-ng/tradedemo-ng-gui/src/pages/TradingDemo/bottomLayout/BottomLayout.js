@@ -1,9 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import {connect} from "react-redux";
-import SelectableTabs from "../../../components/selectableTabs/SelectableTabs"
-import Orderbook from "../../../modules/orderbook/components";
-import DailyTimeSeries from "../../../modules/dailyTimeSeries/components";
-import IntradayTimeSeries from "../../../modules/intradayTimeSeries/components";
+import SelectableTabs from "../../../components/SelectableTabs"
+import Orderbook from "../../../modules/orderbook/Orderbook";
+import TimeSeries, { TimeSeriesLines } from "../../../modules/timeSeries/TimeSeries";
 import "./bottomLayout.css";
 
 /**
@@ -25,25 +24,24 @@ export function BottomLayout({ symbol,
         { name: "Orderbook",
           panel: <Orderbook orderbook={orderbook} />},
         { name: "Intraday Prices " + selectedSymbol,
-          panel: <IntradayTimeSeries timeSeries={intradayTimeSeries} />},
+          panel: <TimeSeries timeSeries={intradayTimeSeries} childElements={TimeSeriesLines.INTRADAY_LINES}/>},
         { name: "Daily Prices " + selectedSymbol,
-          panel: <DailyTimeSeries timeSeries={dailyTimeSeries} />},
+          panel: <TimeSeries timeSeries={dailyTimeSeries} childElements={TimeSeriesLines.DAILY_LINES}/>},
     ]
 
     return (
-
-          <SelectableTabs containerId="bottomLayout"
-                          selectedTab={selectedTab}
-                          updateSelectedTab={updateSelectedTab}
-                          tabs={tabs} />
+        <SelectableTabs containerId="bottomLayout"
+                        selectedTab={selectedTab}
+                        updateSelectedTab={updateSelectedTab}
+                        tabs={tabs} />
     );
 }
 
 const mapStateToProps = state => (
                         { symbol: state.instruments.selected === undefined?"":state.instruments.selected.symbol,
                           orderbook: state.orderbook,
-                          intradayTimeSeries: state.intradayTimeSeries,
-                          dailyTimeSeries: state.dailyTimeSeries });
+                          intradayTimeSeries: state.timeSeries.intradayTimeSeries,
+                          dailyTimeSeries: state.timeSeries.dailyTimeSeries });
 
 // The HOC
 export default connect(mapStateToProps)(BottomLayout);
