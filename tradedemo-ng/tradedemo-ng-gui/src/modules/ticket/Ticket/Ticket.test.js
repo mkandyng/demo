@@ -21,9 +21,11 @@ describe("Ticket", () => {
         expiryType: "Day",
         expiryDate: "2019-10-12",
         note: ""};
-    const props = { instrument: ticket,
+    const props = { ticket: ticket,
+                    instrument: ticket,
                     placeOrder: jest.fn(),
-                    updateOrder: jest.fn() };
+                    updateOrder: jest.fn(),
+                    updateTicket: jest.fn() };
 
 
     it("should render component comparing with previous snapshot shallow markup", () => {

@@ -8,10 +8,12 @@ import "./bottomLayout.css";
 /**
  * Container for the bottomLayout components
  */
-export function BottomLayout({ symbol,
-                               orderbook,
-                               intradayTimeSeries,
-                               dailyTimeSeries }) {
+export function BottomLayout(props) {
+
+    const { symbol,
+            orderbook,
+            intradayTimeSeries,
+            dailyTimeSeries } = props
 
     const [ selectedSymbol, updateSelectedSymbol ] = useState("");
     const [ selectedTab, updateSelectedTab ] = useState(0);

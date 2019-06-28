@@ -1,5 +1,5 @@
 import { getRandomInt, getDateString } from "../../libs/utils";
-import { orderbookStatus } from "../../libs/orderbook";
+import { orderbookStatusEnum } from "../../libs/orderbookStatusEnum";
 
 export function submitTicket({ ticket,
                                instrument,
@@ -14,11 +14,11 @@ export function submitTicket({ ticket,
     }
 
     const getNextStatus = function(checkOrder, orderEndStatus) {
-        let nextStatus = orderbookStatus.WORKING;
-        if(orderEndStatus.displayName === orderbookStatus.REJECTED.displayName) {
-           nextStatus = orderbookStatus.REJECTED;
-        } else if((checkOrder.expiryType === "FOK") && (orderEndStatus.displayName === orderbookStatus.CANCELLED.displayName)) {
-           nextStatus = orderbookStatus.CANCELLED;
+        let nextStatus = orderbookStatusEnum.status.WORKING;
+        if(orderEndStatus.displayName === orderbookStatusEnum.status.REJECTED.displayName) {
+           nextStatus = orderbookStatusEnum.status.REJECTED;
+        } else if((checkOrder.expiryType === "FOK") && (orderEndStatus.displayName === orderbookStatusEnum.status.CANCELLED.displayName)) {
+           nextStatus = orderbookStatusEnum.status.CANCELLED;
         }
         return nextStatus;
     }
@@ -54,9 +54,9 @@ export function submitTicket({ ticket,
         const avgPrice = getRandomInt(0,1) === 0? price - priceMargin : price + priceMargin;
         const executed = order.executed + 1;
 
-        let status = orderbookStatus.PARTFILLED;
+        let status = orderbookStatusEnum.status.PARTFILLED;
         if(executed === order.quantity) {
-           status = orderbookStatus.FILLED;
+           status = orderbookStatusEnum.status.FILLED;
         }
 
         const orderToUpdate = { ...order,
@@ -75,7 +75,7 @@ export function submitTicket({ ticket,
     }
 
     const placeOrderAndGenerateTradeLifeCycle = function(order) {
-        const orderEndStatus = orderbookStatus.getRandomFinalOrderStatus();
+        const orderEndStatus = orderbookStatusEnum.getRandomFinalOrderStatus();
         const createdDate = getDateString(new Date(), "dateTimeFormat");
         let orderToUpdate = { ...order,
            created: createdDate,
@@ -93,8 +93,8 @@ export function submitTicket({ ticket,
                });
 
                // Only fill the rest if it is working
-               if(nextStatus.displayName === orderbookStatus.WORKING.displayName) {
-                  if((orderEndStatus.displayName !== orderbookStatus.WORKING.displayName) ||
+               if(nextStatus.displayName === orderbookStatusEnum.status.WORKING.displayName) {
+                  if((orderEndStatus.displayName !== orderbookStatusEnum.status.WORKING.displayName) ||
                      (order.orderType === "Market")) {
                        updateOrderWithFill(orderEndStatus, orderToUpdate);
                   }

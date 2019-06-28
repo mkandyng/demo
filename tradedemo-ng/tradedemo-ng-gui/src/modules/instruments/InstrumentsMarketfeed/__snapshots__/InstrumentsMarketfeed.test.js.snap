@@ -2,7 +2,7 @@
 
 exports[`InstrumentsMarketfeed should render component comparing with previous snapshot shallow markup 1`] = `
 <InstrumentsMarketfeedView
-  columnHeaders={
+  columns={
     Array [
       Object {
         "Header": "Remove",
@@ -51,11 +51,22 @@ exports[`InstrumentsMarketfeed should render component comparing with previous s
       },
     ]
   }
-  eventHandler={
+  eventHandlers={
     Object {
       "handleTableColumn": [Function],
       "handleTableRow": [Function],
     }
+  }
+  instruments={
+    Array [
+      Object {
+        "delete": <img
+          alt="delete"
+          src="img/delete.png"
+        />,
+        "symbol": "AMZ",
+      },
+    ]
   }
 />
 `;

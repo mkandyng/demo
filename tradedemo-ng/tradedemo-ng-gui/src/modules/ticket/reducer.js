@@ -15,9 +15,9 @@ const initState = { symbol: undefined,
 
 export default function reducer(state = initState, action) {
     switch (action.type) {
-      case types.UPDATE_TICKET:
-          return {...state, ...action.ticketProps}
-      default:
-         return state;
+        case types.UPDATE_TICKET:
+            return {...state, ...action.ticketProps}
+        default:
+           return state;
     }
 }

@@ -19,7 +19,7 @@ export default function Ticket({ ticket,
 
     useEffect ( () => {
         const MAX_ORDER_COUNT = 10;
-        if(instrument !== undefined && ticket.orderId < MAX_ORDER_COUNT) {
+        if(instrument.symbol !== undefined && ticket.orderId < MAX_ORDER_COUNT) {
             let buySell = getRandomInt(0,1) === 0 ? "Buy":"Sell";
             if(submitTicket({ ticket: ticket,
                               instrument: instrument,
@@ -79,7 +79,7 @@ export function TicketView({ticket, instrument, eventHandler}) {
                 <LabelInput label="Quantity"
                             name="quantity"
                             type="number"
-                            step="5"
+                            step={5}
                             value={ticket.quantity}
                             handleOnChange={eventHandler.quantityChange} />
                 <SelectionDropDown id="orderType"
@@ -91,7 +91,7 @@ export function TicketView({ticket, instrument, eventHandler}) {
                             label="Price"
                             name="price"
                             type="number"
-                            step="0.1"
+                            step={0.1}
                             value={ticket.price}
                             handleOnChange={eventHandler.priceChange} />
                 <SelectionDropDown id="expiryType"
@@ -103,13 +103,13 @@ export function TicketView({ticket, instrument, eventHandler}) {
                             label="Expiry Date"
                             name="expiryDate"
                             type="date"
-                            step="0.1"
+                            step={0.1}
                             value={ticket.expiryDate}
                             handleOnChange={eventHandler.expiryDateChange} />
                 <LabelTextArea
                            label="Note"
                            name="note"
-                           maxLength="100"
+                           maxLength={100}
                            value={ticket.note}
                            handleOnChange={eventHandler.noteChange} />
 
@@ -122,7 +122,7 @@ export function TicketView({ticket, instrument, eventHandler}) {
                                        buttonName="Sell" />
                         <BuySellButton containerId="buyButton"
                                        handleOnClick={eventHandler.handleOnSubmit}
-                                       label={instrument && instrument.askPrice}
+                                       label={instrument.askPrice}
                                        id="buy"
                                        buttonName="Buy" />
                     </div>

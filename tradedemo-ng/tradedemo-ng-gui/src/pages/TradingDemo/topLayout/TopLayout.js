@@ -19,15 +19,15 @@ import "./topLayout.css"
  */
 
 export function TopLayout(props) {
-  return (
-      <div id="topLayout">
-          <Ticket {...props} />
-          <div id="instrumentsMarketfeed">
-            <InstrumentsSearch {...props} />
-            <InstrumentsMarketfeed {...props} />
-          </div>
-      </div>
-  )
+    return (
+        <div id="topLayout">
+            <Ticket {...props} />
+            <div id="instrumentsMarketfeed">
+                <InstrumentsSearch {...props} />
+                <InstrumentsMarketfeed {...props} />
+            </div>
+        </div>
+    )
 }
 
 export const UnWrapTopLayout = TopLayout;
@@ -35,8 +35,7 @@ export const UnWrapTopLayout = TopLayout;
 const mapStateToProps = state => ({ instruments: state.instruments.instruments,
                                     marketfeedInstruments: state.instruments.marketfeedInstruments,
                                     instrument: state.instruments.selected,
-                                    ticket: state.ticket,
-                                    maxMarketfeedInstruments: state.maxMarketfeedInstruments });
+                                    ticket: state.ticket });
 
 // Map Redux actions to component props
 const mapDispatchToProps = dispatch =>

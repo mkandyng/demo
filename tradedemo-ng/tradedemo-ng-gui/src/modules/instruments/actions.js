@@ -41,8 +41,7 @@ export const addInstrumentToMarketfeedFailure = message => ({
 
 export const deleteMarketfeedInstrument = instrument => ({
     type: types.DELETE_MARKETFEED_INSTRUMENT,
-    instrument: instrument,
-    selectedMarketfeedIndex: 0
+    instrument: instrument
 });
 
 export const selectMarketfeedInstrument = instrument => ({

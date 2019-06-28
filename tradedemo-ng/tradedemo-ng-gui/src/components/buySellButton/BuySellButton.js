@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
+/**
+ * [BuySellButton Buy and Sell buttons with Label displaying buy/sell prices]
+ */
 export default function BuySellButton(props) {
     const { id,
             containerId,
@@ -8,10 +11,10 @@ export default function BuySellButton(props) {
             buttonName,
             handleOnClick } = props;
     return (
-       <div id={containerId} onClick={handleOnClick}>
-             <label>{label}</label>
-             <button id={id}>{buttonName}</button>
-       </div>
+        <div id={containerId} onClick={handleOnClick}>
+               <label>{label}</label>
+               <button id={id}>{buttonName}</button>
+         </div>
    )
 }
 

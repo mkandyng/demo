@@ -9,8 +9,8 @@ import InstrumentsSearch from "./InstrumentsSearch";
  */
 
 describe("InstrumentsSearch", () => {
-  const props = { instruments: [{name:"symbol"}],
-                  marketfeed: {instruments:[{symbol:"symbol"}], selected: {symbol:"symbol"}},
+    const props = { instruments: [{name:"symbol"}],
+                  marketfeedInstruments: [{symbol:"symbol"}],
                   addInstrumentToMarketfeed: jest.fn(),
                   fetchInstruments: jest.fn()};
 

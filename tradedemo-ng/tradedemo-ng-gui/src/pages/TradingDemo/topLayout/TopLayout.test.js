@@ -10,11 +10,17 @@ import { UnWrapTopLayout } from "./TopLayout";
 
 describe("UnWrapTopLayout", () => {
     const props = { instruments: [{ symbol: "symbol" }],
+                    marketfeedInstruments: [{symbol:"symbol"}],
+                    ticket: { symbol: "symbol" },
                     instrument: { symbol: "symbol" },
-                    marketfeed: { instruments: [{symbol:"symbol"} ],
-                                  selected: {symbol:"symbol"} }
-    }
-
+                    fetchInstruments: jest.fn(),
+                    placeOrder: jest.fn(),
+                    updateOrder: jest.fn(),
+                    addInstrumentToMarketfeed: jest.fn(),
+                    selectMarketfeedInstrument: jest.fn(),
+                    updateMarketfeedInstrument: jest.fn(),
+                    deleteMarketfeedInstrument: jest.fn(),
+                    updateTicket: jest.fn() }
 
     it("should render component comparing with previous snapshot shallow markup", () => {
         // Given

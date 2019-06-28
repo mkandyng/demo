@@ -5,9 +5,10 @@ import "rxjs/add/observable/of";
 import "rxjs/add/operator/catch";
 import { ajax } from "rxjs/observable/dom/ajax";
 import { instrumentServiceUrl } from "../../libs/resources";
-import timeSeries from "../timeSeries";
-import { MAX_MARKET_FEED_INSTRUMENTS, generateMarketfeedMovement } from "./marketfeed";
+import { MAX_MARKET_FEED_INSTRUMENTS } from "./index"
 import * as actions from "./actions";
+import timeSeries from "../timeSeries";
+import generateMarketfeedMovement from "./generateMarketfeedMovement";
 
 export const fetchInstrumentsEpic = function(action$) {
     const fetchInstruments = () => {

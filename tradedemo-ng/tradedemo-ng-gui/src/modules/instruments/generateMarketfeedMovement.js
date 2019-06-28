@@ -1,26 +1,19 @@
 import React from "react";
 import { getRandomInt } from "../../libs/utils";
 
-export const MAX_MARKET_FEED_INSTRUMENTS = 5;
+function calNewPrice(price,margin) {
+        return Math.round(Math.random()) === 0?price-margin:price+margin;
+}
 
-export function generateMarketfeedMovement(instrument) {
-    const calNewPrice = (price,margin,chg) => {
-       if(chg > 10) {
-          return price-margin;
-       } else if(chg < 10) {
-          return price+margin;
-       } else {
-          return Math.round(Math.random()) === 0?price-margin:price+margin;
-       }
-    };
+function upDownPrice(price, previousPrice, data) {
+    let priceUpDown = "priceUp";
+    if(price < previousPrice) {
+        priceUpDown = "priceDown";
+    }
+    return <span className={priceUpDown}>{data}</span>;
+}
 
-    const upDownPrice = (price, previousPrice, data) => {
-       let priceUpDown = "priceUp";
-       if(price < previousPrice) {
-          priceUpDown = "priceDown";
-       }
-       return <span className={priceUpDown}>{data}</span>;
-    };
+export default function generateMarketfeedMovement(instrument) {
 
     // generate a random margin
     const margin = instrument.price * (0.001 * getRandomInt(1,10));
@@ -36,7 +29,7 @@ export function generateMarketfeedMovement(instrument) {
         delete:<img src="img/delete.png"
                   width="15"
                   height="15"
-                  alt="delete" />,
+                  alt="delete"/>,
         price: newPrice,
         bidPrice: bid,
         askPrice: ask,
@@ -48,5 +41,5 @@ export function generateMarketfeedMovement(instrument) {
         bid: upDownPrice(newPrice, open, bid),
         ask: upDownPrice(newPrice, open, ask),
         chg: upDownPrice(newPrice, open, chg + "%")
-      };
+    };
 };

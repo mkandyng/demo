@@ -1,4 +1,4 @@
-import { orderbookStatus } from "../../libs/orderbook";
+import { orderbookStatusEnum } from "../../libs/orderbookStatusEnum";
 import { getDateString } from "../../libs/utils";
 
 export const types = {
@@ -9,7 +9,7 @@ export const types = {
 export const placeOrder = order => ({
     type: types.PLACE_ORDER,
     order: { ...order,
-       status: orderbookStatus.REQUESTED.displayName
+       status: orderbookStatusEnum.status.REQUESTED.displayName
      }
 });
 

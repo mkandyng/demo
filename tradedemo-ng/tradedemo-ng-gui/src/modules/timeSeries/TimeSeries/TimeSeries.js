@@ -7,6 +7,7 @@ import {LineChart,
         Tooltip,
         ResponsiveContainer,
         Legend } from "recharts";
+import PropTypes from 'prop-types';
 
 export const TimeSeriesLines = {
     INTRADAY_LINES: [<Line key="line1" type="monotone" dataKey="price" stroke="#8884d8" activeDot={{r: 8}}/>],
@@ -20,20 +21,25 @@ export const TimeSeriesLines = {
 export default function TimeSeries({timeSeries, childElements}) {
     const margin = {top: 5, right: 20, left: 0, bottom: 5};
     return (
-      <div className="timeSeriesPrices">
-         <ResponsiveContainer>
-            <LineChart
-                        data={timeSeries.chartData}
-                        margin={margin}>
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" />
-                        <YAxis interval="preserveStartEnd"
-                               domain={[timeSeries.minValue, timeSeries.maxValue]} />
-                        <Tooltip />
-                        <Legend />
-                        {childElements}
-            </LineChart>
-         </ResponsiveContainer>
-      </div>
+        <div className="timeSeriesPrices">
+            <ResponsiveContainer>
+                <LineChart
+                          data={timeSeries.chartData}
+                          margin={margin}>
+                          <CartesianGrid strokeDasharray="3 3" />
+                          <XAxis dataKey="name" />
+                          <YAxis interval="preserveStartEnd"
+                                 domain={[timeSeries.minValue, timeSeries.maxValue]} />
+                          <Tooltip />
+                          <Legend />
+                          {childElements}
+                </LineChart>
+            </ResponsiveContainer>
+        </div>
    )
+}
+
+TimeSeries.propTypes = {
+    timeSeries: PropTypes.object.isRequired,
+    childElements: PropTypes.arrayOf(PropTypes.object).isRequired
 };

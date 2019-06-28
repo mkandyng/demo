@@ -28,12 +28,11 @@ describe("Orderbook", () => {
     it("should registered event handler correctly with OrderbookView", () => {
         // Given
         const localProps = {
-            orderbook: props,
+            orderbook: props.orderbook,
             columns:orderBookHeaderColumns,
-            eventHandler: {
-                getTheadThProps: jest.fn(),
-                getTrProps: jest.fn()
-            }
+            eventHandlers: {
+                handleTableColumnHeader: jest.fn(),
+                handleTableRow: jest.fn() }
         };
 
         // When
@@ -42,9 +41,9 @@ describe("Orderbook", () => {
         // Then
         const reactTable = component.find(ReactTable);
         expect(toJson(component)).toMatchSnapshot();
-        expect(reactTable.find({ getTheadThProps: localProps.eventHandler.getTheadThProps })
+        expect(reactTable.find({ getTheadThProps: localProps.eventHandlers.handleTableColumnHeader })
                          .exists()).toBeTruthy();
-        expect(reactTable.find({ getTrProps: localProps.eventHandler.getTrProps})
+        expect(reactTable.find({ getTrProps: localProps.eventHandlers.handleTableRow })
                          .exists()).toBeTruthy();
     });
 

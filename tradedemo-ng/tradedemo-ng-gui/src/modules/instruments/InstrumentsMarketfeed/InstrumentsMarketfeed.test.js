@@ -2,7 +2,7 @@ import React from "react";
 import toJson from "enzyme-to-json";
 import { shallow } from "enzyme";
 import ReactTable from "react-table";
-import InstrumentsMarketfeed, { InstrumentsMarketfeedView } from "./InstrumentsMarketfeed";
+import InstrumentsMarketfeed, { InstrumentsMarketfeedView, columnHeaders } from "./InstrumentsMarketfeed";
 
 /**
  * This is unit test of Marketfeed component
@@ -11,11 +11,12 @@ import InstrumentsMarketfeed, { InstrumentsMarketfeedView } from "./InstrumentsM
 
 describe("InstrumentsMarketfeed", () => {
     const props = {
-        marketfeed: { instruments: [ { delete:<img src="img/delete.png" alt="delete" />,
+        marketfeedInstruments: [ { delete:<img src="img/delete.png" alt="delete" />,
                                        symbol: "AMZ" } ],
-                      selected: {symbol:""}
-                    },
-        instruments: []
+        instrument: {symbol: "AMZ"},
+        selectMarketfeedInstrument: jest.fn(),
+        deleteMarketfeedInstrument: jest.fn(),
+        updateMarketfeedInstrument: jest.fn()
     };
 
     it("should render component comparing with previous snapshot shallow markup", () => {
@@ -32,9 +33,8 @@ describe("InstrumentsMarketfeed", () => {
         // Given
         const localProps = {
             instruments: props.marketfeedInstruments,
-            columnHeaders: [ { Header: "Remove", accessor: "delete", width: 70 },
-                             { Header: "Symbol", accessor: "symbol", width: 100 } ],
-            eventHandler: {
+            columns: columnHeaders,
+            eventHandlers: {
                 handleTableColumn: jest.fn(),
                 handleTableRow: jest.fn()
             }
@@ -45,9 +45,9 @@ describe("InstrumentsMarketfeed", () => {
 
         // Then
         const reactTable = component.find(ReactTable);
-        expect(reactTable.find({ getTdProps: localProps.eventHandler.handleTableColumn })
+        expect(reactTable.find({ getTdProps: localProps.eventHandlers.handleTableColumn })
                          .exists()).toBeTruthy();
-        expect(reactTable.find({ getTrProps: localProps.eventHandler.handleTableRow })
+        expect(reactTable.find({ getTrProps: localProps.eventHandlers.handleTableRow })
                          .exists()).toBeTruthy();
     });
 });

@@ -136,14 +136,12 @@ exports[`Orderbook should registered event handler correctly with OrderbookView 
     ]
   }
   data={
-    Object {
-      "orderbook": Array [
-        Object {
-          "orderRef": "XA12345678",
-          "symbol": "AMZ",
-        },
-      ],
-    }
+    Array [
+      Object {
+        "orderRef": "XA12345678",
+        "symbol": "AMZ",
+      },
+    ]
   }
   defaultExpanded={Object {}}
   defaultFilterMethod={[Function]}
@@ -309,10 +307,10 @@ exports[`Orderbook should render component comparing with previous snapshot shal
       },
     ]
   }
-  eventHandler={
+  eventHandlers={
     Object {
-      "getTheadThProps": [Function],
-      "getTrProps": [Function],
+      "handleTableColumnHeader": [Function],
+      "handleTableRow": [Function],
     }
   }
   orderbook={

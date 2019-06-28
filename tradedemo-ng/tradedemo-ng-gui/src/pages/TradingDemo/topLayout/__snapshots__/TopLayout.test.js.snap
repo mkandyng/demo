@@ -5,6 +5,9 @@ exports[`UnWrapTopLayout should render component comparing with previous snapsho
   id="topLayout"
 >
   <Ticket
+    addInstrumentToMarketfeed={[MockFunction]}
+    deleteMarketfeedInstrument={[MockFunction]}
+    fetchInstruments={[MockFunction]}
     instrument={
       Object {
         "symbol": "symbol",
@@ -17,23 +20,31 @@ exports[`UnWrapTopLayout should render component comparing with previous snapsho
         },
       ]
     }
-    marketfeed={
-      Object {
-        "instruments": Array [
-          Object {
-            "symbol": "symbol",
-          },
-        ],
-        "selected": Object {
+    marketfeedInstruments={
+      Array [
+        Object {
           "symbol": "symbol",
         },
+      ]
+    }
+    placeOrder={[MockFunction]}
+    selectMarketfeedInstrument={[MockFunction]}
+    ticket={
+      Object {
+        "symbol": "symbol",
       }
     }
+    updateMarketfeedInstrument={[MockFunction]}
+    updateOrder={[MockFunction]}
+    updateTicket={[MockFunction]}
   />
   <div
     id="instrumentsMarketfeed"
   >
     <InstrumentsSearch
+      addInstrumentToMarketfeed={[MockFunction]}
+      deleteMarketfeedInstrument={[MockFunction]}
+      fetchInstruments={[MockFunction]}
       instrument={
         Object {
           "symbol": "symbol",
@@ -46,20 +57,28 @@ exports[`UnWrapTopLayout should render component comparing with previous snapsho
           },
         ]
       }
-      marketfeed={
-        Object {
-          "instruments": Array [
-            Object {
-              "symbol": "symbol",
-            },
-          ],
-          "selected": Object {
+      marketfeedInstruments={
+        Array [
+          Object {
             "symbol": "symbol",
           },
+        ]
+      }
+      placeOrder={[MockFunction]}
+      selectMarketfeedInstrument={[MockFunction]}
+      ticket={
+        Object {
+          "symbol": "symbol",
         }
       }
+      updateMarketfeedInstrument={[MockFunction]}
+      updateOrder={[MockFunction]}
+      updateTicket={[MockFunction]}
     />
     <InstrumentsMarketfeed
+      addInstrumentToMarketfeed={[MockFunction]}
+      deleteMarketfeedInstrument={[MockFunction]}
+      fetchInstruments={[MockFunction]}
       instrument={
         Object {
           "symbol": "symbol",
@@ -72,18 +91,23 @@ exports[`UnWrapTopLayout should render component comparing with previous snapsho
           },
         ]
       }
-      marketfeed={
-        Object {
-          "instruments": Array [
-            Object {
-              "symbol": "symbol",
-            },
-          ],
-          "selected": Object {
+      marketfeedInstruments={
+        Array [
+          Object {
             "symbol": "symbol",
           },
+        ]
+      }
+      placeOrder={[MockFunction]}
+      selectMarketfeedInstrument={[MockFunction]}
+      ticket={
+        Object {
+          "symbol": "symbol",
         }
       }
+      updateMarketfeedInstrument={[MockFunction]}
+      updateOrder={[MockFunction]}
+      updateTicket={[MockFunction]}
     />
   </div>
 </div>

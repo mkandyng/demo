@@ -4,57 +4,38 @@
     <list default="true" id="f292c9d8-b3ce-48b0-8e23-ac8caa4d340c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/app/combinedEpics.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/app/combinedEpics.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/app/combinedReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/app/combinedReducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/timeSeries/TimeSeries.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/timeSeries/TimeSeries.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/timeSeries/__snapshots__/TimeSeries.test.js.snap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/marketfeed.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/buySellButton/BuySellButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/buySellButton/BuySellButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/labelInput/LabelInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/labelInput/LabelInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/labelTextArea/LabelTextArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/labelTextArea/LabelTextArea.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/selectionDropDown/SelectionDropDown.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/components/selectionDropDown/SelectionDropDown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/orderbook.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/resources.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/resources.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/dailyTimeSeries/actions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/dailyTimeSeries/components/DailyTimeSeries.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/dailyTimeSeries/components/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/dailyTimeSeries/epics.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/dailyTimeSeries/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/dailyTimeSeries/reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/components/instrumentSearch/InstrumentSearch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/components/instrumentSearch/InstrumentSearch.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/components/instrumentSearch/__snapshots__/InstrumentSearch.test.js.snap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/components/instrumentSearch/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/components/instrumentSearch/instrumentSearch.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/components/marketfeed/Marketfeed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/components/marketfeed/Marketfeed.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/components/marketfeed/__snapshots__/Marketfeed.test.js.snap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/components/marketfeed/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/components/marketfeed/marketfeed.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/epics.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/epics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/intradayTimeSeries/actions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/intradayTimeSeries/components/IntradayTimeSeries.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/intradayTimeSeries/components/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/intradayTimeSeries/epics.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/intradayTimeSeries/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/intradayTimeSeries/reducer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/components/Orderbook.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/components/Orderbook.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/components/__snapshots__/Orderbook.test.js.snap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/components/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/components/orderbook.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/components/Ticket.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/components/Ticket.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/components/__snapshots__/Ticket.test.js.snap" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/components/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/components/ticket.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsMarketfeed/InstrumentsMarketfeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsMarketfeed/InstrumentsMarketfeed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsMarketfeed/InstrumentsMarketfeed.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsMarketfeed/InstrumentsMarketfeed.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsMarketfeed/__snapshots__/InstrumentsMarketfeed.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsMarketfeed/__snapshots__/InstrumentsMarketfeed.test.js.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsSearch/InstrumentsSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsSearch/InstrumentsSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsSearch/InstrumentsSearch.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsSearch/InstrumentsSearch.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/Orderbook/Orderbook.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/Orderbook/Orderbook.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/Orderbook/Orderbook.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/Orderbook/Orderbook.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/Orderbook/__snapshots__/Orderbook.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/Orderbook/__snapshots__/Orderbook.test.js.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orderbook/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/Ticket/Ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/Ticket/Ticket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/Ticket/Ticket.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/Ticket/Ticket.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/Ticket/__snapshots__/Ticket.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/Ticket/__snapshots__/Ticket.test.js.snap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/submitTicket.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/submitTicket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/timeSeries/TimeSeries/TimeSeries.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/timeSeries/TimeSeries/TimeSeries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/Documentation/Documentation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/Documentation/Documentation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/TradingDemo.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/TradingDemo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/bottomLayout/BottomLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/bottomLayout/BottomLayout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/topLayout/TopLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/topLayout/TopLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/topLayout/TopLayout.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/topLayout/TopLayout.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/topLayout/__snapshots__/TopLayout.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/topLayout/__snapshots__/TopLayout.test.js.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/topLayout/topLayout.css" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/topLayout/topLayout.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -130,7 +111,7 @@
     <session id="-1041415839">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.opened" value="2" />
@@ -720,7 +701,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="716" />
@@ -832,7 +813,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561410444479" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561496511852" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -998,7 +979,7 @@
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.54908484" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.54908484" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

@@ -16,7 +16,7 @@ exports[`Ticket should render TicketView component comparing with previous snaps
       handleOnChange={[MockFunction]}
       label="Quantity"
       name="quantity"
-      step="5"
+      step={5}
       type="number"
       value={5}
     />
@@ -38,7 +38,7 @@ exports[`Ticket should render TicketView component comparing with previous snaps
       handleOnChange={[MockFunction]}
       label="Price"
       name="price"
-      step="0.1"
+      step={0.1}
       type="number"
       value={0}
     />
@@ -60,14 +60,14 @@ exports[`Ticket should render TicketView component comparing with previous snaps
       handleOnChange={[MockFunction]}
       label="Expiry Date"
       name="expiryDate"
-      step="0.1"
+      step={0.1}
       type="date"
       value="2019-10-12"
     />
     <LabelTextArea
       handleOnChange={[MockFunction]}
       label="Note"
-      maxLength="100"
+      maxLength={100}
       name="note"
       value=""
     />
@@ -108,6 +108,17 @@ exports[`Ticket should render component comparing with previous snapshot shallow
     }
   }
   instrument={
+    Object {
+      "expiryDate": "2019-10-12",
+      "expiryType": "Day",
+      "note": "",
+      "orderType": "Market",
+      "price": 0,
+      "quantity": 5,
+      "symbol": "symbol",
+    }
+  }
+  ticket={
     Object {
       "expiryDate": "2019-10-12",
       "expiryType": "Day",
