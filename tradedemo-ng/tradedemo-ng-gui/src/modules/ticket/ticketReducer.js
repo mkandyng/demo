@@ -1,4 +1,4 @@
-import { types } from "./actions";
+import * as ticketActions from "./ticketActions";
 
 export const NAME = "ticket";
 
@@ -13,9 +13,9 @@ const initState = { symbol: undefined,
                     priceStyle: {opacity: "0.5"},
                     expiryDateStyle: {opacity: "0.5"}};
 
-export default function reducer(state = initState, action) {
+export default function ticketReducer(state = initState, action) {
     switch (action.type) {
-        case types.UPDATE_TICKET:
+        case ticketActions.types.UPDATE_TICKET:
             return {...state, ...action.ticketProps}
         default:
            return state;

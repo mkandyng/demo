@@ -4,13 +4,13 @@ import { bindActionCreators } from "redux";
 import Ticket from "../../../modules/ticket/Ticket";
 import InstrumentsSearch from "../../../modules/instruments/InstrumentsSearch";
 import InstrumentsMarketfeed from "../../../modules/instruments/InstrumentsMarketfeed";
-import { placeOrder, updateOrder } from "../../../modules/orderbook/actions"
+import { placeOrder, updateOrder } from "../../../modules/orderbook/orderbookActions"
 import { fetchInstruments,
          addInstrumentToMarketfeed,
          selectMarketfeedInstrument,
          updateMarketfeedInstrument,
-         deleteMarketfeedInstrument } from "../../../modules/instruments/actions";
-import { updateTicket } from "../../../modules/ticket/actions";
+         deleteMarketfeedInstrument } from "../../../modules/instruments/instrumentsActions";
+import { updateTicket } from "../../../modules/ticket/ticketActions";
 import "./topLayout.css"
 
 

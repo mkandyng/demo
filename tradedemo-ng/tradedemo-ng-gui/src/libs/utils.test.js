@@ -1,4 +1,8 @@
-import { getDateString, toggleOpacity, getRandomInt, roundValue } from "./utils";
+import { getDateString,
+         toggleOpacity,
+         getRandomInt,
+         roundValue,
+         padDigits } from "./utils";
 
 /**
  * This is unit test of utils helper functions
@@ -82,4 +86,23 @@ describe("roundValue", () => {
     it("should round up value to 1 decimal", () => {
         expect(roundValue(1.561, 10)).toEqual(1.6);
     });
+});
+
+describe("padDigits", () => {
+    it("should convert to String and not pad any digit if padding is 0", () => {
+        expect(padDigits(5,0)).toEqual("5");
+    });
+
+    it("should convert to String and not pad any digit if padding is 1 and digit is 1", () => {
+        expect(padDigits(5,1)).toEqual("5");
+    });
+
+    it("should convert to String and pad 1 digit if padding is 2 and digit is 1", () => {
+        expect(padDigits(5,2)).toEqual("05");
+    });
+
+    it("should convert to String and pad 8 digit if padding is 10 and digit is 2", () => {
+        expect(padDigits(15,10)).toEqual("0000000015");
+    });
+
 });

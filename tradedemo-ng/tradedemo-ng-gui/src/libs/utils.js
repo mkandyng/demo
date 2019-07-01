@@ -54,3 +54,7 @@ export function getRandomInt(min, max) {
 export function roundValue(value, roundingConst) {
   return Math.round(value * roundingConst)/roundingConst;
 }
+
+export function padDigits(number, digits) {
+    return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
+}

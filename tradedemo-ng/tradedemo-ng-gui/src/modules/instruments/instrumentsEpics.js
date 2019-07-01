@@ -6,7 +6,7 @@ import "rxjs/add/operator/catch";
 import { ajax } from "rxjs/observable/dom/ajax";
 import { instrumentServiceUrl } from "../../libs/resources";
 import { MAX_MARKET_FEED_INSTRUMENTS } from "./index"
-import * as actions from "./actions";
+import * as instrumentsActions from "./instrumentsActions";
 import timeSeries from "../timeSeries";
 import generateMarketfeedMovement from "./generateMarketfeedMovement";
 
@@ -25,15 +25,15 @@ export const fetchInstrumentsEpic = function(action$) {
     }
 
     return action$
-        .ofType(actions.types.FETCH_INSTRUMENTS)
+        .ofType(instrumentsActions.types.FETCH_INSTRUMENTS)
         .switchMap(action =>
             fetchInstruments()
             .concatMap(instruments => [
-              actions.fetchInstrumentsSuccess(instruments),
+              instrumentsActions.fetchInstrumentsSuccess(instruments),
               ...instruments.slice(0,MAX_MARKET_FEED_INSTRUMENTS)
-                    .map(instrument => actions.addInstrumentToMarketfeed(instrument))
+                    .map(instrument => instrumentsActions.addInstrumentToMarketfeed(instrument))
             ])
-            .catch(error => {actions.fetchInstrumentsFailure(error.message)})
+            .catch(error => {instrumentsActions.fetchInstrumentsFailure(error.message)})
         )
 }
 
@@ -54,23 +54,23 @@ export const addInstrumentToMarketfeedEpic = function(action$) {
     }
 
     return action$
-        .ofType(actions.types.ADD_INSTRUMENT_TO_MARKETFEED)
+        .ofType(instrumentsActions.types.ADD_INSTRUMENT_TO_MARKETFEED)
         .concatMap(action => fetchInstrumentQuote(action)
           .concatMap(instrument => [
-              actions.addInstrumentToMarketfeedSuccess(instrument),
-              actions.selectMarketfeedInstrument(instrument)
+              instrumentsActions.addInstrumentToMarketfeedSuccess(instrument),
+              instrumentsActions.selectMarketfeedInstrument(instrument)
             ]
           )
-          .catch(error => {actions.addInstrumentToMarketfeedFailure(error)})
+          .catch(error => {instrumentsActions.addInstrumentToMarketfeedFailure(error)})
     )
 }
 
 export const selectMarketfeedInstrumentEpic = function(action$) {
     return action$
-        .ofType(actions.types.SELECT_MARKETFEED_INSTRUMENT)
+        .ofType(instrumentsActions.types.SELECT_MARKETFEED_INSTRUMENT)
         .concatMap(action => [
-              timeSeries.actions.fetchIntradayTimeSeries(action.instrument.symbol),
-              timeSeries.actions.fetchDailyTimeSeries(action.instrument.symbol)
+              timeSeries.timeSeriesActions.fetchIntradayTimeSeries(action.instrument.symbol),
+              timeSeries.timeSeriesActions.fetchDailyTimeSeries(action.instrument.symbol)
             ]
         )
 }

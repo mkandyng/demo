@@ -1,5 +1,5 @@
 
-import * as actions from "./actions";
-import reducer, { NAME } from "./reducer";
+import * as ticketActions from "./ticketActions";
+import ticketReducer, { NAME } from "./ticketReducer";
 
-export default { actions, reducer, NAME };
+export default { ticketActions, ticketReducer, NAME };

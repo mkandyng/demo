@@ -1,7 +1,6 @@
-// dailyTimeSeries/index.js
-import * as actions from "./actions";
-import * as epics from "./epics";
-import reducer, { NAME } from "./reducer";
+import * as instrumentsActions from "./instrumentsActions";
+import * as instrumentsEpics from "./instrumentsEpics";
+import instrumentsReducer, { NAME } from "./instrumentsReducer";
 
 export const MAX_MARKET_FEED_INSTRUMENTS = 5;
-export default { actions, reducer, NAME, epics };
+export default { instrumentsActions, instrumentsReducer, NAME, instrumentsEpics };

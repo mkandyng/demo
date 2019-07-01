@@ -1,5 +1,4 @@
-// dailyTimeSeries/index.js
-import * as actions from "./actions";
-import reducer, { NAME } from "./reducer";
+import * as orderbookActions from "./orderbookActions";
+import orderbookReducer, { NAME } from "./orderbookReducer";
 
-export default { actions, reducer, NAME };
+export default { orderbookActions, orderbookReducer, NAME };

@@ -1,10 +1,10 @@
 import React, {useEffect} from "react";
-import { submitTicket } from "../submitTicket"
 import { getRandomInt, toggleOpacity, getDateString } from "../../../libs/utils";
 import BuySellButton from "../../../components/BuySellButton";
 import LabelInput from "../../../components/LabelInput";
 import LabelTextArea from "../../../components/LabelTextArea";
 import SelectionDropDown from "../../../components/SelectionDropDown";
+import submitTicket from "../submitTicket";
 import "./ticket.css";
 
 /**

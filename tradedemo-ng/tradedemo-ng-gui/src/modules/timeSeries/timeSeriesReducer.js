@@ -1,4 +1,4 @@
-import * as actions from './actions';
+import * as timeSeriesActions from './timeSeriesActions';
 
 export const NAME = "timeSeries";
 
@@ -10,14 +10,14 @@ const transformTimeSeries = (timeSeries, maxPredicate, minPredicate) => {
   }
 }
 
-export default function reducer(state = {dailyTimeSeries:{}, intradayTimeSeries:{}}, action) {
+export default function timeSeriesReducer(state = {dailyTimeSeries:{}, intradayTimeSeries:{}}, action) {
     switch (action.type) {
-      case actions.types.FETCH_DAILY_TIMESERIES_SUCCESS:
+      case timeSeriesActions.types.FETCH_DAILY_TIMESERIES_SUCCESS:
           return {
               ...state,
               dailyTimeSeries: transformTimeSeries(action.timeSeries, o => o.high, o => o.low)
           };
-      case actions.types.FETCH_INTRADAY_TIMESERIES_SUCCESS:
+      case timeSeriesActions.types.FETCH_INTRADAY_TIMESERIES_SUCCESS:
           return {
               ...state,
               intradayTimeSeries: transformTimeSeries(action.timeSeries, o =>  o.price, o =>  o.price)

@@ -1,6 +1,5 @@
-// dailyTimeSeries/index.js
-import * as actions from "./actions";
-import * as epics from "./epics";
-import reducer, { NAME } from "./reducer";
+import * as timeSeriesActions from "./timeSeriesActions";
+import * as timeSeriesEpics from "./timeSeriesEpics";
+import timeSeriesReducer, { NAME } from "./timeSeriesReducer";
 
-export default { actions, reducer, NAME,  epics };
+export default { timeSeriesActions, timeSeriesReducer, NAME,  timeSeriesEpics };

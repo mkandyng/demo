@@ -5,12 +5,12 @@ import "rxjs/add/operator/catch";
 import { ajax } from "rxjs/observable/dom/ajax";
 import { instrumentServiceUrl } from "../../libs/resources";
 import { roundValue } from "../../libs/utils";
-import * as actions from "./actions";
+import * as timeSeriesActions from "./timeSeriesActions";
 
 export const fetchDailyTimeSeriesEpic = function(action$) {
     const maxDisplayRecords = 10;
     return action$
-        .ofType(actions.types.FETCH_DAILY_TIMESERIES)
+        .ofType(timeSeriesActions.types.FETCH_DAILY_TIMESERIES)
         .switchMap((action) => {
             return ajax
                 .getJSON(instrumentServiceUrl + "/dailyPrices/" + action.symbol)
@@ -24,15 +24,15 @@ export const fetchDailyTimeSeriesEpic = function(action$) {
                           };
                 }));
         })
-        .map(timeSeries => actions.fetchDailyTimeSeriesSuccess(timeSeries))
-        .catch(error => {actions.fetchDailyTimeSeriesFailure(error.message)})
+        .map(timeSeries => timeSeriesActions.fetchDailyTimeSeriesSuccess(timeSeries))
+        .catch(error => {timeSeriesActions.fetchDailyTimeSeriesFailure(error.message)})
 }
 
 export const fetchIntradayTimeSeriesEpic = function(action$) {
     const maxDisplayRecords = 15;
     const sliceHourMinDateTime = date => date.substr(11,5);
     return action$
-        .ofType(actions.types.FETCH_INTRADAY_TIMESERIES)
+        .ofType(timeSeriesActions.types.FETCH_INTRADAY_TIMESERIES)
         .switchMap((action) => {
             return ajax
                 .getJSON(instrumentServiceUrl + "/intradayPrices/" + action.symbol)
@@ -43,6 +43,6 @@ export const fetchIntradayTimeSeriesEpic = function(action$) {
                     };
                 }));
         })
-        .map(timeSeries => actions.fetchIntradayTimeSeriesSuccess(timeSeries))
-        .catch(error => {actions.fetchIntradayTimeSeriesFailure(error.message)})
+        .map(timeSeries => timeSeriesActions.fetchIntradayTimeSeriesSuccess(timeSeries))
+        .catch(error => {timeSeriesActions.fetchIntradayTimeSeriesFailure(error.message)})
 }
