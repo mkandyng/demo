@@ -18,9 +18,9 @@ export default function SelectableTabs(props) {
             <Tabs selectedIndex={selectedTab}
                   onSelect={tabIndex => updateSelectedTab(tabIndex)}>
                 <TabList>
-                  {tabs.map(tab => <Tab key={tab.name}>{tab.name}</Tab>)}
+                    {tabs.map(tab => <Tab key={tab.name}>{tab.name}</Tab>)}
                 </TabList>
-                  {tabs.map(tab => <TabPanel key={tab.name}>{tab.panel}</TabPanel>)}
+                    {tabs.map(tab => <TabPanel key={tab.name}>{tab.panel}</TabPanel>)}
             </Tabs>
         </div>
     );

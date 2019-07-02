@@ -52,9 +52,15 @@ export function getRandomInt(min, max) {
  * @return {[Number]}               [A value that s rounded to the given rounding constant]
  */
 export function roundValue(value, roundingConst) {
-  return Math.round(value * roundingConst)/roundingConst;
+    return Math.round(value * roundingConst)/roundingConst;
 }
 
+/**
+ * [padDigits pad a given number with 0 prefix to specified number of characters]
+ * @param  {[Number]} number [a given number value]
+ * @param  {[Number]} digits [number of characters length]
+ * @return {[String]}        [new padded value]
+ */
 export function padDigits(number, digits) {
     return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
 }

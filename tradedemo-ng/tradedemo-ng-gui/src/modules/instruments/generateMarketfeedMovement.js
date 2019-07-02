@@ -1,19 +1,7 @@
 import React from "react";
 import { getRandomInt } from "../../libs/utils";
 
-function calNewPrice(price,margin) {
-        return Math.round(Math.random()) === 0?price-margin:price+margin;
-}
-
-function upDownPrice(price, previousPrice, data) {
-    let priceUpDown = "priceUp";
-    if(price < previousPrice) {
-        priceUpDown = "priceDown";
-    }
-    return <span className={priceUpDown}>{data}</span>;
-}
-
-export default function generateMarketfeedMovement(instrument) {
+export function generateMarketfeedMovement(instrument) {
 
     // generate a random margin
     const margin = instrument.price * (0.001 * getRandomInt(1,10));
@@ -42,4 +30,16 @@ export default function generateMarketfeedMovement(instrument) {
         ask: upDownPrice(newPrice, open, ask),
         chg: upDownPrice(newPrice, open, chg + "%")
     };
-};
+}
+
+function calNewPrice(price,margin) {
+    return Math.round(Math.random()) === 0?price-margin:price+margin;
+}
+
+function upDownPrice(price, previousPrice, data) {
+    let priceUpDown = "priceUp";
+    if(price < previousPrice) {
+        priceUpDown = "priceDown";
+    }
+    return <span className={priceUpDown}>{data}</span>;
+}

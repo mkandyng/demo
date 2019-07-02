@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f292c9d8-b3ce-48b0-8e23-ac8caa4d340c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/utils.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/utils.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/Ticket/Ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/Ticket/Ticket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/submitTicket.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/instrumentsEpics.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/instrumentsEpics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/instrumentsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/instrumentsReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/timeSeries/timeSeriesEpics.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/timeSeries/timeSeriesEpics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/timeSeries/timeSeriesReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/timeSeries/timeSeriesReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
@@ -125,26 +125,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mkandyng/instrumentservice/dataprovider/AlphaVantageRestAPI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="11" column="88" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="88" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mkandyng/instrumentservice/dataprovider/MarketDataProviderRestAPI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -824,7 +805,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561970004943" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562025372968" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -977,7 +958,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="716" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33925685" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33925685" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -989,7 +970,7 @@
       <window_info id="Job Explorer" order="9" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.54908484" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.49916804" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />

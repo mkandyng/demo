@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UnWrapTopLayout should render component comparing with previous snapshot shallow markup 1`] = `
+exports[`TopLayout should render component comparing with previous snapshot shallow markup 1`] = `
 <div
   id="topLayout"
 >

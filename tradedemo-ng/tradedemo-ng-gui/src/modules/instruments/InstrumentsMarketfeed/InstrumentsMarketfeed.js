@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import ReactTable from "react-table";
 import { getRandomInt } from "../../../libs/utils";
 import { MAX_MARKET_FEED_INSTRUMENTS } from "../index";
-import generateMarketfeedMovement from "../generateMarketfeedMovement";
+import { generateMarketfeedMovement } from "../generateMarketfeedMovement";
 import PropTypes from 'prop-types';
 import "./instrumentsMarketfeed.css";
 
@@ -134,31 +134,31 @@ function handleTableColumn(state,
     const index = rowInfo ? rowInfo.index : -1;
     return {
         onClick: (e) => {
-          if(removeColumnHeader(column)) {
-              let instrument = {
-                  symbol: rowInfo.original.symbol,
-                  name: rowInfo.original.name,
-                  currency: rowInfo.original.currency
-              }
-              if(marketfeedInstruments.length > 1) {
-                  const nextSymbol = index === 0 ? marketfeedInstruments[1].symbol:
-                                                   marketfeedInstruments[0].symbol;
-                  deleteMarketfeedInstrument(instrument);
-                  selectMarketfeed(nextSymbol, marketfeedInstruments, selectMarketfeedInstrument);
-              } else {
-                  alert("Must have at least one instrument in the market feed");
-              }
-           }
+            if(removeColumnHeader(column)) {
+                const instrument = {
+                    symbol: rowInfo.original.symbol,
+                    name: rowInfo.original.name,
+                    currency: rowInfo.original.currency
+                }
+                if(marketfeedInstruments.length > 1) {
+                    const nextSymbol = index === 0 ? marketfeedInstruments[1].symbol:
+                                                     marketfeedInstruments[0].symbol;
+                    deleteMarketfeedInstrument(instrument);
+                    selectMarketfeed(nextSymbol, marketfeedInstruments, selectMarketfeedInstrument);
+                } else {
+                    alert("Must have at least one instrument in the market feed");
+                }
+             }
         },
         onMouseOver: (e) => {
-          if(removeColumnHeader(column)) {
-              e.target.src="img/delete_click.png";
-          }
+            if(removeColumnHeader(column)) {
+                e.target.src="img/delete_click.png";
+            }
         },
         onMouseOut: (e) => {
-          if(removeColumnHeader(column)) {
-              e.target.src="img/delete.png";
-          }
+            if(removeColumnHeader(column)) {
+                e.target.src="img/delete.png";
+            }
         }
     };
 };

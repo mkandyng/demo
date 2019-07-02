@@ -1,4 +1,4 @@
-import gnerateMarketfeedMovement from "./generateMarketfeedMovement";
+import { generateMarketfeedMovement } from "./generateMarketfeedMovement";
 
 /**
  * Unit tests for generateMarketfeedMovement
@@ -17,7 +17,7 @@ describe("generateMarketfeedMovement", () => {
         }
 
         // When
-        const newInstrument = gnerateMarketfeedMovement(instrument);
+        const newInstrument = generateMarketfeedMovement(instrument);
 
         // Then
 

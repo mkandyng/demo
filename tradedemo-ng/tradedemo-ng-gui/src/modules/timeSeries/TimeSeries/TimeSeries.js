@@ -9,12 +9,6 @@ import {LineChart,
         Legend } from "recharts";
 import PropTypes from 'prop-types';
 
-export const TimeSeriesLines = {
-    INTRADAY_LINES: [<Line key="line1" type="monotone" dataKey="price" stroke="#8884d8" activeDot={{r: 8}}/>],
-    DAILY_LINES: [<Line key="line1" type="monotone" dataKey="open" stroke="#8884d8" activeDot={{r: 5}}/>,
-                  <Line key="line2" type="monotone" dataKey="close" stroke="#82ca9d" activeDot={{r: 5}}/> ]
-}
-
 /**
  * Generic component to display timeSeries
  */
@@ -37,6 +31,12 @@ export default function TimeSeries({timeSeries, childElements}) {
             </ResponsiveContainer>
         </div>
    )
+}
+
+export const TimeSeriesLines = {
+    INTRADAY_LINES: [<Line key="line1" type="monotone" dataKey="price" stroke="#8884d8" activeDot={{r: 8}}/>],
+    DAILY_LINES: [<Line key="line1" type="monotone" dataKey="open" stroke="#8884d8" activeDot={{r: 5}}/>,
+                  <Line key="line2" type="monotone" dataKey="close" stroke="#82ca9d" activeDot={{r: 5}}/> ]
 }
 
 TimeSeries.propTypes = {

@@ -1,5 +1,11 @@
 import { getDateString } from "../../../libs/utils";
 
+/**
+ * [validateOrder encapsulate the validation of order placement]
+ * @param  {[Object]} ticket     [input data gather on order ticket]
+ * @param  {[Object]} instrument [supplied data from the selected instrument]
+ * @return {[Boolean]}            [validation indicator]
+ */
 export default function validateOrder(ticket, instrument) {
     if(ticket.quantity === 0) {
         alert("Quantity must be greater than 0");

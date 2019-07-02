@@ -30,8 +30,6 @@ export function TopLayout(props) {
     )
 }
 
-export const UnWrapTopLayout = TopLayout;
-
 const mapStateToProps = state => ({ instruments: state.instruments.instruments,
                                     marketfeedInstruments: state.instruments.marketfeedInstruments,
                                     instrument: state.instruments.selected,
@@ -50,4 +48,4 @@ const mapDispatchToProps = dispatch =>
       updateTicket
     }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(UnWrapTopLayout);
+export default connect(mapStateToProps, mapDispatchToProps)(TopLayout);

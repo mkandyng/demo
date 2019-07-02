@@ -12,7 +12,7 @@ export default function instrumentsReducer(state = { instruments:[],
 
     switch (action.type) {
         case instrumentActions.types.FETCH_INSTRUMENTS_SUCCESS:
-            return { instruments: action.payload,
+            return { instruments: action.instruments,
                      marketfeedInstruments:[],
                      selected:{} }
         case instrumentActions.types.FETCH_INSTRUMENTS_FAILURE:

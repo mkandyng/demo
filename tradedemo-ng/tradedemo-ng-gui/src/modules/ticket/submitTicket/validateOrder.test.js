@@ -1,7 +1,7 @@
 import validateOrder from "./validateOrder";
 
 /**
- * This is unit test of submitTicket
+ * This is unit test of validatorOrder, testing each invalid entries
  */
 
 describe("ValidateOrder", () => {

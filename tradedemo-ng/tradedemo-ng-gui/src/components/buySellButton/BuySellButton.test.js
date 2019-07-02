@@ -10,7 +10,7 @@ import BuySellButton from "./BuySellButton";
  */
 
 describe("BuySellButton", () => {
-  const props = {
+    const props = {
           id: "id",
           containerId: "divId",
           label: "label",

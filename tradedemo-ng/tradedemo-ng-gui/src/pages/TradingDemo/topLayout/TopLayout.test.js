@@ -1,14 +1,14 @@
 import React from "react";
 import toJson from "enzyme-to-json";
 import { shallow } from "enzyme";
-import { UnWrapTopLayout } from "./TopLayout";
+import { TopLayout } from "./TopLayout";
 
 /**
  * This is unit test of TopLayout component
  * It leverage snapshot to test the presentation
  */
 
-describe("UnWrapTopLayout", () => {
+describe("TopLayout", () => {
     const props = { instruments: [{ symbol: "symbol" }],
                     marketfeedInstruments: [{symbol:"symbol"}],
                     ticket: { symbol: "symbol" },
@@ -26,7 +26,7 @@ describe("UnWrapTopLayout", () => {
         // Given
 
         // When
-        const component = shallow(<UnWrapTopLayout {...props} />);
+        const component = shallow(<TopLayout {...props} />);
 
         // Then
         expect(toJson(component)).toMatchSnapshot();

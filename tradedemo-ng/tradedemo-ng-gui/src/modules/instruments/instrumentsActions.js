@@ -10,18 +10,18 @@ export const types = {
     UPDATE_MARKETFEED_INSTRUMENT: "instruments/UPDATE_MARKETFEED_INSTRUMENT"
 }
 
-export const fetchInstruments = callback => ({
+export const fetchInstruments = ()  => ({
     type: types.FETCH_INSTRUMENTS
 });
 
 export const fetchInstrumentsSuccess = instruments => ({
     type: types.FETCH_INSTRUMENTS_SUCCESS,
-    payload: instruments
+    instruments: instruments
 });
 
 export const fetchInstrumentsFailure = message => ({
     type: types.FETCH_INSTRUMENTS_FAILURE,
-    payload: message
+    error: message
 });
 
 export const addInstrumentToMarketfeed = instrument => ({
@@ -36,7 +36,7 @@ export const addInstrumentToMarketfeedSuccess = instrument => ({
 
 export const addInstrumentToMarketfeedFailure = message => ({
     type: types.ADD_INSTRUMENT_TO_MARKETFEED_FAILURE,
-    payload: message
+    error: message
 });
 
 export const deleteMarketfeedInstrument = instrument => ({

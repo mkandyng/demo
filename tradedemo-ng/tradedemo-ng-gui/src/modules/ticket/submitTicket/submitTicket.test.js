@@ -1,7 +1,8 @@
 import submitTicket from "./submitTicket";
 
 /**
- * This is unit test of submitTicket
+ * This is unit test of submitTicket. Focus is to test the basic happy and validation path
+ * and not each individual test cases
  */
 
 describe("submitTicket validation", () => {

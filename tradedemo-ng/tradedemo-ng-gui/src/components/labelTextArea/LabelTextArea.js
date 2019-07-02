@@ -16,11 +16,11 @@ export default function LabelTextArea(props) {
       <p>
           <label>{label}
                <textarea
-                 id={id}
-                 name={name}
-                 maxLength={maxLength}
-                 value={value}
-                 onChange={handleOnChange}/>
+                   id={id}
+                   name={name}
+                   maxLength={maxLength}
+                   value={value}
+                   onChange={handleOnChange}/>
           </label>
       </p>
    )

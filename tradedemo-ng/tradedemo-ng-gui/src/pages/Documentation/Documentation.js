@@ -5,6 +5,9 @@ import FunctionalitiesView from "../../modules/documentation/Functionalities";
 import FutureDevelopmentView from "../../modules/documentation/FutureDevelopment";
 import "./documentation.css";
 
+/**
+ * [Documentation component to display the documentation link]
+ */
 export default function Documentation() {
   return (
       <div id="documentation">

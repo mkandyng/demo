@@ -8,7 +8,7 @@ import submitTicket from "../submitTicket";
 import "./ticket.css";
 
 /**
- * Component to handle ticket view and interaction
+ * [Ticket Component to handle ticket view and interaction]
  */
 
 export default function Ticket({ ticket,

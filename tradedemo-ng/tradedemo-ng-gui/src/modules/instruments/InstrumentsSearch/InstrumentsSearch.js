@@ -19,25 +19,25 @@ export default function InstrumentsSearch({ instruments,
     }, [ fetchInstruments ]);
 
     return (
-      <div id="instrumentsSearch">
-           <form>
-               <ReactAutocomplete
-                   value={value}
-                   onChange={event => setSelectItem(event.target.value)}
-                   onSelect={value => setSelectItem(value)}
-                   items={updateSearchDropDown(instruments)}
-                   getItemValue={item => `${item.value}`}
-                   shouldItemRender={matchStocks}
-                   renderItem={renderItem}
-               />
-               <input type="submit" value="Add" onClick={event => addItem(event,
-                                                                          value,
-                                                                          instruments,
-                                                                          marketfeedInstruments,
-                                                                          addInstrumentToMarketfeed,
-                                                                          setSelectItem)}/>
-           </form>
-      </div>
+        <div id="instrumentsSearch">
+             <form>
+                 <ReactAutocomplete
+                     value={value}
+                     onChange={event => setSelectItem(event.target.value)}
+                     onSelect={value => setSelectItem(value)}
+                     items={updateSearchDropDown(instruments)}
+                     getItemValue={item => `${item.value}`}
+                     shouldItemRender={matchStocks}
+                     renderItem={renderItem}
+                 />
+                 <input type="submit" value="Add" onClick={event => addItem(event,
+                                                                            value,
+                                                                            instruments,
+                                                                            marketfeedInstruments,
+                                                                            addInstrumentToMarketfeed,
+                                                                            setSelectItem)}/>
+             </form>
+        </div>
     )
 }
 
@@ -69,7 +69,7 @@ function addItem(event,
         } else {
             alert("[" + value + "] is not a valid, unable to add to marketfeed");
         }
-            return false;
+        return false;
     };
 
     event.preventDefault();
@@ -86,7 +86,7 @@ function renderItem(item, highlighted) {
 }
 
 function matchStocks(state, value) {
-      return state.label.toLowerCase().indexOf(value.toLowerCase()) !== -1;
+    return state.label.toLowerCase().indexOf(value.toLowerCase()) !== -1;
 }
 
 InstrumentsSearch.propTypes = {

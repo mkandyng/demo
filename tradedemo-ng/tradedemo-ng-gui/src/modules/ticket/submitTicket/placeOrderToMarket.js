@@ -1,6 +1,13 @@
 import { getRandomInt, getDateString } from "../../../libs/utils";
 import { orderbookStatusEnum } from "../../../libs/orderbookStatusEnum";
 
+/**
+ * [placeOrderToMarket entry point to call placeOrder and kick off order life cycle]
+ * @param  {[Object]} order       [order entries]
+ * @param  {[Function]} placeOrder  [Action creator to placeOrder to affect orderbook state]
+ * @param  {[Function]} updateOrder [Action creator to updateOrder to affect orderbook state]
+ * @return {[Void]}         
+ */
 export default function placeOrderToMarket(order, placeOrder, updateOrder) {
     const createdDate = getDateString(new Date(), "dateTimeFormat");
     const orderPlaced = { ...order,

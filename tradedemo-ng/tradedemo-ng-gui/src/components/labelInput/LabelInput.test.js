@@ -10,7 +10,7 @@ import LabelInput from "./LabelInput";
  */
 
 describe("LabelInput", () => {
-  const props = { id: "id",
+    const props = { id: "id",
                   label: "label",
                   style: "style",
                   type: "number",

@@ -2,6 +2,16 @@ import { padDigits } from "../../../libs/utils";
 import placeOrderToMarket from "./placeOrderToMarket";
 import validateOrder from "./validateOrder";
 
+/**
+ * [submitTicket exposed API to submit ticket by delegating to sub modules validate and place ]
+ * @param  {[Object]} ticket       [input data gather on order ticket]
+ * @param  {[Object]} instrument   [supplied data from the selected instrument]
+ * @param  {[String]} buySell      [buy or sell indicator]
+ * @param  {[Boolean]} confirmOrder [flag to determine whether user needs confirmation]
+ * @param  {[Function]} placeOrder   [Action creator to affect orderbook state by adding a new order]
+ * @param  {[Function]} updateOrder  [Action creator to affect orderbook state of a given order]
+ * @return {[Boolean]}              [Indicator on success/failure of operation]
+ */
 export default function submitTicket({ ticket,
                                        instrument,
                                        buySell,

@@ -10,9 +10,9 @@ import InstrumentsSearch from "./InstrumentsSearch";
 
 describe("InstrumentsSearch", () => {
     const props = { instruments: [{name:"symbol"}],
-                  marketfeedInstruments: [{symbol:"symbol"}],
-                  addInstrumentToMarketfeed: jest.fn(),
-                  fetchInstruments: jest.fn()};
+                    marketfeedInstruments: [{symbol:"symbol"}],
+                    addInstrumentToMarketfeed: jest.fn(),
+                    fetchInstruments: jest.fn() };
 
     it("should render component comparing with previous snapshot shallow markup", () => {
         // Given
