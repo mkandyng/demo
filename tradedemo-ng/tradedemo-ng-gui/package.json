@@ -47,7 +47,8 @@
   "devDependencies": {
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.3.5"
+    "enzyme-to-json": "^3.3.5",
+    "jest-mock-console": "^1.0.0"
   },
   "jest": {
     "snapshotSerializers": [

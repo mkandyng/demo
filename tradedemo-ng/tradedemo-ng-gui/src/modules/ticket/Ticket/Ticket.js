@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { getRandomInt, toggleOpacity, getDateString } from "../../../libs/utils";
 import BuySellButton from "../../../components/BuySellButton";
 import LabelInput from "../../../components/LabelInput";
@@ -8,63 +8,75 @@ import submitTicket from "../submitTicket";
 import "./ticket.css";
 
 /**
+ * 
  * [Ticket Component to handle ticket view and interaction]
+ * This component is not a pure function because ticket keep changing due
+ * market data so the function would get call all the time and create
+ * unnesscary performance hit on creating eventHandler and check to automatically
+ * place order
+ *
  */
 
-export default function Ticket({ ticket,
-                                 instrument,
-                                 placeOrder,
-                                 updateOrder,
-                                 updateTicket }) {
+class Ticket extends React.PureComponent {
 
-    useEffect ( () => {
-        const MAX_ORDER_COUNT = 10;
-        if(instrument.symbol !== undefined && ticket.orderId < MAX_ORDER_COUNT) {
-            let buySell = getRandomInt(0,1) === 0 ? "Buy":"Sell";
-            if(submitTicket({ ticket: ticket,
-                              instrument: instrument,
-                              buySell: buySell,
-                              confirmOrder: false,
-                              placeOrder: placeOrder,
-                              updateOrder: updateOrder })) {
-                updateTicket({...ticket, orderId: ticket.orderId+1});
-            }
-        }
-    }, [instrument, ticket, placeOrder, updateOrder, updateTicket]);
+    constructor(props) {
+        super(props);
+        this.eventHandler = {
+            symbolChange:     e => this.props.updateTicket({price: this.props.instrument.price.toFixed(2)}),
+            expiryDateChange: e => this.props.updateTicket({expiryDate: e.target.value}),
+            quantityChange:   e => this.props.updateTicket({quantity: e.target.value}),
+            priceChange:      e => this.props.updateTicket({price: e.target.value}),
+            noteChange:       e => this.props.updateTicket({note: e.target.value}),
+            orderTypeChange:  e => this.props.updateTicket({
+                      priceStyle: {opacity: toggleOpacity(e.target.value, "Market", true)},
+                      orderType: e.target.value,
+                      price: this.props.instrument.price.toFixed(2)}),
+            expiryTypeChange: e => this.props.updateTicket({
+                      expiryDateStyle: {opacity: toggleOpacity(e.target.value, "GTD", false)},
+                      expiryType: e.target.value,
+                      expiryDate: e.target.value === "GTD"?getDateString(new Date(), "dateOnly"):""}),
+            handleOnSubmit:   e => {
+                      e.preventDefault();
+                      const buySell = e.target.innerText;
+                      if(submitTicket({ ticket:this.props.ticket,
+                                         instrument:this.props.instrument,
+                                         buySell:buySell,
+                                         confirmOrder: true,
+                                         placeOrder: this.props.placeOrder,
+                                         updateOrder: this.props.updateOrder})) {
+                          this.props.updateTicket({orderId: this.props.ticket.orderId+1});
+                      }
+             }
+         };
+     }
 
-    const eventHandler = {
-        symbolChange:     e => updateTicket({price: instrument.price.toFixed(2)}),
-        expiryDateChange: e => updateTicket({expiryDate: e.target.value}),
-        quantityChange:   e => updateTicket({price: e.target.value}),
-        priceChange:      e => updateTicket({price: e.target.value}),
-        noteChange:       e => updateTicket({note: e.target.value}),
-        orderTypeChange:  e => updateTicket({
-                  priceStyle: {opacity: toggleOpacity(e.target.value, "Market", true)},
-                  orderType: e.target.value,
-                  price: instrument.price.toFixed(2)}),
-        expiryTypeChange: e => updateTicket({
-                  expiryDateStyle: {opacity: toggleOpacity(e.target.value, "GTD", false)},
-                  expiryType: e.target.value,
-                  expiryDate: e.target.value === "GTD"?getDateString(new Date(), "dateOnly"):""}),
-        handleOnSubmit:   e => {
-                  e.preventDefault();
-                  const buySell = e.target.innerText;
-                  if(submitTicket({ ticket:ticket,
-                                   instrument:instrument,
-                                   buySell:buySell,
-                                   confirmOrder: true,
-                                   placeOrder: placeOrder,
-                                   updateOrder: updateOrder})) {
-                      updateTicket({orderId: ticket.orderId+1});
-                  }
-        }
-    };
+     componentDidMount() {
+         const MAX_ORDER_COUNT = 10;
+         const interval = setInterval(() => {
+             if(this.props.enableDemo && this.props.ticket.orderId < MAX_ORDER_COUNT) {
+                 let buySell = getRandomInt(0,1) === 0 ? "Buy":"Sell";
+                 if(this.props.instrument.symbol && submitTicket({ ticket: this.props.ticket,
+                                   instrument: this.props.instrument,
+                                   buySell: buySell,
+                                   confirmOrder: false,
+                                   placeOrder: this.props.placeOrder,
+                                   updateOrder: this.props.updateOrder })) {
+                     this.props.updateTicket({...this.props.ticket,
+                                              orderId: this.props.ticket.orderId+1});
+                 }
+             } else {
+                clearInterval(interval);
+             }
+         }, getRandomInt(300,1000));
+     }
 
-    return (
-      <TicketView ticket={ticket}
-                  instrument={instrument}
-                  eventHandler={eventHandler} />
-    )
+     render() {
+         return (
+             <TicketView ticket={this.props.ticket}
+                         instrument={this.props.instrument}
+                         eventHandler={this.eventHandler} />
+         );
+     }
 }
 
 export function TicketView({ticket, instrument, eventHandler}) {
@@ -131,3 +143,5 @@ export function TicketView({ticket, instrument, eventHandler}) {
         </div>
     )
 }
+
+export default Ticket;

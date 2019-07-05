@@ -19,7 +19,7 @@ describe("placeOrderToMarket", () => {
         quantity: 10,
     }
 
-    beforeAll(() => {
+    beforeEach(() => {
         jest.useFakeTimers();
         placeOrder = jest.fn();
         updateOrder = jest.fn();
@@ -39,8 +39,6 @@ describe("placeOrderToMarket", () => {
         expect(placeOrder).toHaveBeenCalledWith(expect.objectContaining({
                                                 ...order,
                                                   executed: 0,
-                                                  created: expect.any(String),
-                                                  lastUpdated: expect.any(String),
                                                   status: orderbookStatusEnum.status.REQUESTED.displayName
                                               }));
 

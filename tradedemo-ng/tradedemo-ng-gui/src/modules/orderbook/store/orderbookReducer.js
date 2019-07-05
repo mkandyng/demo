@@ -2,7 +2,7 @@ import * as orderbookActions from "./orderbookActions";
 
 export const NAME = "orderbook";
 
-export default function orderbookReducer(state = [], action) {
+export function orderbookReducer(state = [], action) {
     switch (action.type) {
         case orderbookActions.types.PLACE_ORDER:
             return [action.order, ...state];

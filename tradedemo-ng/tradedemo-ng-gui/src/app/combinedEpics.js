@@ -1,6 +1,6 @@
 import { combineEpics } from "redux-observable";
-import * as instrumentsEpics from "../modules/instruments/instrumentsEpics";
-import * as timeSeriesEpics from "../modules/timeSeries/timeSeriesEpics";
+import * as instrumentsEpics from "../modules/instruments/store/instrumentsEpics";
+import * as timeSeriesEpics from "../modules/timeSeries/store/timeSeriesEpics";
 import { ajax } from 'rxjs/observable/dom/ajax';
 
 /**

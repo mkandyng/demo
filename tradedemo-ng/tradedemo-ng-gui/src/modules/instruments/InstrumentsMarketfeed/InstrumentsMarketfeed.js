@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from "react";
 import ReactTable from "react-table";
 import { getRandomInt } from "../../../libs/utils";
-import { MAX_MARKET_FEED_INSTRUMENTS } from "../index";
-import { generateMarketfeedMovement } from "../generateMarketfeedMovement";
+import { generateMarketfeedMovement, MAX_MARKET_FEED_INSTRUMENTS } from "../marketfeed";
 import PropTypes from 'prop-types';
 import "./instrumentsMarketfeed.css";
 
@@ -162,7 +161,6 @@ function handleTableColumn(state,
         }
     };
 };
-
 
 InstrumentsMarketfeed.propTypes = {
     marketfeedInstruments: PropTypes.arrayOf(PropTypes.object).isRequired,

@@ -2,7 +2,7 @@ import * as ticketActions from "./ticketActions";
 
 export const NAME = "ticket";
 
-export default function ticketReducer(state = initState, action) {
+export function ticketReducer(state = initState, action) {
     switch (action.type) {
         case ticketActions.types.UPDATE_TICKET:
             return {...state, ...action.ticketProps}
@@ -11,7 +11,8 @@ export default function ticketReducer(state = initState, action) {
     }
 }
 
-const initState = { symbol: undefined,
+export const initState = {
+                    symbol: undefined,
                     orderId:0,
                     quantity: 5,
                     orderType: "Market",
@@ -20,4 +21,5 @@ const initState = { symbol: undefined,
                     expiryDate: "",
                     note: "",
                     priceStyle: {opacity: "0.5"},
-                    expiryDateStyle: {opacity: "0.5"}};
+                    expiryDateStyle: {opacity: "0.5"}
+};

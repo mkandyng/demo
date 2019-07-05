@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import instruments from "../modules/instruments";
-import timeSeries from "../modules/timeSeries"
-import orderbook from "../modules/orderbook";
-import ticket from "../modules/ticket";
+import * as instruments from "../modules/instruments/store/instrumentsReducer";
+import * as timeSeries from "../modules/timeSeries/store/timeSeriesReducer"
+import * as orderbook from "../modules/orderbook/store/orderbookReducer";
+import * as ticket from "../modules/ticket/store/ticketReducer";
 
 /**
  * root reducer

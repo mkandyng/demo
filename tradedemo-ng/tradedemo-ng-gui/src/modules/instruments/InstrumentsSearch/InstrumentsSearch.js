@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactAutocomplete from "react-autocomplete";
-import { MAX_MARKET_FEED_INSTRUMENTS } from "../index";
+import { MAX_MARKET_FEED_INSTRUMENTS } from "../marketfeed";
 import PropTypes from 'prop-types';
 import "./instrumentsSearch.css"
 

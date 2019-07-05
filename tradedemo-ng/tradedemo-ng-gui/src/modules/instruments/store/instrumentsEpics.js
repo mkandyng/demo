@@ -5,16 +5,16 @@ import "rxjs/add/observable/of";
 import "rxjs/add/operator/catch";
 import { Observable } from 'rxjs';
 import { catchError, concatMap } from 'rxjs/operators'
-import { instrumentServiceUrl } from "../../libs/resources";
-import { MAX_MARKET_FEED_INSTRUMENTS } from "./index"
+import { instrumentServiceUrl } from "../../../libs/resources";
+import { fetchIntradayTimeSeries,
+         fetchDailyTimeSeries } from "../../timeSeries/store/timeSeriesActions";
 import * as instrumentsActions from "./instrumentsActions";
-import timeSeries from "../timeSeries";
-import { generateMarketfeedMovement } from "./generateMarketfeedMovement";
+import { generateMarketfeedMovement, MAX_MARKET_FEED_INSTRUMENTS } from "../marketfeed";
 
 export function fetchInstrumentsEpic(action$, store, {ajax}) {
     function fetchInstruments(ajaxRestApi){
       return ajaxRestApi
-          .getJSON(instrumentServiceUrl + "/instruments")
+          .getJSON(instrumentServiceUrl + "/instruments/")
           .map(payload => payload.map(instrument => {
               let object = {
                   symbol: instrument.symbol,
@@ -70,8 +70,8 @@ export function selectMarketfeedInstrumentEpic(action$) {
     return action$
         .ofType(instrumentsActions.types.SELECT_MARKETFEED_INSTRUMENT)
         .concatMap(action => [
-              timeSeries.timeSeriesActions.fetchIntradayTimeSeries(action.instrument.symbol),
-              timeSeries.timeSeriesActions.fetchDailyTimeSeries(action.instrument.symbol)
+              fetchIntradayTimeSeries(action.instrument.symbol),
+              fetchDailyTimeSeries(action.instrument.symbol)
             ]
         )
 }

@@ -18,7 +18,7 @@ describe("submitTicket validation", () => {
                            placeOrder: jest.fn(),
                            updateOrder: jest.fn()};
 
-    beforeAll(() => {
+    beforeEach(() => {
         jest.useFakeTimers();
     });
 

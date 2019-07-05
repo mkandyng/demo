@@ -1,6 +1,8 @@
 import React from "react";
 import { getRandomInt } from "../../libs/utils";
 
+export const MAX_MARKET_FEED_INSTRUMENTS = 5;
+
 export function generateMarketfeedMovement(instrument) {
 
     // generate a random margin

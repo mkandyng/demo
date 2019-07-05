@@ -4,13 +4,14 @@ import { bindActionCreators } from "redux";
 import Ticket from "../../../modules/ticket/Ticket";
 import InstrumentsSearch from "../../../modules/instruments/InstrumentsSearch";
 import InstrumentsMarketfeed from "../../../modules/instruments/InstrumentsMarketfeed";
-import { placeOrder, updateOrder } from "../../../modules/orderbook/orderbookActions"
+import { placeOrder,
+         updateOrder } from "../../../modules/orderbook/store/orderbookActions"
 import { fetchInstruments,
          addInstrumentToMarketfeed,
          selectMarketfeedInstrument,
          updateMarketfeedInstrument,
-         deleteMarketfeedInstrument } from "../../../modules/instruments/instrumentsActions";
-import { updateTicket } from "../../../modules/ticket/ticketActions";
+         deleteMarketfeedInstrument } from "../../../modules/instruments/store/instrumentsActions";
+import { updateTicket } from "../../../modules/ticket/store/ticketActions";
 import "./topLayout.css"
 
 
@@ -21,7 +22,7 @@ import "./topLayout.css"
 export function TopLayout(props) {
     return (
         <div id="topLayout">
-            <Ticket {...props} />
+            <Ticket {...props} enableDemo={true} />
             <div id="instrumentsMarketfeed">
                 <InstrumentsSearch {...props} />
                 <InstrumentsMarketfeed {...props} />

@@ -29,7 +29,7 @@ describe("BuySellButton", () => {
 
     it("should call handleOnClick prop with given event", () => {
         // Given
-        const event = 1
+        const event = {target: {innerText: "Sell"}}
         const component = shallow(<BuySellButton {...props} />);
 
         // When

@@ -1,4 +1,4 @@
-import { generateMarketfeedMovement } from "./generateMarketfeedMovement";
+import { generateMarketfeedMovement } from "./marketfeed";
 
 /**
  * Unit tests for generateMarketfeedMovement

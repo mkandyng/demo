@@ -4,8 +4,8 @@ import "rxjs/add/observable/of";
 import "rxjs/add/operator/catch";
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators'
-import { instrumentServiceUrl } from "../../libs/resources";
-import { roundValue } from "../../libs/utils";
+import { instrumentServiceUrl } from "../../../libs/resources";
+import { roundValue } from "../../../libs/utils";
 import * as timeSeriesActions from "./timeSeriesActions";
 
 export function fetchDailyTimeSeriesEpic(action$, store, {ajax}) {

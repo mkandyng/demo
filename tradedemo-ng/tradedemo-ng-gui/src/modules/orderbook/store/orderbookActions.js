@@ -1,5 +1,5 @@
-import { orderbookStatusEnum } from "../../libs/orderbookStatusEnum";
-import { getDateString } from "../../libs/utils";
+import { orderbookStatusEnum } from "../../../libs/orderbookStatusEnum";
+import { getDateString } from "../../../libs/utils";
 
 export const types = {
     PLACE_ORDER: "orderbook/PLACE_ORDER",
@@ -9,7 +9,8 @@ export const types = {
 export const placeOrder = order => ({
     type: types.PLACE_ORDER,
     order: { ...order,
-       status: orderbookStatusEnum.status.REQUESTED.displayName
+       status: orderbookStatusEnum.status.REQUESTED.displayName,
+       lastUpdated: order.created
      }
 });
 

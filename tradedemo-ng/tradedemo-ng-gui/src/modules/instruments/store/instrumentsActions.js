@@ -19,9 +19,9 @@ export const fetchInstrumentsSuccess = instruments => ({
     instruments: instruments
 });
 
-export const fetchInstrumentsFailure = message => ({
+export const fetchInstrumentsFailure = error => ({
     type: types.FETCH_INSTRUMENTS_FAILURE,
-    error: message
+    error: error
 });
 
 export const addInstrumentToMarketfeed = instrument => ({
@@ -34,14 +34,9 @@ export const addInstrumentToMarketfeedSuccess = instrument => ({
     instrument: instrument
 });
 
-export const addInstrumentToMarketfeedFailure = message => ({
+export const addInstrumentToMarketfeedFailure = error => ({
     type: types.ADD_INSTRUMENT_TO_MARKETFEED_FAILURE,
-    error: message
-});
-
-export const deleteMarketfeedInstrument = instrument => ({
-    type: types.DELETE_MARKETFEED_INSTRUMENT,
-    instrument: instrument
+    error: error
 });
 
 export const selectMarketfeedInstrument = instrument => ({
@@ -51,5 +46,10 @@ export const selectMarketfeedInstrument = instrument => ({
 
 export const updateMarketfeedInstrument = instrument => ({
     type: types.UPDATE_MARKETFEED_INSTRUMENT,
+    instrument: instrument
+});
+
+export const deleteMarketfeedInstrument = instrument => ({
+    type: types.DELETE_MARKETFEED_INSTRUMENT,
     instrument: instrument
 });
