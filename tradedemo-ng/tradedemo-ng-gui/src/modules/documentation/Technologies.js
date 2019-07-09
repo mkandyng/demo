@@ -4,7 +4,7 @@ import React from "react";
  * Presentation component to display html fragment of document current technologies used
  */
 
-export default function TechnologiesView() {
+export default function Technologies() {
     return (
         <div>
             <p>

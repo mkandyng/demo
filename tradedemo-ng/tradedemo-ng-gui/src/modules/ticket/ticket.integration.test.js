@@ -1,30 +1,25 @@
 import React from "react";
 import { mount } from "enzyme";
 import toJson from "enzyme-to-json";
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import { createEpicMiddleware } from "redux-observable";
-import { Observable } from 'rxjs';
-import { combineEpics } from "redux-observable";
-import { fetchInstrumentsEpic,
-         addInstrumentToMarketfeedEpic,
-         selectMarketfeedInstrumentEpic } from "../../modules/instruments/store/instrumentsEpics";
-import { getDateString, padDigits } from "../../libs/utils";
+import { combineReducers } from "redux";
+import { getDateString,
+         padDigits,
+         createStoreWithMiddleware } from "../../libs/utils";
+import { MAX_INSTRUMENTS } from "../instruments/instruments";
 import * as orderbook from "../../modules/orderbook/store/orderbookReducer";
 import * as instruments from "../../modules/instruments/store/instrumentsReducer";
-import * as ticket from "./store/ticketReducer";
-import { updateTicket } from "./store/ticketActions";
+import { instrumentsEpics } from "../../modules/instruments/store/instrumentsEpics";
 import { placeOrder, updateOrder } from "../../modules/orderbook/store/orderbookActions"
 import { fetchInstruments } from "../../modules/instruments/store/instrumentsActions";
+import { createInstruments,
+         getJSONFunction } from "../instruments/instruments.test.helpers";
 import Ticket from "./Ticket";
 
 /**
  *
- * Test of Ticket component integrate with Redux store
+ * Test of Ticket component integrate with Redux store to verify against orderbook
  *
  */
-
-const mockModule = require('../../modules/instruments/marketfeed');
-mockModule.generateMarketfeedMovement = jest.fn(expectedInstrument => expectedInstrument);
 
 describe("ticket integration tests", () => {
     let store = undefined;
@@ -32,14 +27,17 @@ describe("ticket integration tests", () => {
     let props = undefined;
 
     beforeEach(() => {
-        store = createStoreWithMiddleware();
+        store = createStoreWithMiddleware({getJSON: url => getJSONFunction(url, createInstruments(MAX_INSTRUMENTS))},
+                                           combineReducers({
+                                              [orderbook.NAME]:orderbook.orderbookReducer,
+                                              [instruments.NAME]: instruments.instrumentsReducer
+                                            }),
+                                            instrumentsEpics);
         store.dispatch(fetchInstruments());
         props = {
-            ticket: store.getState().ticket,
             instrument: store.getState().instruments.selected,
             placeOrder: order => store.dispatch(placeOrder(order)),
             updateOrder: order => store.dispatch(updateOrder(order)),
-            updateTicket: ticketProps => store.dispatch(updateTicket(ticketProps)),
             enableDemo: false
         }
         component = mount(<Ticket {... props} />);
@@ -58,13 +56,8 @@ describe("ticket integration tests", () => {
 
     it("should handle orderType change", () => {
         const verifyOrderType = (orderType, expectedOpacity, instrument) => {
-            const replacedPrice = instrument.price + 1.5;
-            store.dispatch(updateTicket({price: replacedPrice}));
-            expect(store.getState().ticket.price).toStrictEqual(replacedPrice);
             verifyTicketChange("select", "orderType", orderType);
-            expect(store.getState().ticket.price).not.toStrictEqual(replacedPrice);
-            expect(store.getState().ticket.price).toStrictEqual(instrument.price.toFixed(2));
-            expect(store.getState().ticket.priceStyle).toStrictEqual({"opacity": expectedOpacity});
+            expect(component.state().priceStyle).toStrictEqual({"opacity": expectedOpacity});
         }
         const instrument = store.getState().instruments.marketfeedInstruments[0];
         verifyOrderType("Market", 0.5, instrument);
@@ -76,8 +69,8 @@ describe("ticket integration tests", () => {
     it("should handle expiryType change", () => {
         const verifyExpiryType = (expiryType, expectedOpacity, expectedExpiryDate) => {
             verifyTicketChange("select", "expiryType", expiryType);
-            expect(store.getState().ticket.expiryDateStyle).toStrictEqual({"opacity": expectedOpacity});
-            expect(store.getState().ticket.expiryDate).toStrictEqual(expectedExpiryDate);
+            expect(component.state().expiryDateStyle).toStrictEqual({"opacity": expectedOpacity});
+            expect(component.state().expiryDate).toStrictEqual(expectedExpiryDate);
         }
         verifyExpiryType("GTD", 1.0, getDateString(new Date(), "dateOnly"));
         verifyExpiryType("Day", 0.5, "");
@@ -91,8 +84,8 @@ describe("ticket integration tests", () => {
         jest.runAllTimers();
         const verifyBuySellButtonClickSubmitOrder = (buySellId, buySell) => {
             // Given
-            const expectedOrderRef = "XA"+ padDigits(store.getState().ticket.orderId, 8);
-            const ticket = mount(<Ticket {... props} ticket={store.getState().ticket}/>)
+            const expectedOrderRef = "XA"+ padDigits(component.state().orderId, 8);
+            const ticket = mount(<Ticket {... props} ticket={component.state()}/>)
 
             // when
             ticket.find("div#" + buySellId)
@@ -116,16 +109,15 @@ describe("ticket integration tests", () => {
 
     it("should handle buy/sell submit click when quantity zero is rejected, no order placed", () => {
         window.confirm = jest.fn(() => true);
-        window.alert = jest.fn();
-        store.dispatch(updateTicket({quantity:0}));
-        verifyNoOrderPlaced("buyButton", "Buy");
-        verifyNoOrderPlaced("sellButton", "Sell");
+        verifyNoOrderPlaced("buyButton", "Buy", {quantity: 0});
+        verifyNoOrderPlaced("sellButton", "Sell", {quantity: 0});
         expect(window.alert).toHaveBeenCalled();
     });
 
-    const verifyNoOrderPlaced = (buySellId, buySell) => {
+    const verifyNoOrderPlaced = (buySellId, buySell, ticketPropsChange = {}) => {
         // Given
-        const ticket = mount(<Ticket {... props} ticket={store.getState().ticket}/>)
+        const ticket = mount(<Ticket {... props}/>)
+        ticket.setState(ticketPropsChange);
 
         // when
         ticket.find("div#" + buySellId)
@@ -140,44 +132,9 @@ describe("ticket integration tests", () => {
         const element = component.find(elementTag).find({ name: inputName })
 
         // when
-        element.simulate('change', { target: { value: changeValue }});
+        element.simulate('change', { target: { name: inputName, value: changeValue }});
 
         // Then
-        expect(store.getState().ticket[inputName]).toStrictEqual(changeValue);
+        expect(component.state()[inputName]).toStrictEqual(changeValue);
     }
 });
-
-function createInstruments(count) {
-    let instruments = [];
-    for (let i=0; i<= count; i++) {
-        instruments.push({symbol:"symbol" + i, name:"instrument" + i, currency: "USD"});
-    }
-    return instruments;
-}
-
-function createStoreWithMiddleware() {
-    const ajax = {
-        getJSON: url => {
-          if(url.includes("/instruments/")) {
-              return Observable.of(createInstruments(10));
-          } else if(url.includes("/instrumentQuote/")) {
-             return Observable.of({price: 1.0, open: 1.0});
-          }
-        }
-    };
-
-    const rootEpic = (...args) => combineEpics(
-                                  fetchInstrumentsEpic,
-                                  addInstrumentToMarketfeedEpic,
-                                  selectMarketfeedInstrumentEpic)(...args, { ajax });
-
-    const epicMiddleware = createEpicMiddleware();
-    const rootReducer = combineReducers({
-        [orderbook.NAME]:orderbook.orderbookReducer,
-        [ticket.NAME]: ticket.ticketReducer,
-        [instruments.NAME]: instruments.instrumentsReducer
-    });
-    const store = createStore(rootReducer, applyMiddleware(epicMiddleware));
-    epicMiddleware.run(rootEpic);
-    return store;
-}

@@ -21,7 +21,7 @@ exports[`Ticket should render TicketView component comparing with previous snaps
       value={5}
     />
     <SelectionDropDown
-      handleOnChange={[MockFunction]}
+      handleOnChange={[Function]}
       id="orderType"
       label="Order Type"
       list={
@@ -78,13 +78,13 @@ exports[`Ticket should render TicketView component comparing with previous snaps
         <BuySellButton
           buttonName="Sell"
           containerId="sellButton"
-          handleOnClick={[MockFunction]}
+          handleOnClick={[Function]}
           id="sell"
         />
         <BuySellButton
           buttonName="Buy"
           containerId="buyButton"
-          handleOnClick={[MockFunction]}
+          handleOnClick={[Function]}
           id="buy"
         />
       </div>
@@ -97,14 +97,10 @@ exports[`Ticket should render component comparing with previous snapshot shallow
 <TicketView
   eventHandler={
     Object {
-      "expiryDateChange": [Function],
       "expiryTypeChange": [Function],
+      "handleFormChange": [Function],
       "handleOnSubmit": [Function],
-      "noteChange": [Function],
       "orderTypeChange": [Function],
-      "priceChange": [Function],
-      "quantityChange": [Function],
-      "symbolChange": [Function],
     }
   }
   instrument={
@@ -120,13 +116,20 @@ exports[`Ticket should render component comparing with previous snapshot shallow
   }
   ticket={
     Object {
-      "expiryDate": "2019-10-12",
+      "expiryDate": "",
+      "expiryDateStyle": Object {
+        "opacity": "0.5",
+      },
       "expiryType": "Day",
       "note": "",
+      "orderId": 0,
       "orderType": "Market",
       "price": 0,
+      "priceStyle": Object {
+        "opacity": "0.5",
+      },
       "quantity": 5,
-      "symbol": "symbol",
+      "symbol": undefined,
     }
   }
 />

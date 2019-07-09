@@ -13,8 +13,8 @@ exports[`InstrumentsSearch should render component comparing with previous snaps
       items={
         Array [
           Object {
-            "label": "(undefined) symbol",
-            "value": undefined,
+            "label": "(sym) symbol",
+            "value": "sym",
           },
         ]
       }

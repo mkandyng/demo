@@ -1,10 +1,8 @@
-import { createStore, applyMiddleware } from "redux";
-import { createEpicMiddleware } from "redux-observable";
-import { combineEpics } from "redux-observable";
 import { Observable, throwError } from 'rxjs';
-import { transformTimeSeries, roundValue } from "../../../libs/utils"
-import { fetchIntradayTimeSeriesEpic,
-         fetchDailyTimeSeriesEpic} from "./timeSeriesEpics";
+import { transformTimeSeries,
+         roundValue,
+         createStoreWithMiddleware } from "../../../libs/utils"
+import { timeSeriesEpics } from "./timeSeriesEpics";
 import { timeSeriesReducer } from "./timeSeriesReducer";
 import { fetchDailyTimeSeries,
          fetchIntradayTimeSeries } from "./timeSeriesActions";
@@ -16,7 +14,7 @@ import { fetchDailyTimeSeries,
  *
  */
 
-describe("timeSeries integration tests", () => {
+describe("timeSeries store integration tests", () => {
 
     const symbol = "symbol";
     const error = new Error("error");
@@ -25,7 +23,9 @@ describe("timeSeries integration tests", () => {
     it("should fetchDailyTimeSeries if ajax returns successfully ", done => {
         // Given
         const timeSeries = createTimeSeries(i => ({dateTime:"2019-10-12",open: i+1,high:i+3,low:i,close:i+2}), 5);
-        const store = createStoreWithMiddleware(url => Observable.of(timeSeries));
+        const store = createStoreWithMiddleware({getJSON: url => Observable.of(timeSeries)},
+                                                timeSeriesReducer,
+                                                timeSeriesEpics);
         const action = fetchDailyTimeSeries(symbol);
         const expectedTimeSeries = transformTimeSeries(timeSeries.map(timeSeries => {
             const {dateTime, ...expected} = timeSeries;
@@ -45,8 +45,11 @@ describe("timeSeries integration tests", () => {
 
     it("should fetchIntradayTimeSeries if ajax returns successfully ", done => {
         // Given
-        const timeSeries = createTimeSeries(i => ({dateTime:"2019-10-12 11:11:10.123",high:i+3,low:i}), 1);
-        const store = createStoreWithMiddleware(url => Observable.of(timeSeries));
+        const timeSeries = createTimeSeries(i => ({dateTime:"2019-10-12 11:11:10.123",
+                                                   high:i+3,low:i}), 1);
+        const store = createStoreWithMiddleware({getJSON:url => Observable.of(timeSeries)},
+                                                 timeSeriesReducer,
+                                                 timeSeriesEpics);
         const action = fetchIntradayTimeSeries(symbol);
         const expectedTimeSeries = transformTimeSeries(timeSeries.map(timeSeries => {
             const {dateTime, high, low, ...expected} = timeSeries;
@@ -67,7 +70,9 @@ describe("timeSeries integration tests", () => {
 
     it("should log error if fetchDailyTimeSeries ajax error", done => {
         // Given
-        const store = createStoreWithMiddleware(() => throwError(error));
+        const store = createStoreWithMiddleware({getJSON:() => throwError(error)},
+                                                timeSeriesReducer,
+                                                timeSeriesEpics);
         const action = fetchDailyTimeSeries(symbol);
 
         // When
@@ -87,19 +92,4 @@ function createTimeSeries(timeSeriesGenerator, count) {
         timeSeries.push(timeSeriesGenerator(i));
   }
   return timeSeries;
-}
-
-function createStoreWithMiddleware(getJSONFunction) {
-    const ajax = {
-        getJSON: getJSONFunction
-    };
-
-    const rootEpic = (...args) => combineEpics(
-                                    fetchIntradayTimeSeriesEpic,
-                                    fetchDailyTimeSeriesEpic)(...args, { ajax });
-
-    const epicMiddleware = createEpicMiddleware();
-    const store = createStore(timeSeriesReducer, applyMiddleware(epicMiddleware));
-    epicMiddleware.run(rootEpic);
-    return store;
 }

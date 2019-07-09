@@ -1,3 +1,23 @@
+import { createStore, applyMiddleware } from "redux";
+import { createEpicMiddleware } from "redux-observable";
+import { combineEpics } from "redux-observable";
+
+/**
+ * [createStoreWithMiddleware use to create a redux store tying implementation of ajax, reducer, epics]
+ * @param  {[Object]} ajax    [implement the interface getJSON]
+ * @param  {[Function]} reducer [Redux store reducer function]
+ * @param  {[Function]} epics   [Redux store observable epics middleware]
+ * @return {[Object]}         [Redux store]
+ */
+export function createStoreWithMiddleware(ajax, reducer, epics) {
+     const epicMiddleware = createEpicMiddleware();
+     const store = createStore(reducer, applyMiddleware(epicMiddleware));
+     const rootEpicWithMockAjax = (...args) => combineEpics(
+                                           epics)(...args, { ajax });
+     epicMiddleware.run(rootEpicWithMockAjax);
+     return store;
+}
+
 /**
  * [getDateString resolve display date format]
  * @param  {[Date]} date   [a given date object]
@@ -71,16 +91,4 @@ export function transformTimeSeries(timeSeries, maxPredicate, minPredicate) {
       maxValue: Math.max.apply(Math, timeSeries.map(maxPredicate)),
       minValue: Math.min.apply(Math, timeSeries.map(minPredicate))
   }
-}
-
-export function retrieveInstrument(instruments, symbol) {
-    return instruments.find(e => e.symbol === symbol);
-}
-
-export function removeInstrument(instruments, symbol) {
-    return instruments.filter(e => e.symbol !== symbol);
-}
-
-export function updateInstrument(instruments, updateInstrument) {
-    return instruments.map(e => e.symbol === updateInstrument.symbol ? updateInstrument: e);
 }

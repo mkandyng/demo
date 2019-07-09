@@ -1,6 +1,6 @@
 import React from "react";
 import ReactTable from "react-table";
-import { orderbookStatusEnum } from "../../../libs/orderbookStatusEnum";
+import { orderbookStatusEnum } from "../orderbookStatusEnum";
 import PropTypes from 'prop-types';
 import "./orderbook.css";
 

@@ -1,22 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ReactAutocomplete from "react-autocomplete";
-import { MAX_MARKET_FEED_INSTRUMENTS } from "../marketfeed";
+import { MAX_MARKET_FEED_INSTRUMENTS, MAX_INSTRUMENTS } from "../instruments";
 import PropTypes from 'prop-types';
 import "./instrumentsSearch.css"
 
 /**
  * Component for InstrumentSearch drop down, which manage the instruments state
  */
+
 export default function InstrumentsSearch({ instruments,
                                             marketfeedInstruments,
                                             addInstrumentToMarketfeed,
                                             fetchInstruments }) {
 
     const [ value, setSelectItem ] = useState("");
-
-    useEffect(() => {
-        fetchInstruments();
-    }, [ fetchInstruments ]);
 
     return (
         <div id="instrumentsSearch">
@@ -30,24 +27,22 @@ export default function InstrumentsSearch({ instruments,
                      shouldItemRender={matchStocks}
                      renderItem={renderItem}
                  />
-                 <input type="submit" value="Add" onClick={event => addItem(event,
-                                                                            value,
-                                                                            instruments,
-                                                                            marketfeedInstruments,
-                                                                            addInstrumentToMarketfeed,
-                                                                            setSelectItem)}/>
+               <input type="submit" value="Add" onClick={event => addItem(event,
+                                                                          value,
+                                                                          instruments,
+                                                                          marketfeedInstruments,
+                                                                          addInstrumentToMarketfeed,
+                                                                          setSelectItem)}/>
              </form>
         </div>
     )
 }
 
 function updateSearchDropDown(instruments) {
-   const MAX_RECORDS = 10;
-   return instruments.slice(0, MAX_RECORDS)
+   return instruments.slice(0, MAX_INSTRUMENTS)
                      .map(instrument => ({
                          value: instrument.symbol,
-                         label: "(" + instrument.symbol +  ") " +  instrument.name
-                     }));
+                         label: "(" + instrument.symbol +  ") " +  instrument.name}));
 };
 
 function addItem(event,
@@ -67,7 +62,7 @@ function addItem(event,
                 return true;
             }
         } else {
-            alert("[" + value + "] is not a valid, unable to add to marketfeed");
+            alert("[" + value + "] is not valid, unable to add to marketfeed");
         }
         return false;
     };
@@ -92,6 +87,5 @@ function matchStocks(state, value) {
 InstrumentsSearch.propTypes = {
     marketfeedInstruments: PropTypes.arrayOf(PropTypes.object).isRequired,
     instruments: PropTypes.arrayOf(PropTypes.object).isRequired,
-    addInstrumentToMarketfeed: PropTypes.func.isRequired,
-    fetchInstruments: PropTypes.func.isRequired
+    addInstrumentToMarketfeed: PropTypes.func.isRequired
 };

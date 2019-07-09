@@ -37,7 +37,6 @@ exports[`TopLayout should render component comparing with previous snapshot shal
     }
     updateMarketfeedInstrument={[MockFunction]}
     updateOrder={[MockFunction]}
-    updateTicket={[MockFunction]}
   />
   <div
     id="instrumentsMarketfeed"
@@ -74,7 +73,6 @@ exports[`TopLayout should render component comparing with previous snapshot shal
       }
       updateMarketfeedInstrument={[MockFunction]}
       updateOrder={[MockFunction]}
-      updateTicket={[MockFunction]}
     />
     <InstrumentsMarketfeed
       addInstrumentToMarketfeed={[MockFunction]}
@@ -108,7 +106,6 @@ exports[`TopLayout should render component comparing with previous snapshot shal
       }
       updateMarketfeedInstrument={[MockFunction]}
       updateOrder={[MockFunction]}
-      updateTicket={[MockFunction]}
     />
   </div>
 </div>

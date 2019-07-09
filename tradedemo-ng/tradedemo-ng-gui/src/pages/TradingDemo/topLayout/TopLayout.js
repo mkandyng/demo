@@ -6,12 +6,10 @@ import InstrumentsSearch from "../../../modules/instruments/InstrumentsSearch";
 import InstrumentsMarketfeed from "../../../modules/instruments/InstrumentsMarketfeed";
 import { placeOrder,
          updateOrder } from "../../../modules/orderbook/store/orderbookActions"
-import { fetchInstruments,
-         addInstrumentToMarketfeed,
+import { addInstrumentToMarketfeed,
          selectMarketfeedInstrument,
          updateMarketfeedInstrument,
          deleteMarketfeedInstrument } from "../../../modules/instruments/store/instrumentsActions";
-import { updateTicket } from "../../../modules/ticket/store/ticketActions";
 import "./topLayout.css"
 
 
@@ -39,14 +37,12 @@ const mapStateToProps = state => ({ instruments: state.instruments.instruments,
 // Map Redux actions to component props
 const mapDispatchToProps = dispatch =>
     bindActionCreators({
-      fetchInstruments,
       placeOrder,
       updateOrder,
       addInstrumentToMarketfeed,
       selectMarketfeedInstrument,
       updateMarketfeedInstrument,
       deleteMarketfeedInstrument,
-      updateTicket
     }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopLayout);

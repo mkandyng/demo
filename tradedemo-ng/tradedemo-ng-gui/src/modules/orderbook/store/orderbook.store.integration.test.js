@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import { orderbookStatusEnum } from "../../../libs/orderbookStatusEnum";
+import { orderbookStatusEnum } from "../orderbookStatusEnum";
 import { orderbookReducer } from "./orderbookReducer";
 import { getDateString } from "../../../libs/utils";
 import { placeOrder,

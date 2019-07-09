@@ -1,5 +1,5 @@
 import placeOrderToMarket from "./placeOrderToMarket";
-import { orderbookStatusEnum } from "../../../libs/orderbookStatusEnum";
+import { orderbookStatusEnum } from "../../orderbook/orderbookStatusEnum";
 
 /**
  * This is unit test of placeOrderToMarket, simulate typical order events lifecycle

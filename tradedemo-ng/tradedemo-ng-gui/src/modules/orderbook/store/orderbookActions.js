@@ -1,4 +1,4 @@
-import { orderbookStatusEnum } from "../../../libs/orderbookStatusEnum";
+import { orderbookStatusEnum } from "../orderbookStatusEnum";
 import { getDateString } from "../../../libs/utils";
 
 export const types = {

@@ -16,7 +16,7 @@ exports[`Documentation should render component comparing with previous snapshot 
         TradeDemo-NG
       </h3>
       <hr />
-      <TechnologiesView>
+      <Technologies>
         <div>
           <p>
             TradeDemo-NG is a skeleton trading application with 
@@ -99,8 +99,8 @@ exports[`Documentation should render component comparing with previous snapshot 
             </li>
           </ul>
         </div>
-      </TechnologiesView>
-      <FunctionalitiesView>
+      </Technologies>
+      <Functionalities>
         <div>
           <p>
             This skeleton trading application provided the following functionalities:
@@ -139,8 +139,8 @@ exports[`Documentation should render component comparing with previous snapshot 
             </li>
           </ul>
         </div>
-      </FunctionalitiesView>
-      <FutureDevelopmentView>
+      </Functionalities>
+      <FutureDevelopment>
         <div>
           <p>
             The focus of this demo is on ReactJS.The next phase are Java server side microservices to demonstrate modern distributed reactive architecture.
@@ -202,7 +202,7 @@ exports[`Documentation should render component comparing with previous snapshot 
             </li>
           </ul>
         </div>
-      </FutureDevelopmentView>
+      </FutureDevelopment>
     </div>
   </div>
 </Documentation>

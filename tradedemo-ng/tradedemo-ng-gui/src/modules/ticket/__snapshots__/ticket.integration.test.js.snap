@@ -13,38 +13,15 @@ exports[`ticket integration tests should matchSnapshot for mount Ticket componen
     }
   }
   placeOrder={[Function]}
-  ticket={
-    Object {
-      "expiryDate": "",
-      "expiryDateStyle": Object {
-        "opacity": "0.5",
-      },
-      "expiryType": "Day",
-      "note": "",
-      "orderId": 0,
-      "orderType": "Market",
-      "price": 0,
-      "priceStyle": Object {
-        "opacity": "0.5",
-      },
-      "quantity": 5,
-      "symbol": undefined,
-    }
-  }
   updateOrder={[Function]}
-  updateTicket={[Function]}
 >
   <TicketView
     eventHandler={
       Object {
-        "expiryDateChange": [Function],
         "expiryTypeChange": [Function],
+        "handleFormChange": [Function],
         "handleOnSubmit": [Function],
-        "noteChange": [Function],
         "orderTypeChange": [Function],
-        "priceChange": [Function],
-        "quantityChange": [Function],
-        "symbolChange": [Function],
       }
     }
     instrument={
@@ -84,7 +61,6 @@ exports[`ticket integration tests should matchSnapshot for mount Ticket componen
           label="Symbol"
           name="symbol"
           type="text"
-          value="symbol4"
         >
           <p>
             <label>
@@ -94,7 +70,7 @@ exports[`ticket integration tests should matchSnapshot for mount Ticket componen
                 name="symbol"
                 onChange={[Function]}
                 type="text"
-                value="symbol4"
+                value=""
               />
             </label>
           </p>

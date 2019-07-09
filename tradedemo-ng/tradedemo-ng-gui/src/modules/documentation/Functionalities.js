@@ -4,7 +4,7 @@ import React from "react";
  * Presentation component to display html fragment of document functionality
  */
 
-export default function FunctionalitiesView() {
+export default function Functionalities() {
   return (
      <div>
         <p>This skeleton trading application provided the following functionalities:</p>

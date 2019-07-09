@@ -62,9 +62,18 @@ exports[`InstrumentsMarketfeed should render component comparing with previous s
       Object {
         "delete": <img
           alt="delete"
+          id="deleteImg-AMZ"
           src="img/delete.png"
         />,
         "symbol": "AMZ",
+      },
+      Object {
+        "delete": <img
+          alt="delete"
+          id="deleteImg-ABC"
+          src="img/delete.png"
+        />,
+        "symbol": "ABC",
       },
     ]
   }

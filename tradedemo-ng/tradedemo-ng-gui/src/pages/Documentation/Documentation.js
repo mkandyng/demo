@@ -1,8 +1,8 @@
 import React from "react";
 
-import TechnologiesView from "../../modules/documentation/Technologies";
-import FunctionalitiesView from "../../modules/documentation/Functionalities";
-import FutureDevelopmentView from "../../modules/documentation/FutureDevelopment";
+import Technologies from "../../modules/documentation/Technologies";
+import Functionalities from "../../modules/documentation/Functionalities";
+import FutureDevelopment from "../../modules/documentation/FutureDevelopment";
 import "./documentation.css";
 
 /**
@@ -14,9 +14,9 @@ export default function Documentation() {
           <div style={{padding: "20px"}}>
               <h3>TradeDemo-NG</h3>
               <hr/>
-              <TechnologiesView/>
-              <FunctionalitiesView/>
-              <FutureDevelopmentView/>
+              <Technologies/>
+              <Functionalities/>
+              <FutureDevelopment/>
           </div>
       </div>
   );

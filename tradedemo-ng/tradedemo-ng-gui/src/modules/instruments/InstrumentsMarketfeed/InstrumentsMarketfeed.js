@@ -1,30 +1,29 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import ReactTable from "react-table";
-import { getRandomInt } from "../../../libs/utils";
-import { generateMarketfeedMovement, MAX_MARKET_FEED_INSTRUMENTS } from "../marketfeed";
+import { MAX_MARKET_FEED_INSTRUMENTS,
+         MOUSE_OVER_IMAGE,
+         MOUSE_OUT_IMAGE  } from "../instruments";
 import PropTypes from 'prop-types';
 import "./instrumentsMarketfeed.css";
 
+export const SELECTED_MARKET_FEED_ROW_COLOUR = "#f5f2f2";
+
 /**
- * Component to handle Marketfeed view and interaction
+ * [InstrumentsMarketfeed Component to handle Marketfeed view and interaction]
+ * @param       {[Array]} marketfeedInstruments      [store instruments.marketfeedInstruments]
+ * @param       {[Array]} instrument                 [store instruments.selected]
+ * @param       {[Function]} selectMarketfeedInstrument [action to select an instrument in the marketfeed]
+ * @param       {[Function]} deleteMarketfeedInstrument [action to delete an instrument in the marketfeed]
+ * @param       {[Function]} updateMarketfeedInstrument [action to update an instrument in the marketfeed]
+ * @constructor
  */
+
 export default function InstrumentsMarketfeed({
                                      marketfeedInstruments,
                                      instrument,
                                      selectMarketfeedInstrument,
                                      deleteMarketfeedInstrument,
                                      updateMarketfeedInstrument }) {
-
-    // marketfeedCounter ensure only generate one interval after populated marketfeed
-    const [marketfeedCounter, updateMarkfeedCounter] = useState(MAX_MARKET_FEED_INSTRUMENTS);
-    useEffect(() => {
-        if(marketfeedCounter === marketfeedInstruments.length) {
-            updateMarkfeedCounter(counter => counter+1);
-            setInterval(() => {
-                flashPriceUpdate(marketfeedInstruments, updateMarketfeedInstrument);
-            }, 500);
-        }
-    }, [marketfeedInstruments, marketfeedCounter, updateMarketfeedInstrument] );
 
     const eventHandlers = {
         handleTableColumn: (state, rowInfo, column) => {
@@ -52,7 +51,9 @@ export default function InstrumentsMarketfeed({
     );
 }
 
-export function InstrumentsMarketfeedView({instruments, columns, eventHandlers}) {
+function InstrumentsMarketfeedView({ instruments,
+                                     columns,
+                                     eventHandlers }) {
     return (
       <ReactTable
           defaultPageSize={MAX_MARKET_FEED_INSTRUMENTS}
@@ -75,33 +76,18 @@ export const columnHeaders = [
       { Header: "Bid", accessor: "bid", width: 70 },
       { Header: "Ask", accessor: "ask", width: 70 },
       { Header: "Last", accessor: "last", width: 70 },
-      { Header: "Open", accessor: "open", width: 70},
+      { Header: "Open", accessor: "open", width: 70 },
       { Header: "Chg", accessor: "chg", width: 70 }
 ];
 
-/**
- * [flashPriceUpdate trigger an update of marketfeed price of one of the instruments]
- * @param  {[Array]} marketfeedInstruments      [Array of instruments in the marketfeed]
- * @param  {[Function]} updateMarketfeedInstrument [Action to change state of marketfeed]
- * @return {[Boolean]}                            [Inform if update successful or not]
- */
-function flashPriceUpdate(marketfeedInstruments, updateMarketfeedInstrument) {
-    if(marketfeedInstruments.length > 0) {
-        const instrumentIndex = getRandomInt(0, marketfeedInstruments.length-1);
-        const randomInstrument = marketfeedInstruments[instrumentIndex];
-        updateMarketfeedInstrument({...randomInstrument, bid:"", ask:"" });
-        setTimeout(() => updateMarketfeedInstrument(generateMarketfeedMovement(randomInstrument)),500);
-        return true;
-    }
-    return false;
-};
+function removeColumnHeader(column) {
+        return column.Header === "Remove";
+}
 
-function removeColumnHeader(column) { return column.Header === "Remove"};
-
-function selectMarketfeed(symbol, marketfeedInstruments, selectMarketfeedInstrument){
+function selectMarketfeed(symbol, marketfeedInstruments, selectMarketfeedInstrument) {
     const matchedInstrument = marketfeedInstruments.find(e => e.symbol === symbol);
     selectMarketfeedInstrument(matchedInstrument);
-};
+}
 
 function handleTableRow(state,
                         rowInfo,
@@ -115,11 +101,13 @@ function handleTableRow(state,
        onClick: (e) => {
           if(e.target.src === undefined || !e.target.src.indexOf("delete")) {
               const symbol = marketfeedInstruments[index].symbol;
-              selectMarketfeed(symbol, marketfeedInstruments, selectMarketfeedInstrument);
+              if(symbol !== instrument.symbol) {
+                  selectMarketfeed(symbol, marketfeedInstruments, selectMarketfeedInstrument);
+              }
           }
        },
        style: {
-          background: selectedIndex === index? "#f5f2f2": null
+          background: selectedIndex === index? SELECTED_MARKET_FEED_ROW_COLOUR: null
        }
    };
 };
@@ -143,7 +131,9 @@ function handleTableColumn(state,
                     const nextSymbol = index === 0 ? marketfeedInstruments[1].symbol:
                                                      marketfeedInstruments[0].symbol;
                     deleteMarketfeedInstrument(instrument);
-                    selectMarketfeed(nextSymbol, marketfeedInstruments, selectMarketfeedInstrument);
+                    selectMarketfeed(nextSymbol,
+                                     marketfeedInstruments,
+                                     selectMarketfeedInstrument);
                 } else {
                     alert("Must have at least one instrument in the market feed");
                 }
@@ -151,12 +141,12 @@ function handleTableColumn(state,
         },
         onMouseOver: (e) => {
             if(removeColumnHeader(column)) {
-                e.target.src="img/delete_click.png";
+                e.target.src=MOUSE_OVER_IMAGE;
             }
         },
         onMouseOut: (e) => {
             if(removeColumnHeader(column)) {
-                e.target.src="img/delete.png";
+                e.target.src=MOUSE_OUT_IMAGE;
             }
         }
     };

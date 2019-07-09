@@ -19,8 +19,7 @@ describe("TopLayout", () => {
                     addInstrumentToMarketfeed: jest.fn(),
                     selectMarketfeedInstrument: jest.fn(),
                     updateMarketfeedInstrument: jest.fn(),
-                    deleteMarketfeedInstrument: jest.fn(),
-                    updateTicket: jest.fn() }
+                    deleteMarketfeedInstrument: jest.fn() }
 
     it("should render component comparing with previous snapshot shallow markup", () => {
         // Given

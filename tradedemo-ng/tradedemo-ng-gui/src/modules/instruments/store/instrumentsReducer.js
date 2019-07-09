@@ -1,13 +1,13 @@
 import * as instrumentsActions from "./instrumentsActions";
 import { retrieveInstrument,
          removeInstrument,
-         updateInstrument } from "../../../libs/utils";
+         updateInstrument } from "../instruments";
 
 export const NAME = "instruments";
 
 export function instrumentsReducer(state = { instruments:[],
-                                                     marketfeedInstruments:[],
-                                                     selected:{} }, action = {}) {
+                                             marketfeedInstruments:[],
+                                             selected:{} }, action = {}) {
 
     switch (action.type) {
         case instrumentsActions.types.FETCH_INSTRUMENTS_SUCCESS:

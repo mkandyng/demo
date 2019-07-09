@@ -4,7 +4,7 @@ import React from "react";
  * Presentation component to display html fragment of document future development
  */
 
-export default function FutureDevelopmentView() {
+export default function FutureDevelopment() {
     return (
         <div>
             <p>The focus of this demo is on ReactJS.The next phase are Java server side microservices

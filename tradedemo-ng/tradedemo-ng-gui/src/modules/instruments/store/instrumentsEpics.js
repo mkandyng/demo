@@ -3,15 +3,20 @@ import "rxjs/add/operator/concatMap";
 import "rxjs/add/operator/map";
 import "rxjs/add/observable/of";
 import "rxjs/add/operator/catch";
+import { combineEpics } from "redux-observable";
 import { Observable } from 'rxjs';
 import { catchError, concatMap } from 'rxjs/operators'
 import { instrumentServiceUrl } from "../../../libs/resources";
 import { fetchIntradayTimeSeries,
          fetchDailyTimeSeries } from "../../timeSeries/store/timeSeriesActions";
 import * as instrumentsActions from "./instrumentsActions";
-import { generateMarketfeedMovement, MAX_MARKET_FEED_INSTRUMENTS } from "../marketfeed";
+import { generateMarketfeedMovement, MAX_MARKET_FEED_INSTRUMENTS } from "../instruments";
 
-export function fetchInstrumentsEpic(action$, store, {ajax}) {
+export const instrumentsEpics = combineEpics( fetchInstrumentsEpic,
+                                              addInstrumentToMarketfeedEpic,
+                                              selectMarketfeedInstrumentEpic )
+
+function fetchInstrumentsEpic(action$, store, {ajax}) {
     function fetchInstruments(ajaxRestApi){
       return ajaxRestApi
           .getJSON(instrumentServiceUrl + "/instruments/")
@@ -39,7 +44,7 @@ export function fetchInstrumentsEpic(action$, store, {ajax}) {
         )
 }
 
-export function addInstrumentToMarketfeedEpic(action$, store, {ajax}) {
+function addInstrumentToMarketfeedEpic(action$, store, {ajax}) {
     const fetchInstrumentQuote = action => {
       return ajax
           .getJSON(instrumentServiceUrl + "/instrumentQuote/" + action.instrument.symbol)
@@ -66,7 +71,7 @@ export function addInstrumentToMarketfeedEpic(action$, store, {ajax}) {
     )
 }
 
-export function selectMarketfeedInstrumentEpic(action$) {
+function selectMarketfeedInstrumentEpic(action$) {
     return action$
         .ofType(instrumentsActions.types.SELECT_MARKETFEED_INSTRUMENT)
         .concatMap(action => [

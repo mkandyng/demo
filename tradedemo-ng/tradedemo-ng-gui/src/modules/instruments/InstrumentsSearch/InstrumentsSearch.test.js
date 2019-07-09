@@ -1,27 +1,66 @@
 import React from "react";
 import toJson from "enzyme-to-json";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import InstrumentsSearch from "./InstrumentsSearch";
+import { MAX_MARKET_FEED_INSTRUMENTS,
+         MAX_INSTRUMENTS } from "../instruments";
+import { addInstrumentToMarketfeedVerify,
+         createInstruments } from "../instruments.test.helpers";
 
 /**
- * This is unit test of InstrumentsSearch component
- * It leverage snapshot to test the presentation
+ * Unit Test InstrumentSearch, using snapshot and simulate even callback
  */
 
 describe("InstrumentsSearch", () => {
-    const props = { instruments: [{name:"symbol"}],
-                    marketfeedInstruments: [{symbol:"symbol"}],
-                    addInstrumentToMarketfeed: jest.fn(),
-                    fetchInstruments: jest.fn() };
+    let props = undefined;
+    let component = undefined;
+
+    beforeEach(() => {
+        props = { instruments: [{symbol: "sym", name:"symbol"}],
+                  marketfeedInstruments: [{symbol: "sym1", name:"symbol1"}],
+                  addInstrumentToMarketfeed: jest.fn(),
+                  fetchInstruments: jest.fn() };
+        component = mount(<InstrumentsSearch {...props} />);
+    });
 
     it("should render component comparing with previous snapshot shallow markup", () => {
-        // Given
-
-        // When
-        const component = shallow(<InstrumentsSearch {...props} />);
-
-        // Then
+        component = shallow(<InstrumentsSearch {...props} />);
         expect(toJson(component)).toMatchSnapshot();
     });
 
+    it("should update value on input change", () => {
+        // Given
+        const expectedValue = "changeValue";
+        const input = component.find("input").find({role: "combobox"});
+        // When
+        input.simulate("change", {target: {value: expectedValue}});
+
+        // Then
+        expect(input.find({value:expectedValue})).toBeDefined();
+    });
+
+    it("should reject input not in instruments", () => {
+        addInstrumentToMarketfeedVerify("invalid",
+                                        props,
+                                        () => expect(window.alert)
+                                        .toHaveBeenCalledWith(expect.stringMatching(/not valid/)));
+    });
+
+    it("should reject when marketInstruments exceed max", () => {
+        addInstrumentToMarketfeedVerify(props.instruments[0].symbol,
+                                        { ...props,
+                                          marketfeedInstruments: createInstruments(MAX_MARKET_FEED_INSTRUMENTS)},
+                                        () => expect(window.alert)
+                                        .toHaveBeenCalledWith(expect.stringMatching(/Max.*instruments/)));
+    });
+
+    it("should call addInstrumentToMarketfeed for valid input", () => {
+        // Given
+        const instruments = createInstruments(MAX_INSTRUMENTS+1);
+        addInstrumentToMarketfeedVerify(instruments[MAX_INSTRUMENTS].symbol,
+                                       { ...props,
+                                         instruments: instruments,
+                                         marketfeedInstruments:[]},
+                                       () => expect(props.addInstrumentToMarketfeed).toHaveBeenCalled());
+    });
 });

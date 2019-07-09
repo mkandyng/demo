@@ -1,5 +1,5 @@
 import { getRandomInt } from "../../../libs/utils";
-import { orderbookStatusEnum } from "../../../libs/orderbookStatusEnum";
+import { orderbookStatusEnum } from "../../orderbook/orderbookStatusEnum";
 
 /**
  * [placeOrderToMarket entry point to call placeOrder and kick off order life cycle]
@@ -27,7 +27,7 @@ export default function placeOrderToMarket(order, placeOrder, updateOrder) {
             updateOrderWithFill(orderEndStatus, orderPlaced, updateOrder);
           }
         }
-    }, getRandomInt(500,3000));
+    }, getRandomInt(300,2000));
 }
 
 function updateOrderWithFill(endStatus, order, updateOrder) {
