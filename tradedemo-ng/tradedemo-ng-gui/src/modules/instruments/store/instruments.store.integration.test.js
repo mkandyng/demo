@@ -25,7 +25,7 @@ describe("instruments store integration tests - Happy Path", () => {
     let store = undefined;
 
     const instruments = createInstruments(MAX_MARKET_FEED_INSTRUMENTS)
-                      .map(instrument => ({...instrument, price: 1.0, open: 1.0}));
+                            .map(instrument => ({...instrument, price: 1.0, open: 1.0}));
 
     beforeEach(() => {
 
@@ -37,7 +37,8 @@ describe("instruments store integration tests - Happy Path", () => {
     it("should fetchInstruments, add to marketfeed and select first element ", () => {
         // Given
         const {price, open, ...expectedInstrument} = instruments[MAX_MARKET_FEED_INSTRUMENTS];
-        const expectedMarketfeedInstruments = removeInstrument(instruments, expectedInstrument.symbol).reverse();
+        const expectedMarketfeedInstruments = removeInstrument(instruments,
+                                                               expectedInstrument.symbol).reverse();
 
         const action = fetchInstruments();
 
@@ -46,7 +47,7 @@ describe("instruments store integration tests - Happy Path", () => {
 
         // Then
         expect(store.getState()).toStrictEqual({
-            instruments: [expectedInstrument],
+            searchInstruments: [expectedInstrument],
             marketfeedInstruments: expectedMarketfeedInstruments,
             selected: expectedMarketfeedInstruments[0]
         });
@@ -63,7 +64,7 @@ describe("instruments store integration tests - Happy Path", () => {
 
         // Then
         expect(store.getState()).toStrictEqual({
-            instruments: [],
+            searchInstruments: [],
             marketfeedInstruments: (instruments.slice().reverse()),
             selected: instruments[MAX_MARKET_FEED_INSTRUMENTS]
         });
@@ -72,7 +73,8 @@ describe("instruments store integration tests - Happy Path", () => {
     it("should selectMarketfeedInstrument to a given instrument", () => {
         // Given
         const {price, open, ...expectedInstrument} = instruments[MAX_MARKET_FEED_INSTRUMENTS];
-        const expectedMarketfeedInstruments = removeInstrument(instruments, expectedInstrument.symbol).reverse();
+        const expectedMarketfeedInstruments = removeInstrument(instruments,
+                                                               expectedInstrument.symbol).reverse();
 
         store.dispatch(fetchInstruments());
 
@@ -83,7 +85,7 @@ describe("instruments store integration tests - Happy Path", () => {
 
         // Then
         expect(store.getState()).toStrictEqual({
-            instruments: [expectedInstrument],
+            searchInstruments: [expectedInstrument],
             marketfeedInstruments: expectedMarketfeedInstruments,
             selected: instruments[0]
         });
@@ -93,7 +95,8 @@ describe("instruments store integration tests - Happy Path", () => {
     it("should updateMarketfeedInstrument to a given instrument ", () => {
         // Given
         const {price, open, ...expectedInstrument} = instruments[MAX_MARKET_FEED_INSTRUMENTS];
-        const expectedMarketfeedInstruments = removeInstrument(instruments, expectedInstrument.symbol).reverse();
+        const expectedMktfeedInstruments = removeInstrument(instruments,
+                                                            expectedInstrument.symbol).reverse();
 
         store.dispatch(fetchInstruments());
         const updatingInstrument = {...instruments[0], price: 1.5, open: 1.2};
@@ -105,9 +108,10 @@ describe("instruments store integration tests - Happy Path", () => {
 
         // Then
         expect(store.getState()).toStrictEqual({
-            instruments: [expectedInstrument],
-            marketfeedInstruments: updateInstrument(expectedMarketfeedInstruments, updatingInstrument),
-            selected: expectedMarketfeedInstruments[0]
+            searchInstruments: [expectedInstrument],
+            marketfeedInstruments: updateInstrument(expectedMktfeedInstruments,
+                                                    updatingInstrument),
+            selected: expectedMktfeedInstruments[0]
         });
 
     });
@@ -115,7 +119,8 @@ describe("instruments store integration tests - Happy Path", () => {
     it("should deleteMarketfeedInstrument to a given instrument ", () => {
         // Given
         const {price, open, ...expectedInstrument} = instruments[MAX_MARKET_FEED_INSTRUMENTS];
-        const expectedMarketfeedInstruments = removeInstrument(instruments, expectedInstrument.symbol).reverse();
+        const expectedMktfeedInstruments = removeInstrument(instruments,
+                                                            expectedInstrument.symbol).reverse();
         store.dispatch(fetchInstruments());
         const deleteInstrument = instruments[0];
 
@@ -126,9 +131,10 @@ describe("instruments store integration tests - Happy Path", () => {
 
         // Then
         expect(store.getState()).toStrictEqual({
-            instruments: [deleteInstrument, expectedInstrument],
-            marketfeedInstruments: removeInstrument(expectedMarketfeedInstruments, deleteInstrument.symbol),
-            selected: expectedMarketfeedInstruments[0]
+            searchInstruments: [deleteInstrument, expectedInstrument],
+            marketfeedInstruments: removeInstrument(expectedMktfeedInstruments,
+                                                    deleteInstrument.symbol),
+            selected: expectedMktfeedInstruments[0]
         });
     });
 
@@ -183,7 +189,7 @@ describe("instruments store integration tests - Invalid Path", () => {
 
         // Then
         expect(store.getState()).toStrictEqual({
-            instruments: [],
+            searchInstruments: [],
             marketfeedInstruments: [],
             selected: {}
         });

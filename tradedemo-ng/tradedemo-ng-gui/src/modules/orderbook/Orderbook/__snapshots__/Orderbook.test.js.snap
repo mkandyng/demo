@@ -313,7 +313,7 @@ exports[`Orderbook should render component comparing with previous snapshot shal
       "handleTableRow": [Function],
     }
   }
-  orderbook={
+  orders={
     Array [
       Object {
         "orderRef": "XA12345678",

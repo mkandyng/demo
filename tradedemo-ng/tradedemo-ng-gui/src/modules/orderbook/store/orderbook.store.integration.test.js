@@ -12,7 +12,7 @@ import { placeOrder,
  *
  */
 
-describe("orderbook integration tests", () => {
+describe("orderbook store integration tests", () => {
 
     let orders = undefined;
     let store = undefined;
@@ -28,33 +28,38 @@ describe("orderbook integration tests", () => {
 
     it("should placeOrder ", done => {
         // Given
-        const action = placeOrder(orders[0]);
+        const givenOrder = orders[0];
+        const action = placeOrder(givenOrder);
 
         // When
         store.dispatch(action);
 
         // Then
-        expect(store.getState()).toStrictEqual([{ ...orders[0],
-                                                  lastUpdated: expectedDate,
-                                                  status: orderbookStatusEnum.status.REQUESTED.displayName}]);
+        const order = store.getState()[0];
+        expect(order).toStrictEqual({ ...givenOrder,
+                                       lastUpdated: expectedDate,
+                                       status: orderbookStatusEnum.status.REQUESTED.displayName});
         done();
     });
 
     it("should update an existing order ", done => {
         // Given
         orders.forEach(order => store.dispatch(placeOrder(order)));
-        const expectedOrders = orders.map(order => ({ ...order,
-                                                      lastUpdated: expectedDate,
-                                                      status: orderbookStatusEnum.status.REQUESTED.displayName})).reverse();
 
-        const updatingOrder = { ...expectedOrders.pop(), status: orderbookStatusEnum.status.WORKING.displayName}
+        const expectedOrder = store.getState().find(order => true);
+
+        const remainingOrders = store.getState()
+                                     .filter(order => order.orderRef !== expectedOrder.orderRef);
+
+        const updatingOrder = { ...expectedOrder,
+                                status: orderbookStatusEnum.status.WORKING.displayName}
         const action = updateOrder(updatingOrder);
 
         // When
         store.dispatch(action);
 
         // Then
-        expect(store.getState()).toStrictEqual([updatingOrder, ...expectedOrders]);
+        expect(store.getState()).toStrictEqual([updatingOrder, ...remainingOrders]);
         done();
     });
 
@@ -63,8 +68,7 @@ describe("orderbook integration tests", () => {
 function createOrders(count) {
     let orders = [];
     for (let i=0; i<= count; i++) {
-        orders.push({ orderRef:"XA00000000" + i,
-                      created: getDateString(new Date(), "dateTimeFormat"),
+        orders.push({ created: getDateString(new Date(), "dateTimeFormat"),
                       symbol: "symbol" + i,  name:"instrument" + i,
                       currency: "USD"});
     }

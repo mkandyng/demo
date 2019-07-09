@@ -29,10 +29,9 @@ export function TopLayout(props) {
     )
 }
 
-const mapStateToProps = state => ({ instruments: state.instruments.instruments,
+const mapStateToProps = state => ({ searchInstruments: state.instruments.searchInstruments,
                                     marketfeedInstruments: state.instruments.marketfeedInstruments,
-                                    instrument: state.instruments.selected,
-                                    ticket: state.ticket });
+                                    instrument: state.instruments.selected });
 
 // Map Redux actions to component props
 const mapDispatchToProps = dispatch =>

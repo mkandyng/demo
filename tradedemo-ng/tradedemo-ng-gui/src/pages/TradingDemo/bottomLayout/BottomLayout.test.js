@@ -10,7 +10,7 @@ import { BottomLayout } from "./BottomLayout";
 
 describe("BottomLayout", () => {
     const props = { symbol: "symbol",
-                    orderbook: [{symbol:"symbol"}],
+                    orders: [{symbol:"symbol"}],
                     intradayTimeSeries: {},
                     dailyTimeSeries: {},
                     fetchIntradayTimeSeries: jest.fn(),

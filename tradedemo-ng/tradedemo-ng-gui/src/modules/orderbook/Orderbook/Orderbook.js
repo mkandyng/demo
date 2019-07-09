@@ -9,7 +9,7 @@ import "./orderbook.css";
  */
 export default function Orderbook(props) {
 
-    const { orderbook } = props;
+    const { orders } = props;
 
     const eventHandlers = {
         handleTableColumnHeader: handleTableColumnHeader,
@@ -17,20 +17,20 @@ export default function Orderbook(props) {
     }
 
     return (
-        <OrderbookView orderbook={orderbook}
+        <OrderbookView orders={orders}
                    columns={orderBookHeaderColumns}
                    eventHandlers={eventHandlers} />
     );
 }
 
-export function OrderbookView({orderbook,
+export function OrderbookView({orders,
                                columns,
                                eventHandlers}) {
     return (
         <ReactTable
             defaultPageSize={10}
             showPageSizeOptions={false}
-            data={orderbook}
+            data={orders}
             columns={columns}
             getTheadThProps={eventHandlers.handleTableColumnHeader}
             getTrProps={eventHandlers.handleTableRow}
@@ -77,11 +77,11 @@ function handleTableRow(state, rowInfo, column) {
 }
 
 Orderbook.propTypes = {
-    orderbook: PropTypes.arrayOf(PropTypes.object).isRequired
+    orders: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 OrderbookView.propTypes = {
-    orderbook: PropTypes.arrayOf(PropTypes.object).isRequired,
+    orders: PropTypes.arrayOf(PropTypes.object).isRequired,
     columns: PropTypes.arrayOf(PropTypes.object).isRequired,
     eventHandlers: PropTypes.objectOf(PropTypes.func).isRequired
 };

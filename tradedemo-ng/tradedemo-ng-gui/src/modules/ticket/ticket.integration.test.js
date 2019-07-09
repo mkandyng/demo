@@ -3,7 +3,6 @@ import { mount } from "enzyme";
 import toJson from "enzyme-to-json";
 import { combineReducers } from "redux";
 import { getDateString,
-         padDigits,
          createStoreWithMiddleware } from "../../libs/utils";
 import { MAX_INSTRUMENTS } from "../instruments/instruments";
 import * as orderbook from "../../modules/orderbook/store/orderbookReducer";
@@ -84,7 +83,9 @@ describe("ticket integration tests", () => {
         jest.runAllTimers();
         const verifyBuySellButtonClickSubmitOrder = (buySellId, buySell) => {
             // Given
-            const expectedOrderRef = "XA"+ padDigits(component.state().orderId, 8);
+            const originalCount = store.getState()
+                                       .orderbook
+                                       .filter(o => o.buySell === buySell).length;
             const ticket = mount(<Ticket {... props} ticket={component.state()}/>)
 
             // when
@@ -92,10 +93,9 @@ describe("ticket integration tests", () => {
                   .simulate("click", { target: { innerText: buySell }});
 
             // Then
-            const newOrder = store.getState().orderbook.find(
-                                  order=>order.orderRef === expectedOrderRef);
-            expect(newOrder).not.toBeUndefined();
-            expect(newOrder.buySell).toStrictEqual(buySell);
+            expect(store.getState()
+                        .orderbook
+                        .filter(o => o.buySell === buySell)).toHaveLength(originalCount+1);
         }
         verifyBuySellButtonClickSubmitOrder("buyButton", "Buy");
         verifyBuySellButtonClickSubmitOrder("sellButton", "Sell");

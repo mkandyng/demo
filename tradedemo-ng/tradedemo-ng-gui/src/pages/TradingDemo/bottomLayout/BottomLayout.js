@@ -11,7 +11,7 @@ import "./bottomLayout.css";
 export function BottomLayout(props) {
 
     const { symbol,
-            orderbook,
+            orders,
             intradayTimeSeries,
             dailyTimeSeries } = props
 
@@ -24,7 +24,7 @@ export function BottomLayout(props) {
 
     const tabs = [
         { name: "Orderbook",
-          panel: <Orderbook orderbook={orderbook} />},
+          panel: <Orderbook orders={orders} />},
         { name: "Intraday Prices " + selectedSymbol,
           panel: <TimeSeries timeSeries={intradayTimeSeries} childElements={TimeSeriesLines.INTRADAY_LINES}/>},
         { name: "Daily Prices " + selectedSymbol,
@@ -41,7 +41,7 @@ export function BottomLayout(props) {
 
 const mapStateToProps = state => (
                         { symbol: state.instruments.selected === undefined?"":state.instruments.selected.symbol,
-                          orderbook: state.orderbook,
+                          orders: state.orderbook,
                           intradayTimeSeries: state.timeSeries.intradayTimeSeries,
                           dailyTimeSeries: state.timeSeries.dailyTimeSeries });
 

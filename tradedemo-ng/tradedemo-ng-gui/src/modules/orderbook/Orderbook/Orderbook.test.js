@@ -11,15 +11,15 @@ import Orderbook, {OrderbookView, orderBookHeaderColumns } from "./Orderbook";
 
 describe("Orderbook", () => {
     const props = {
-      orderbook: [ {  orderRef:"XA12345678",
-                      symbol: "AMZ" } ]
+      orders: [ {  orderRef:"XA12345678",
+                   symbol: "AMZ" } ]
     };
 
     it("should render component comparing with previous snapshot shallow markup", () => {
         // Given
 
         // When
-        const component = shallow(<Orderbook orderbook={props.orderbook} />);
+        const component = shallow(<Orderbook orders={props.orders} />);
 
         // Then
         expect(toJson(component)).toMatchSnapshot();
@@ -28,7 +28,7 @@ describe("Orderbook", () => {
     it("should registered event handler correctly with OrderbookView", () => {
         // Given
         const localProps = {
-            orderbook: props.orderbook,
+            orders: props.orders,
             columns:orderBookHeaderColumns,
             eventHandlers: {
                 handleTableColumnHeader: jest.fn(),

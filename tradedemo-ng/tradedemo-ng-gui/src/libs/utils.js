@@ -4,6 +4,9 @@ import { combineEpics } from "redux-observable";
 
 /**
  * [createStoreWithMiddleware use to create a redux store tying implementation of ajax, reducer, epics]
+ * Note, no test for this function as it is used by the production code and
+ * number of integration tests that tested against the redux createStore
+ *
  * @param  {[Object]} ajax    [implement the interface getJSON]
  * @param  {[Function]} reducer [Redux store reducer function]
  * @param  {[Function]} epics   [Redux store observable epics middleware]

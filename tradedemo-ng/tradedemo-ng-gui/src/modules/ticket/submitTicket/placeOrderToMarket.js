@@ -10,8 +10,8 @@ import { orderbookStatusEnum } from "../../orderbook/orderbookStatusEnum";
  */
 export default function placeOrderToMarket(order, placeOrder, updateOrder) {
     const orderPlaced = { ...order,
-       executed: 0,
-       status: orderbookStatusEnum.status.REQUESTED.displayName
+        executed: 0,
+        status: orderbookStatusEnum.status.REQUESTED.displayName
     };
     placeOrder(orderPlaced);
     const orderEndStatus = orderbookStatusEnum.getRandomFinalOrderStatus();

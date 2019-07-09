@@ -1,4 +1,5 @@
-import { padDigits, getDateString } from "../../../libs/utils";
+import { getDateString,
+         padDigits } from "../../../libs/utils";
 import placeOrderToMarket from "./placeOrderToMarket";
 import validateOrder from "./validateOrder";
 
@@ -31,7 +32,7 @@ export default function submitTicket({ ticket,
 
         if(confirmedPlaceOrder) {
             placeOrderToMarket({
-                orderRef:"XA"+ padDigits(ticket.orderId, 8),
+                orderRef: "XA" + padDigits(ticket.orderId, 8),
                 created: getDateString(new Date(), "dateTimeFormat"),
                 executed: 0,
                 buySell: buySell,

@@ -14,13 +14,6 @@ exports[`TopLayout should render component comparing with previous snapshot shal
         "symbol": "symbol",
       }
     }
-    instruments={
-      Array [
-        Object {
-          "symbol": "symbol",
-        },
-      ]
-    }
     marketfeedInstruments={
       Array [
         Object {
@@ -29,6 +22,13 @@ exports[`TopLayout should render component comparing with previous snapshot shal
       ]
     }
     placeOrder={[MockFunction]}
+    searchInstruments={
+      Array [
+        Object {
+          "symbol": "symbol",
+        },
+      ]
+    }
     selectMarketfeedInstrument={[MockFunction]}
     ticket={
       Object {
@@ -50,13 +50,6 @@ exports[`TopLayout should render component comparing with previous snapshot shal
           "symbol": "symbol",
         }
       }
-      instruments={
-        Array [
-          Object {
-            "symbol": "symbol",
-          },
-        ]
-      }
       marketfeedInstruments={
         Array [
           Object {
@@ -65,6 +58,13 @@ exports[`TopLayout should render component comparing with previous snapshot shal
         ]
       }
       placeOrder={[MockFunction]}
+      searchInstruments={
+        Array [
+          Object {
+            "symbol": "symbol",
+          },
+        ]
+      }
       selectMarketfeedInstrument={[MockFunction]}
       ticket={
         Object {
@@ -83,13 +83,6 @@ exports[`TopLayout should render component comparing with previous snapshot shal
           "symbol": "symbol",
         }
       }
-      instruments={
-        Array [
-          Object {
-            "symbol": "symbol",
-          },
-        ]
-      }
       marketfeedInstruments={
         Array [
           Object {
@@ -98,6 +91,13 @@ exports[`TopLayout should render component comparing with previous snapshot shal
         ]
       }
       placeOrder={[MockFunction]}
+      searchInstruments={
+        Array [
+          Object {
+            "symbol": "symbol",
+          },
+        ]
+      }
       selectMarketfeedInstrument={[MockFunction]}
       ticket={
         Object {

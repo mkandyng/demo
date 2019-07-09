@@ -16,10 +16,9 @@ describe("InstrumentsSearch", () => {
     let component = undefined;
 
     beforeEach(() => {
-        props = { instruments: [{symbol: "sym", name:"symbol"}],
+        props = { searchInstruments: [{symbol: "sym", name:"symbol"}],
                   marketfeedInstruments: [{symbol: "sym1", name:"symbol1"}],
-                  addInstrumentToMarketfeed: jest.fn(),
-                  fetchInstruments: jest.fn() };
+                  addInstrumentToMarketfeed: jest.fn() };
         component = mount(<InstrumentsSearch {...props} />);
     });
 
@@ -47,7 +46,7 @@ describe("InstrumentsSearch", () => {
     });
 
     it("should reject when marketInstruments exceed max", () => {
-        addInstrumentToMarketfeedVerify(props.instruments[0].symbol,
+        addInstrumentToMarketfeedVerify(props.searchInstruments[0].symbol,
                                         { ...props,
                                           marketfeedInstruments: createInstruments(MAX_MARKET_FEED_INSTRUMENTS)},
                                         () => expect(window.alert)
@@ -59,7 +58,7 @@ describe("InstrumentsSearch", () => {
         const instruments = createInstruments(MAX_INSTRUMENTS+1);
         addInstrumentToMarketfeedVerify(instruments[MAX_INSTRUMENTS].symbol,
                                        { ...props,
-                                         instruments: instruments,
+                                         searchInstruments: instruments,
                                          marketfeedInstruments:[]},
                                        () => expect(props.addInstrumentToMarketfeed).toHaveBeenCalled());
     });

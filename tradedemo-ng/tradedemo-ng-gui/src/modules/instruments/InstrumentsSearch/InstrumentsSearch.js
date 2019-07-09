@@ -8,10 +8,9 @@ import "./instrumentsSearch.css"
  * Component for InstrumentSearch drop down, which manage the instruments state
  */
 
-export default function InstrumentsSearch({ instruments,
+export default function InstrumentsSearch({ searchInstruments,
                                             marketfeedInstruments,
-                                            addInstrumentToMarketfeed,
-                                            fetchInstruments }) {
+                                            addInstrumentToMarketfeed }) {
 
     const [ value, setSelectItem ] = useState("");
 
@@ -22,14 +21,14 @@ export default function InstrumentsSearch({ instruments,
                      value={value}
                      onChange={event => setSelectItem(event.target.value)}
                      onSelect={value => setSelectItem(value)}
-                     items={updateSearchDropDown(instruments)}
+                     items={updateSearchDropDown(searchInstruments)}
                      getItemValue={item => `${item.value}`}
                      shouldItemRender={matchStocks}
                      renderItem={renderItem}
                  />
                <input type="submit" value="Add" onClick={event => addItem(event,
                                                                           value,
-                                                                          instruments,
+                                                                          searchInstruments,
                                                                           marketfeedInstruments,
                                                                           addInstrumentToMarketfeed,
                                                                           setSelectItem)}/>
@@ -85,7 +84,7 @@ function matchStocks(state, value) {
 }
 
 InstrumentsSearch.propTypes = {
+    searchInstruments: PropTypes.arrayOf(PropTypes.object).isRequired,
     marketfeedInstruments: PropTypes.arrayOf(PropTypes.object).isRequired,
-    instruments: PropTypes.arrayOf(PropTypes.object).isRequired,
     addInstrumentToMarketfeed: PropTypes.func.isRequired
 };

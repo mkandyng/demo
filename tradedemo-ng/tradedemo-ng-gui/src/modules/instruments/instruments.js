@@ -2,7 +2,7 @@ import React from "react";
 import { getRandomInt } from "../../libs/utils";
 
 export const MAX_MARKET_FEED_INSTRUMENTS = 5;
-export const MAX_INSTRUMENTS = 10;
+export const MAX_INSTRUMENTS = 15;
 export const MOUSE_OVER_IMAGE = "img/delete_click.png";
 export const MOUSE_OUT_IMAGE = "img/delete.png";
 

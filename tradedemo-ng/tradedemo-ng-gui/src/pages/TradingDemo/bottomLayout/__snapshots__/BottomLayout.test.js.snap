@@ -9,7 +9,7 @@ exports[`BottomLayout should render component comparing with previous snapshot s
       Object {
         "name": "Orderbook",
         "panel": <Orderbook
-          orderbook={
+          orders={
             Array [
               Object {
                 "symbol": "symbol",

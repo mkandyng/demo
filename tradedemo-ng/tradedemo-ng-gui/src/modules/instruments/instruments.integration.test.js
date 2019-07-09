@@ -35,15 +35,17 @@ describe("InstrumentsSearch integration tests", () => {
     });
 
     it("should add to marketfeedInstruments and remove from instruments", () => {
-        const instrumentsToAdd = props.instruments[0];
+        const instrumentsToAdd = props.searchInstruments[0];
         addInstrumentToMarketfeedVerify(instrumentsToAdd.symbol,
                                        { ...props, marketfeedInstruments:[] },
                                        () => {
                                           expect(retrieveInstrument(
-                                                 store.getState().instruments, instrumentsToAdd.symbol)
+                                                     store.getState().searchInstruments,
+                                                     instrumentsToAdd.symbol)
                                                 ).not.toBeDefined();
                                           expect(retrieveInstrument(
-                                                 store.getState().marketfeedInstruments, instrumentsToAdd.symbol)
+                                                     store.getState().marketfeedInstruments,
+                                                     instrumentsToAdd.symbol)
                                                 ).toBeDefined();
                                        });
     });
@@ -55,7 +57,8 @@ describe("InstrumentsMarketfeed integration tests", () => {
     const mockModule = require('./instruments');
     mockModule.generateMarketfeedMovement = jest.fn(expectedInstrument => {
       return { ...expectedInstrument,
-               delete:<img id={getDeleteId(expectedInstrument)} src="img/delete.png" alt="delete" />}
+               delete:<img id={getDeleteId(expectedInstrument)}
+                           src="img/delete.png" alt="delete" />}
     });
     const { store, props } = createStoreAndFetchInstruments();
     const component = mount(<InstrumentsMarketfeed {...props} />);
@@ -85,7 +88,7 @@ describe("InstrumentsMarketfeed integration tests", () => {
             ).not.toBeDefined();
 
             expect(retrieveInstrument(
-                store.getState().instruments, selectedMrkInstrument.symbol)
+                store.getState().searchInstruments, selectedMrkInstrument.symbol)
             ).toBeDefined();
 
             expect(store.getState().selected).toStrictEqual(nextSelectedInstrument);
@@ -104,7 +107,7 @@ function createStoreAndFetchInstruments() {
     store.dispatch(fetchInstruments());
 
     const props = {
-            instruments: store.getState().instruments,
+            searchInstruments: store.getState().searchInstruments,
             marketfeedInstruments: store.getState().marketfeedInstruments,
             instrument: store.getState().selected,
             addInstrumentToMarketfeed: instrument =>

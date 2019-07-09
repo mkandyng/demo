@@ -9,7 +9,7 @@ import { TopLayout } from "./TopLayout";
  */
 
 describe("TopLayout", () => {
-    const props = { instruments: [{ symbol: "symbol" }],
+    const props = { searchInstruments: [{ symbol: "symbol" }],
                     marketfeedInstruments: [{symbol:"symbol"}],
                     ticket: { symbol: "symbol" },
                     instrument: { symbol: "symbol" },

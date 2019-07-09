@@ -18,45 +18,6 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
       "symbol": "symbol4",
     }
   }
-  instruments={
-    Array [
-      Object {
-        "currency": "USD",
-        "name": "instrument5",
-        "symbol": "symbol5",
-      },
-      Object {
-        "currency": "USD",
-        "name": "instrument6",
-        "symbol": "symbol6",
-      },
-      Object {
-        "currency": "USD",
-        "name": "instrument7",
-        "symbol": "symbol7",
-      },
-      Object {
-        "currency": "USD",
-        "name": "instrument8",
-        "symbol": "symbol8",
-      },
-      Object {
-        "currency": "USD",
-        "name": "instrument9",
-        "symbol": "symbol9",
-      },
-      Object {
-        "currency": "USD",
-        "name": "instrument10",
-        "symbol": "symbol10",
-      },
-      Object {
-        "currency": "USD",
-        "name": "instrument11",
-        "symbol": "symbol11",
-      },
-    ]
-  }
   marketfeedInstruments={
     Array [
       Object {
@@ -118,6 +79,70 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
         "open": 1,
         "price": 1,
         "symbol": "symbol0",
+      },
+    ]
+  }
+  searchInstruments={
+    Array [
+      Object {
+        "currency": "USD",
+        "name": "instrument5",
+        "symbol": "symbol5",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument6",
+        "symbol": "symbol6",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument7",
+        "symbol": "symbol7",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument8",
+        "symbol": "symbol8",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument9",
+        "symbol": "symbol9",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument10",
+        "symbol": "symbol10",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument11",
+        "symbol": "symbol11",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument12",
+        "symbol": "symbol12",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument13",
+        "symbol": "symbol13",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument14",
+        "symbol": "symbol14",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument15",
+        "symbol": "symbol15",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument16",
+        "symbol": "symbol16",
       },
     ]
   }
@@ -2486,45 +2511,6 @@ exports[`InstrumentsSearch integration tests should render component Instruments
       "symbol": "symbol4",
     }
   }
-  instruments={
-    Array [
-      Object {
-        "currency": "USD",
-        "name": "instrument5",
-        "symbol": "symbol5",
-      },
-      Object {
-        "currency": "USD",
-        "name": "instrument6",
-        "symbol": "symbol6",
-      },
-      Object {
-        "currency": "USD",
-        "name": "instrument7",
-        "symbol": "symbol7",
-      },
-      Object {
-        "currency": "USD",
-        "name": "instrument8",
-        "symbol": "symbol8",
-      },
-      Object {
-        "currency": "USD",
-        "name": "instrument9",
-        "symbol": "symbol9",
-      },
-      Object {
-        "currency": "USD",
-        "name": "instrument10",
-        "symbol": "symbol10",
-      },
-      Object {
-        "currency": "USD",
-        "name": "instrument11",
-        "symbol": "symbol11",
-      },
-    ]
-  }
   marketfeedInstruments={
     Array [
       Object {
@@ -2561,6 +2547,70 @@ exports[`InstrumentsSearch integration tests should render component Instruments
         "open": 1,
         "price": 1,
         "symbol": "symbol0",
+      },
+    ]
+  }
+  searchInstruments={
+    Array [
+      Object {
+        "currency": "USD",
+        "name": "instrument5",
+        "symbol": "symbol5",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument6",
+        "symbol": "symbol6",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument7",
+        "symbol": "symbol7",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument8",
+        "symbol": "symbol8",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument9",
+        "symbol": "symbol9",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument10",
+        "symbol": "symbol10",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument11",
+        "symbol": "symbol11",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument12",
+        "symbol": "symbol12",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument13",
+        "symbol": "symbol13",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument14",
+        "symbol": "symbol14",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument15",
+        "symbol": "symbol15",
+      },
+      Object {
+        "currency": "USD",
+        "name": "instrument16",
+        "symbol": "symbol16",
       },
     ]
   }
@@ -2605,6 +2655,26 @@ exports[`InstrumentsSearch integration tests should render component Instruments
             Object {
               "label": "(symbol11) instrument11",
               "value": "symbol11",
+            },
+            Object {
+              "label": "(symbol12) instrument12",
+              "value": "symbol12",
+            },
+            Object {
+              "label": "(symbol13) instrument13",
+              "value": "symbol13",
+            },
+            Object {
+              "label": "(symbol14) instrument14",
+              "value": "symbol14",
+            },
+            Object {
+              "label": "(symbol15) instrument15",
+              "value": "symbol15",
+            },
+            Object {
+              "label": "(symbol16) instrument16",
+              "value": "symbol16",
             },
           ]
         }
