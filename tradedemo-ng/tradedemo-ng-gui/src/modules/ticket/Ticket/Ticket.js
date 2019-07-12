@@ -1,9 +1,9 @@
 import React from "react";
 import { getRandomInt, toggleOpacity, getDateString } from "../../../libs/utils";
-import BuySellButton from "../../../components/BuySellButton";
-import LabelInput from "../../../components/LabelInput";
-import LabelTextArea from "../../../components/LabelTextArea";
-import SelectionDropDown from "../../../components/SelectionDropDown";
+import BuySellButton from "../../../libs/components/BuySellButton";
+import LabelInput from "../../../libs/components/LabelInput";
+import LabelTextArea from "../../../libs/components/LabelTextArea";
+import SelectionDropDown from "../../../libs/components/SelectionDropDown";
 import submitTicket from "../submitTicket";
 import "./ticket.css";
 

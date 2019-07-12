@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {connect} from "react-redux";
-import SelectableTabs from "../../../components/SelectableTabs"
+import SelectableTabs from "../../../libs/components/SelectableTabs"
 import Orderbook from "../../../modules/orderbook/Orderbook";
 import TimeSeries, { TimeSeriesLines } from "../../../modules/timeSeries/TimeSeries";
 import "./bottomLayout.css";
