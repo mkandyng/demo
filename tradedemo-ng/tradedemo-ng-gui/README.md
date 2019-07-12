@@ -27,9 +27,9 @@ However, common consensus is to <a href="https://reactjs.org/docs/faq-structure.
 In my code, I have setup three top level folder structures:
 
 <ol>
-  <li>libs, this is where the share code (utils and components resides)</li>
-  <li>modules, this is where I bundled state with the corresponding feature UI elements</li>
-  <li>pages, this is where I define the structure of a pages and routes</li>
+  <li><b>libs</b>, this is where the share code (utils and components resides)</li>
+  <li><b>modules</b>, this is where I bundled state with the corresponding feature UI elements</li>
+  <li><b>pages</b>, this is where I define the structure of a pages and routes</li>
 </ol>
 </p>
 
