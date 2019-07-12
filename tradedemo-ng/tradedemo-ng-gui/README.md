@@ -33,7 +33,7 @@ In my code, I have setup three top level folder structures:
 </ol>
 </p>
 
-<h2>2.0 Favour functional style of programming</h2>
+<h2>2.0 Favour functional programming style</h2>
 
 <h2>3.0 Use state management</h2>
 
