@@ -4,11 +4,11 @@ A <a href="http://tradedemo-ng.appspot.com" alt="tradedemo-ng">live demo</a> is 
 
 This frontend is written using the following main technologies:
 <ul>
-  <li><a href="https://reactjs.org" alt="reactjs">ReactJs for view layer of the UI</a></li>
-  <li><a href="https://redux.js.org" alt="redux">Redux for frontend state management</a></li>
-  <li><a href="https://redux-observable.js.org/" alt="redux">Redux Observable (Redux + RxJS) for rest API calls</a></li>
-  <li><a href="https://jestjs.io/" alt="redux">Javascript Testing Framework</a></li>
-  <li><a href="https://airbnb.io/enzyme/" alt="redux">Javascript Testing Utilities</a></li>
+  <li><a href="https://reactjs.org" alt="reactjs">ReactJs</a> for view layer of the UI</li>
+  <li><a href="https://redux.js.org" alt="redux">Redux</a> for frontend state management</li>
+  <li><a href="https://redux-observable.js.org/" alt="redux">Redux Observable</a> (Redux + RxJS) for async rest API calls</li>
+  <li><a href="https://jestjs.io/" alt="redux">Jest</a>, a Javascript Testing Framework</li>
+  <li><a href="https://airbnb.io/enzyme/" alt="enzyme">enzyme</a>, a Javascript Testing Utilities</li>
 </ul>
 
 Note, I have been a Java backend developer in the last decade and only reacquaint my Javascript skills since April 2019. This project is a learning exercise to familiar myself with ReactJS and its technology ecosystem.
