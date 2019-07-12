@@ -37,7 +37,9 @@ describe("timeSeries store integration tests", () => {
 
         // Then
         expect(store.getState()).toEqual(
-            { intradayTimeSeries:{}, dailyTimeSeries: expectedTimeSeries}
+            { symbol: symbol,
+              intradayTimeSeries:{},
+              dailyTimeSeries: expectedTimeSeries}
         );
 
         done();
@@ -53,7 +55,8 @@ describe("timeSeries store integration tests", () => {
         const action = fetchIntradayTimeSeries(symbol);
         const expectedTimeSeries = transformTimeSeries(timeSeries.map(timeSeries => {
             const {dateTime, high, low, ...expected} = timeSeries;
-            return {...expected, name: timeSeries.dateTime.substr(11,5),
+            return {...expected,
+                    name: timeSeries.dateTime.substr(11,5),
                     price: roundValue((high + low)/2, 100)};
         }).reverse(), o => o.price, o => o.price);
 
@@ -62,7 +65,9 @@ describe("timeSeries store integration tests", () => {
 
         // Then
         expect(store.getState()).toEqual(
-            { intradayTimeSeries:expectedTimeSeries, dailyTimeSeries: {}}
+            { symbol: symbol,
+              intradayTimeSeries:expectedTimeSeries,
+              dailyTimeSeries: {}}
         );
 
         done();

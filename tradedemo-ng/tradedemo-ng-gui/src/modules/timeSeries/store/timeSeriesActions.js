@@ -12,8 +12,9 @@ export const fetchDailyTimeSeries = symbol => ({
     symbol: symbol
 });
 
-export const fetchDailyTimeSeriesSuccess = timeSeries => ({
+export const fetchDailyTimeSeriesSuccess = (symbol, timeSeries) => ({
     type: types.FETCH_DAILY_TIMESERIES_SUCCESS,
+    symbol: symbol,
     timeSeries: timeSeries
 });
 
@@ -27,8 +28,9 @@ export const fetchIntradayTimeSeries = symbol => ({
     symbol: symbol
 });
 
-export const fetchIntradayTimeSeriesSuccess = timeSeries => ({
+export const fetchIntradayTimeSeriesSuccess = (symbol, timeSeries) => ({
     type: types.FETCH_INTRADAY_TIMESERIES_SUCCESS,
+    symbol: symbol,
     timeSeries: timeSeries
 });
 

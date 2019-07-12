@@ -27,7 +27,7 @@ function fetchDailyTimeSeriesEpic(action$, store, {ajax}) {
                              close: series.close
                     })
                 )),
-                map(timeSeries => timeSeriesActions.fetchDailyTimeSeriesSuccess(timeSeries)),
+                map(timeSeries => timeSeriesActions.fetchDailyTimeSeriesSuccess(action.symbol, timeSeries)),
                 catchError(error => Observable.of(timeSeriesActions.fetchDailyTimeSeriesFailure(error)))
             )
         )
@@ -46,7 +46,7 @@ function fetchIntradayTimeSeriesEpic(action$, store, {ajax}) {
                        price: roundValue((series.high + series.low)/2, 100)
                     })
                  )),
-                 map(timeSeries => timeSeriesActions.fetchIntradayTimeSeriesSuccess(timeSeries)),
+                 map(timeSeries => timeSeriesActions.fetchIntradayTimeSeriesSuccess(action.symbol, timeSeries)),
                  catchError(error => Observable.of(timeSeriesActions.fetchIntradayTimeSeriesFailure(error)))
             )
         )

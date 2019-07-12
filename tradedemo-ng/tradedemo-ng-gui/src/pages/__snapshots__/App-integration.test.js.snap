@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App Integration Test should initialise app and matched with previous shallow snapshot 1`] = `
+exports[`App Integration Test - Standard tests should initialise app and matched with previous shallow snapshot 1`] = `
 <ContextProvider
   value={
     Object {

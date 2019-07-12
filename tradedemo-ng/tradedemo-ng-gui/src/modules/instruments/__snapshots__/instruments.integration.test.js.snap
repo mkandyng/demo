@@ -139,11 +139,6 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
         "name": "instrument15",
         "symbol": "symbol15",
       },
-      Object {
-        "currency": "USD",
-        "name": "instrument16",
-        "symbol": "symbol16",
-      },
     ]
   }
   selectMarketfeedInstrument={[Function]}
@@ -2607,11 +2602,6 @@ exports[`InstrumentsSearch integration tests should render component Instruments
         "name": "instrument15",
         "symbol": "symbol15",
       },
-      Object {
-        "currency": "USD",
-        "name": "instrument16",
-        "symbol": "symbol16",
-      },
     ]
   }
   selectMarketfeedInstrument={[Function]}
@@ -2671,10 +2661,6 @@ exports[`InstrumentsSearch integration tests should render component Instruments
             Object {
               "label": "(symbol15) instrument15",
               "value": "symbol15",
-            },
-            Object {
-              "label": "(symbol16) instrument16",
-              "value": "symbol16",
             },
           ]
         }

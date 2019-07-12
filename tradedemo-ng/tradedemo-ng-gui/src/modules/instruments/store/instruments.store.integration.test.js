@@ -24,7 +24,7 @@ describe("instruments store integration tests - Happy Path", () => {
 
     let store = undefined;
 
-    const instruments = createInstruments(MAX_MARKET_FEED_INSTRUMENTS)
+    const instruments = createInstruments(MAX_MARKET_FEED_INSTRUMENTS+1)
                             .map(instrument => ({...instrument, price: 1.0, open: 1.0}));
 
     beforeEach(() => {
@@ -56,6 +56,7 @@ describe("instruments store integration tests - Happy Path", () => {
     it("should addInstrumentToMarketfeed and select first element ", () => {
         // Given
         store.dispatch(fetchInstruments());
+
 
         const action = addInstrumentToMarketfeed(instruments[MAX_MARKET_FEED_INSTRUMENTS]);
 
@@ -148,7 +149,8 @@ describe("instruments store integration tests - Invalid Path", () => {
     console.log = jest.fn();
 
     beforeEach(() => {
-        instruments = createInstruments(MAX_MARKET_FEED_INSTRUMENTS).map(instrument => ({...instrument, price: 1.0, open: 1.0}));
+        instruments = createInstruments(MAX_MARKET_FEED_INSTRUMENTS)
+                          .map(instrument => ({...instrument, price: 1.0, open: 1.0}));
 
         store = createStoreWithMiddleware({getJSON:() => throwError(error)},
                                           instrumentsReducer,

@@ -28,14 +28,17 @@ describe("InstrumentsSearch", () => {
     });
 
     it("should update value on input change", () => {
+
+      
         // Given
         const expectedValue = "changeValue";
-        const input = component.find("input").find({role: "combobox"});
         // When
-        input.simulate("change", {target: {value: expectedValue}});
+        component.find("input").find({role: "combobox"})
+             .simulate("change", {target: {value: expectedValue}});
 
         // Then
-        expect(input.find({value:expectedValue})).toBeDefined();
+        expect(component.find("input").find({value: expectedValue}).props().value)
+                                      .toEqual(expectedValue);
     });
 
     it("should reject input not in instruments", () => {

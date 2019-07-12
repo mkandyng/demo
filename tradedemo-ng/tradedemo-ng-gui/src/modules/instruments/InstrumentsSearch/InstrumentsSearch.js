@@ -26,12 +26,12 @@ export default function InstrumentsSearch({ searchInstruments,
                      shouldItemRender={matchStocks}
                      renderItem={renderItem}
                  />
-               <input type="submit" value="Add" onClick={event => addItem(event,
-                                                                          value,
-                                                                          searchInstruments,
-                                                                          marketfeedInstruments,
-                                                                          addInstrumentToMarketfeed,
-                                                                          setSelectItem)}/>
+                 <input type="submit" value="Add" onClick={event => addItem(event,
+                                                                            value,
+                                                                            searchInstruments,
+                                                                            marketfeedInstruments,
+                                                                            addInstrumentToMarketfeed,
+                                                                            setSelectItem)}/>
              </form>
         </div>
     )
@@ -65,7 +65,6 @@ function addItem(event,
         }
         return false;
     };
-
     event.preventDefault();
     setSelectItem("");
     addSelectedInstrumentToMarketfeed();

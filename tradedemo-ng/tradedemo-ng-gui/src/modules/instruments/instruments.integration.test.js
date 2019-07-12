@@ -15,7 +15,8 @@ import { MAX_INSTRUMENTS,
 import { addInstrumentToMarketfeedVerify,
          createInstruments,
          getJSONFunction,
-         clickAndVerify } from "./instruments.test.helpers";
+         clickAndVerify,
+         getNextSelectedMarketfeed } from "./instruments.test.helpers";
 import InstrumentsSearch from "./InstrumentsSearch";
 import InstrumentsMarketfeed from "./InstrumentsMarketfeed";
 
@@ -68,9 +69,8 @@ describe("InstrumentsMarketfeed integration tests", () => {
     });
 
     it("should select another instrument if not already selected", () => {
-        const selectInstrument = props.marketfeedInstruments.find(
-                                       instrument => instrument.symbol !== props.instrument.symbol);
-
+        const selectInstrument = getNextSelectedMarketfeed(props.marketfeedInstruments,
+                                                           props.instrument);
         clickAndVerify(component, "div[children='" + selectInstrument.symbol + "']", () => {
             expect(store.getState().selected).toStrictEqual(selectInstrument);
         });
@@ -80,8 +80,8 @@ describe("InstrumentsMarketfeed integration tests", () => {
         const selectedMrkInstrument = props.marketfeedInstruments[0];
 
         clickAndVerify(component, "img#" + getDeleteId(selectedMrkInstrument), () => {
-            const nextSelectedInstrument = props.marketfeedInstruments
-                        .find(e => e.symbol !== selectedMrkInstrument.symbol);
+            const nextSelectedInstrument = getNextSelectedMarketfeed(props.marketfeedInstruments,
+                                                                     selectedMrkInstrument);
 
             expect(retrieveInstrument(
                 store.getState().marketfeedInstruments, selectedMrkInstrument.symbol)
@@ -101,8 +101,8 @@ function createStoreAndFetchInstruments() {
                                   .map(instrument => ({ ...instrument, price: 1.0, open: 1.0 }));
 
     const store = createStoreWithMiddleware({getJSON: (url) => getJSONFunction(url, instruments)},
-                                     instrumentsReducer,
-                                     instrumentsEpics);
+                                             instrumentsReducer,
+                                             instrumentsEpics);
 
     store.dispatch(fetchInstruments());
 

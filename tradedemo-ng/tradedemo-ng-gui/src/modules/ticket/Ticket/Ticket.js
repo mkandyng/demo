@@ -76,8 +76,10 @@ class Ticket extends React.Component {
 
     componentWillUpdate() {
         if(this.state.symbol !== this.props.instrument.symbol) {
-            this.setState({ symbol: this.props.instrument.symbol,
-                            price: this.props.instrument.price.toFixed(2) });
+            this.setState({ symbol: this.props.instrument.symbol});
+            if(this.props.instrument.price !== undefined) {
+                this.setState({ price: this.props.instrument.price.toFixed(2) });
+            }
         }
     }
 
