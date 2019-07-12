@@ -70,7 +70,7 @@ In the javascript world, there are many options and I tend to use the same set o
 
 <ol>
   <li><b>Unit Tests,</b> All the tests that end with .test</li>
-  <li><b>Integration Test,</b>, All the test that end with .integration.test</li>
+  <li><b>Integration Test,</b> All the test that end with .integration.test</li>
   <li><b>End2End</b>, App-end2end.test, which test when the application is fully wired up</li>
 </ol>
 </p>
