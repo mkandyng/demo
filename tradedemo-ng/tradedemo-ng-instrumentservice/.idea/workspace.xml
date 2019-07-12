@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f292c9d8-b3ce-48b0-8e23-ac8caa4d340c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/resources.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/resources.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/libs/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsSearch/InstrumentsSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsSearch/InstrumentsSearch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsSearch/InstrumentsSearch.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsSearch/InstrumentsSearch.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/__snapshots__/instruments.integration.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/__snapshots__/instruments.integration.test.js.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/instruments.integration.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/instruments.integration.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/store/instruments.store.integration.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/store/instruments.store.integration.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/store/instrumentsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/store/instrumentsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/submitTicket/placeOrderToMarket.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/submitTicket/placeOrderToMarket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/ticket.integration.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/ticket.integration.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/topLayout/TopLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/topLayout/TopLayout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/topLayout/TopLayout.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/topLayout/TopLayout.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/topLayout/__snapshots__/TopLayout.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/pages/TradingDemo/topLayout/__snapshots__/TopLayout.test.js.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
