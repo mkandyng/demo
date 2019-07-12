@@ -13,14 +13,17 @@ This frontend is written using the following main technologies:
 
 Note, I have been a Java backend developer in the last decade and only reacquaint my Javascript skills since April 2019. This project is a learning exercise to familiar myself with ReactJS and its technology ecosystem.
 
-As a software engineer and not a UI designer, I am done with the GUI and its functionalities. I am happy enough to share my code as is. During the course of building this frontend, I have to gathered the following modern JS and React 'Best Practices', filtering out many different opinions and make conclusion using my own intuitions how best to structure, write, and test software that can grow from skeleton to large scale application.
+As a software engineer and not a UI designer, I am done with the GUI and its functionalities. I am happy enough to share my code as is. During the course of building this frontend, I have to gathered the following modern JS and React 'Best Practices', filtering out many different opinions and make conclusions using my own intuition how best to structure, write, and test software that can grow from skeleton to large scale application.
 
 Here are my views on modern Javascript and React Best Practices:
 
 <h2>1.0 Structure your project by feature</h2>
+<p>
 React doesn’t have opinions as it is a view library, not a framework which offer opinionated architecture style.
 However, common consensus is to <a href="https://reactjs.org/docs/faq-structure.html">structure your project by feature</a> but even that has different takes on where the redux code should reside.
+<p>
 
+<p>
 In my code, I have setup three top level folder structures:
 
 <ol>
@@ -28,6 +31,7 @@ In my code, I have setup three top level folder structures:
   <li>modules, this is where I bundled state with the corresponding feature UI elements</li>
   <li>pages, this is where I define the structure of a pages and routes</li>
 </ol>
+</p>
 
 <h2>2.0 Favour functional style of programming</h2>
 
