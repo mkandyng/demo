@@ -1,4 +1,4 @@
-<h2>1.0 Intro to TradeDemo-NG GUI</h2>
+<h2>1.0 Introduction to TradeDemo-NG GUI</h2>
 
 This project is the Web frontend of a skeleton trading application I am developing to serve as a blueprint on how to apply modern technologies to implement a working cloud-native application that adheres to the principles of <a href="https://12factor.net/">12 Factor App</a> and <a href="https://www.reactivemanifesto.org/">Reactive Manifesto</a>.
 
