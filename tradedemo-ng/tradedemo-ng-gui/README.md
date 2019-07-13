@@ -11,7 +11,7 @@ This frontend is written using the following technologies:
   <li><a href="https://airbnb.io/enzyme/" alt="enzyme">enzyme</a>, Javascript Testing Utilities</li>
 </ul>
 
-Note, I have been a Java backend developer in the last couple of decades and only reacquaint my Javascript skills since April 2019. This project is a learning exercise to familiar myself with ReactJS and its technology ecosystem.
+Note, I have been a pure Java backend developer in the last decade and only reacquaint my Javascript skills since April 2019. I left the javascript world just when JQuery was the trending technology and now that is legacy. This project is a learning exercise to familiar myself with ReactJS and its technology ecosystem.
 
 As a software engineer and not a UI designer, I am done with the GUI and its functionalities. I am happy enough to share my code as is. During the course of building this frontend, I have to gathered the following <b>modern Javascript and React 'Best Practices'</b>, filtering out many different opinions and make conclusions using my own intuition how best to structure and write testable software that can scale.
 
@@ -43,7 +43,7 @@ You can create React component using pure function or using class syntax. Some p
 <ol>
   <li><b>Less boiler plate code,</b> No constructor, no life cycle events, simply a javascript function that takes props as input and return JSX</li>
   <li><b>Testability</b>, As a function, same input will produces the same output</li>
-  <li><b>Interface</b>, functional component interface should destruct the props, making inputs clear</li>
+  <li><b>Interface</b>, Functional component interface should destruct the props, making inputs clear</li>
 </ol>
 </p>
 <p>
@@ -61,9 +61,18 @@ Without state management library, as the application grow, it will become very d
 In this project, I grouped the store data as modules and within it, define the React components that renders its data.
 </p>
 
-<h2>4.0 Test, Test, and Test</h2>
+<h2>4.0 Test (Unit), Test (Integration), and Test (End2End)</h2>
 <p>
 Whether you are writing Test First, Test Last, or Test In-Between, if you want to be productive, you need lot of Unit Tests on export functions, Integration Test on modules, and End-2-End at the application level to provide the necessary code coverage.
+</p>
+<p>
+Many people argue about productivity of unit tests. Many are happy to promote <a href="https://en.wikipedia.org/wiki/Test-driven_development">Test Driven Development</a> and only have End2End tests that the whole system or large part of the system to demonstrate their practices. Although you can define an End2End test to specify a feature before any code is written to ensure <b>building the right application</b>, testing only at the highest level does not enforce we <b>build the application right</b>.
+</p>
+<p>
+The original <a href="https://martinfowler.com/bliki/TestPyramid.html">Test Pyramid</a> define layers such as UI, Service, and Unit. The modern takes on <a href="https://dzone.com/articles/the-battle-of-the-testing-triangle">Test Triangle</a> that do not mix application architecture with test artefacts. In this project, I have shown even at the UI layer, we can group units into modules and gluing modules together to form an application. If we apply the modern takes of testing triangle, we can leave feature tests at End2End level, drilling down into more focus tests at module level, and test all edge cases at the unit level to ensure every layer (even UI and not just the backends) adheres to the most rigorous engineering practices.
+</p>
+<p>
+Writing unit tests and integration tests can be time consuming and can lead up to 3x as much code covering all edge cases. This mean application that is adaptable to change are those that are made up of small independent units which are glue together with well defined interface, so that any change do not cascade all over the different layer of the application.
 </p>
 <p>
 In the javascript world, there are many test libraries and frameworks. I tend to use the same set of tool to perform different level of tests and not resort to specific tool at a given layer. In this project, I used <a href="https://jestjs.io/" alt="redux">Jest</a> and <a href="https://airbnb.io/enzyme/" alt="enzyme">enzyme</a> and created:
