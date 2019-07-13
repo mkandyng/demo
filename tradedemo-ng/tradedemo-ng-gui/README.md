@@ -4,9 +4,9 @@ A <a href="http://tradedemo-ng.appspot.com" alt="tradedemo-ng">live demo</a> is 
 
 This frontend is written using the following technologies:
 <ul>
-  <li><a href="https://reactjs.org" alt="reactjs">ReactJs</a>, view layer of the UI</li>
-  <li><a href="https://redux.js.org" alt="redux">Redux</a>, frontend state management</li>
-  <li><a href="https://redux-observable.js.org/" alt="redux">Redux Observable</a>, (Redux + RxJS) for async rest API calls</li>
+  <li><a href="https://reactjs.org" alt="reactjs">ReactJs</a>, view layer of the UI.</li>
+  <li><a href="https://redux.js.org" alt="redux">Redux</a>, frontend state management.</li>
+  <li><a href="https://redux-observable.js.org/" alt="redux">Redux Observable</a>, (Redux + RxJS) for async rest API calls.</li>
   <li><a href="https://jestjs.io/" alt="redux">Jest</a>, Javascript Testing Framework</li>
   <li><a href="https://airbnb.io/enzyme/" alt="enzyme">enzyme</a>, Javascript Testing Utilities</li>
 </ul>
@@ -27,9 +27,9 @@ However, community consensus is to <a href="https://reactjs.org/docs/faq-structu
 In my code, I have setup three top level folder structure:
 
 <ol>
-  <li><b>libs</b>, this is where the share code (utils and components resides)</li>
-  <li><b>modules</b>, this is where I bundled state with the corresponding feature UI elements</li>
-  <li><b>pages</b>, this is where I define the structure of a pages and routes</li>
+  <li><b>libs</b>, this is where the share code (utils and components resides).</li>
+  <li><b>modules</b>, this is where I bundled state with the corresponding feature UI elements.</li>
+  <li><b>pages</b>, this is where I define the structure of a pages and routes.</li>
 </ol>
 </p>
 
@@ -41,9 +41,9 @@ You can create React component using pure function or using class syntax. Some p
 </p>
 <p>Here are some of the benefits of pure functional components:
 <ol>
-  <li><b>Less boiler plate code,</b> No constructor, no life cycle events, simply a javascript function that takes props as input and return JSX</li>
-  <li><b>Testability</b>, As a function, same input will produces the same output</li>
-  <li><b>Interface</b>, Functional component interface should destruct the props, making inputs clear</li>
+  <li><b>Less boiler plate code,</b> No constructor, no life cycle events, simply a javascript function that takes props as input and return JSX.</li>
+  <li><b>Testability</b>, As a function, same input will produces the same output.</li>
+  <li><b>Interface</b>, Functional component interface should destruct the props, making inputs clear.</li>
 </ol>
 </p>
 <p>
@@ -69,7 +69,7 @@ Whether you are writing Test First, Test Last, or Test In-Between, if you want t
 Many people argue about productivity of unit tests. Many are happy to promote <a href="https://en.wikipedia.org/wiki/Test-driven_development">Test Driven Development</a> and only have End2End tests that the whole system or large part of the system to demonstrate their practices. Although you can define an End2End test to specify a feature before any code is written to ensure <b>building the right application</b>, testing only at the highest level does not enforce we <b>build the application right</b>.
 </p>
 <p>
-The original <a href="https://martinfowler.com/bliki/TestPyramid.html">Test Pyramid</a> define layers such as UI, Service, and Unit. The modern takes on <a href="https://dzone.com/articles/the-battle-of-the-testing-triangle">Test Triangle</a> that do not mix application architecture with test artefacts. In this project, I have shown even at the UI layer, we can group units into modules and gluing modules together to form an application. If we apply the modern takes of testing triangle, we can leave feature tests at End2End level, drilling down into more focus tests at module level, and test all edge cases at the unit level to ensure every layer (even UI and not just the backends) adheres to the most rigorous engineering practices.
+The original <a href="https://martinfowler.com/bliki/TestPyramid.html">Test Pyramid</a> define layers such as <b>UI, Service, and Unit</b>. The modern takes on <a href="https://dzone.com/articles/the-battle-of-the-testing-triangle">Test Triangle</a> that do not mix application architecture with test artefacts. In this project, I have shown even at the UI layer, we can group units into modules and gluing modules together to form an application. If we apply the modern takes of testing triangle, we can leave feature tests at End2End level, drilling down into more focus tests at module level, and test all edge cases at the unit level to ensure every layer (even UI and not just the backends) adheres to the most rigorous engineering practices.
 </p>
 <p>
 Writing unit tests and integration tests can be time consuming and can lead up to 3x as much code covering all edge cases. This mean application that is adaptable to change are those that are made up of small independent units which are glue together with well defined interface, so that any change do not cascade all over the different layer of the application.
@@ -78,8 +78,8 @@ Writing unit tests and integration tests can be time consuming and can lead up t
 In the javascript world, there are many test libraries and frameworks. I tend to use the same set of tool to perform different level of tests and not resort to specific tool at a given layer. In this project, I used <a href="https://jestjs.io/" alt="redux">Jest</a> and <a href="https://airbnb.io/enzyme/" alt="enzyme">enzyme</a> and created:
 
 <ol>
-  <li><b>Unit Tests,</b> All the tests that end with .test</li>
-  <li><b>Integration Test,</b> All the test that end with .integration.test</li>
-  <li><b>End2End</b>, App-end2end.test, which test when the application is fully wired up</li>
+  <li><b>Unit Tests,</b> All the tests that end with .test.</li>
+  <li><b>Integration Test,</b> All the test that end with .integration.test.</li>
+  <li><b>End2End</b>, App-end2end.test, which test when the application is fully wired up.</li>
 </ol>
 </p>
