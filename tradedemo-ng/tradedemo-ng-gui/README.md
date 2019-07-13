@@ -1,3 +1,5 @@
+<h2>1.0 Intro</h2>
+
 This project is the Web frontend of a skeleton trading application I am developing to serve as a blueprint on how to apply modern technologies to implement a working cloud-native application that adheres to the principles of <a href="https://12factor.net/">12 Factor App</a> and <a href="https://www.reactivemanifesto.org/">Reactive Manifesto</a>.
 
 A <a href="http://tradedemo-ng.appspot.com" alt="tradedemo-ng">live demo</a> is available which is deployed to the Google Cloud Platform.
@@ -17,7 +19,7 @@ As a software engineer and not a UI designer, I am done with the GUI and its fun
 
 Here are my views on modern Javascript and React Best Practices:
 
-<h2>1.0 Structure your project by feature</h2>
+<h2>2.0 Structure your project by feature</h2>
 <p>
 React doesn’t have opinions as it is a view library and does not offer opinionated architecture style.
 However, community consensus is to <a href="https://reactjs.org/docs/faq-structure.html">structure your project by feature</a>. However, even that has different takes on where the redux code should reside, does it belongs in its own folder or with its feature?
@@ -35,7 +37,7 @@ In my code, I have setup three top level folder structure:
 
 In this project structure, the application can grow organically with more pages, plugging in modules, with share code push to the libs directory. Each module is a subsystem with store defining reducer, epics, and actions. This allow each module to be build and test separately. The structure of pages are to glue these modules together to form an application.
 
-<h2>2.0 Prefer React Functional Components over Class based component </h2>
+<h2>3.0 Prefer React Functional Components over Class based component </h2>
 <p>
 You can create React component using pure function or using class syntax. Some people follows the convention of using class to create <a href="https://medium.com/@learnreact/container-components-c0e67432e005">container component</a> and pure function only for presentation component. However, with <a href="https://reactjs.org/docs/hooks-effect.html">React hook</a> in conjunction with <a href="https://redux.js.org" alt="redux">Redux</a> as state management, you can create container component as pure function.
 </p>
@@ -50,7 +52,7 @@ You can create React component using pure function or using class syntax. Some p
 In this project, only Ticket is a class component to maintain internal state as I found using pure function with hook is doable but not so clean for this component, so I refactored it to class.
 </p>
 
-<h2>3.0 Use a state management library</h2>
+<h2>4.0 Use a state management library</h2>
 <p>
 The standard way to update React view is to leverage <a href="https://facebook.github.io/flux/docs/in-depth-overview">Flux architecture</a> for uni-directional data flow to update the view. Redux is one most popular state management library that adhere to the Flux architecture, making your application easier to reason about.
 </p>
@@ -61,7 +63,7 @@ Without state management library, as the application grow, it will become very d
 In this project, I grouped the store data as modules and within it, define the React components that renders its data.
 </p>
 
-<h2>4.0 Test (Unit), Test (Integration), and Test (End2End)</h2>
+<h2>5.0 Test (Unit), Test (Integration), and Test (End2End)</h2>
 <p>
 Whether you are writing Test First, Test Last, or Test In-Between, if you want to be productive, you need lot of Unit Tests on export functions, Integration Test on modules, and End-2-End at the application level to provide the necessary code coverage.
 </p>
