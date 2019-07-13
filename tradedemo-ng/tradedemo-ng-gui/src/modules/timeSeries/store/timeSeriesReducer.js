@@ -1,7 +1,14 @@
 import * as timeSeriesActions from './timeSeriesActions';
-import { transformTimeSeries } from "../../../libs/utils"
 
 export const NAME = "timeSeries";
+
+export function transformTimeSeries(timeSeries, maxPredicate, minPredicate) {
+  return {
+      chartData: timeSeries,
+      maxValue: Math.max.apply(Math, timeSeries.map(maxPredicate)),
+      minValue: Math.min.apply(Math, timeSeries.map(minPredicate))
+  }
+}
 
 export function timeSeriesReducer(state = {symbol: undefined, dailyTimeSeries:{}, intradayTimeSeries:{}}, action) {
     switch (action.type) {

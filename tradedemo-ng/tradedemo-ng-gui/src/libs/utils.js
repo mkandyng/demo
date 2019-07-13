@@ -87,11 +87,3 @@ export function roundValue(value, roundingConst) {
 export function padDigits(number, digits) {
     return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
 }
-
-export function transformTimeSeries(timeSeries, maxPredicate, minPredicate) {
-  return {
-      chartData: timeSeries,
-      maxValue: Math.max.apply(Math, timeSeries.map(maxPredicate)),
-      minValue: Math.min.apply(Math, timeSeries.map(minPredicate))
-  }
-}

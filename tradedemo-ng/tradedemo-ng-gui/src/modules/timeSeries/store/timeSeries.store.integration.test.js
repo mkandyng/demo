@@ -1,9 +1,8 @@
 import { Observable, throwError } from 'rxjs';
-import { transformTimeSeries,
-         roundValue,
+import { roundValue,
          createStoreWithMiddleware } from "../../../libs/utils"
 import { timeSeriesEpics } from "./timeSeriesEpics";
-import { timeSeriesReducer } from "./timeSeriesReducer";
+import { timeSeriesReducer, transformTimeSeries } from "./timeSeriesReducer";
 import { fetchDailyTimeSeries,
          fetchIntradayTimeSeries } from "./timeSeriesActions";
 
