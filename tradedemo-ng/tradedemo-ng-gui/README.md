@@ -65,7 +65,7 @@ In this project, I grouped the store data as modules and within it, define the R
 
 <h2>5.0 Test (Unit), Test (Integration), and Test (End2End)</h2>
 <p>
-Whether you are writing Test First, Test Last, or Test In-Between, if you want to be productive, you need lot of Unit Tests on export functions, Integration Test on modules, and End-2-End at the application level to provide the necessary code coverage.
+Whether you are writing Test First, Test Last, or Test In-Between, if you want to be productive, you need lot of Unit Tests on export functions, Integration Test on modules, and End-2-End at the application level.
 </p>
 <p>
 Many people argue about productivity of unit tests. Many are happy to promote <a href="https://en.wikipedia.org/wiki/Test-driven_development">Test Driven Development</a> and only have End2End tests that the whole system or large part of the system to demonstrate their practices. Although you can define an End2End test to specify a feature before any code is written to ensure <b>building the right application</b>, testing only at the highest level does not enforce we <b>build the application right</b>.
