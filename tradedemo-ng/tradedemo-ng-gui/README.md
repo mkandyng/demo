@@ -37,7 +37,7 @@ In my code, I have setup three top level folder structure:
 
 In this project structure, the application can grow organically with more pages, plugging in modules, with share code push to the libs directory. Each module is a subsystem with store defining reducer, epics, and actions. This allow each module to be build and test separately. The structure of pages are to glue these modules together to form an application.
 
-<h2>3.0 Prefer React Functional Components over Class based component </h2>
+<h2>3.0 Prefer React Functional Component over Class Component </h2>
 <p>
 You can create React component using pure function or using class syntax. Some people follows the convention of using class to create <a href="https://medium.com/@learnreact/container-components-c0e67432e005">container component</a> and pure function only for presentation component. However, with <a href="https://reactjs.org/docs/hooks-effect.html">React hook</a> in conjunction with <a href="https://redux.js.org" alt="redux">Redux</a> as state management, you can create container component as pure function.
 </p>
@@ -45,7 +45,8 @@ You can create React component using pure function or using class syntax. Some p
 <ol>
   <li><b>Less boiler plate code,</b> No constructor, no life cycle events, simply a javascript function that takes props as input and return JSX.</li>
   <li><b>Testability</b>, As a function, same input will produces the same output.</li>
-  <li><b>Interface</b>, Functional component interface should destruct the props, making inputs clear.</li>
+  <li><b>Interface</b>, Functional component interface destruct props, making inputs clear.</li>
+  <li><b>Strategically</b>, The future of React is functional. Here is the real <a href="https://reasonml.github.io/docs/en/what-and-why">Reason</a> behind its strategic decision.
 </ol>
 </p>
 <p>

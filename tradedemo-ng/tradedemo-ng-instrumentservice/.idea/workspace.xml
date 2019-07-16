@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f292c9d8-b3ce-48b0-8e23-ac8caa4d340c" name="Default Changelist" comment="" />
+    <list default="true" id="f292c9d8-b3ce-48b0-8e23-ac8caa4d340c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsMarketfeed/InstrumentsMarketfeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsMarketfeed/InstrumentsMarketfeed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/mkandyng/instrumentservice/dataprovider/AlphaVantageRestAPITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mkandyng/instrumentservice/dataprovider/AlphaVantageRestAPITest.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +90,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gradle" value="2" />
-          <entry key="java" value="87" />
+          <entry key="java" value="91" />
           <entry key="json" value="10" />
           <entry key="properties" value="1" />
         </counts>
@@ -95,7 +98,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="2" />
-          <entry key="JAVA" value="87" />
+          <entry key="JAVA" value="91" />
           <entry key="JSON" value="10" />
           <entry key="Properties" value="1" />
         </counts>
@@ -117,7 +120,17 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/mkandyng/instrumentservice/dataprovider/AlphaVantageRestAPITest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="78" column="5" lean-forward="true" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -641,7 +654,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/mkandyng/instrumentservice/dataprovider/FakeMarketDataProviderRestAPI.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/mkandyng/instrumentservice/dataprovider/AlphaVantageRestAPITest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/marketdata/instruments_BA_input.json" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/static/marketdata/instruments_Micro_input.json" />
@@ -655,6 +667,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mkandyng/instrumentservice/ApplicationConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mkandyng/instrumentservice/InitRequestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mkandyng/instrumentservice/instrument/InstrumentRetrieverService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/mkandyng/instrumentservice/dataprovider/AlphaVantageRestAPITest.java" />
       </list>
     </option>
   </component>
@@ -735,7 +748,7 @@
               <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="instrumentservice" type="462c0819:PsiDirectoryNode" />
-              <item name="regressionTests" type="462c0819:PsiDirectoryNode" />
+              <item name="dataprovider" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -774,7 +787,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.tradedemo-ng-instrumentservice [bootRun]">
+  <component name="RunManager" selected="JUnit.AlphaVantageRestAPITest">
     <configuration name="tradedemo-ng-instrumentservice [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -811,24 +824,6 @@
       </ExternalSystemSettings>
       <method v="2" />
     </configuration>
-    <configuration name="tradedemo-ng-instrumentservice [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method v="2" />
-    </configuration>
     <configuration name="tradedemo-ng-instrumentservice [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -855,20 +850,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AlphaVantageRestAPITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="instrumentservice_test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mkandyng.instrumentservice.dataprovider.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mkandyng.instrumentservice.dataprovider" />
+      <option name="MAIN_CLASS_NAME" value="com.mkandyng.instrumentservice.dataprovider.AlphaVantageRestAPITest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Gradle.tradedemo-ng-instrumentservice [bootRun]" />
-      <item itemvalue="Gradle.tradedemo-ng-instrumentservice [clean]" />
       <item itemvalue="Gradle.tradedemo-ng-instrumentservice [jar]" />
       <item itemvalue="Gradle.tradedemo-ng-instrumentservice [assemble]" />
       <item itemvalue="JUnit.All in instrumentservice_test" />
+      <item itemvalue="JUnit.AlphaVantageRestAPITest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AlphaVantageRestAPITest" />
         <item itemvalue="Gradle.tradedemo-ng-instrumentservice [bootRun]" />
         <item itemvalue="JUnit.All in instrumentservice_test" />
         <item itemvalue="Gradle.tradedemo-ng-instrumentservice [assemble]" />
         <item itemvalue="Gradle.tradedemo-ng-instrumentservice [jar]" />
-        <item itemvalue="Gradle.tradedemo-ng-instrumentservice [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -898,8 +907,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="716" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28756058" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28756058" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -911,7 +921,7 @@
       <window_info id="Job Explorer" order="9" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.38795987" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.38795987" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -959,13 +969,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/marketdata/quote_BABA_input.json" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/mkandyng/instrumentservice/dataprovider/AlphaVantageRestAPITest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="78" column="7" selection-start-line="78" selection-start-column="7" selection-end-line="78" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1182,13 +1185,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/mkandyng/instrumentservice/quote/QuoteRetrieverServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mkandyng/instrumentservice/dataprovider/MarketDataProviderRestAPI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1215,6 +1211,34 @@
             <element signature="e#2412#2413#0" expanded="true" />
             <element signature="e#2445#2446#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/mkandyng/instrumentservice/quote/QuoteRequestResultTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/mkandyng/instrumentservice/quote/QuoteRequestControllerIntTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/mkandyng/instrumentservice/quote/QuoteRetrieverServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/mkandyng/instrumentservice/dataprovider/AlphaVantageRestAPITest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="78" column="5" lean-forward="true" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
         </state>
       </provider>
     </entry>
