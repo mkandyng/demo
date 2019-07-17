@@ -1,6 +1,6 @@
 <h2>1.0 Introduction to TradeDemo-NG GUI</h2>
 
-This project is the Web frontend of a skeleton trading application I am developing to serve as a blueprint on how to apply modern technologies to implement a working cloud-native application that adheres to the principles of <a href="https://12factor.net/">12 Factor App</a> and <a href="https://www.reactivemanifesto.org/">Reactive Manifesto</a>.
+This project is the Web frontend of a skeleton trading application I am developing to serve as a blueprint on how to apply modern technologies to implement a <a href="https://dzone.com/articles/the-battle-of-the-testing-triangle">testable</a> cloud-native application that adheres to the principles of <a href="https://12factor.net/">12 Factor App</a> and <a href="https://www.reactivemanifesto.org/">Reactive Manifesto</a>.
 
 A <a href="http://tradedemo-ng.appspot.com" alt="tradedemo-ng">live demo</a> is available which is deployed to the Google Cloud Platform.
 
@@ -49,9 +49,6 @@ You can create React component using pure function or using class syntax. Some p
   <li><b>Strategically</b>, The future of React is functional. Here is the real <a href="https://reasonml.github.io/docs/en/what-and-why">Reason</a> behind its creator strategic decision.
 </ol>
 </p>
-<p>
-In this project, only Ticket is a class component to maintain internal state as I found using pure function with hook is doable but not so clean for this component, so I refactored it to class.
-</p>
 
 <h2>4.0 Use a state management library</h2>
 <p>
@@ -72,7 +69,7 @@ Whether you are writing Test First, Test Last, or Test In-Between, if you want t
 Many people argue about productivity of unit tests. Many are happy to promote <a href="https://en.wikipedia.org/wiki/Test-driven_development">Test Driven Development</a> and only have End2End tests that the whole system or large part of the system to demonstrate their practices. Although you can define an End2End test to specify a feature before any code is written to ensure <b>building the right application</b>, testing only at the highest level does not enforce we <b>build the application right</b>.
 </p>
 <p>
-The original <a href="https://martinfowler.com/bliki/TestPyramid.html">Test Pyramid</a> define layers such as <b>UI, Service, and Unit</b>. The modern takes on <a href="https://dzone.com/articles/the-battle-of-the-testing-triangle">Test Triangle</a> do not mix application architecture with test artefacts as each layers, whether it is UI or backend services, should follows the same rigorous engineering practices. In this project, I have shown at the UI layer, we can group units into modules and glue modules together to form an application. If we apply the modern takes of testing triangle, we can write feature tests at End2End level, drilling down into more focus tests at module level, and test all edge cases at the unit level.
+The original <a href="https://martinfowler.com/bliki/TestPyramid.html">Test Pyramid</a> define layers such as <b>UI, Service, and Unit</b>. The modern takes on <a href="https://dzone.com/articles/the-battle-of-the-testing-triangle">Test Triangle</a> do not mix application architecture with test artefacts as each layers, whether it is UI or backend services, should follows the same rigorous engineering practice. In this project, I have shown at the UI layer, we can group units into modules and glue modules together to form an application. If we apply the modern takes of testing triangle, we can write feature tests at End2End level, drilling down into more focus tests at module level, and test all edge cases at the unit level.
 </p>
 <p>
 Writing unit tests and integration tests can be time consuming and can lead up to 3x as much code covering all edge cases. This mean to create an application that is adaptable to change, it needs to be made up of small fully tested components that are <a href="https://en.wikipedia.org/wiki/Loose_coupling">loosely coupled</a>, modules that are <a href="https://en.wikipedia.org/wiki/Cohesion_(computer_science)">highly cohesive</a>, and the application that is <a href="https://www.tutorialspoint.com/software_testing_dictionary/correctness.htm">functionally correct</a>.
