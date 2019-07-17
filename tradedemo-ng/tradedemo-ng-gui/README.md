@@ -30,7 +30,7 @@ In my code, I have setup three top level folder structure:
 
 <ol>
   <li><b>libs</b>, this is where the share code (utils and components resides).</li>
-  <li><b>modules</b>, this is where I bundled state with the corresponding feature UI elements.</li>
+  <li><b>modules</b>, this is where I bundled state with the corresponding UI.</li>
   <li><b>pages</b>, this is where I define the structure of a pages and routes.</li>
 </ol>
 </p>
@@ -41,9 +41,9 @@ In this project structure, the application can grow organically with more pages,
 <p>
 You can create React component using pure function or using class syntax. Some people follows the convention of using class to create <a href="https://medium.com/@learnreact/container-components-c0e67432e005">container component</a> and pure function only for presentation component. However, with <a href="https://reactjs.org/docs/hooks-effect.html">React hook</a> in conjunction with <a href="https://redux.js.org" alt="redux">Redux</a> as state management, you can create container component as pure function.
 </p>
-<p>Here are some of the benefits of pure functional components:
+<p>Here are some of the benefits of pure functional component:
 <ol>
-  <li><b>Less boiler plate,</b> No constructor, no life cycles, simple function takes props as input and return JSX.</li>
+  <li><b>Less boiler plate,</b> No constructor, no life cycles, pure function takes props as input and return JSX.</li>
   <li><b>Testability</b>, As a function, same input will produces the same output.</li>
   <li><b>Interface</b>, Functional component interface can use destruct props to make inputs clear.</li>
   <li><b>Strategically</b>, The future of React is functional. Here is the real <a href="https://reasonml.github.io/docs/en/what-and-why">Reason</a> behind its creator strategic decision.
@@ -55,7 +55,7 @@ You can create React component using pure function or using class syntax. Some p
 The standard way to update React view is to leverage <a href="https://facebook.github.io/flux/docs/in-depth-overview">Flux architecture</a> for uni-directional data flow to update its UI. Redux is one most popular Flux implementation, making your application easier to reason about.
 </p>
 <p>
-Without state management library, as the application grow, it can become difficult to manage states within each individual components and co-ordinating between parent and children components.
+Without state management library, as the application grow, it can become difficult to manage states with components and co-ordinating between parent and children components.
 </p>
 <p>
 In this project, I grouped the store data as modules and within it, define the React components that renders its data.

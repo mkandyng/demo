@@ -1,6 +1,6 @@
 import React from "react";
 import toJson from "enzyme-to-json";
-import { mount } from "enzyme";
+import {mount} from "enzyme";
 import Documentation from "./Documentation";
 
 /**
@@ -10,14 +10,14 @@ import Documentation from "./Documentation";
 
 describe("Documentation", () => {
 
-    it("should render component comparing with previous snapshot shallow markup", () => {
-        // Given
+  it("should render component comparing with previous snapshot shallow markup", () => {
+    // Given
 
-        // When
-        const component = mount(<Documentation />);
+    // When
+    const component = mount(<Documentation/>);
 
-        // Then
-        expect(toJson(component)).toMatchSnapshot();
-    });
+    // Then
+    expect(toJson(component)).toMatchSnapshot();
+  });
 
 });

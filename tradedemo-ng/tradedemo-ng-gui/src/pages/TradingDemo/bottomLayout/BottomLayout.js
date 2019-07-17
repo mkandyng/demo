@@ -1,49 +1,51 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 import {connect} from "react-redux";
 import SelectableTabs from "../../../libs/components/SelectableTabs"
-import Orderbook from "../../../modules/orderbook/Orderbook";
-import TimeSeries, { TimeSeriesLines } from "../../../modules/timeSeries/TimeSeries";
+import Orderbook from "../../../modules/orders/Orderbook";
+import TimeSeries, {TimeSeriesLines} from "../../../modules/timeSeries/TimeSeries";
 import "./bottomLayout.css";
 
 /**
- * Container for the bottomLayout components
+ * Container for the BottomLayout components
  */
-export function BottomLayout(props) {
+export function BottomLayout({
+  symbol,
+  orders,
+  intradayTimeSeries,
+  dailyTimeSeries
+}) {
+  const [selectedSymbol, updateSelectedSymbol] = useState("");
+  const [selectedTab, updateSelectedTab] = useState(0);
 
-    const { symbol,
-            orders,
-            intradayTimeSeries,
-            dailyTimeSeries } = props
+  useEffect(() => {
+    updateSelectedSymbol(symbol);
+  }, [symbol])
 
-    const [ selectedSymbol, updateSelectedSymbol ] = useState("");
-    const [ selectedTab, updateSelectedTab ] = useState(0);
+  const tabs = [
+    {
+      name: "Orderbook",
+      panel: <Orderbook orders={orders}/>
+    }, {
+      name: "Intraday Prices " + selectedSymbol,
+      panel: <TimeSeries timeSeries={intradayTimeSeries} childElements={TimeSeriesLines.INTRADAY_LINES}/>
+    }, {
+      name: "Daily Prices " + selectedSymbol,
+      panel: <TimeSeries timeSeries={dailyTimeSeries} childElements={TimeSeriesLines.DAILY_LINES}/>
+    }
+  ]
 
-    useEffect(() => {
-        updateSelectedSymbol(symbol);
-    },[symbol])
-
-    const tabs = [
-        { name: "Orderbook",
-          panel: <Orderbook orders={orders} />},
-        { name: "Intraday Prices " + selectedSymbol,
-          panel: <TimeSeries timeSeries={intradayTimeSeries} childElements={TimeSeriesLines.INTRADAY_LINES}/>},
-        { name: "Daily Prices " + selectedSymbol,
-          panel: <TimeSeries timeSeries={dailyTimeSeries} childElements={TimeSeriesLines.DAILY_LINES}/>},
-    ]
-
-    return (
-        <SelectableTabs containerId="bottomLayout"
-                        selectedTab={selectedTab}
-                        updateSelectedTab={updateSelectedTab}
-                        tabs={tabs} />
-    );
+  return (<SelectableTabs containerId="bottomLayout"
+                          selectedTab={selectedTab}
+                          updateSelectedTab={updateSelectedTab}
+                          tabs={tabs}/>);
 }
 
-const mapStateToProps = state => (
-                        { symbol: state.instruments.selected === undefined?"":state.instruments.selected.symbol,
-                          orders: state.orderbook,
-                          intradayTimeSeries: state.timeSeries.intradayTimeSeries,
-                          dailyTimeSeries: state.timeSeries.dailyTimeSeries });
+const mapStateToProps = state => ({
+  symbol: state.instruments.selected === undefined? "": state.instruments.selected.symbol,
+  orders: state.orderbook,
+  intradayTimeSeries: state.timeSeries.intradayTimeSeries,
+  dailyTimeSeries: state.timeSeries.dailyTimeSeries
+});
 
 // The HOC
 export default connect(mapStateToProps)(BottomLayout);

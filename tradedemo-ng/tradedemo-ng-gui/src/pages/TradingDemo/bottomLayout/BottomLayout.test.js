@@ -1,7 +1,7 @@
 import React from "react";
 import toJson from "enzyme-to-json";
-import { shallow } from "enzyme";
-import { BottomLayout } from "./BottomLayout";
+import {shallow} from "enzyme";
+import {BottomLayout} from "./BottomLayout";
 
 /**
  * This is unit test of Orderbook component
@@ -9,22 +9,27 @@ import { BottomLayout } from "./BottomLayout";
  */
 
 describe("BottomLayout", () => {
-    const props = { symbol: "symbol",
-                    orders: [{symbol:"symbol"}],
-                    intradayTimeSeries: {},
-                    dailyTimeSeries: {},
-                    fetchIntradayTimeSeries: jest.fn(),
-                    fetchDailyTimeSeries: jest.fn() };
+  const props = {
+    symbol: "symbol",
+    orders: [
+      {
+        symbol: "symbol"
+      }
+    ],
+    intradayTimeSeries: {},
+    dailyTimeSeries: {},
+    fetchIntradayTimeSeries: jest.fn(),
+    fetchDailyTimeSeries: jest.fn()
+  };
 
+  it("should render component comparing with previous snapshot shallow markup", () => {
+    // Given
 
-    it("should render component comparing with previous snapshot shallow markup", () => {
-        // Given
+    // When
+    const component = shallow(<BottomLayout {...props}/>);
 
-        // When
-        const component = shallow(<BottomLayout {...props} />);
-
-        // Then
-        expect(toJson(component)).toMatchSnapshot();
-    });
+    // Then
+    expect(toJson(component)).toMatchSnapshot();
+  });
 
 });

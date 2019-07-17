@@ -1,10 +1,22 @@
-import { Observable, throwError } from 'rxjs';
-import { roundValue,
-         createStoreWithMiddleware } from "../../../libs/utils"
-import { timeSeriesEpics } from "./timeSeriesEpics";
-import { timeSeriesReducer, transformTimeSeries } from "./timeSeriesReducer";
-import { fetchDailyTimeSeries,
-         fetchIntradayTimeSeries } from "./timeSeriesActions";
+import {
+  Observable,
+  throwError
+} from 'rxjs';
+import {
+  roundValue,
+  createStoreWithMiddleware
+} from "../../../libs/utils"
+import {
+  timeSeriesEpics
+} from "./timeSeriesEpics";
+import {
+  timeSeriesReducer,
+  transformTimeSeries
+} from "./timeSeriesReducer";
+import {
+  fetchDailyTimeSeries,
+  fetchIntradayTimeSeries
+} from "./timeSeriesActions";
 
 /**
  *
@@ -15,85 +27,113 @@ import { fetchDailyTimeSeries,
 
 describe("timeSeries store integration tests", () => {
 
-    const symbol = "symbol";
-    const error = new Error("error");
-    console.log = jest.fn();
+  const symbol = "symbol";
+  const error = new Error("error");
+  console.log = jest.fn();
 
-    it("should fetchDailyTimeSeries if ajax returns successfully ", done => {
-        // Given
-        const timeSeries = createTimeSeries(i => ({dateTime:"2019-10-12",open: i+1,high:i+3,low:i,close:i+2}), 5);
-        const store = createStoreWithMiddleware({getJSON: url => Observable.of(timeSeries)},
-                                                timeSeriesReducer,
-                                                timeSeriesEpics);
-        const action = fetchDailyTimeSeries(symbol);
-        const expectedTimeSeries = transformTimeSeries(timeSeries.map(timeSeries => {
-            const {dateTime, ...expected} = timeSeries;
-            return {...expected, name: timeSeries.dateTime};
-        }).reverse(), o => o.high, o => o.low);
+  it("should fetchDailyTimeSeries if ajax returns successfully ", done => {
+    // Given
+    const timeSeries = createTimeSeries(i => ({
+      dateTime: "2019-10-12",
+      open: i + 1,
+      high: i + 3,
+      low: i,
+      close: i + 2
+    }), 5);
+    const store = createStoreWithMiddleware({
+        getJSON: url => Observable.of(timeSeries)
+      },
+      timeSeriesReducer,
+      timeSeriesEpics);
+    const action = fetchDailyTimeSeries(symbol);
+    const expectedTimeSeries = transformTimeSeries(timeSeries.map(timeSeries => {
+      const {
+        dateTime,
+        ...expected
+      } = timeSeries;
+      return {
+        ...expected,
+        name: timeSeries.dateTime
+      };
+    }).reverse(), o => o.high, o => o.low);
 
-        // When
-        store.dispatch(action);
+    // When
+    store.dispatch(action);
 
-        // Then
-        expect(store.getState()).toEqual(
-            { symbol: symbol,
-              intradayTimeSeries:{},
-              dailyTimeSeries: expectedTimeSeries}
-        );
-
-        done();
+    // Then
+    expect(store.getState()).toEqual({
+      symbol: symbol,
+      intradayTimeSeries: {},
+      dailyTimeSeries: expectedTimeSeries
     });
 
-    it("should fetchIntradayTimeSeries if ajax returns successfully ", done => {
-        // Given
-        const timeSeries = createTimeSeries(i => ({dateTime:"2019-10-12 11:11:10.123",
-                                                   high:i+3,low:i}), 1);
-        const store = createStoreWithMiddleware({getJSON:url => Observable.of(timeSeries)},
-                                                 timeSeriesReducer,
-                                                 timeSeriesEpics);
-        const action = fetchIntradayTimeSeries(symbol);
-        const expectedTimeSeries = transformTimeSeries(timeSeries.map(timeSeries => {
-            const {dateTime, high, low, ...expected} = timeSeries;
-            return {...expected,
-                    name: timeSeries.dateTime.substr(11,5),
-                    price: roundValue((high + low)/2, 100)};
-        }).reverse(), o => o.price, o => o.price);
+    done();
+  });
 
-        // When
-        store.dispatch(action);
+  it("should fetchIntradayTimeSeries if ajax returns successfully ", done => {
+    // Given
+    const timeSeries = createTimeSeries(i => ({
+      dateTime: "2019-10-12 11:11:10.123",
+      high: i + 3,
+      low: i
+    }), 1);
+    const store = createStoreWithMiddleware({
+        getJSON: url => Observable.of(timeSeries)
+      },
+      timeSeriesReducer,
+      timeSeriesEpics);
+    const action = fetchIntradayTimeSeries(symbol);
+    const expectedTimeSeries = transformTimeSeries(timeSeries.map(timeSeries => {
+      const {
+        dateTime,
+        high,
+        low,
+        ...expected
+      } = timeSeries;
+      return {
+        ...expected,
+        name: timeSeries.dateTime.substr(11, 5),
+        price: roundValue((high + low) / 2, 100)
+      };
+    }).reverse(), o => o.price, o => o.price);
 
-        // Then
-        expect(store.getState()).toEqual(
-            { symbol: symbol,
-              intradayTimeSeries:expectedTimeSeries,
-              dailyTimeSeries: {}}
-        );
+    // When
+    store.dispatch(action);
 
-        done();
+    // Then
+    expect(store.getState()).toEqual({
+      symbol: symbol,
+      intradayTimeSeries: expectedTimeSeries,
+      dailyTimeSeries: {}
     });
 
-    it("should log error if fetchDailyTimeSeries ajax error", done => {
-        // Given
-        const store = createStoreWithMiddleware({getJSON:() => throwError(error)},
-                                                timeSeriesReducer,
-                                                timeSeriesEpics);
-        const action = fetchDailyTimeSeries(symbol);
+    done();
+  });
 
-        // When
-        store.dispatch(action);
+  it("should log error if fetchDailyTimeSeries ajax error", done => {
+    // Given
+    const store = createStoreWithMiddleware({
+        getJSON: () => throwError(error)
+      },
+      timeSeriesReducer,
+      timeSeriesEpics);
+    const action = fetchDailyTimeSeries(symbol);
 
-        // Then
-        expect(console.log).toHaveBeenCalledWith(error);
+    // When
+    store.dispatch(action);
+
+    // Then
+    expect(console.log).toHaveBeenCalledWith(error);
 
 
-        done();
-    });
+    done();
+  });
 });
 
 function createTimeSeries(timeSeriesGenerator, count) {
-    let timeSeries = [];
-    for (let i=0; i<= count; i++) {
-        timeSeries.push(timeSeriesGenerator(i));
+  let timeSeries = [];
+  for (let i = 0; i <= count; i++) {
+    timeSeries.push(timeSeriesGenerator(i));
   }
   return timeSeries;
 }

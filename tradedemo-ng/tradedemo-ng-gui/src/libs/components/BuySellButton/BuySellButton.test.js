@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import {shallow} from "enzyme";
 import toJson from "enzyme-to-json";
 import BuySellButton from "./BuySellButton";
 
@@ -10,33 +10,38 @@ import BuySellButton from "./BuySellButton";
  */
 
 describe("BuySellButton", () => {
-    const props = {
-          id: "id",
-          containerId: "divId",
-          label: "label",
-          buttonName: "buttonName",
-          handleOnClick: jest.fn()};
+  const props = {
+    id: "id",
+    containerId: "divId",
+    label: "label",
+    buttonName: "buttonName",
+    handleOnClick: jest.fn()
+  };
 
-    it("should render component comparing with previous snapshot shallow markup", () => {
-        // Given
+  it("should render component comparing with previous snapshot shallow markup", () => {
+    // Given
 
-        // When
-        const component = shallow(<BuySellButton {...props} />);
+    // When
+    const component = shallow(<BuySellButton {...props}/>);
 
-        // Then
-        expect(toJson(component)).toMatchSnapshot();
-    });
+    // Then
+    expect(toJson(component)).toMatchSnapshot();
+  });
 
-    it("should call handleOnClick prop with given event", () => {
-        // Given
-        const event = {target: {innerText: "Sell"}}
-        const component = shallow(<BuySellButton {...props} />);
+  it("should call handleOnClick prop with given event", () => {
+    // Given
+    const event = {
+      target: {
+        innerText: "Sell"
+      }
+    }
+    const component = shallow(<BuySellButton {...props}/>);
 
-        // When
-        component.find("div#" + props.containerId).simulate('click', event);
+    // When
+    component.find("div#" + props.containerId).simulate('click', event);
 
-        // Then
-        expect(props.handleOnClick).toBeCalledWith(event);
-    });
+    // Then
+    expect(props.handleOnClick).toBeCalledWith(event);
+  });
 
 });

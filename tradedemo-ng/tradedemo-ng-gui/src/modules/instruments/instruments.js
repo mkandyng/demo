@@ -1,5 +1,5 @@
 import React from "react";
-import { getRandomInt } from "../../libs/utils";
+import {getRandomInt} from "../../libs/utils";
 
 export const MAX_MARKET_FEED_INSTRUMENTS = 5;
 export const MAX_INSTRUMENTS = 15;
@@ -13,7 +13,7 @@ export const MOUSE_OUT_IMAGE = "img/delete.png";
  * @return {[Object]}             [An instrument object from the given array]
  */
 export function retrieveInstrument(instruments, symbol) {
-    return instruments.find(e => e.symbol === symbol);
+  return instruments.find(e => e.symbol === symbol);
 }
 
 /**
@@ -23,7 +23,7 @@ export function retrieveInstrument(instruments, symbol) {
  * @return {[Array]}             [Array of the instrument objects that doesn't contain matched symbol]
  */
 export function removeInstrument(instruments, symbol) {
-    return instruments.filter(e => e.symbol !== symbol);
+  return instruments.filter(e => e.symbol !== symbol);
 }
 
 /**
@@ -33,11 +33,14 @@ export function removeInstrument(instruments, symbol) {
  * @return {[Array]}                  [Array of the instruments with instrument replaced for matched symbol]
  */
 export function updateInstrument(instruments, updateInstrument) {
-    return instruments.map(e => e.symbol === updateInstrument.symbol ? updateInstrument: e);
+  return instruments.map(
+    e => e.symbol === updateInstrument.symbol
+    ? updateInstrument
+    : e);
 }
 
 export function getDeleteId(instrument) {
-    return "deleteImg-" + instrument.symbol;
+  return "deleteImg-" + instrument.symbol;
 }
 
 /**
@@ -47,35 +50,30 @@ export function getDeleteId(instrument) {
  */
 export function generateMarketfeedMovement(instrument) {
 
-    // generate a random margin
-    const margin = instrument.price * (0.001 * getRandomInt(1,10));
-    const bidAskMargin = instrument.price * (0.001 * getRandomInt(1,10));
-    const newPrice = calNewPrice(instrument.price,margin);
-    const chg = (((newPrice - instrument.open)/instrument.open) * 100).toFixed(2);
-    const bid = (newPrice - bidAskMargin).toFixed(2);
-    const ask = (newPrice + bidAskMargin).toFixed(2);
-    const open = instrument.open * 1.0;
-    const last = instrument.price * 1.0;
+  // generate a random margin
+  const margin = instrument.price * (0.001 * getRandomInt(1, 10));
+  const bidAskMargin = instrument.price * (0.001 * getRandomInt(1, 10));
+  const newPrice = calNewPrice(instrument.price, margin);
+  const chg = (((newPrice - instrument.open) / instrument.open) * 100).toFixed(2);
+  const bid = (newPrice - bidAskMargin).toFixed(2);
+  const ask = (newPrice + bidAskMargin).toFixed(2);
+  const open = instrument.open * 1.0;
+  const last = instrument.price * 1.0;
 
-    return {
-        delete:<img
-                  id={getDeleteId(instrument)}
-                  src={MOUSE_OUT_IMAGE}
-                  width={15}
-                  height={15}
-                  alt={"delete"}/>,
-        price: newPrice,
-        bidPrice: bid,
-        askPrice: ask,
-        symbol: instrument.symbol,
-        name: instrument.name,
-        currency: instrument.currency,
-        last: last.toFixed(2),
-        open: open.toFixed(2),
-        bid: upDownPrice(newPrice, open, bid),
-        ask: upDownPrice(newPrice, open, ask),
-        chg: upDownPrice(newPrice, open, chg + "%")
-    };
+  return {
+    delete: <img id={getDeleteId(instrument)} src={MOUSE_OUT_IMAGE} width={15} height={15} alt={"delete"}/>,
+    price: newPrice,
+    bidPrice: bid,
+    askPrice: ask,
+    symbol: instrument.symbol,
+    name: instrument.name,
+    currency: instrument.currency,
+    last: last.toFixed(2),
+    open: open.toFixed(2),
+    bid: upDownPrice(newPrice, open, bid),
+    ask: upDownPrice(newPrice, open, ask),
+    chg: upDownPrice(newPrice, open, chg + "%")
+  };
 }
 
 /**
@@ -85,25 +83,30 @@ export function generateMarketfeedMovement(instrument) {
  * @return {[Boolean]}                            [Inform if update successful or not]
  */
 export function flashPriceUpdate(marketfeedInstruments, updateMarketfeedInstrument) {
-    if(marketfeedInstruments.length > 0) {
-        const instrumentIndex = getRandomInt(0, marketfeedInstruments.length-1);
-        const randomInstrument = marketfeedInstruments[instrumentIndex];
-        updateMarketfeedInstrument({...randomInstrument, bid:"", ask:"" });
-        setTimeout(() => updateMarketfeedInstrument(
-                            generateMarketfeedMovement(randomInstrument)),500);
-        return true;
-    }
-    return false;
+  if (marketfeedInstruments.length > 0) {
+    const instrumentIndex = getRandomInt(0, marketfeedInstruments.length - 1);
+    const randomInstrument = marketfeedInstruments[instrumentIndex];
+    updateMarketfeedInstrument({
+      ...randomInstrument,
+      bid: "",
+      ask: ""
+    });
+    setTimeout(() => updateMarketfeedInstrument(generateMarketfeedMovement(randomInstrument)), 500);
+    return true;
+  }
+  return false;
 };
 
-function calNewPrice(price,margin) {
-    return Math.round(Math.random()) === 0?price-margin:price+margin;
+function calNewPrice(price, margin) {
+  return Math.round(Math.random()) === 0
+    ? price - margin
+    : price + margin;
 }
 
 function upDownPrice(price, previousPrice, data) {
-    let priceUpDown = "priceUp";
-    if(price < previousPrice) {
-        priceUpDown = "priceDown";
-    }
-    return <span className={priceUpDown}>{data}</span>;
+  let priceUpDown = "priceUp";
+  if (price < previousPrice) {
+    priceUpDown = "priceDown";
+  }
+  return <span className={priceUpDown}>{data}</span>;
 }

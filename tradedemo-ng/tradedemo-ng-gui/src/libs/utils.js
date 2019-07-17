@@ -1,6 +1,13 @@
-import { createStore, applyMiddleware } from "redux";
-import { createEpicMiddleware } from "redux-observable";
-import { combineEpics } from "redux-observable";
+import {
+  createStore,
+  applyMiddleware
+} from "redux";
+import {
+  createEpicMiddleware
+} from "redux-observable";
+import {
+  combineEpics
+} from "redux-observable";
 
 /**
  * [createStoreWithMiddleware use to create a redux store tying implementation of ajax, reducer, epics]
@@ -13,12 +20,14 @@ import { combineEpics } from "redux-observable";
  * @return {[Object]}         [Redux store]
  */
 export function createStoreWithMiddleware(ajax, reducer, epics) {
-     const epicMiddleware = createEpicMiddleware();
-     const store = createStore(reducer, applyMiddleware(epicMiddleware));
-     const rootEpicWithMockAjax = (...args) => combineEpics(
-                                           epics)(...args, { ajax });
-     epicMiddleware.run(rootEpicWithMockAjax);
-     return store;
+  const epicMiddleware = createEpicMiddleware();
+  const store = createStore(reducer, applyMiddleware(epicMiddleware));
+  const rootEpicWithMockAjax = (...args) => combineEpics(
+    epics)(...args, {
+    ajax
+  });
+  epicMiddleware.run(rootEpicWithMockAjax);
+  return store;
 }
 
 /**
@@ -28,14 +37,14 @@ export function createStoreWithMiddleware(ajax, reducer, epics) {
  * @return {[String]}        [formatted String of a given date]
  */
 export function getDateString(date, format) {
-    const dateTimeMills = date.toISOString();
-    if(format === "dateOnly") {
-       return dateTimeMills.substr(0,10);
-    } else if(format === "dateTimeFormat") {
-       return dateTimeMills.replace("T"," ").replace("Z","");
-    } else {
-      return dateTimeMills;
-    }
+  const dateTimeMills = date.toISOString();
+  if (format === "dateOnly") {
+    return dateTimeMills.substr(0, 10);
+  } else if (format === "dateTimeFormat") {
+    return dateTimeMills.replace("T", " ").replace("Z", "");
+  } else {
+    return dateTimeMills;
+  }
 };
 
 /**
@@ -46,11 +55,11 @@ export function getDateString(date, format) {
  * @return {[Number]}               [Opacity ratio]
  */
 export function toggleOpacity(selectedValue, opacityValue, equalsCompare) {
-    if(equalsCompare) {
-        return selectedValue === opacityValue? 0.5: 1.0;
-    } else {
-        return selectedValue === opacityValue? 1.0: 0.5;
-    }
+  if (equalsCompare) {
+    return selectedValue === opacityValue ? 0.5 : 1.0;
+  } else {
+    return selectedValue === opacityValue ? 1.0 : 0.5;
+  }
 };
 
 /**
@@ -60,12 +69,12 @@ export function toggleOpacity(selectedValue, opacityValue, equalsCompare) {
  * @return {[Number]}     [a value between the min/max range inclusive]
  */
 export function getRandomInt(min, max) {
-    if(min > max) {
-      throw new RangeError("The argument min is must be less than or equals to max, min[" + min + "],max[" + max +"].");
-    }
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  if (min > max) {
+    throw new RangeError("The argument min is must be less than or equals to max, min[" + min + "],max[" + max + "].");
+  }
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 /**
@@ -75,7 +84,7 @@ export function getRandomInt(min, max) {
  * @return {[Number]}               [A value that s rounded to the given rounding constant]
  */
 export function roundValue(value, roundingConst) {
-    return Math.round(value * roundingConst)/roundingConst;
+  return Math.round(value * roundingConst) / roundingConst;
 }
 
 /**
@@ -85,5 +94,5 @@ export function roundValue(value, roundingConst) {
  * @return {[String]}        [new padded value]
  */
 export function padDigits(number, digits) {
-    return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
+  return Array(Math.max(digits - String(number).length + 1, 0)).join(0) + number;
 }

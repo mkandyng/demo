@@ -136,6 +136,7 @@ exports[`TimeSeries should render component comparing with previous snapshot sha
         layout="horizontal"
         verticalAlign="bottom"
       />
+       
       <Line
         activeDot={
           Object {

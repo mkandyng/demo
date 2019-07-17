@@ -8,27 +8,25 @@ import PropTypes from 'prop-types';
  * that is selectable and invoke onSelect callback
  *
  */
-export default function SelectableTabs(props) {
-    const { containerId,
-            selectedTab,
-            updateSelectedTab,
-            tabs } = props;
-    return (
-        <div id={containerId}>
-            <Tabs selectedIndex={selectedTab}
-                  onSelect={tabIndex => updateSelectedTab(tabIndex)}>
-                <TabList>
-                    {tabs.map(tab => <Tab key={tab.name}>{tab.name}</Tab>)}
-                </TabList>
-                    {tabs.map(tab => <TabPanel key={tab.name}>{tab.panel}</TabPanel>)}
-            </Tabs>
-        </div>
-    );
+export default function SelectableTabs({
+  containerId,
+  selectedTab,
+  updateSelectedTab,
+  tabs
+}) {
+  return (<div id={containerId}>
+    <Tabs selectedIndex={selectedTab} onSelect={tabIndex => updateSelectedTab(tabIndex)}>
+      <TabList>
+        {tabs.map(tab => <Tab key={tab.name}>{tab.name}</Tab>)}
+      </TabList>
+      {tabs.map(tab => <TabPanel key={tab.name}>{tab.panel}</TabPanel>)}
+    </Tabs>
+  </div>);
 }
 
 SelectableTabs.propTypes = {
-    containerId: PropTypes.string.isRequired,
-    selectedTab: PropTypes.number.isRequired,
-    updateSelectedTab: PropTypes.func.isRequired,
-    tabs: PropTypes.arrayOf(PropTypes.object)
+  containerId: PropTypes.string.isRequired,
+  selectedTab: PropTypes.number.isRequired,
+  updateSelectedTab: PropTypes.func.isRequired,
+  tabs: PropTypes.arrayOf(PropTypes.object)
 };

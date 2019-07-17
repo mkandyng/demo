@@ -1,6 +1,6 @@
 import React from "react";
 import toJson from "enzyme-to-json";
-import { shallow } from "enzyme";
+import {shallow} from "enzyme";
 import TradingDemo from "./TradingDemo";
 
 /**
@@ -10,14 +10,14 @@ import TradingDemo from "./TradingDemo";
 
 describe("TradingDemo", () => {
 
-    it("should render component comparing with previous snapshot shallow markup", () => {
-        // Given
+  it("should render component comparing with previous snapshot shallow markup", () => {
+    // Given
 
-        // When
-        const component = shallow(<TradingDemo />);
+    // When
+    const component = shallow(<TradingDemo/>);
 
-        // Then
-        expect(toJson(component)).toMatchSnapshot();
-    });
+    // Then
+    expect(toJson(component)).toMatchSnapshot();
+  });
 
 });

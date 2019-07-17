@@ -1,12 +1,10 @@
 import React from "react";
-import BottomLayout from "./bottomLayout/BottomLayout"
-import TopLayout from "./topLayout/TopLayout"
+import BottomLayout from "./BottomLayout"
+import TopLayout from "./TopLayout"
 
 export default function TradingDemo() {
-  return (
-    <div>
-        <TopLayout />
-        <BottomLayout />
-    </div>
-  )
+  return (<div>
+    <TopLayout/>
+    <BottomLayout/>
+  </div>)
 };
