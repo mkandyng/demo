@@ -99,15 +99,9 @@ function handleTableColumnHeader() {
 }
 
 function handleTableRow(state, rowInfo, column) {
-  const orderStatus = rowInfo
-    ? orderStatusEnum.getOrderStatus(rowInfo.original.status)
-    : undefined
-  const backgroundColor = orderStatus
-    ? orderStatus.backgroundColor
-    : "white";
-  const color = orderStatus
-    ? orderStatus.color
-    : "black";
+  const orderStatus = rowInfo? orderStatusEnum.getOrderStatus(rowInfo.original.status): undefined
+  const backgroundColor = orderStatus? orderStatus.backgroundColor: "white";
+  const color = orderStatus? orderStatus.color: "black";
   return {
     style: {
       backgroundColor: backgroundColor,

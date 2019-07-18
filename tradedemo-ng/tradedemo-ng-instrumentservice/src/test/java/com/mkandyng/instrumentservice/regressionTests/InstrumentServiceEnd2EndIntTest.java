@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import java.net.URL;
 import java.nio.file.Files;
@@ -30,7 +29,6 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-@ActiveProfiles("test")
 public class InstrumentServiceEnd2EndIntTest {
 
     @Autowired
@@ -46,13 +44,18 @@ public class InstrumentServiceEnd2EndIntTest {
         printHeader('#');
 
         for(TestCaseEnum testCaseEnum: TestCaseEnum.values()) {
+
             // Given
             String restEndPoint = testCaseEnum.getRestEndpoint();
             printHeader('-');
             System.out.println(String.format("Running test case [%s], rest API [%s]", testCaseEnum, restEndPoint));
             printHeader('-');
+
+
             // When
-            ResponseEntity<String> response = restTemplate.getForEntity(testCaseEnum.getRestEndpoint(), String.class);
+            ResponseEntity<String> response = restTemplate.getForEntity(restEndPoint, String.class);
+
+
 
             // Then
             System.out.println("Actual: " + response.getBody());

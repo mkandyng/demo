@@ -51,9 +51,7 @@ class Ticket extends React.Component {
           opacity: toggleOpacity(e.target.value, "GTD", false)
         },
         expiryType: e.target.value,
-        expiryDate: e.target.value === "GTD"
-          ? getDateString(new Date(), "dateOnly")
-          : ""
+        expiryDate: e.target.value === "GTD"? getDateString(new Date(), "dateOnly"): ""
       }),
       handleOnSubmit: (e, ticket, instrument) => {
         e.preventDefault();
@@ -78,9 +76,7 @@ class Ticket extends React.Component {
     const MAX_ORDER_COUNT = 10;
     const interval = setInterval(() => {
       if (this.props.enableDemo && this.state.orderId < MAX_ORDER_COUNT) {
-        let buySell = getRandomInt(0, 1) === 0
-          ? "Buy"
-          : "Sell";
+        let buySell = getRandomInt(0, 1) === 0? "Buy": "Sell";
         if (this.props.instrument.symbol && submitTicket({
           ticket: this.state,
           instrument: this.props.instrument,
@@ -89,7 +85,6 @@ class Ticket extends React.Component {
           placeOrder: this.props.placeOrder,
           updateOrder: this.props.updateOrder
         })) {
-
           this.setState({
             orderId: this.state.orderId + 1
           });

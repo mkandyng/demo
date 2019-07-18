@@ -7,6 +7,7 @@ import com.mkandyng.instrumentservice.timeSeries.dailyPrice.DailyPriceTimeSeries
 import com.mkandyng.instrumentservice.timeSeries.intradayPrice.IntradayPriceTimeSeriesRetrieverService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.Set;
 import java.util.concurrent.Executors;
@@ -22,6 +23,7 @@ import java.util.concurrent.TimeUnit;
  */
 
 @RestController
+@Profile("production")
 public class InitRequestController {
 
     private static final Logger logger = LoggerFactory.getLogger(InitRequestController.class);
