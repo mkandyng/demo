@@ -8,6 +8,7 @@ import {rootReducer} from "./modules/rootReducer";
 import {createStoreWithMiddleware} from "./libs/utils";
 import appWithProvider from "./pages/App";
 
+require('dotenv').config();
 const store = createStoreWithMiddleware(ajax, rootReducer, rootEpic);
 const provider = appWithProvider(store);
 ReactDOM.render(provider, document.getElementById("container"));

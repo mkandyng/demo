@@ -8,25 +8,15 @@ import "./orderbook.css";
  * Component to handle orderbook view and interaction
  */
 export default function Orderbook({orders}) {
-  const eventHandlers = {
-    handleTableColumnHeader: handleTableColumnHeader,
-    handleTableRow: handleTableRow
-  }
 
-  return (<OrderbookView orders={orders}
-                         columns={orderBookHeaderColumns}
-                         eventHandlers={eventHandlers}/>);
+  return (<ReactTable defaultPageSize={10}
+                      showPageSizeOptions={false}
+                      data={orders} columns={orderBookHeaderColumns}
+                      getTheadThProps={handleTableColumnHeader}
+                      getTrProps={handleTableRow}/>);
 }
 
-export function OrderbookView({
-  orders,
-  columns,
-  eventHandlers
-}) {
-  return (<ReactTable defaultPageSize={10} showPageSizeOptions={false} data={orders} columns={columns} getTheadThProps={eventHandlers.handleTableColumnHeader} getTrProps={eventHandlers.handleTableRow}/>);
-}
-
-export const orderBookHeaderColumns = [
+const orderBookHeaderColumns = [
   {
     Header: "Order Ref",
     accessor: "orderRef",
@@ -112,10 +102,4 @@ function handleTableRow(state, rowInfo, column) {
 
 Orderbook.propTypes = {
   orders: PropTypes.arrayOf(PropTypes.object).isRequired
-};
-
-OrderbookView.propTypes = {
-  orders: PropTypes.arrayOf(PropTypes.object).isRequired,
-  columns: PropTypes.arrayOf(PropTypes.object).isRequired,
-  eventHandlers: PropTypes.objectOf(PropTypes.func).isRequired
 };

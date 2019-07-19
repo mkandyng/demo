@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f292c9d8-b3ce-48b0-8e23-ac8caa4d340c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsMarketfeed/InstrumentsMarketfeed.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/instruments/InstrumentsMarketfeed/InstrumentsMarketfeed.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orders/Orderbook/Orderbook.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orders/Orderbook/Orderbook.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/Ticket/Ticket.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/ticket/Ticket/Ticket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/timeSeries/TimeSeries/TimeSeries.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/timeSeries/TimeSeries/TimeSeries.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mkandyng/instrumentservice/InitRequestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mkandyng/instrumentservice/InitRequestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mkandyng/instrumentservice/regressionTests/InstrumentServiceEnd2EndIntTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mkandyng/instrumentservice/regressionTests/InstrumentServiceEnd2EndIntTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orders/Orderbook/Orderbook.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orders/Orderbook/Orderbook.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orders/Orderbook/__snapshots__/Orderbook.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/../tradedemo-ng-gui/src/modules/orders/Orderbook/__snapshots__/Orderbook.test.js.snap" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -675,7 +669,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="716" />
@@ -748,7 +742,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563444234079" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563562699759" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -916,7 +910,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="716" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="716" extended-state="1" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3117932" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />

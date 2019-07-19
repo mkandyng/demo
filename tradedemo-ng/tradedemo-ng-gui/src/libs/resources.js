@@ -1,1 +1,1 @@
-export const instrumentServiceUrl = "http://34.77.5.217";
+export const instrumentServiceUrl = process.env.REACT_APP_INSTRUMENT_SERVICE_URL;

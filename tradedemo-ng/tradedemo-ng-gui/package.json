@@ -6,6 +6,7 @@
     "babel-core": "^6.26.3",
     "babel-jest": "^24.8.0",
     "babel-plugin-rewire": "^1.2.0",
+    "dotenv": "^8.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-autocomplete": "^1.8.1",

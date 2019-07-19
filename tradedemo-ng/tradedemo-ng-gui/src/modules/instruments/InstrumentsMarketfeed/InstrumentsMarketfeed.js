@@ -60,7 +60,7 @@ function InstrumentsMarketfeedView({instruments, columns, eventHandlers}) {
                 getTrProps={eventHandlers.handleTableRow}/>);
 }
 
-export const columnHeaders = [
+const columnHeaders = [
   {
     Header: "Remove",
     accessor: "delete",

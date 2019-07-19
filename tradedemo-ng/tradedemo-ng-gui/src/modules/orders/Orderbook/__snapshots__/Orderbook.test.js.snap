@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Orderbook should registered event handler correctly with OrderbookView 1`] = `
+exports[`Orderbook should render component comparing with previous snapshot shallow markup 1`] = `
 <ReactTable
   AggregatedComponent={[Function]}
   ExpanderComponent={[Function]}
@@ -180,10 +180,10 @@ exports[`Orderbook should registered event handler correctly with OrderbookView 
   getTheadGroupThProps={[Function]}
   getTheadGroupTrProps={[Function]}
   getTheadProps={[Function]}
-  getTheadThProps={[MockFunction]}
+  getTheadThProps={[Function]}
   getTheadTrProps={[Function]}
   getTrGroupProps={[Function]}
-  getTrProps={[MockFunction]}
+  getTrProps={[Function]}
   groupedByPivotKey="_groupedByPivot"
   indexKey="_index"
   loading={false}
@@ -223,103 +223,5 @@ exports[`Orderbook should registered event handler correctly with OrderbookView 
   sortable={true}
   style={Object {}}
   subRowsKey="_subRows"
-/>
-`;
-
-exports[`Orderbook should render component comparing with previous snapshot shallow markup 1`] = `
-<OrderbookView
-  columns={
-    Array [
-      Object {
-        "Header": "Order Ref",
-        "accessor": "orderRef",
-        "width": 80,
-      },
-      Object {
-        "Header": "Symbol",
-        "accessor": "symbol",
-        "width": 50,
-      },
-      Object {
-        "Header": "Created",
-        "accessor": "created",
-        "width": 120,
-      },
-      Object {
-        "Header": "Last Updated",
-        "accessor": "lastUpdated",
-        "width": 120,
-      },
-      Object {
-        "Header": "Instrument",
-        "accessor": "instrument",
-        "className": "instrument-column",
-      },
-      Object {
-        "Header": "Status",
-        "accessor": "status",
-        "width": 70,
-      },
-      Object {
-        "Header": "Ccy",
-        "accessor": "ccy",
-        "width": 40,
-      },
-      Object {
-        "Header": "Buy/Sell",
-        "accessor": "buySell",
-        "width": 50,
-      },
-      Object {
-        "Header": "Qty",
-        "accessor": "quantity",
-        "width": 50,
-      },
-      Object {
-        "Header": "Executed",
-        "accessor": "executed",
-        "width": 60,
-      },
-      Object {
-        "Header": "Order Type",
-        "accessor": "orderType",
-        "width": 70,
-      },
-      Object {
-        "Header": "Order Price",
-        "accessor": "price",
-        "width": 70,
-      },
-      Object {
-        "Header": "Price (avg)",
-        "accessor": "avgPrice",
-        "width": 70,
-      },
-      Object {
-        "Header": "Expiry Type",
-        "accessor": "expiryType",
-        "width": 70,
-      },
-      Object {
-        "Header": "Expiry Date",
-        "accessor": "expiryDate",
-        "width": 70,
-      },
-    ]
-  }
-  eventHandlers={
-    Object {
-      "handleTableColumnHeader": [Function],
-      "handleTableRow": [Function],
-    }
-  }
-  orders={
-    Array [
-      Object {
-        "orderRef": "XA12345678",
-        "symbol": "AMZ",
-      },
-    ]
-  }
 />
 `;
