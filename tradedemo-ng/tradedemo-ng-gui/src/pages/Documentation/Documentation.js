@@ -1,5 +1,4 @@
 import React from "react";
-
 import Technologies from "../../modules/documentation/Technologies";
 import Functionalities from "../../modules/documentation/Functionalities";
 import FutureDevelopment from "../../modules/documentation/FutureDevelopment";

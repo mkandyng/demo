@@ -3,10 +3,7 @@ import {instrumentsReducer} from "./instrumentsReducer";
 import {createStoreWithMiddleware} from "../../../libs/utils";
 import {instrumentsEpics} from "./instrumentsEpics";
 import {createInstruments,getJSONFunction} from "../instruments.test.helpers";
-import {
-  MAX_MARKET_FEED_INSTRUMENTS,
-  removeInstrument,updateInstrument
-} from "../instruments";
+import {MAX_MARKET_FEED_INSTRUMENTS,removeInstrument,updateInstrument} from "../instruments";
 import {
   fetchInstruments,
   addInstrumentToMarketfeed,
@@ -27,31 +24,20 @@ describe("instruments store integration tests - Happy Path", () => {
   let store = undefined;
 
   const instruments = createInstruments(MAX_MARKET_FEED_INSTRUMENTS + 1)
-    .map(instrument => ({
-      ...instrument,
-      price: 1.0,
-      open: 1.0
-    }));
+    .map(instrument => ({...instrument,price: 1.0,open: 1.0}));
 
   beforeEach(() => {
-
-    store = createStoreWithMiddleware({
-        getJSON: url => getJSONFunction(url, instruments)
-      },
+    store = createStoreWithMiddleware(
+      {getJSON: url => getJSONFunction(url, instruments)},
       instrumentsReducer,
-      instrumentsEpics);
+      instrumentsEpics
+    );
   });
 
   it("should fetchInstruments, add to marketfeed and select first element ", () => {
     // Given
-    const {
-      price,
-      open,
-      ...expectedInstrument
-    } = instruments[MAX_MARKET_FEED_INSTRUMENTS];
-    const expectedMarketfeedInstruments = removeInstrument(instruments,
-      expectedInstrument.symbol).reverse();
-
+    const {price,open,...expectedInstrument} = instruments[MAX_MARKET_FEED_INSTRUMENTS];
+    const expectedMarketfeedInstruments = removeInstrument(instruments,expectedInstrument.symbol).reverse();
     const action = fetchInstruments();
 
     // When
@@ -68,8 +54,6 @@ describe("instruments store integration tests - Happy Path", () => {
   it("should addInstrumentToMarketfeed and select first element ", () => {
     // Given
     store.dispatch(fetchInstruments());
-
-
     const action = addInstrumentToMarketfeed(instruments[MAX_MARKET_FEED_INSTRUMENTS]);
 
     // When
@@ -85,16 +69,9 @@ describe("instruments store integration tests - Happy Path", () => {
 
   it("should selectMarketfeedInstrument to a given instrument", () => {
     // Given
-    const {
-      price,
-      open,
-      ...expectedInstrument
-    } = instruments[MAX_MARKET_FEED_INSTRUMENTS];
-    const expectedMarketfeedInstruments = removeInstrument(instruments,
-      expectedInstrument.symbol).reverse();
-
+    const {price,open,...expectedInstrument} = instruments[MAX_MARKET_FEED_INSTRUMENTS];
+    const expectedMarketfeedInstruments = removeInstrument(instruments,expectedInstrument.symbol).reverse();
     store.dispatch(fetchInstruments());
-
     const action = selectMarketfeedInstrument(instruments[0]);
 
     // When
@@ -111,21 +88,10 @@ describe("instruments store integration tests - Happy Path", () => {
 
   it("should updateMarketfeedInstrument to a given instrument ", () => {
     // Given
-    const {
-      price,
-      open,
-      ...expectedInstrument
-    } = instruments[MAX_MARKET_FEED_INSTRUMENTS];
-    const expectedMktfeedInstruments = removeInstrument(instruments,
-      expectedInstrument.symbol).reverse();
-
+    const {price,open,...expectedInstrument} = instruments[MAX_MARKET_FEED_INSTRUMENTS];
+    const expectedMktfeedInstruments = removeInstrument(instruments,expectedInstrument.symbol).reverse();
     store.dispatch(fetchInstruments());
-    const updatingInstrument = {
-      ...instruments[0],
-      price: 1.5,
-      open: 1.2
-    };
-
+    const updatingInstrument = {...instruments[0],price: 1.5,open: 1.2};
     const action = updateMarketfeedInstrument(updatingInstrument);
 
     // When
@@ -143,16 +109,10 @@ describe("instruments store integration tests - Happy Path", () => {
 
   it("should deleteMarketfeedInstrument to a given instrument ", () => {
     // Given
-    const {
-      price,
-      open,
-      ...expectedInstrument
-    } = instruments[MAX_MARKET_FEED_INSTRUMENTS];
-    const expectedMktfeedInstruments = removeInstrument(instruments,
-      expectedInstrument.symbol).reverse();
+    const {price,open,...expectedInstrument} = instruments[MAX_MARKET_FEED_INSTRUMENTS];
+    const expectedMktfeedInstruments = removeInstrument(instruments,expectedInstrument.symbol).reverse();
     store.dispatch(fetchInstruments());
     const deleteInstrument = instruments[0];
-
     const action = deleteMarketfeedInstrument(deleteInstrument);
 
     // When
@@ -178,15 +138,10 @@ describe("instruments store integration tests - Invalid Path", () => {
 
   beforeEach(() => {
     instruments = createInstruments(MAX_MARKET_FEED_INSTRUMENTS)
-      .map(instrument => ({
-        ...instrument,
-        price: 1.0,
-        open: 1.0
-      }));
+      .map(instrument => ({...instrument,price: 1.0,open: 1.0}));
 
-    store = createStoreWithMiddleware({
-        getJSON: () => throwError(error)
-      },
+    store = createStoreWithMiddleware(
+      {getJSON: () => throwError(error)},
       instrumentsReducer,
       instrumentsEpics);
   });
@@ -218,9 +173,7 @@ describe("instruments store integration tests - Invalid Path", () => {
 
   it("should return initial state for invalid action ", () => {
     // Given
-    const action = {
-      type: "invalid_action"
-    };
+    const action = {type: "invalid_action"};
 
     // When
     store.dispatch(action);
@@ -229,7 +182,7 @@ describe("instruments store integration tests - Invalid Path", () => {
     expect(store.getState()).toStrictEqual({
       searchInstruments: [],
       marketfeedInstruments: [],
-      selected: {}
+      selected: {symbol: ""}
     });
   });
 

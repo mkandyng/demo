@@ -1,9 +1,5 @@
-import {
-  orderStatusEnum
-} from "./orderStatusEnum";
-import {
-  from
-} from "rxjs";
+import {orderStatusEnum} from "./orderStatusEnum";
+import {from} from "rxjs";
 
 /**
  * This is unit test of orderStatusEnum, testing the configuration of

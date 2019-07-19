@@ -9,12 +9,13 @@ export default function SelectionDropDown({
   label,
   name,
   list,
+  value,
   handleOnChange
 }) {
   return (<p>
     <label>{label}:
-      <select id={id} name={name} onChange={handleOnChange}>
-        {list.map((value) => <option key={name + value} id={name + value} value={value}>{value}</option>)}
+      <select id={id} name={name} onChange={handleOnChange} value={value}>
+        {list.map((val) => <option key={name + val} id={name + value} value={value}>{val}</option>)}
       </select>
     </label>
   </p>)

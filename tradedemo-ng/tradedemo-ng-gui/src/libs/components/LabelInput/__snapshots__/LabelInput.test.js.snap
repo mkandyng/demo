@@ -12,6 +12,7 @@ exports[`LabelInput should render component comparing with previous snapshot sha
       name="name"
       onChange={[MockFunction]}
       step={1}
+      style="style"
       type="number"
       value={12}
     />

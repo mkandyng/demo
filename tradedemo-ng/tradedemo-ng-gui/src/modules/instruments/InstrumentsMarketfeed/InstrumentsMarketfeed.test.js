@@ -51,11 +51,7 @@ describe("InstrumentsMarketfeed", () => {
   it("should set src to delete_click on mouseout", () => {
     const selectedMktInstrument = props.marketfeedInstruments.find(
                                       instrument => instrument.symbol === props.instrument.symbol);
-    const event = {
-      target: {
-        src: "valueToReplace"
-      }
-    };
+    const event = {target: {src: "valueToReplace"}};
     sendEventAndVerify(component,
                        "mouseover",
                        event,
@@ -66,11 +62,7 @@ describe("InstrumentsMarketfeed", () => {
   it("should set src to delete_click on mouseout", () => {
     const selectedMktInstrument = props.marketfeedInstruments.find(
                                       instrument => instrument.symbol === props.instrument.symbol);
-    const event = {
-      target: {
-        src: "valueToReplace"
-      }
-    };
+    const event = {target: {src: "valueToReplace"}};
     sendEventAndVerify(component,
                        "mouseout",
                        event,

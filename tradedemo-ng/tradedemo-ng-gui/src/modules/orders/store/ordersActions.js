@@ -1,9 +1,5 @@
-import {
-  orderStatusEnum
-} from "../orderStatusEnum";
-import {
-  getDateString
-} from "../../../libs/utils";
+import {orderStatusEnum} from "../orderStatusEnum";
+import {getDateString} from "../../../libs/utils";
 
 export const types = {
   PLACE_ORDER: "orders/PLACE_ORDER",

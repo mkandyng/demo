@@ -1,9 +1,5 @@
-import {
-  getRandomInt
-} from "../../../libs/utils";
-import {
-  orderStatusEnum
-} from "../../orders/orderStatusEnum";
+import {getRandomInt} from "../../../libs/utils";
+import {orderStatusEnum} from "../../orders/orderStatusEnum";
 
 /**
  * [placeOrderToMarket entry point to call placeOrder and kick off order life cycle]
@@ -13,20 +9,13 @@ import {
  * @return {[Void]}
  */
 export default function placeOrderToMarket(order, placeOrder, updateOrder) {
-  const orderPlaced = {
-    ...order,
-    executed: 0,
-    status: orderStatusEnum.status.REQUESTED.displayName
-  };
+  const orderPlaced = {...order,executed: 0,status: orderStatusEnum.status.REQUESTED.displayName};
   placeOrder(orderPlaced);
   const orderEndStatus = orderStatusEnum.getRandomFinalOrderStatus();
   const nextStatus = getNextStatusAfterPlace(order, orderEndStatus);
 
   setTimeout(() => {
-    updateOrder({
-      ...orderPlaced,
-      status: nextStatus.displayName
-    });
+    updateOrder({...orderPlaced,status: nextStatus.displayName});
 
     // Only fill the rest if it is working
     if (nextStatus.displayName === orderStatusEnum.status.WORKING.displayName) {

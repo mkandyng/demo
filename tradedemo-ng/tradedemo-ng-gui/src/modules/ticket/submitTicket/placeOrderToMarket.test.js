@@ -1,12 +1,9 @@
 import placeOrderToMarket from "./placeOrderToMarket";
-import {
-  orderStatusEnum
-} from "../../orders/orderStatusEnum";
+import {orderStatusEnum} from "../../orders/orderStatusEnum";
 
 /**
  * This is unit test of placeOrderToMarket, simulate typical order events lifecycle
  */
-
 
 describe("placeOrderToMarket", () => {
 
@@ -55,7 +52,7 @@ describe("placeOrderToMarket", () => {
     verifyPlaceOrder(order, "REJECTED");
   });
 
-  it("should place order and update last status to CANCELLED when expiryType is FOK and exchange is cancelled", () => {
+  it("should place order and update last status to CANCELLED when FOK and cancelled", () => {
     verifyPlaceOrder({
       ...order,
       expiryType: "FOK"

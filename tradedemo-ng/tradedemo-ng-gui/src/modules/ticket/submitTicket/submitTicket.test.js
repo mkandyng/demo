@@ -15,9 +15,7 @@ describe("submitTicket validation", () => {
       orderType: "Limit",
       price: 1.0
     },
-    instrument: {
-      price: 1.02
-    },
+    instrument: {price: 1.02},
     buySell: "buy",
     confirmOrder: true,
     placeOrder: jest.fn(),
@@ -30,15 +28,10 @@ describe("submitTicket validation", () => {
 
   it("should return false for invalid submit object", () => {
     // Given
-    window.alert = jest.fn()
+    window.alert = jest.fn();
+
     // When
-    const success = submitTicket({
-      ...submitObject,
-      ticket: {
-        ...submitObject.ticket,
-        quantity: 0
-      }
-    });
+    const success = submitTicket({...submitObject,ticket: {...submitObject.ticket,quantity: 0}});
 
     // Then
     expect(window.alert).toHaveBeenCalled();
@@ -48,7 +41,8 @@ describe("submitTicket validation", () => {
 
   it("should return false when confirmPlaceOrder is false", () => {
     // Given
-    window.confirm = jest.fn(() => false)
+    window.confirm = jest.fn(() => false);
+
     // When
     const success = submitTicket(submitObject);
 
@@ -59,7 +53,8 @@ describe("submitTicket validation", () => {
 
   it("should place order and generate order life cycle for valide order", done => {
     // Given
-    window.confirm = jest.fn(() => true)
+    window.confirm = jest.fn(() => true);
+    
     // When
     const success = submitTicket(submitObject);
 

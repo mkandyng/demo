@@ -13,7 +13,7 @@ This front end is written using the following technologies:
   <li><a href="https://airbnb.io/enzyme/" alt="enzyme">enzyme</a>, Javascript Testing Utilities</li>
 </ul>
 
-Note, I have been a Java backend developer in the last decade and only reacquaint with Javascript since April 2019. I left the javascript behind when JQuery was the trending technology, now heading towards legacy. This project is a learning exercise on ReactJS and its technology ecosystem.
+Note, I have been a Java backend developer in the last decade and only reacquaint with Javascript since April 2019. When I stopped using javascript in 2009, JQuery was the trending technology, now heading towards legacy. This project is a learning exercise on ReactJS and its technology ecosystem.
 
 As a software engineer and not a UI designer, I am done with the GUI and its functionalities. I am happy enough to share my code as is. Building this front end allow me to gather some <b>modern Javascript and React 'Best Practices'</b>, filtering out different opinions and conclude with own intuition how to structure and write testable software that can scale.
 
@@ -46,13 +46,13 @@ You can create React component using pure function or using class syntax. Some p
   <li><b>Less boiler plate,</b> No constructor, no life cycles, pure function takes props as input and return JSX.</li>
   <li><b>Testability</b>, As a function, same input will produces the same output.</li>
   <li><b>Interface</b>, Functional component can use destruct props to make input interface clear.</li>
-  <li><b>Strategically</b>, React was created using functional language <a href="https://en.wikipedia.org/wiki/Standard_ML">SML</a>. Here is the <a href="https://reasonml.github.io/docs/en/what-and-why">Reason</a> why its creator wants to strategic move back to its root.
+  <li><b>Strategically</b>, React was originally created using functional language <a href="https://en.wikipedia.org/wiki/Standard_ML">SML</a>. Here is the <a href="https://reasonml.github.io/docs/en/what-and-why">Reason</a> why its creator wants to strategically move back to its root.
 </ol>
 </p>
 
 <h2>4.0 Use a state management library</h2>
 <p>
-The standard way to update React view is to leverage <a href="https://facebook.github.io/flux/docs/in-depth-overview">Flux architecture</a> for uni-directional data flow to update its UI. Redux is one most popular Flux implementation, making your application easier to reason about.
+The standard way to update React view is to leverage <a href="https://facebook.github.io/flux/docs/in-depth-overview">Flux architecture</a> for uni-directional data flow to update its UI. Redux is one of the most popular Flux implementation, making your application easier to reason about.
 </p>
 <p>
 Without state management library, as the application grow, it can become difficult to manage states with components and coordinating between parent and children components.
@@ -63,19 +63,19 @@ In this project, I grouped the store data as modules and within it, define React
 
 <h2>5.0 Test (Unit), Test (Integration), and Test (End2End)</h2>
 <p>
-Whether you are writing Test First, Test Last, or Test In-Between, if you want to be productive, you need plenty of Unit Tests on export functions, Integration Test on modules, and End-2-End at the application level.
+Whether you are writing Test First, Test Last, or Test In-Between, if you want to be productive, you need plenty of <b>Unit Tests</b> on export functions, <b>Integration Tests</b> on modules, and <b>End-2-End test</b> at the application level.
 </p>
 <p>
-Many people are not convince about productivity of unit tests. Many are happy to promote <a href="https://en.wikipedia.org/wiki/Test-driven_development">Test Driven Development</a> and only have End2End testing the whole system or large part of the system to demonstrate their practices. Although End2End test to specify a feature before any code is written can ensure <b>building the right application</b>, testing only at the highest level does not enforce <b>building the application right</b>.
+Many people are not convince about productivity of unit tests. Many are happy to promote <a href="https://en.wikipedia.org/wiki/Test-driven_development">Test Driven Development</a> and only have End2End testing the whole system or large part of the system to demonstrate their understanding. Although End2End test to specify a feature before any code is written can ensure <b>building the right application</b>, testing only at the highest level does not enforce <b>building the application right</b>.
 </p>
 <p>
 The original <a href="https://martinfowler.com/bliki/TestPyramid.html">Test Pyramid</a> define layers such as <b>UI, Service, and Unit</b>. The modern takes on <a href="https://dzone.com/articles/the-battle-of-the-testing-triangle">Test Triangle</a> do not mix application architecture with test artifacts as each layers, whether it is UI or backend services, should follow the same rigorous engineering practice. I have shown just at the UI layer, we can group units of code into module and glue modules together to form an application. If we apply the modern takes of testing triangle, we can write feature tests at End2End level, drilling down into more focus tests at module level, and complete test on all edge cases at the unit level.
 </p>
 <p>
-Writing unit tests and integration tests are time-consuming, lead up to 3x as much code covering all edge cases. The efforts can pay off if the application is adaptable to change when it is made up of small fully tested components that are <a href="https://en.wikipedia.org/wiki/Loose_coupling">loosely coupled</a>, modules that are <a href="https://en.wikipedia.org/wiki/Cohesion_(computer_science)">highly cohesive</a>, and the application that is <a href="https://www.tutorialspoint.com/software_testing_dictionary/correctness.htm">functionally correct</a>.
+Writing unit tests and integration tests are time-consuming and accumulate with 3x as much code covering all edge cases. The efforts can pay off only if the application is adaptable to change when it is made up of small fully tested components that are <a href="https://en.wikipedia.org/wiki/Loose_coupling">loosely coupled</a>, modules that are <a href="https://en.wikipedia.org/wiki/Cohesion_(computer_science)">highly cohesive</a>, and the application that is <a href="https://www.tutorialspoint.com/software_testing_dictionary/correctness.htm">functionally correct</a>.
 </p>
 <p>
-In the javascript world, there are many test libraries and frameworks. I tend to use the same set of tool to perform different level of tests and not resort to specific tool for a given layer. This ensures all tests are written consistently, just the level of granularity differs. For this project, I used <a href="https://jestjs.io/" alt="redux">Jest</a> and <a href="https://airbnb.io/enzyme/" alt="enzyme">enzyme</a> and created:
+In the javascript world, there are many test libraries and frameworks. I tend to use the same set of tool to perform different level of tests and not resort to specific tool for a given layer. This ensures all tests are written consistently, just the level of granularity differs. For this project, I used <a href="https://jestjs.io/" alt="redux">Jest</a> and <a href="https://airbnb.io/enzyme/" alt="enzyme">enzyme</a> to create:
 
 <ol>
   <li><b>Unit Tests,</b> All the tests that end with <b>.test.</b></li>

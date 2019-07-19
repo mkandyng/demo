@@ -1,7 +1,4 @@
-import {
-  getDateString,
-  padDigits
-} from "../../../libs/utils";
+import {getDateString,padDigits} from "../../../libs/utils";
 import placeOrderToMarket from "./placeOrderToMarket";
 import validateOrder from "./validateOrder";
 
@@ -23,7 +20,6 @@ export default function submitTicket({
   placeOrder,
   updateOrder
 }) {
-
   if (validateOrder(ticket, instrument)) {
     const priceInfo = ticket.orderType === "Market" ? "Market price" :
       ticket.orderType + " (" + ticket.price + ")";

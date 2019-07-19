@@ -31,10 +31,10 @@ export function timeSeriesReducer(state = {
         symbol: action.symbol,
           intradayTimeSeries: transformTimeSeries(action.timeSeries, o => o.price, o => o.price)
       }
-      case timeSeriesActions.types.FETCH_INTRADAY_TIMESERIES_FAILURE:
-        console.log(action.error);
-        return state;
-      default:
-        return state;
+    case timeSeriesActions.types.FETCH_INTRADAY_TIMESERIES_FAILURE:
+      console.log(action.error);
+      return state;
+    default:
+      return state;
   }
 }

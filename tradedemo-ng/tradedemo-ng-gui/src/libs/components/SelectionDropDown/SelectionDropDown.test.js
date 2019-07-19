@@ -14,9 +14,7 @@ describe("SelectionDropDown", () => {
     id: "id",
     label: "label",
     name: "name",
-    list: [
-      "item1", "item2"
-    ],
+    list: ["item1", "item2"],
     handleOnChange: jest.fn()
   };
 

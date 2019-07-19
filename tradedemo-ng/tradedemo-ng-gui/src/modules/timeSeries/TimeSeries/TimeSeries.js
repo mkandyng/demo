@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import {
   LineChart,
   Line,
@@ -9,7 +10,6 @@ import {
   ResponsiveContainer,
   Legend
 } from "recharts";
-import PropTypes from 'prop-types';
 
 /**
  * Generic component to display timeSeries

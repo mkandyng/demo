@@ -1,6 +1,4 @@
-import {
-  getRandomInt
-} from "../../libs/utils.js"
+import {getRandomInt} from "../../libs/utils.js"
 
 /**
  * orderStatusEnum, defining order status life cycle
@@ -39,12 +37,13 @@ export const orderStatusEnum = {
     }
   },
   getRandomFinalOrderStatus: () => {
-    const arrayorderStatusEnum = Object.keys(orderStatusEnum.status);
-    const status = arrayorderStatusEnum[getRandomInt(0, arrayorderStatusEnum.length - 1)];
+    const arrayOrderStatusEnum = Object.keys(orderStatusEnum.status);
+    const status = arrayOrderStatusEnum[getRandomInt(0, arrayOrderStatusEnum.length - 1)];
     return orderStatusEnum.status[status];
   },
   getOrderStatus: displayName => {
-    const status = Object.keys(orderStatusEnum.status).find(e => orderStatusEnum.status[e].displayName === displayName);
+    const status = Object.keys(orderStatusEnum.status)
+                         .find(e => orderStatusEnum.status[e].displayName === displayName);
     return orderStatusEnum.status[status];
   }
 }

@@ -1,6 +1,4 @@
-import {
-  getDateString
-} from "../../../libs/utils";
+import {getDateString} from "../../../libs/utils";
 
 /**
  * [validateOrder encapsulate the validation of order placement]
@@ -9,7 +7,7 @@ import {
  * @return {[Boolean]}            [validation indicator]
  */
 export default function validateOrder(ticket, instrument) {
-  if (ticket.quantity === 0) {
+  if (ticket.quantity <= 0) {
     alert("Quantity must be greater than 0");
     return false;
   }

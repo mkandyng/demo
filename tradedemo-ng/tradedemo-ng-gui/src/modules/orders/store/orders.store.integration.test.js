@@ -1,19 +1,8 @@
-import {
-  createStore
-} from "redux";
-import {
-  orderStatusEnum
-} from "../orderStatusEnum";
-import {
-  ordersReducer
-} from "./ordersReducer";
-import {
-  getDateString
-} from "../../../libs/utils";
-import {
-  placeOrder,
-  updateOrder
-} from "./ordersActions";
+import {createStore} from "redux";
+import {orderStatusEnum} from "../orderStatusEnum";
+import {ordersReducer} from "./ordersReducer";
+import {getDateString} from "../../../libs/utils";
+import {placeOrder,updateOrder} from "./ordersActions";
 
 /**
  *

@@ -6,7 +6,7 @@ import React from "react";
 
 export default function FutureDevelopment() {
   return (<div>
-    <p>The focus of this demo is on ReactJS.The next phase are Java server side microservices to demonstrate modern distributed reactive architecture.
+    <p>The focus of this demo is on ReactJS. The next phase are Java server side microservices to demonstrate modern distributed reactive architecture.
     </p>
     <ul>
       <li>Mock exchange communicate via&nbsp;

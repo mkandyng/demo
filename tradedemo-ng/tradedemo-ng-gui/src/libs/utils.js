@@ -1,13 +1,6 @@
-import {
-  createStore,
-  applyMiddleware
-} from "redux";
-import {
-  createEpicMiddleware
-} from "redux-observable";
-import {
-  combineEpics
-} from "redux-observable";
+import {createStore, applyMiddleware} from "redux";
+import {createEpicMiddleware} from "redux-observable";
+import {combineEpics} from "redux-observable";
 
 /**
  * [createStoreWithMiddleware use to create a redux store tying implementation of ajax, reducer, epics]
@@ -70,7 +63,7 @@ export function toggleOpacity(selectedValue, opacityValue, equalsCompare) {
  */
 export function getRandomInt(min, max) {
   if (min > max) {
-    throw new RangeError("The argument min is must be less than or equals to max, min[" + min + "],max[" + max + "].");
+    throw new RangeError("The argument min must be less than or equals to max, min[" + min + "],max[" + max + "].");
   }
   min = Math.ceil(min);
   max = Math.floor(max);

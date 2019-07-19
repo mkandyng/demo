@@ -143,7 +143,7 @@ exports[`Documentation should render component comparing with previous snapshot 
       <FutureDevelopment>
         <div>
           <p>
-            The focus of this demo is on ReactJS.The next phase are Java server side microservices to demonstrate modern distributed reactive architecture.
+            The focus of this demo is on ReactJS. The next phase are Java server side microservices to demonstrate modern distributed reactive architecture.
           </p>
           <ul>
             <li>

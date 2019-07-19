@@ -15,327 +15,304 @@ exports[`ticket integration tests should matchSnapshot for mount Ticket componen
   placeOrder={[Function]}
   updateOrder={[Function]}
 >
-  <TicketView
-    eventHandler={
-      Object {
-        "expiryTypeChange": [Function],
-        "handleFormChange": [Function],
-        "handleOnSubmit": [Function],
-        "orderTypeChange": [Function],
-      }
-    }
-    instrument={
-      Object {
-        "currency": "USD",
-        "name": "instrument4",
-        "open": 1,
-        "price": 1,
-        "symbol": "symbol4",
-      }
-    }
-    ticket={
-      Object {
-        "expiryDate": "",
-        "expiryDateStyle": Object {
-          "opacity": "0.5",
-        },
-        "expiryType": "Day",
-        "note": "",
-        "orderId": 0,
-        "orderType": "Market",
-        "price": 0,
-        "priceStyle": Object {
-          "opacity": "0.5",
-        },
-        "quantity": 5,
-        "symbol": undefined,
-      }
-    }
+  <div
+    id="ticket"
   >
-    <div
-      id="ticket"
-    >
-      <form>
-        <LabelInput
-          handleOnChange={[Function]}
-          label="Symbol"
-          name="symbol"
-          type="text"
-        >
-          <p>
-            <label>
-              Symbol
-              :
-              <input
-                name="symbol"
-                onChange={[Function]}
-                type="text"
-                value=""
-              />
-            </label>
-          </p>
-        </LabelInput>
-        <LabelInput
-          handleOnChange={[Function]}
-          label="Quantity"
-          name="quantity"
-          step={5}
-          type="number"
-          value={5}
-        >
-          <p>
-            <label>
-              Quantity
-              :
-              <input
-                name="quantity"
-                onChange={[Function]}
-                step={5}
-                type="number"
-                value={5}
-              />
-            </label>
-          </p>
-        </LabelInput>
-        <SelectionDropDown
-          handleOnChange={[Function]}
-          id="orderType"
-          label="Order Type"
-          list={
-            Array [
-              "Market",
-              "Limit",
-              "Stop",
-              "Stop Limit",
-            ]
-          }
-          name="orderType"
-        >
-          <p>
-            <label>
-              Order Type
-              :
-              <select
-                id="orderType"
-                name="orderType"
-                onChange={[Function]}
+    <form>
+      <LabelInput
+        handleOnChange={[Function]}
+        label="Symbol"
+        name="symbol"
+        type="text"
+        value="symbol4"
+      >
+        <p>
+          <label>
+            Symbol
+            :
+            <input
+              name="symbol"
+              onChange={[Function]}
+              type="text"
+              value="symbol4"
+            />
+          </label>
+        </p>
+      </LabelInput>
+      <LabelInput
+        handleOnChange={[Function]}
+        label="Quantity"
+        name="quantity"
+        step={5}
+        type="number"
+        value={5}
+      >
+        <p>
+          <label>
+            Quantity
+            :
+            <input
+              name="quantity"
+              onChange={[Function]}
+              step={5}
+              type="number"
+              value={5}
+            />
+          </label>
+        </p>
+      </LabelInput>
+      <SelectionDropDown
+        handleOnChange={[Function]}
+        id="orderType"
+        label="Order Type"
+        list={
+          Array [
+            "Market",
+            "Limit",
+            "Stop",
+            "Stop Limit",
+          ]
+        }
+        name="orderType"
+        value="Market"
+      >
+        <p>
+          <label>
+            Order Type
+            :
+            <select
+              id="orderType"
+              name="orderType"
+              onChange={[Function]}
+              value="Market"
+            >
+              <option
+                id="orderTypeMarket"
+                key="orderTypeMarket"
+                value="Market"
               >
-                <option
-                  id="orderTypeMarket"
-                  key="orderTypeMarket"
-                  value="Market"
-                >
-                  Market
-                </option>
-                <option
-                  id="orderTypeLimit"
-                  key="orderTypeLimit"
-                  value="Limit"
-                >
-                  Limit
-                </option>
-                <option
-                  id="orderTypeStop"
-                  key="orderTypeStop"
-                  value="Stop"
-                >
-                  Stop
-                </option>
-                <option
-                  id="orderTypeStop Limit"
-                  key="orderTypeStop Limit"
-                  value="Stop Limit"
-                >
-                  Stop Limit
-                </option>
-              </select>
-            </label>
-          </p>
-        </SelectionDropDown>
-        <LabelInput
-          handleOnChange={[Function]}
-          label="Price"
-          name="price"
-          step={0.1}
+                Market
+              </option>
+              <option
+                id="orderTypeMarket"
+                key="orderTypeLimit"
+                value="Market"
+              >
+                Limit
+              </option>
+              <option
+                id="orderTypeMarket"
+                key="orderTypeStop"
+                value="Market"
+              >
+                Stop
+              </option>
+              <option
+                id="orderTypeMarket"
+                key="orderTypeStop Limit"
+                value="Market"
+              >
+                Stop Limit
+              </option>
+            </select>
+          </label>
+        </p>
+      </SelectionDropDown>
+      <LabelInput
+        handleOnChange={[Function]}
+        label="Price"
+        name="price"
+        step={0.1}
+        style={
+          Object {
+            "opacity": "0.5",
+          }
+        }
+        type="number"
+        value="1.00"
+      >
+        <p
           style={
             Object {
               "opacity": "0.5",
             }
           }
-          type="number"
-          value={0}
         >
-          <p
-            style={
-              Object {
-                "opacity": "0.5",
+          <label>
+            Price
+            :
+            <input
+              name="price"
+              onChange={[Function]}
+              step={0.1}
+              style={
+                Object {
+                  "opacity": "0.5",
+                }
               }
-            }
-          >
-            <label>
-              Price
-              :
-              <input
-                name="price"
-                onChange={[Function]}
-                step={0.1}
-                type="number"
-                value=""
-              />
-            </label>
-          </p>
-        </LabelInput>
-        <SelectionDropDown
-          handleOnChange={[Function]}
-          id="expiryType"
-          label="Expiry Type"
-          list={
-            Array [
-              "Day",
-              "GTD",
-              "GTC",
-              "FOK",
-            ]
-          }
-          name="expiryType"
-        >
-          <p>
-            <label>
-              Expiry Type
-              :
-              <select
-                id="expiryType"
-                name="expiryType"
-                onChange={[Function]}
+              type="number"
+              value="1.00"
+            />
+          </label>
+        </p>
+      </LabelInput>
+      <SelectionDropDown
+        handleOnChange={[Function]}
+        id="expiryType"
+        label="Expiry Type"
+        list={
+          Array [
+            "Day",
+            "GTD",
+            "GTC",
+            "FOK",
+          ]
+        }
+        name="expiryType"
+        value="Day"
+      >
+        <p>
+          <label>
+            Expiry Type
+            :
+            <select
+              id="expiryType"
+              name="expiryType"
+              onChange={[Function]}
+              value="Day"
+            >
+              <option
+                id="expiryTypeDay"
+                key="expiryTypeDay"
+                value="Day"
               >
-                <option
-                  id="expiryTypeDay"
-                  key="expiryTypeDay"
-                  value="Day"
-                >
-                  Day
-                </option>
-                <option
-                  id="expiryTypeGTD"
-                  key="expiryTypeGTD"
-                  value="GTD"
-                >
-                  GTD
-                </option>
-                <option
-                  id="expiryTypeGTC"
-                  key="expiryTypeGTC"
-                  value="GTC"
-                >
-                  GTC
-                </option>
-                <option
-                  id="expiryTypeFOK"
-                  key="expiryTypeFOK"
-                  value="FOK"
-                >
-                  FOK
-                </option>
-              </select>
-            </label>
-          </p>
-        </SelectionDropDown>
-        <LabelInput
-          handleOnChange={[Function]}
-          label="Expiry Date"
-          name="expiryDate"
-          step={0.1}
+                Day
+              </option>
+              <option
+                id="expiryTypeDay"
+                key="expiryTypeGTD"
+                value="Day"
+              >
+                GTD
+              </option>
+              <option
+                id="expiryTypeDay"
+                key="expiryTypeGTC"
+                value="Day"
+              >
+                GTC
+              </option>
+              <option
+                id="expiryTypeDay"
+                key="expiryTypeFOK"
+                value="Day"
+              >
+                FOK
+              </option>
+            </select>
+          </label>
+        </p>
+      </SelectionDropDown>
+      <LabelInput
+        handleOnChange={[Function]}
+        label="Expiry Date"
+        name="expiryDate"
+        step={0.1}
+        style={
+          Object {
+            "opacity": "0.5",
+          }
+        }
+        type="date"
+        value=""
+      >
+        <p
           style={
             Object {
               "opacity": "0.5",
             }
           }
-          type="date"
-          value=""
         >
-          <p
-            style={
-              Object {
-                "opacity": "0.5",
+          <label>
+            Expiry Date
+            :
+            <input
+              name="expiryDate"
+              onChange={[Function]}
+              step={0.1}
+              style={
+                Object {
+                  "opacity": "0.5",
+                }
               }
-            }
-          >
-            <label>
-              Expiry Date
-              :
-              <input
-                name="expiryDate"
-                onChange={[Function]}
-                step={0.1}
-                type="date"
-                value=""
-              />
-            </label>
-          </p>
-        </LabelInput>
-        <LabelTextArea
-          handleOnChange={[Function]}
-          label="Note"
-          maxLength={100}
-          name="note"
-          value=""
+              type="date"
+              value=""
+            />
+          </label>
+        </p>
+      </LabelInput>
+      <LabelTextArea
+        handleOnChange={[Function]}
+        label="Note"
+        maxLength={100}
+        name="note"
+        value=""
+      >
+        <p>
+          <label>
+            Note
+            <textarea
+              maxLength={100}
+              name="note"
+              onChange={[Function]}
+              value=""
+            />
+          </label>
+        </p>
+      </LabelTextArea>
+      <div>
+        <div
+          id="buySell"
         >
-          <p>
-            <label>
-              Note
-              <textarea
-                maxLength={100}
-                name="note"
-                onChange={[Function]}
-                value=""
-              />
-            </label>
-          </p>
-        </LabelTextArea>
-        <div>
-          <div
-            id="buySell"
+          <BuySellButton
+            buttonName="Sell"
+            containerId="sellButton"
+            handleOnClick={[Function]}
+            id="sell"
           >
-            <BuySellButton
-              buttonName="Sell"
-              containerId="sellButton"
-              handleOnClick={[Function]}
-              id="sell"
+            <div
+              id="sellButton"
+              onClick={[Function]}
             >
-              <div
-                id="sellButton"
-                onClick={[Function]}
+              <label />
+              <button
+                id="sell"
               >
-                <label />
-                <button
-                  id="sell"
-                >
-                  Sell
-                </button>
-              </div>
-            </BuySellButton>
-            <BuySellButton
-              buttonName="Buy"
-              containerId="buyButton"
-              handleOnClick={[Function]}
-              id="buy"
+                Sell
+              </button>
+            </div>
+          </BuySellButton>
+          <BuySellButton
+            buttonName="Buy"
+            containerId="buyButton"
+            handleOnClick={[Function]}
+            id="buy"
+          >
+            <div
+              id="buyButton"
+              onClick={[Function]}
             >
-              <div
-                id="buyButton"
-                onClick={[Function]}
+              <label />
+              <button
+                id="buy"
               >
-                <label />
-                <button
-                  id="buy"
-                >
-                  Buy
-                </button>
-              </div>
-            </BuySellButton>
-          </div>
+                Buy
+              </button>
+            </div>
+          </BuySellButton>
         </div>
-      </form>
-    </div>
-  </TicketView>
+      </div>
+    </form>
+  </div>
 </Ticket>
 `;

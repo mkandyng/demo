@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Ticket should render TicketView component comparing with previous snapshot shallow markup 1`] = `
+exports[`Ticket should render component comparing with previous snapshot shallow markup 1`] = `
 <div
   id="ticket"
 >
   <form>
     <LabelInput
-      handleOnChange={[MockFunction]}
+      handleOnChange={[Function]}
       label="Symbol"
       name="symbol"
       type="text"
       value="symbol"
     />
     <LabelInput
-      handleOnChange={[MockFunction]}
+      handleOnChange={[Function]}
       label="Quantity"
       name="quantity"
       step={5}
@@ -33,17 +33,23 @@ exports[`Ticket should render TicketView component comparing with previous snaps
         ]
       }
       name="orderType"
+      value="Market"
     />
     <LabelInput
-      handleOnChange={[MockFunction]}
+      handleOnChange={[Function]}
       label="Price"
       name="price"
       step={0.1}
+      style={
+        Object {
+          "opacity": "0.5",
+        }
+      }
       type="number"
       value={0}
     />
     <SelectionDropDown
-      handleOnChange={[MockFunction]}
+      handleOnChange={[Function]}
       id="expiryType"
       label="Expiry Type"
       list={
@@ -55,17 +61,23 @@ exports[`Ticket should render TicketView component comparing with previous snaps
         ]
       }
       name="expiryType"
+      value="Day"
     />
     <LabelInput
-      handleOnChange={[MockFunction]}
+      handleOnChange={[Function]}
       label="Expiry Date"
       name="expiryDate"
       step={0.1}
+      style={
+        Object {
+          "opacity": "0.5",
+        }
+      }
       type="date"
-      value="2019-10-12"
+      value=""
     />
     <LabelTextArea
-      handleOnChange={[MockFunction]}
+      handleOnChange={[Function]}
       label="Note"
       maxLength={100}
       name="note"
@@ -91,46 +103,4 @@ exports[`Ticket should render TicketView component comparing with previous snaps
     </div>
   </form>
 </div>
-`;
-
-exports[`Ticket should render component comparing with previous snapshot shallow markup 1`] = `
-<TicketView
-  eventHandler={
-    Object {
-      "expiryTypeChange": [Function],
-      "handleFormChange": [Function],
-      "handleOnSubmit": [Function],
-      "orderTypeChange": [Function],
-    }
-  }
-  instrument={
-    Object {
-      "expiryDate": "2019-10-12",
-      "expiryType": "Day",
-      "note": "",
-      "orderType": "Market",
-      "price": 0,
-      "quantity": 5,
-      "symbol": "symbol",
-    }
-  }
-  ticket={
-    Object {
-      "expiryDate": "",
-      "expiryDateStyle": Object {
-        "opacity": "0.5",
-      },
-      "expiryType": "Day",
-      "note": "",
-      "orderId": 0,
-      "orderType": "Market",
-      "price": 0,
-      "priceStyle": Object {
-        "opacity": "0.5",
-      },
-      "quantity": 5,
-      "symbol": undefined,
-    }
-  }
-/>
 `;

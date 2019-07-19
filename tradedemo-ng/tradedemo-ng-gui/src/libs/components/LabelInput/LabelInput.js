@@ -11,12 +11,19 @@ export default function LabelInput({
   type,
   name,
   step,
+  min,
   value,
   handleOnChange
 }) {
   return (<p style={style}>
     <label>{label}:
-      <input id={id} type={type} name={name} step={step} onChange={handleOnChange} value={value || ""}/>
+      <input id={id}
+             type={type}
+             name={name}
+             step={step}
+             style={style}
+             onChange={handleOnChange}
+             value={value || ""}/>
     </label>
   </p>)
 }

@@ -52,22 +52,23 @@ describe("ticket integration tests", () => {
   });
 
   it("should handle orderType change", () => {
-    const verifyOrderType = (orderType, expectedOpacity, instrument) => {
+    const verifyOrderType = (orderType, expectedOpacity) => {
       verifyTicketChange("select", "orderType", orderType);
-      expect(component.state().priceStyle).toStrictEqual({"opacity": expectedOpacity});
+      const style = component.find("input").find({name: "price"}).props().style;
+      expect(style).toStrictEqual({"opacity": expectedOpacity});
     }
-    const instrument = store.getState().instruments.marketfeedInstruments[0];
-    verifyOrderType("Market", 0.5, instrument);
-    verifyOrderType("Limit", 1.0, instrument);
-    verifyOrderType("Stop", 1.0, instrument);
-    verifyOrderType("Stop Limit", 1.0, instrument);
+    verifyOrderType("Market", 0.5);
+    verifyOrderType("Limit", 1.0);
+    verifyOrderType("Stop", 1.0);
+    verifyOrderType("Stop Limit", 1.0);
   });
 
   it("should handle expiryType change", () => {
     const verifyExpiryType = (expiryType, expectedOpacity, expectedExpiryDate) => {
       verifyTicketChange("select", "expiryType", expiryType);
-      expect(component.state().expiryDateStyle).toStrictEqual({"opacity": expectedOpacity});
-      expect(component.state().expiryDate).toStrictEqual(expectedExpiryDate);
+      const expiryDate = component.find("input").find({name: "expiryDate"});
+      expect(expiryDate.props().style).toStrictEqual({"opacity": expectedOpacity});
+      expect(expiryDate.props().value).toStrictEqual(expectedExpiryDate);
     }
     verifyExpiryType("GTD", 1.0, getDateString(new Date(), "dateOnly"));
     verifyExpiryType("Day", 0.5, "");
@@ -81,18 +82,19 @@ describe("ticket integration tests", () => {
     jest.runAllTimers();
     const verifyBuySellButtonClickSubmitOrder = (buySellId, buySell) => {
       // Given
-      const originalCount = store.getState().orderbook.filter(o => o.buySell === buySell).length;
-      const ticket = mount(<Ticket {... props} ticket={component.state()}/>)
+      const originalCount = store.getState()
+                                 .orderbook
+                                 .filter(o => o.buySell === buySell).length;
 
       // when
-      ticket.find("div#" + buySellId).simulate("click", {
-        target: {
-          innerText: buySell
-        }
-      });
+      component.find("div#" + buySellId)
+               .simulate("click", {target: {innerText: buySell}});
 
       // Then
-      expect(store.getState().orderbook.filter(o => o.buySell === buySell)).toHaveLength(originalCount + 1);
+      expect(store.getState()
+                  .orderbook
+                  .filter(o => o.buySell === buySell))
+                  .toHaveLength(originalCount + 1);
     }
     verifyBuySellButtonClickSubmitOrder("buyButton", "Buy");
     verifyBuySellButtonClickSubmitOrder("sellButton", "Sell");
@@ -104,24 +106,19 @@ describe("ticket integration tests", () => {
     verifyNoOrderPlaced("sellButton", "Sell");
   });
 
-  it("should handle buy/sell submit click when quantity zero is rejected, no order placed", () => {
+  it("should handle buy/sell submit click when quantity negative is rejected, no order placed", () => {
     window.confirm = jest.fn(() => true);
-    verifyNoOrderPlaced("buyButton", "Buy", {quantity: 0});
-    verifyNoOrderPlaced("sellButton", "Sell", {quantity: 0});
+    verifyTicketChange("input", "quantity", -1);
+    verifyNoOrderPlaced("buyButton", "Buy");
+    verifyNoOrderPlaced("sellButton", "Sell");
     expect(window.alert).toHaveBeenCalled();
   });
 
-  const verifyNoOrderPlaced = (buySellId, buySell, ticketPropsChange = {}) => {
-    // Given
-    const ticket = mount(<Ticket {... props}/>)
-    ticket.setState(ticketPropsChange);
+  const verifyNoOrderPlaced = (buySellId, buySell) => {
 
     // when
-    ticket.find("div#" + buySellId).simulate("click", {
-      target: {
-        innerText: buySell
-      }
-    });
+    component.find("div#" + buySellId)
+             .simulate("click", {target: {innerText: buySell}});
 
     // Then
     expect(store.getState().orderbook.length).toStrictEqual(0);
@@ -129,17 +126,15 @@ describe("ticket integration tests", () => {
 
   const verifyTicketChange = (elementTag, inputName, changeValue) => {
     // Given
-    const element = component.find(elementTag).find({name: inputName})
+    const element = component.find(elementTag).find({name: inputName});
 
     // when
-    element.simulate('change', {
-      target: {
-        name: inputName,
-        value: changeValue
-      }
-    });
+    element.simulate('change', {target: {name: inputName, value: changeValue}});
 
     // Then
-    expect(component.state()[inputName]).toStrictEqual(changeValue);
+    const newValue = component.find(elementTag)
+                              .find({name: inputName})
+                              .props().value;
+    expect(newValue).toStrictEqual(changeValue);
   }
 });

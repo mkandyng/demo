@@ -2,30 +2,17 @@ import "rxjs/add/operator/concatMap";
 import "rxjs/add/operator/map";
 import "rxjs/add/observable/of";
 import "rxjs/add/operator/catch";
-import {
-  Observable
-} from 'rxjs';
-import {
-  combineEpics
-} from "redux-observable";
-import {
-  map,
-  catchError
-} from 'rxjs/operators'
-import {
-  instrumentServiceUrl
-} from "../../../libs/resources";
-import {
-  roundValue
-} from "../../../libs/utils";
+import {Observable} from 'rxjs';
+import {combineEpics} from "redux-observable";
+import {map,catchError} from 'rxjs/operators'
+import {instrumentServiceUrl} from "../../../libs/resources";
+import {roundValue} from "../../../libs/utils";
 import * as timeSeriesActions from "./timeSeriesActions";
 
 export const timeSeriesEpics = combineEpics(fetchDailyTimeSeriesEpic,
   fetchIntradayTimeSeriesEpic)
 
-function fetchDailyTimeSeriesEpic(action$, store, {
-  ajax
-}) {
+function fetchDailyTimeSeriesEpic(action$, store, {ajax}) {
   const maxDisplayRecords = 10;
   return action$
     .ofType(timeSeriesActions.types.FETCH_DAILY_TIMESERIES)
@@ -47,9 +34,7 @@ function fetchDailyTimeSeriesEpic(action$, store, {
     )
 }
 
-function fetchIntradayTimeSeriesEpic(action$, store, {
-  ajax
-}) {
+function fetchIntradayTimeSeriesEpic(action$, store, {ajax}) {
   const maxDisplayRecords = 15;
   const sliceHourMinDateTime = date => date.substr(11, 5);
   return action$

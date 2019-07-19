@@ -11,16 +11,14 @@ exports[`SelectionDropDown should render component comparing with previous snaps
       onChange={[MockFunction]}
     >
       <option
-        id="nameitem1"
+        id="nameundefined"
         key="nameitem1"
-        value="item1"
       >
         item1
       </option>
       <option
-        id="nameitem2"
+        id="nameundefined"
         key="nameitem2"
-        value="item2"
       >
         item2
       </option>

@@ -1,22 +1,8 @@
-import {
-  Observable,
-  throwError
-} from 'rxjs';
-import {
-  roundValue,
-  createStoreWithMiddleware
-} from "../../../libs/utils"
-import {
-  timeSeriesEpics
-} from "./timeSeriesEpics";
-import {
-  timeSeriesReducer,
-  transformTimeSeries
-} from "./timeSeriesReducer";
-import {
-  fetchDailyTimeSeries,
-  fetchIntradayTimeSeries
-} from "./timeSeriesActions";
+import {Observable,throwError} from 'rxjs';
+import {roundValue,createStoreWithMiddleware} from "../../../libs/utils"
+import {timeSeriesEpics} from "./timeSeriesEpics";
+import {timeSeriesReducer,transformTimeSeries} from "./timeSeriesReducer";
+import {fetchDailyTimeSeries,fetchIntradayTimeSeries} from "./timeSeriesActions";
 
 /**
  *
@@ -47,14 +33,8 @@ describe("timeSeries store integration tests", () => {
       timeSeriesEpics);
     const action = fetchDailyTimeSeries(symbol);
     const expectedTimeSeries = transformTimeSeries(timeSeries.map(timeSeries => {
-      const {
-        dateTime,
-        ...expected
-      } = timeSeries;
-      return {
-        ...expected,
-        name: timeSeries.dateTime
-      };
+      const {dateTime,...expected} = timeSeries;
+      return {...expected, name: timeSeries.dateTime};
     }).reverse(), o => o.high, o => o.low);
 
     // When

@@ -45,9 +45,7 @@ export function getNextSelectedMarketfeed(marketfeedInstruments, instrument) {
 // Helper function when send event on marketfeed
 export function sendEventAndVerify(component, eventAction, event, cssSelector, verifyFunction) {
   const rowColumn = component.find("TdComponent").find(cssSelector);
-
   rowColumn.simulate(eventAction, event);
-
   verifyFunction();
 }
 
@@ -58,25 +56,9 @@ export function getJSONFunction(url, instruments) {
   } else if (url.includes("/instrumentQuote/")) {
     return Observable.of({price: 1.0, open: 1.0});
   } else if (url.includes("/dailyPrices/")) {
-    return Observable.of([
-      {
-        dateTime: "2019-10-11",
-        high: 1.0,
-        open: 1.0,
-        low: 1.0,
-        close: 1.0
-      }
-    ]);
+    return Observable.of([{dateTime: "2019-10-11",high: 1.0,open: 1.0,low: 1.0,close: 1.0}]);
   } else if (url.includes("/intradayPrices/")) {
-    return Observable.of([
-      {
-        dateTime: "2019-10-12 11:11:10.123",
-        high: 1.0,
-        open: 1.0,
-        low: 1.0,
-        close: 1.0
-      }
-    ]);
+    return Observable.of([{dateTime: "2019-10-12 11:11:10.123",high: 1.0,open: 1.0,low: 1.0,close: 1.0}]);
   } else {
     console.log(new Error("Mock implementation of rest api not implemented [" + url + "], please check!"));
   }
@@ -86,11 +68,7 @@ export function getJSONFunction(url, instruments) {
 export function createInstruments(count) {
   let instruments = [];
   for (let i = 0; i < count; i++) {
-    instruments.push({
-      symbol: "symbol" + i,
-      name: "instrument" + i,
-      currency: "USD"
-    });
+    instruments.push({symbol: "symbol" + i,name: "instrument" + i,currency: "USD"});
   }
   return instruments;
 }

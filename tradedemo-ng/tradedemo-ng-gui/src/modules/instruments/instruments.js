@@ -61,7 +61,11 @@ export function generateMarketfeedMovement(instrument) {
   const last = instrument.price * 1.0;
 
   return {
-    delete: <img id={getDeleteId(instrument)} src={MOUSE_OUT_IMAGE} width={15} height={15} alt={"delete"}/>,
+    delete: <img id={getDeleteId(instrument)}
+                 src={MOUSE_OUT_IMAGE}
+                 width={15}
+                 height={15}
+                 alt={"delete"}/>,
     price: newPrice,
     bidPrice: bid,
     askPrice: ask,
@@ -86,21 +90,17 @@ export function flashPriceUpdate(marketfeedInstruments, updateMarketfeedInstrume
   if (marketfeedInstruments.length > 0) {
     const instrumentIndex = getRandomInt(0, marketfeedInstruments.length - 1);
     const randomInstrument = marketfeedInstruments[instrumentIndex];
-    updateMarketfeedInstrument({
-      ...randomInstrument,
-      bid: "",
-      ask: ""
-    });
-    setTimeout(() => updateMarketfeedInstrument(generateMarketfeedMovement(randomInstrument)), 500);
+    updateMarketfeedInstrument({...randomInstrument,bid: "",ask: ""});
+    setTimeout(() => updateMarketfeedInstrument(
+                          generateMarketfeedMovement(randomInstrument)),
+                          500);
     return true;
   }
   return false;
 };
 
 function calNewPrice(price, margin) {
-  return Math.round(Math.random()) === 0
-    ? price - margin
-    : price + margin;
+  return Math.round(Math.random()) === 0? price - margin: price + margin;
 }
 
 function upDownPrice(price, previousPrice, data) {
