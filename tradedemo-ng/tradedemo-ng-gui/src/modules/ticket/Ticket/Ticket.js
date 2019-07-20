@@ -25,7 +25,7 @@ export default function Ticket({
            handleSubmit} = useTicketForm(instrument, placeOrder, updateOrder);
 
     return ((<div id="ticket">
-      <form id="ticketForm">
+      <form>
         <LabelInput label="Symbol"
                     name="symbol"
                     type="text"

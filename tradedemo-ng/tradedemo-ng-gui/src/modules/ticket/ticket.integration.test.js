@@ -83,7 +83,7 @@ describe("ticket integration tests", () => {
     const verifyBuySellButtonClickSubmitOrder = (buySellId, buySell) => {
       // Given
       const originalCount = store.getState()
-                                 .orderbook
+                                 .orders
                                  .filter(o => o.buySell === buySell).length;
 
       // when
@@ -92,7 +92,7 @@ describe("ticket integration tests", () => {
 
       // Then
       expect(store.getState()
-                  .orderbook
+                  .orders
                   .filter(o => o.buySell === buySell))
                   .toHaveLength(originalCount + 1);
     }
@@ -121,7 +121,7 @@ describe("ticket integration tests", () => {
              .simulate("click", {target: {innerText: buySell}});
 
     // Then
-    expect(store.getState().orderbook.length).toStrictEqual(0);
+    expect(store.getState().orders.length).toStrictEqual(0);
   }
 
   const verifyTicketChange = (elementTag, inputName, changeValue) => {
