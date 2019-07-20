@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from "react";
-import {getRandomInt, toggleOpacity, getDateString} from "../../../libs/utils";
+import React, {useState} from "react";
+import {toggleOpacity, getDateString} from "../../../libs/utils";
 import PropTypes from 'prop-types';
 import BuySellButton from "../../../libs/components/BuySellButton";
 import LabelInput from "../../../libs/components/LabelInput";
@@ -23,19 +23,9 @@ export default function Ticket({
     const {ticket,
            handleInputChange,
            handleSubmit} = useTicketForm(instrument, placeOrder, updateOrder);
-    useEffect ( () => {
-        const MAX_ORDER_COUNT = 10;
-        if(ticket.orderId < MAX_ORDER_COUNT &&
-           enableDemo &&
-           instrument.name !== undefined) {
-          let buySell = getRandomInt(0,1) === 0 ? "Buy":"Sell";
-          handleSubmit({target: {innerText: buySell},
-                        preventDefault: () => null}, false);
-        }
-    }, [ticket.orderId, instrument.name, ticket, enableDemo, handleSubmit]);
 
     return ((<div id="ticket">
-      <form>
+      <form id="ticketForm">
         <LabelInput label="Symbol"
                     name="symbol"
                     type="text"
@@ -111,17 +101,18 @@ function useTicketForm(instrument, placeOrder, updateOrder) {
   });
 
   if (ticket.symbol !== instrument.symbol) {
-    setTicket(ticket => ({...ticket, symbol: instrument.symbol}));
+    let newTicket = {...ticket, symbol: instrument.symbol};
     if (instrument.price !== undefined) {
-      setTicket(ticket => ({...ticket, price: instrument.price.toFixed(2)}));
+      newTicket = {...newTicket, price: instrument.price.toFixed(2)};
     }
+    setTicket(ticket => ({...ticket, ...newTicket}));
   }
 
   const handleSubmit = (event, confirmOrder) => {
     if (event) {
       event.preventDefault();
       const buySell = event.target.innerText;
-      if (submitTicket({
+      if (ticket.symbol && submitTicket({
         ticket: ticket,
         instrument: instrument,
         buySell: buySell,

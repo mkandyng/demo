@@ -16,11 +16,34 @@ export default function appWithProvider(store) {
 
 function initOnStartup(store) {
   store.dispatch(fetchInstruments());
+  flashPriceOnMarketFeed(store);
+  PlaceSampleOrders(store, 10);
+}
+
+function flashPriceOnMarketFeed(store) {
   setInterval(() => {
-    if (store.getState().instruments && store.getState().instruments.selected.symbol !== undefined) {
-      flashPriceUpdate(store.getState().instruments.marketfeedInstruments, instrument => store.dispatch(updateMarketfeedInstrument(instrument)));
+    if (store.getState().instruments &&
+        store.getState().instruments.selected.symbol !== undefined) {
+      flashPriceUpdate(store.getState().instruments.marketfeedInstruments,
+                       instrument => store.dispatch(updateMarketfeedInstrument(instrument)));
     }
-  }, getRandomInt(200, 500));
+  }, getRandomInt(200, 1000));
+}
+
+function PlaceSampleOrders(store, maxOrderCount) {
+  let interval = setInterval(() => {
+    let buySellId = getRandomInt(0,1) === 0 ? "buy":"sell";
+    const ticketBuySell = document.getElementById(buySellId);
+    const orderCount = store.getState().orders.length;
+    if(ticketBuySell != null && orderCount < maxOrderCount) {
+      const confirmFunc = window.confirm;
+      window.confirm = () => true;
+      ticketBuySell.click();
+      window.confirm = confirmFunc;
+    } else {
+      clearInterval(interval);
+    }
+  }, getRandomInt(300, 500));
 }
 
 /**

@@ -1,6 +1,6 @@
 import * as ordersActions from "./ordersActions";
 
-export const NAME = "orderbook";
+export const NAME = "orders";
 
 export function ordersReducer(state = [], action) {
   switch (action.type) {
