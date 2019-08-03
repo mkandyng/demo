@@ -10,22 +10,10 @@ import {TopLayout} from "./TopLayout";
 
 describe("TopLayout", () => {
   const props = {
-    searchInstruments: [
-      {
-        symbol: "symbol"
-      }
-    ],
-    marketfeedInstruments: [
-      {
-        symbol: "symbol"
-      }
-    ],
-    ticket: {
-      symbol: "symbol"
-    },
-    instrument: {
-      symbol: "symbol"
-    },
+    searchInstruments: [{symbol: "symbol"}],
+    marketfeedInstruments: [{symbol: "symbol"}],
+    ticket: {symbol: "symbol"},
+    instrument: {symbol: "symbol"},
     fetchInstruments: jest.fn(),
     placeOrder: jest.fn(),
     updateOrder: jest.fn(),

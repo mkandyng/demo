@@ -144,7 +144,61 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
   selectMarketfeedInstrument={[Function]}
   updateMarketfeedInstrument={[Function]}
 >
-  <InstrumentsMarketfeedView
+  <ReactTable
+    AggregatedComponent={[Function]}
+    ExpanderComponent={[Function]}
+    FilterComponent={[Function]}
+    LoadingComponent={[Function]}
+    NoDataComponent={[Function]}
+    PadRowComponent={[Function]}
+    PaginationComponent={[Function]}
+    PivotValueComponent={[Function]}
+    ResizerComponent={[Function]}
+    TableComponent={[Function]}
+    TbodyComponent={[Function]}
+    TdComponent={[Function]}
+    TfootComponent={[Function]}
+    ThComponent={[Function]}
+    TheadComponent={[Function]}
+    TrComponent={[Function]}
+    TrGroupComponent={[Function]}
+    aggregatedKey="_aggregated"
+    className=""
+    collapseOnDataChange={true}
+    collapseOnPageChange={true}
+    collapseOnSortingChange={true}
+    column={
+      Object {
+        "Aggregated": undefined,
+        "Cell": undefined,
+        "Expander": undefined,
+        "Filter": undefined,
+        "Footer": undefined,
+        "Header": undefined,
+        "Pivot": undefined,
+        "PivotValue": undefined,
+        "Placeholder": undefined,
+        "aggregate": undefined,
+        "className": "",
+        "filterAll": false,
+        "filterMethod": undefined,
+        "filterable": undefined,
+        "footerClassName": "",
+        "footerStyle": Object {},
+        "getFooterProps": [Function],
+        "getHeaderProps": [Function],
+        "getProps": [Function],
+        "headerClassName": "",
+        "headerStyle": Object {},
+        "minResizeWidth": 11,
+        "minWidth": 100,
+        "resizable": undefined,
+        "show": true,
+        "sortMethod": undefined,
+        "sortable": undefined,
+        "style": Object {},
+      }
+    }
     columns={
       Array [
         Object {
@@ -194,13 +248,7 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
         },
       ]
     }
-    eventHandlers={
-      Object {
-        "handleTableColumn": [Function],
-        "handleTableRow": [Function],
-      }
-    }
-    instruments={
+    data={
       Array [
         Object {
           "currency": "USD",
@@ -264,291 +312,135 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
         },
       ]
     }
+    defaultExpanded={Object {}}
+    defaultFilterMethod={[Function]}
+    defaultFiltered={Array []}
+    defaultPage={0}
+    defaultPageSize={5}
+    defaultResized={Array []}
+    defaultSortDesc={false}
+    defaultSortMethod={[Function]}
+    defaultSorted={Array []}
+    expanderDefaults={
+      Object {
+        "filterable": false,
+        "resizable": false,
+        "sortable": false,
+        "width": 35,
+      }
+    }
+    filterable={false}
+    freezeWhenExpanded={false}
+    getLoadingProps={[Function]}
+    getNoDataProps={[Function]}
+    getPaginationProps={[Function]}
+    getProps={[Function]}
+    getResizerProps={[Function]}
+    getTableProps={[Function]}
+    getTbodyProps={[Function]}
+    getTdProps={[Function]}
+    getTfootProps={[Function]}
+    getTfootTdProps={[Function]}
+    getTfootTrProps={[Function]}
+    getTheadFilterProps={[Function]}
+    getTheadFilterThProps={[Function]}
+    getTheadFilterTrProps={[Function]}
+    getTheadGroupProps={[Function]}
+    getTheadGroupThProps={[Function]}
+    getTheadGroupTrProps={[Function]}
+    getTheadProps={[Function]}
+    getTheadThProps={[Function]}
+    getTheadTrProps={[Function]}
+    getTrGroupProps={[Function]}
+    getTrProps={[Function]}
+    groupedByPivotKey="_groupedByPivot"
+    indexKey="_index"
+    loading={false}
+    loadingText="Loading..."
+    multiSort={true}
+    nestingLevelKey="_nestingLevel"
+    nextText="Next"
+    noDataText="No rows found"
+    ofText="of"
+    onFetchData={[Function]}
+    originalKey="_original"
+    pageJumpText="jump to page"
+    pageSizeOptions={
+      Array [
+        5,
+        10,
+        20,
+        25,
+        50,
+        100,
+      ]
+    }
+    pageText="Page"
+    pivotDefaults={Object {}}
+    pivotIDKey="_pivotID"
+    pivotValKey="_pivotVal"
+    previousText="Previous"
+    resizable={true}
+    resolveData={[Function]}
+    rowsSelectorText="rows per page"
+    rowsText="rows"
+    showPageJump={true}
+    showPageSizeOptions={false}
+    showPagination={true}
+    showPaginationBottom={false}
+    showPaginationTop={false}
+    sortable={false}
+    style={Object {}}
+    subRowsKey="_subRows"
   >
-    <ReactTable
-      AggregatedComponent={[Function]}
-      ExpanderComponent={[Function]}
-      FilterComponent={[Function]}
-      LoadingComponent={[Function]}
-      NoDataComponent={[Function]}
-      PadRowComponent={[Function]}
-      PaginationComponent={[Function]}
-      PivotValueComponent={[Function]}
-      ResizerComponent={[Function]}
-      TableComponent={[Function]}
-      TbodyComponent={[Function]}
-      TdComponent={[Function]}
-      TfootComponent={[Function]}
-      ThComponent={[Function]}
-      TheadComponent={[Function]}
-      TrComponent={[Function]}
-      TrGroupComponent={[Function]}
-      aggregatedKey="_aggregated"
-      className=""
-      collapseOnDataChange={true}
-      collapseOnPageChange={true}
-      collapseOnSortingChange={true}
-      column={
-        Object {
-          "Aggregated": undefined,
-          "Cell": undefined,
-          "Expander": undefined,
-          "Filter": undefined,
-          "Footer": undefined,
-          "Header": undefined,
-          "Pivot": undefined,
-          "PivotValue": undefined,
-          "Placeholder": undefined,
-          "aggregate": undefined,
-          "className": "",
-          "filterAll": false,
-          "filterMethod": undefined,
-          "filterable": undefined,
-          "footerClassName": "",
-          "footerStyle": Object {},
-          "getFooterProps": [Function],
-          "getHeaderProps": [Function],
-          "getProps": [Function],
-          "headerClassName": "",
-          "headerStyle": Object {},
-          "minResizeWidth": 11,
-          "minWidth": 100,
-          "resizable": undefined,
-          "show": true,
-          "sortMethod": undefined,
-          "sortable": undefined,
-          "style": Object {},
-        }
-      }
-      columns={
-        Array [
-          Object {
-            "Header": "Remove",
-            "accessor": "delete",
-            "width": 70,
-          },
-          Object {
-            "Header": "Symbol",
-            "accessor": "symbol",
-            "width": 100,
-          },
-          Object {
-            "Header": "Instrument Name",
-            "accessor": "name",
-            "className": "instrument-column",
-          },
-          Object {
-            "Header": "Ccy",
-            "accessor": "currency",
-            "width": 70,
-          },
-          Object {
-            "Header": "Bid",
-            "accessor": "bid",
-            "width": 70,
-          },
-          Object {
-            "Header": "Ask",
-            "accessor": "ask",
-            "width": 70,
-          },
-          Object {
-            "Header": "Last",
-            "accessor": "last",
-            "width": 70,
-          },
-          Object {
-            "Header": "Open",
-            "accessor": "open",
-            "width": 70,
-          },
-          Object {
-            "Header": "Chg",
-            "accessor": "chg",
-            "width": 70,
-          },
-        ]
-      }
-      data={
-        Array [
-          Object {
-            "currency": "USD",
-            "delete": <img
-              alt="delete"
-              id="deleteImg-symbol4"
-              src="img/delete.png"
-            />,
-            "name": "instrument4",
-            "open": 1,
-            "price": 1,
-            "symbol": "symbol4",
-          },
-          Object {
-            "currency": "USD",
-            "delete": <img
-              alt="delete"
-              id="deleteImg-symbol3"
-              src="img/delete.png"
-            />,
-            "name": "instrument3",
-            "open": 1,
-            "price": 1,
-            "symbol": "symbol3",
-          },
-          Object {
-            "currency": "USD",
-            "delete": <img
-              alt="delete"
-              id="deleteImg-symbol2"
-              src="img/delete.png"
-            />,
-            "name": "instrument2",
-            "open": 1,
-            "price": 1,
-            "symbol": "symbol2",
-          },
-          Object {
-            "currency": "USD",
-            "delete": <img
-              alt="delete"
-              id="deleteImg-symbol1"
-              src="img/delete.png"
-            />,
-            "name": "instrument1",
-            "open": 1,
-            "price": 1,
-            "symbol": "symbol1",
-          },
-          Object {
-            "currency": "USD",
-            "delete": <img
-              alt="delete"
-              id="deleteImg-symbol0"
-              src="img/delete.png"
-            />,
-            "name": "instrument0",
-            "open": 1,
-            "price": 1,
-            "symbol": "symbol0",
-          },
-        ]
-      }
-      defaultExpanded={Object {}}
-      defaultFilterMethod={[Function]}
-      defaultFiltered={Array []}
-      defaultPage={0}
-      defaultPageSize={5}
-      defaultResized={Array []}
-      defaultSortDesc={false}
-      defaultSortMethod={[Function]}
-      defaultSorted={Array []}
-      expanderDefaults={
-        Object {
-          "filterable": false,
-          "resizable": false,
-          "sortable": false,
-          "width": 35,
-        }
-      }
-      filterable={false}
-      freezeWhenExpanded={false}
-      getLoadingProps={[Function]}
-      getNoDataProps={[Function]}
-      getPaginationProps={[Function]}
-      getProps={[Function]}
-      getResizerProps={[Function]}
-      getTableProps={[Function]}
-      getTbodyProps={[Function]}
-      getTdProps={[Function]}
-      getTfootProps={[Function]}
-      getTfootTdProps={[Function]}
-      getTfootTrProps={[Function]}
-      getTheadFilterProps={[Function]}
-      getTheadFilterThProps={[Function]}
-      getTheadFilterTrProps={[Function]}
-      getTheadGroupProps={[Function]}
-      getTheadGroupThProps={[Function]}
-      getTheadGroupTrProps={[Function]}
-      getTheadProps={[Function]}
-      getTheadThProps={[Function]}
-      getTheadTrProps={[Function]}
-      getTrGroupProps={[Function]}
-      getTrProps={[Function]}
-      groupedByPivotKey="_groupedByPivot"
-      indexKey="_index"
-      loading={false}
-      loadingText="Loading..."
-      multiSort={true}
-      nestingLevelKey="_nestingLevel"
-      nextText="Next"
-      noDataText="No rows found"
-      ofText="of"
-      onFetchData={[Function]}
-      originalKey="_original"
-      pageJumpText="jump to page"
-      pageSizeOptions={
-        Array [
-          5,
-          10,
-          20,
-          25,
-          50,
-          100,
-        ]
-      }
-      pageText="Page"
-      pivotDefaults={Object {}}
-      pivotIDKey="_pivotID"
-      pivotValKey="_pivotVal"
-      previousText="Previous"
-      resizable={true}
-      resolveData={[Function]}
-      rowsSelectorText="rows per page"
-      rowsText="rows"
-      showPageJump={true}
-      showPageSizeOptions={false}
-      showPagination={true}
-      showPaginationBottom={false}
-      showPaginationTop={false}
-      sortable={false}
+    <div
+      className="ReactTable"
       style={Object {}}
-      subRowsKey="_subRows"
     >
-      <div
-        className="ReactTable"
-        style={Object {}}
+      <TableComponent
+        className=""
       >
-        <TableComponent
-          className=""
+        <div
+          className="rt-table"
+          role="grid"
         >
-          <div
-            className="rt-table"
-            role="grid"
+          <Thead
+            className="-header"
+            style={
+              Object {
+                "minWidth": "690px",
+              }
+            }
           >
-            <Thead
-              className="-header"
+            <div
+              className="rt-thead -header"
               style={
                 Object {
                   "minWidth": "690px",
                 }
               }
             >
-              <div
-                className="rt-thead -header"
-                style={
-                  Object {
-                    "minWidth": "690px",
-                  }
-                }
-              >
-                <TrComponent>
-                  <div
-                    className="rt-tr"
-                    role="row"
+              <TrComponent>
+                <div
+                  className="rt-tr"
+                  role="row"
+                >
+                  <ThComponent
+                    className="rt-resizable-header"
+                    key="0-delete"
+                    style={
+                      Object {
+                        "flex": "70 0 auto",
+                        "maxWidth": "70px",
+                        "width": "70px",
+                      }
+                    }
+                    toggleSort={[Function]}
                   >
-                    <ThComponent
-                      className="rt-resizable-header"
-                      key="0-delete"
+                    <div
+                      className="rt-th rt-resizable-header"
+                      onClick={[Function]}
+                      role="columnheader"
                       style={
                         Object {
                           "flex": "70 0 auto",
@@ -556,41 +448,41 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                           "width": "70px",
                         }
                       }
-                      toggleSort={[Function]}
+                      tabIndex="-1"
                     >
                       <div
-                        className="rt-th rt-resizable-header"
-                        onClick={[Function]}
-                        role="columnheader"
-                        style={
-                          Object {
-                            "flex": "70 0 auto",
-                            "maxWidth": "70px",
-                            "width": "70px",
-                          }
-                        }
-                        tabIndex="-1"
+                        className="rt-resizable-header-content"
+                      >
+                        Remove
+                      </div>
+                      <Resizer
+                        onMouseDown={[Function]}
+                        onTouchStart={[Function]}
                       >
                         <div
-                          className="rt-resizable-header-content"
-                        >
-                          Remove
-                        </div>
-                        <Resizer
+                          className="rt-resizer"
                           onMouseDown={[Function]}
                           onTouchStart={[Function]}
-                        >
-                          <div
-                            className="rt-resizer"
-                            onMouseDown={[Function]}
-                            onTouchStart={[Function]}
-                          />
-                        </Resizer>
-                      </div>
-                    </ThComponent>
-                    <ThComponent
-                      className="rt-resizable-header"
-                      key="1-symbol"
+                        />
+                      </Resizer>
+                    </div>
+                  </ThComponent>
+                  <ThComponent
+                    className="rt-resizable-header"
+                    key="1-symbol"
+                    style={
+                      Object {
+                        "flex": "100 0 auto",
+                        "maxWidth": "100px",
+                        "width": "100px",
+                      }
+                    }
+                    toggleSort={[Function]}
+                  >
+                    <div
+                      className="rt-th rt-resizable-header"
+                      onClick={[Function]}
+                      role="columnheader"
                       style={
                         Object {
                           "flex": "100 0 auto",
@@ -598,41 +490,41 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                           "width": "100px",
                         }
                       }
-                      toggleSort={[Function]}
+                      tabIndex="-1"
                     >
                       <div
-                        className="rt-th rt-resizable-header"
-                        onClick={[Function]}
-                        role="columnheader"
-                        style={
-                          Object {
-                            "flex": "100 0 auto",
-                            "maxWidth": "100px",
-                            "width": "100px",
-                          }
-                        }
-                        tabIndex="-1"
+                        className="rt-resizable-header-content"
+                      >
+                        Symbol
+                      </div>
+                      <Resizer
+                        onMouseDown={[Function]}
+                        onTouchStart={[Function]}
                       >
                         <div
-                          className="rt-resizable-header-content"
-                        >
-                          Symbol
-                        </div>
-                        <Resizer
+                          className="rt-resizer"
                           onMouseDown={[Function]}
                           onTouchStart={[Function]}
-                        >
-                          <div
-                            className="rt-resizer"
-                            onMouseDown={[Function]}
-                            onTouchStart={[Function]}
-                          />
-                        </Resizer>
-                      </div>
-                    </ThComponent>
-                    <ThComponent
-                      className="rt-resizable-header"
-                      key="2-name"
+                        />
+                      </Resizer>
+                    </div>
+                  </ThComponent>
+                  <ThComponent
+                    className="rt-resizable-header"
+                    key="2-name"
+                    style={
+                      Object {
+                        "flex": "100 0 auto",
+                        "maxWidth": null,
+                        "width": "100px",
+                      }
+                    }
+                    toggleSort={[Function]}
+                  >
+                    <div
+                      className="rt-th rt-resizable-header"
+                      onClick={[Function]}
+                      role="columnheader"
                       style={
                         Object {
                           "flex": "100 0 auto",
@@ -640,12 +532,395 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                           "width": "100px",
                         }
                       }
-                      toggleSort={[Function]}
+                      tabIndex="-1"
                     >
                       <div
-                        className="rt-th rt-resizable-header"
+                        className="rt-resizable-header-content"
+                      >
+                        Instrument Name
+                      </div>
+                      <Resizer
+                        onMouseDown={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <div
+                          className="rt-resizer"
+                          onMouseDown={[Function]}
+                          onTouchStart={[Function]}
+                        />
+                      </Resizer>
+                    </div>
+                  </ThComponent>
+                  <ThComponent
+                    className="rt-resizable-header"
+                    key="3-currency"
+                    style={
+                      Object {
+                        "flex": "70 0 auto",
+                        "maxWidth": "70px",
+                        "width": "70px",
+                      }
+                    }
+                    toggleSort={[Function]}
+                  >
+                    <div
+                      className="rt-th rt-resizable-header"
+                      onClick={[Function]}
+                      role="columnheader"
+                      style={
+                        Object {
+                          "flex": "70 0 auto",
+                          "maxWidth": "70px",
+                          "width": "70px",
+                        }
+                      }
+                      tabIndex="-1"
+                    >
+                      <div
+                        className="rt-resizable-header-content"
+                      >
+                        Ccy
+                      </div>
+                      <Resizer
+                        onMouseDown={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <div
+                          className="rt-resizer"
+                          onMouseDown={[Function]}
+                          onTouchStart={[Function]}
+                        />
+                      </Resizer>
+                    </div>
+                  </ThComponent>
+                  <ThComponent
+                    className="rt-resizable-header"
+                    key="4-bid"
+                    style={
+                      Object {
+                        "flex": "70 0 auto",
+                        "maxWidth": "70px",
+                        "width": "70px",
+                      }
+                    }
+                    toggleSort={[Function]}
+                  >
+                    <div
+                      className="rt-th rt-resizable-header"
+                      onClick={[Function]}
+                      role="columnheader"
+                      style={
+                        Object {
+                          "flex": "70 0 auto",
+                          "maxWidth": "70px",
+                          "width": "70px",
+                        }
+                      }
+                      tabIndex="-1"
+                    >
+                      <div
+                        className="rt-resizable-header-content"
+                      >
+                        Bid
+                      </div>
+                      <Resizer
+                        onMouseDown={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <div
+                          className="rt-resizer"
+                          onMouseDown={[Function]}
+                          onTouchStart={[Function]}
+                        />
+                      </Resizer>
+                    </div>
+                  </ThComponent>
+                  <ThComponent
+                    className="rt-resizable-header"
+                    key="5-ask"
+                    style={
+                      Object {
+                        "flex": "70 0 auto",
+                        "maxWidth": "70px",
+                        "width": "70px",
+                      }
+                    }
+                    toggleSort={[Function]}
+                  >
+                    <div
+                      className="rt-th rt-resizable-header"
+                      onClick={[Function]}
+                      role="columnheader"
+                      style={
+                        Object {
+                          "flex": "70 0 auto",
+                          "maxWidth": "70px",
+                          "width": "70px",
+                        }
+                      }
+                      tabIndex="-1"
+                    >
+                      <div
+                        className="rt-resizable-header-content"
+                      >
+                        Ask
+                      </div>
+                      <Resizer
+                        onMouseDown={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <div
+                          className="rt-resizer"
+                          onMouseDown={[Function]}
+                          onTouchStart={[Function]}
+                        />
+                      </Resizer>
+                    </div>
+                  </ThComponent>
+                  <ThComponent
+                    className="rt-resizable-header"
+                    key="6-last"
+                    style={
+                      Object {
+                        "flex": "70 0 auto",
+                        "maxWidth": "70px",
+                        "width": "70px",
+                      }
+                    }
+                    toggleSort={[Function]}
+                  >
+                    <div
+                      className="rt-th rt-resizable-header"
+                      onClick={[Function]}
+                      role="columnheader"
+                      style={
+                        Object {
+                          "flex": "70 0 auto",
+                          "maxWidth": "70px",
+                          "width": "70px",
+                        }
+                      }
+                      tabIndex="-1"
+                    >
+                      <div
+                        className="rt-resizable-header-content"
+                      >
+                        Last
+                      </div>
+                      <Resizer
+                        onMouseDown={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <div
+                          className="rt-resizer"
+                          onMouseDown={[Function]}
+                          onTouchStart={[Function]}
+                        />
+                      </Resizer>
+                    </div>
+                  </ThComponent>
+                  <ThComponent
+                    className="rt-resizable-header"
+                    key="7-open"
+                    style={
+                      Object {
+                        "flex": "70 0 auto",
+                        "maxWidth": "70px",
+                        "width": "70px",
+                      }
+                    }
+                    toggleSort={[Function]}
+                  >
+                    <div
+                      className="rt-th rt-resizable-header"
+                      onClick={[Function]}
+                      role="columnheader"
+                      style={
+                        Object {
+                          "flex": "70 0 auto",
+                          "maxWidth": "70px",
+                          "width": "70px",
+                        }
+                      }
+                      tabIndex="-1"
+                    >
+                      <div
+                        className="rt-resizable-header-content"
+                      >
+                        Open
+                      </div>
+                      <Resizer
+                        onMouseDown={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <div
+                          className="rt-resizer"
+                          onMouseDown={[Function]}
+                          onTouchStart={[Function]}
+                        />
+                      </Resizer>
+                    </div>
+                  </ThComponent>
+                  <ThComponent
+                    className="rt-resizable-header"
+                    key="8-chg"
+                    style={
+                      Object {
+                        "flex": "70 0 auto",
+                        "maxWidth": "70px",
+                        "width": "70px",
+                      }
+                    }
+                    toggleSort={[Function]}
+                  >
+                    <div
+                      className="rt-th rt-resizable-header"
+                      onClick={[Function]}
+                      role="columnheader"
+                      style={
+                        Object {
+                          "flex": "70 0 auto",
+                          "maxWidth": "70px",
+                          "width": "70px",
+                        }
+                      }
+                      tabIndex="-1"
+                    >
+                      <div
+                        className="rt-resizable-header-content"
+                      >
+                        Chg
+                      </div>
+                      <Resizer
+                        onMouseDown={[Function]}
+                        onTouchStart={[Function]}
+                      >
+                        <div
+                          className="rt-resizer"
+                          onMouseDown={[Function]}
+                          onTouchStart={[Function]}
+                        />
+                      </Resizer>
+                    </div>
+                  </ThComponent>
+                </div>
+              </TrComponent>
+            </div>
+          </Thead>
+          <Tbody
+            className=""
+            style={
+              Object {
+                "minWidth": "690px",
+              }
+            }
+          >
+            <div
+              className="rt-tbody"
+              style={
+                Object {
+                  "minWidth": "690px",
+                }
+              }
+            >
+              <TrGroupComponent
+                key="0"
+              >
+                <div
+                  className="rt-tr-group"
+                  role="rowgroup"
+                >
+                  <TrComponent
+                    className="-odd"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "background": "#f5f2f2",
+                      }
+                    }
+                  >
+                    <div
+                      className="rt-tr -odd"
+                      onClick={[Function]}
+                      role="row"
+                      style={
+                        Object {
+                          "background": "#f5f2f2",
+                        }
+                      }
+                    >
+                      <TdComponent
+                        className=""
+                        key="0-delete"
                         onClick={[Function]}
-                        role="columnheader"
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        >
+                          <img
+                            alt="delete"
+                            id="deleteImg-symbol4"
+                            src="img/delete.png"
+                          />
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="1-symbol"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "100 0 auto",
+                            "maxWidth": "100px",
+                            "width": "100px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "100 0 auto",
+                              "maxWidth": "100px",
+                              "width": "100px",
+                            }
+                          }
+                        >
+                          symbol4
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className="instrument-column"
+                        key="2-name"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
                         style={
                           Object {
                             "flex": "100 0 auto",
@@ -653,41 +928,30 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             "width": "100px",
                           }
                         }
-                        tabIndex="-1"
                       >
                         <div
-                          className="rt-resizable-header-content"
+                          className="rt-td instrument-column"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "100 0 auto",
+                              "maxWidth": null,
+                              "width": "100px",
+                            }
+                          }
                         >
-                          Instrument Name
+                          instrument4
                         </div>
-                        <Resizer
-                          onMouseDown={[Function]}
-                          onTouchStart={[Function]}
-                        >
-                          <div
-                            className="rt-resizer"
-                            onMouseDown={[Function]}
-                            onTouchStart={[Function]}
-                          />
-                        </Resizer>
-                      </div>
-                    </ThComponent>
-                    <ThComponent
-                      className="rt-resizable-header"
-                      key="3-currency"
-                      style={
-                        Object {
-                          "flex": "70 0 auto",
-                          "maxWidth": "70px",
-                          "width": "70px",
-                        }
-                      }
-                      toggleSort={[Function]}
-                    >
-                      <div
-                        className="rt-th rt-resizable-header"
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="3-currency"
                         onClick={[Function]}
-                        role="columnheader"
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
                         style={
                           Object {
                             "flex": "70 0 auto",
@@ -695,41 +959,30 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             "width": "70px",
                           }
                         }
-                        tabIndex="-1"
                       >
                         <div
-                          className="rt-resizable-header-content"
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
                         >
-                          Ccy
+                          USD
                         </div>
-                        <Resizer
-                          onMouseDown={[Function]}
-                          onTouchStart={[Function]}
-                        >
-                          <div
-                            className="rt-resizer"
-                            onMouseDown={[Function]}
-                            onTouchStart={[Function]}
-                          />
-                        </Resizer>
-                      </div>
-                    </ThComponent>
-                    <ThComponent
-                      className="rt-resizable-header"
-                      key="4-bid"
-                      style={
-                        Object {
-                          "flex": "70 0 auto",
-                          "maxWidth": "70px",
-                          "width": "70px",
-                        }
-                      }
-                      toggleSort={[Function]}
-                    >
-                      <div
-                        className="rt-th rt-resizable-header"
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="4-bid"
                         onClick={[Function]}
-                        role="columnheader"
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
                         style={
                           Object {
                             "flex": "70 0 auto",
@@ -737,41 +990,28 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             "width": "70px",
                           }
                         }
-                        tabIndex="-1"
                       >
                         <div
-                          className="rt-resizable-header-content"
-                        >
-                          Bid
-                        </div>
-                        <Resizer
-                          onMouseDown={[Function]}
-                          onTouchStart={[Function]}
-                        >
-                          <div
-                            className="rt-resizer"
-                            onMouseDown={[Function]}
-                            onTouchStart={[Function]}
-                          />
-                        </Resizer>
-                      </div>
-                    </ThComponent>
-                    <ThComponent
-                      className="rt-resizable-header"
-                      key="5-ask"
-                      style={
-                        Object {
-                          "flex": "70 0 auto",
-                          "maxWidth": "70px",
-                          "width": "70px",
-                        }
-                      }
-                      toggleSort={[Function]}
-                    >
-                      <div
-                        className="rt-th rt-resizable-header"
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        />
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="5-ask"
                         onClick={[Function]}
-                        role="columnheader"
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
                         style={
                           Object {
                             "flex": "70 0 auto",
@@ -779,41 +1019,28 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             "width": "70px",
                           }
                         }
-                        tabIndex="-1"
                       >
                         <div
-                          className="rt-resizable-header-content"
-                        >
-                          Ask
-                        </div>
-                        <Resizer
-                          onMouseDown={[Function]}
-                          onTouchStart={[Function]}
-                        >
-                          <div
-                            className="rt-resizer"
-                            onMouseDown={[Function]}
-                            onTouchStart={[Function]}
-                          />
-                        </Resizer>
-                      </div>
-                    </ThComponent>
-                    <ThComponent
-                      className="rt-resizable-header"
-                      key="6-last"
-                      style={
-                        Object {
-                          "flex": "70 0 auto",
-                          "maxWidth": "70px",
-                          "width": "70px",
-                        }
-                      }
-                      toggleSort={[Function]}
-                    >
-                      <div
-                        className="rt-th rt-resizable-header"
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        />
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="6-last"
                         onClick={[Function]}
-                        role="columnheader"
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
                         style={
                           Object {
                             "flex": "70 0 auto",
@@ -821,41 +1048,28 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             "width": "70px",
                           }
                         }
-                        tabIndex="-1"
                       >
                         <div
-                          className="rt-resizable-header-content"
-                        >
-                          Last
-                        </div>
-                        <Resizer
-                          onMouseDown={[Function]}
-                          onTouchStart={[Function]}
-                        >
-                          <div
-                            className="rt-resizer"
-                            onMouseDown={[Function]}
-                            onTouchStart={[Function]}
-                          />
-                        </Resizer>
-                      </div>
-                    </ThComponent>
-                    <ThComponent
-                      className="rt-resizable-header"
-                      key="7-open"
-                      style={
-                        Object {
-                          "flex": "70 0 auto",
-                          "maxWidth": "70px",
-                          "width": "70px",
-                        }
-                      }
-                      toggleSort={[Function]}
-                    >
-                      <div
-                        className="rt-th rt-resizable-header"
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        />
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="7-open"
                         onClick={[Function]}
-                        role="columnheader"
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
                         style={
                           Object {
                             "flex": "70 0 auto",
@@ -863,41 +1077,30 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             "width": "70px",
                           }
                         }
-                        tabIndex="-1"
                       >
                         <div
-                          className="rt-resizable-header-content"
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
                         >
-                          Open
+                          1
                         </div>
-                        <Resizer
-                          onMouseDown={[Function]}
-                          onTouchStart={[Function]}
-                        >
-                          <div
-                            className="rt-resizer"
-                            onMouseDown={[Function]}
-                            onTouchStart={[Function]}
-                          />
-                        </Resizer>
-                      </div>
-                    </ThComponent>
-                    <ThComponent
-                      className="rt-resizable-header"
-                      key="8-chg"
-                      style={
-                        Object {
-                          "flex": "70 0 auto",
-                          "maxWidth": "70px",
-                          "width": "70px",
-                        }
-                      }
-                      toggleSort={[Function]}
-                    >
-                      <div
-                        className="rt-th rt-resizable-header"
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="8-chg"
                         onClick={[Function]}
-                        role="columnheader"
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
                         style={
                           Object {
                             "flex": "70 0 auto",
@@ -905,382 +1108,72 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             "width": "70px",
                           }
                         }
-                        tabIndex="-1"
                       >
                         <div
-                          className="rt-resizable-header-content"
-                        >
-                          Chg
-                        </div>
-                        <Resizer
-                          onMouseDown={[Function]}
-                          onTouchStart={[Function]}
-                        >
-                          <div
-                            className="rt-resizer"
-                            onMouseDown={[Function]}
-                            onTouchStart={[Function]}
-                          />
-                        </Resizer>
-                      </div>
-                    </ThComponent>
-                  </div>
-                </TrComponent>
-              </div>
-            </Thead>
-            <Tbody
-              className=""
-              style={
-                Object {
-                  "minWidth": "690px",
-                }
-              }
-            >
-              <div
-                className="rt-tbody"
-                style={
-                  Object {
-                    "minWidth": "690px",
-                  }
-                }
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        />
+                      </TdComponent>
+                    </div>
+                  </TrComponent>
+                </div>
+              </TrGroupComponent>
+              <TrGroupComponent
+                key="1"
               >
-                <TrGroupComponent
-                  key="0"
+                <div
+                  className="rt-tr-group"
+                  role="rowgroup"
                 >
-                  <div
-                    className="rt-tr-group"
-                    role="rowgroup"
-                  >
-                    <TrComponent
-                      className="-odd"
-                      onClick={[Function]}
-                      style={
-                        Object {
-                          "background": "#f5f2f2",
-                        }
+                  <TrComponent
+                    className="-even"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "background": null,
                       }
-                    >
-                      <div
-                        className="rt-tr -odd"
-                        onClick={[Function]}
-                        role="row"
-                        style={
-                          Object {
-                            "background": "#f5f2f2",
-                          }
-                        }
-                      >
-                        <TdComponent
-                          className=""
-                          key="0-delete"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          >
-                            <img
-                              alt="delete"
-                              id="deleteImg-symbol4"
-                              src="img/delete.png"
-                            />
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="1-symbol"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "100 0 auto",
-                              "maxWidth": "100px",
-                              "width": "100px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "100 0 auto",
-                                "maxWidth": "100px",
-                                "width": "100px",
-                              }
-                            }
-                          >
-                            symbol4
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className="instrument-column"
-                          key="2-name"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "100 0 auto",
-                              "maxWidth": null,
-                              "width": "100px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td instrument-column"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "100 0 auto",
-                                "maxWidth": null,
-                                "width": "100px",
-                              }
-                            }
-                          >
-                            instrument4
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="3-currency"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          >
-                            USD
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="4-bid"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="5-ask"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="6-last"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="7-open"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          >
-                            1
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="8-chg"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                      </div>
-                    </TrComponent>
-                  </div>
-                </TrGroupComponent>
-                <TrGroupComponent
-                  key="1"
-                >
-                  <div
-                    className="rt-tr-group"
-                    role="rowgroup"
+                    }
                   >
-                    <TrComponent
-                      className="-even"
+                    <div
+                      className="rt-tr -even"
                       onClick={[Function]}
+                      role="row"
                       style={
                         Object {
                           "background": null,
                         }
                       }
                     >
-                      <div
-                        className="rt-tr -even"
+                      <TdComponent
+                        className=""
+                        key="0-delete"
                         onClick={[Function]}
-                        role="row"
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
                         style={
                           Object {
-                            "background": null,
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
                           }
                         }
                       >
-                        <TdComponent
-                          className=""
-                          key="0-delete"
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "70 0 auto",
@@ -1289,33 +1182,33 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          >
-                            <img
-                              alt="delete"
-                              id="deleteImg-symbol3"
-                              src="img/delete.png"
-                            />
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="1-symbol"
+                          <img
+                            alt="delete"
+                            id="deleteImg-symbol3"
+                            src="img/delete.png"
+                          />
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="1-symbol"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "100 0 auto",
+                            "maxWidth": "100px",
+                            "width": "100px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "100 0 auto",
@@ -1324,29 +1217,29 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "100 0 auto",
-                                "maxWidth": "100px",
-                                "width": "100px",
-                              }
-                            }
-                          >
-                            symbol3
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className="instrument-column"
-                          key="2-name"
+                          symbol3
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className="instrument-column"
+                        key="2-name"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "100 0 auto",
+                            "maxWidth": null,
+                            "width": "100px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td instrument-column"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "100 0 auto",
@@ -1355,29 +1248,29 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td instrument-column"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "100 0 auto",
-                                "maxWidth": null,
-                                "width": "100px",
-                              }
-                            }
-                          >
-                            instrument3
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="3-currency"
+                          instrument3
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="3-currency"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "70 0 auto",
@@ -1386,29 +1279,116 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          >
-                            USD
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="4-bid"
+                          USD
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="4-bid"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        />
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="5-ask"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        />
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="6-last"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        />
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="7-open"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "70 0 auto",
@@ -1417,27 +1397,29 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="5-ask"
+                          1
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="8-chg"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "70 0 auto",
@@ -1445,147 +1427,58 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                               "width": "70px",
                             }
                           }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="6-last"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="7-open"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          >
-                            1
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="8-chg"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                      </div>
-                    </TrComponent>
-                  </div>
-                </TrGroupComponent>
-                <TrGroupComponent
-                  key="2"
+                        />
+                      </TdComponent>
+                    </div>
+                  </TrComponent>
+                </div>
+              </TrGroupComponent>
+              <TrGroupComponent
+                key="2"
+              >
+                <div
+                  className="rt-tr-group"
+                  role="rowgroup"
                 >
-                  <div
-                    className="rt-tr-group"
-                    role="rowgroup"
+                  <TrComponent
+                    className="-odd"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "background": null,
+                      }
+                    }
                   >
-                    <TrComponent
-                      className="-odd"
+                    <div
+                      className="rt-tr -odd"
                       onClick={[Function]}
+                      role="row"
                       style={
                         Object {
                           "background": null,
                         }
                       }
                     >
-                      <div
-                        className="rt-tr -odd"
+                      <TdComponent
+                        className=""
+                        key="0-delete"
                         onClick={[Function]}
-                        role="row"
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
                         style={
                           Object {
-                            "background": null,
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
                           }
                         }
                       >
-                        <TdComponent
-                          className=""
-                          key="0-delete"
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "70 0 auto",
@@ -1594,33 +1487,33 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          >
-                            <img
-                              alt="delete"
-                              id="deleteImg-symbol2"
-                              src="img/delete.png"
-                            />
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="1-symbol"
+                          <img
+                            alt="delete"
+                            id="deleteImg-symbol2"
+                            src="img/delete.png"
+                          />
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="1-symbol"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "100 0 auto",
+                            "maxWidth": "100px",
+                            "width": "100px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "100 0 auto",
@@ -1629,29 +1522,29 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "100 0 auto",
-                                "maxWidth": "100px",
-                                "width": "100px",
-                              }
-                            }
-                          >
-                            symbol2
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className="instrument-column"
-                          key="2-name"
+                          symbol2
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className="instrument-column"
+                        key="2-name"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "100 0 auto",
+                            "maxWidth": null,
+                            "width": "100px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td instrument-column"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "100 0 auto",
@@ -1660,29 +1553,29 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td instrument-column"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "100 0 auto",
-                                "maxWidth": null,
-                                "width": "100px",
-                              }
-                            }
-                          >
-                            instrument2
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="3-currency"
+                          instrument2
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="3-currency"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "70 0 auto",
@@ -1691,29 +1584,116 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          >
-                            USD
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="4-bid"
+                          USD
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="4-bid"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        />
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="5-ask"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        />
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="6-last"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        />
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="7-open"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "70 0 auto",
@@ -1722,27 +1702,29 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="5-ask"
+                          1
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="8-chg"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "70 0 auto",
@@ -1750,147 +1732,58 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                               "width": "70px",
                             }
                           }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="6-last"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="7-open"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          >
-                            1
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="8-chg"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                      </div>
-                    </TrComponent>
-                  </div>
-                </TrGroupComponent>
-                <TrGroupComponent
-                  key="3"
+                        />
+                      </TdComponent>
+                    </div>
+                  </TrComponent>
+                </div>
+              </TrGroupComponent>
+              <TrGroupComponent
+                key="3"
+              >
+                <div
+                  className="rt-tr-group"
+                  role="rowgroup"
                 >
-                  <div
-                    className="rt-tr-group"
-                    role="rowgroup"
+                  <TrComponent
+                    className="-even"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "background": null,
+                      }
+                    }
                   >
-                    <TrComponent
-                      className="-even"
+                    <div
+                      className="rt-tr -even"
                       onClick={[Function]}
+                      role="row"
                       style={
                         Object {
                           "background": null,
                         }
                       }
                     >
-                      <div
-                        className="rt-tr -even"
+                      <TdComponent
+                        className=""
+                        key="0-delete"
                         onClick={[Function]}
-                        role="row"
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
                         style={
                           Object {
-                            "background": null,
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
                           }
                         }
                       >
-                        <TdComponent
-                          className=""
-                          key="0-delete"
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "70 0 auto",
@@ -1899,33 +1792,33 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          >
-                            <img
-                              alt="delete"
-                              id="deleteImg-symbol1"
-                              src="img/delete.png"
-                            />
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="1-symbol"
+                          <img
+                            alt="delete"
+                            id="deleteImg-symbol1"
+                            src="img/delete.png"
+                          />
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="1-symbol"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "100 0 auto",
+                            "maxWidth": "100px",
+                            "width": "100px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "100 0 auto",
@@ -1934,29 +1827,29 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "100 0 auto",
-                                "maxWidth": "100px",
-                                "width": "100px",
-                              }
-                            }
-                          >
-                            symbol1
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className="instrument-column"
-                          key="2-name"
+                          symbol1
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className="instrument-column"
+                        key="2-name"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "100 0 auto",
+                            "maxWidth": null,
+                            "width": "100px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td instrument-column"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "100 0 auto",
@@ -1965,29 +1858,29 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td instrument-column"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "100 0 auto",
-                                "maxWidth": null,
-                                "width": "100px",
-                              }
-                            }
-                          >
-                            instrument1
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="3-currency"
+                          instrument1
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="3-currency"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "70 0 auto",
@@ -1996,29 +1889,116 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          >
-                            USD
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="4-bid"
+                          USD
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="4-bid"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        />
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="5-ask"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        />
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="6-last"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        />
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="7-open"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "70 0 auto",
@@ -2027,27 +2007,29 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="5-ask"
+                          1
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="8-chg"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "70 0 auto",
@@ -2055,147 +2037,58 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                               "width": "70px",
                             }
                           }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="6-last"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="7-open"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          >
-                            1
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="8-chg"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                      </div>
-                    </TrComponent>
-                  </div>
-                </TrGroupComponent>
-                <TrGroupComponent
-                  key="4"
+                        />
+                      </TdComponent>
+                    </div>
+                  </TrComponent>
+                </div>
+              </TrGroupComponent>
+              <TrGroupComponent
+                key="4"
+              >
+                <div
+                  className="rt-tr-group"
+                  role="rowgroup"
                 >
-                  <div
-                    className="rt-tr-group"
-                    role="rowgroup"
+                  <TrComponent
+                    className="-odd"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "background": null,
+                      }
+                    }
                   >
-                    <TrComponent
-                      className="-odd"
+                    <div
+                      className="rt-tr -odd"
                       onClick={[Function]}
+                      role="row"
                       style={
                         Object {
                           "background": null,
                         }
                       }
                     >
-                      <div
-                        className="rt-tr -odd"
+                      <TdComponent
+                        className=""
+                        key="0-delete"
                         onClick={[Function]}
-                        role="row"
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
                         style={
                           Object {
-                            "background": null,
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
                           }
                         }
                       >
-                        <TdComponent
-                          className=""
-                          key="0-delete"
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "70 0 auto",
@@ -2204,33 +2097,33 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          >
-                            <img
-                              alt="delete"
-                              id="deleteImg-symbol0"
-                              src="img/delete.png"
-                            />
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="1-symbol"
+                          <img
+                            alt="delete"
+                            id="deleteImg-symbol0"
+                            src="img/delete.png"
+                          />
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="1-symbol"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "100 0 auto",
+                            "maxWidth": "100px",
+                            "width": "100px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "100 0 auto",
@@ -2239,29 +2132,29 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "100 0 auto",
-                                "maxWidth": "100px",
-                                "width": "100px",
-                              }
-                            }
-                          >
-                            symbol0
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className="instrument-column"
-                          key="2-name"
+                          symbol0
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className="instrument-column"
+                        key="2-name"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "100 0 auto",
+                            "maxWidth": null,
+                            "width": "100px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td instrument-column"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "100 0 auto",
@@ -2270,29 +2163,29 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td instrument-column"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "100 0 auto",
-                                "maxWidth": null,
-                                "width": "100px",
-                              }
-                            }
-                          >
-                            instrument0
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="3-currency"
+                          instrument0
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="3-currency"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "70 0 auto",
@@ -2301,29 +2194,116 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          >
-                            USD
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="4-bid"
+                          USD
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="4-bid"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        />
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="5-ask"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        />
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="6-last"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
+                          style={
+                            Object {
+                              "flex": "70 0 auto",
+                              "maxWidth": "70px",
+                              "width": "70px",
+                            }
+                          }
+                        />
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="7-open"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
+                          onClick={[Function]}
+                          onMouseOut={[Function]}
+                          onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "70 0 auto",
@@ -2332,27 +2312,29 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                             }
                           }
                         >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="5-ask"
+                          1
+                        </div>
+                      </TdComponent>
+                      <TdComponent
+                        className=""
+                        key="8-chg"
+                        onClick={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        style={
+                          Object {
+                            "flex": "70 0 auto",
+                            "maxWidth": "70px",
+                            "width": "70px",
+                          }
+                        }
+                      >
+                        <div
+                          className="rt-td"
                           onClick={[Function]}
                           onMouseOut={[Function]}
                           onMouseOver={[Function]}
+                          role="gridcell"
                           style={
                             Object {
                               "flex": "70 0 auto",
@@ -2360,136 +2342,32 @@ exports[`InstrumentsMarketfeed integration tests should render component with In
                               "width": "70px",
                             }
                           }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="6-last"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="7-open"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          >
-                            1
-                          </div>
-                        </TdComponent>
-                        <TdComponent
-                          className=""
-                          key="8-chg"
-                          onClick={[Function]}
-                          onMouseOut={[Function]}
-                          onMouseOver={[Function]}
-                          style={
-                            Object {
-                              "flex": "70 0 auto",
-                              "maxWidth": "70px",
-                              "width": "70px",
-                            }
-                          }
-                        >
-                          <div
-                            className="rt-td"
-                            onClick={[Function]}
-                            onMouseOut={[Function]}
-                            onMouseOver={[Function]}
-                            role="gridcell"
-                            style={
-                              Object {
-                                "flex": "70 0 auto",
-                                "maxWidth": "70px",
-                                "width": "70px",
-                              }
-                            }
-                          />
-                        </TdComponent>
-                      </div>
-                    </TrComponent>
-                  </div>
-                </TrGroupComponent>
-              </div>
-            </Tbody>
-          </div>
-        </TableComponent>
-        <LoadingComponent
-          loading={false}
-          loadingText="Loading..."
+                        />
+                      </TdComponent>
+                    </div>
+                  </TrComponent>
+                </div>
+              </TrGroupComponent>
+            </div>
+          </Tbody>
+        </div>
+      </TableComponent>
+      <LoadingComponent
+        loading={false}
+        loadingText="Loading..."
+      >
+        <div
+          className="-loading"
         >
           <div
-            className="-loading"
+            className="-loading-inner"
           >
-            <div
-              className="-loading-inner"
-            >
-              Loading...
-            </div>
+            Loading...
           </div>
-        </LoadingComponent>
-      </div>
-    </ReactTable>
-  </InstrumentsMarketfeedView>
+        </div>
+      </LoadingComponent>
+    </div>
+  </ReactTable>
 </InstrumentsMarketfeed>
 `;
 

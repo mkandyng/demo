@@ -16,7 +16,7 @@ describe("getDateString", () => {
     expect(getDateString(date)).toEqual("1970-01-01T00:00:00.100Z");
   });
 
-  it("should returns ISOString date with no invalid format parameter", () => {
+  it("should returns ISOString date with invalid as format parameter", () => {
     expect(getDateString(date, "invalid")).toEqual("1970-01-01T00:00:00.100Z");
   });
 
@@ -52,7 +52,7 @@ describe("getRandomInt", () => {
     expect(getRandomInt(1, 1)).toEqual(1);
   });
 
-  it("should throw exception when min is greater than max", () => {
+  it("should throw exception when min is greater than max for negative number", () => {
     expect(() => getRandomInt(-1, -2)).toThrow();
   });
 

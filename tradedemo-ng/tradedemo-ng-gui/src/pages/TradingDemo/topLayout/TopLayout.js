@@ -17,7 +17,7 @@ import "./topLayout.css"
 
 export function TopLayout(props) {
   return (<div id="topLayout">
-    <Ticket {...props} enableDemo={true}/>
+    <Ticket {...props} />
     <div id="instrumentsMarketfeed">
       <InstrumentsSearch {...props}/>
       <InstrumentsMarketfeed {...props}/>

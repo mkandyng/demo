@@ -41,21 +41,14 @@ export default function InstrumentsMarketfeed({
     }
   };
 
-  return (<InstrumentsMarketfeedView
-                            instruments={marketfeedInstruments}
-                            columns={columnHeaders}
-                            eventHandlers={eventHandlers}/>);
-}
-
-function InstrumentsMarketfeedView({instruments, columns, eventHandlers}) {
   return (<ReactTable
                 defaultPageSize={MAX_MARKET_FEED_INSTRUMENTS}
                 sortable={false}
                 showPaginationTop={false}
                 showPaginationBottom={false}
                 showPageSizeOptions={false}
-                data={instruments}
-                columns={columns}
+                data={marketfeedInstruments}
+                columns={columnHeaders}
                 getTdProps={eventHandlers.handleTableColumn}
                 getTrProps={eventHandlers.handleTableRow}/>);
 }
@@ -171,10 +164,4 @@ InstrumentsMarketfeed.propTypes = {
   selectMarketfeedInstrument: PropTypes.func.isRequired,
   deleteMarketfeedInstrument: PropTypes.func.isRequired,
   updateMarketfeedInstrument: PropTypes.func.isRequired
-};
-
-InstrumentsMarketfeedView.propTypes = {
-  instruments: PropTypes.arrayOf(PropTypes.object).isRequired,
-  columns: PropTypes.arrayOf(PropTypes.object).isRequired,
-  eventHandlers: PropTypes.objectOf(PropTypes.func).isRequired
 };

@@ -1,11 +1,11 @@
 import React from "react";
 import {Provider} from "react-redux";
 import {Route, NavLink, HashRouter} from "react-router-dom";
-import TradingDemo from "./TradingDemo";
-import Documentation from "./Documentation";
 import {getRandomInt} from "../libs/utils";
 import {fetchInstruments, updateMarketfeedInstrument} from "../modules/instruments/store/instrumentsActions";
 import {flashPriceUpdate} from "../modules/instruments/instruments";
+import TradingDemo from "./TradingDemo";
+import Documentation from "./Documentation";
 
 export default function appWithProvider(store) {
   initOnStartup(store);
@@ -16,8 +16,8 @@ export default function appWithProvider(store) {
 
 function initOnStartup(store) {
   store.dispatch(fetchInstruments());
-  flashPriceOnMarketFeed(store);
-  PlaceSampleOrders(store, 10);
+    flashPriceOnMarketFeed(store);
+    PlaceSampleOrders(store, 10);
 }
 
 function flashPriceOnMarketFeed(store) {
@@ -31,8 +31,8 @@ function flashPriceOnMarketFeed(store) {
 }
 
 function PlaceSampleOrders(store, maxOrderCount) {
-  let interval = setInterval(() => {
-    let buySellId = getRandomInt(0,1) === 0 ? "buy":"sell";
+  const interval = setInterval(() => {
+    const buySellId = getRandomInt(0,1) === 0 ? "buy":"sell";
     const ticketBuySell = document.getElementById(buySellId);
     const orderCount = store.getState().orders.length;
     if(ticketBuySell != null && orderCount < maxOrderCount) {

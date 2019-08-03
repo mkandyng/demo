@@ -7,7 +7,6 @@ exports[`TopLayout should render component comparing with previous snapshot shal
   <Ticket
     addInstrumentToMarketfeed={[MockFunction]}
     deleteMarketfeedInstrument={[MockFunction]}
-    enableDemo={true}
     fetchInstruments={[MockFunction]}
     instrument={
       Object {

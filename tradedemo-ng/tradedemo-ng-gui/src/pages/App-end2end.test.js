@@ -71,7 +71,8 @@ describe("App Integration Test - Standard tests", () => {
     const instrumentInSearch = {
       ...store.getState().instruments.searchInstruments[0]
     };
-    const instrumentSearchInput = component.find(InstrumentsSearch).find({role: "combobox"});
+    const instrumentSearchInput = component.find(InstrumentsSearch)
+                                           .find({role: "combobox"});
     instrumentSearchInput.simulate("change", {
       target: {
         value: instrumentInSearch.symbol
@@ -81,13 +82,19 @@ describe("App Integration Test - Standard tests", () => {
 
     // When
     act(() => {
-      component.find(InstrumentsSearch).find({value: "Add"}).simulate("click", {preventDefault: jest.fn()});
+      component.find(InstrumentsSearch)
+               .find({value: "Add"})
+               .simulate("click", {preventDefault: jest.fn()});
     });
 
     // Then
-    expect(store.getState().instruments.searchInstruments[0]).not.toEqual(instrumentInSearch);
+    expect(store.getState()
+                .instruments
+                .searchInstruments[0]).not.toEqual(instrumentInSearch);
 
-    expect(store.getState().instruments.marketfeedInstruments[0]).toEqual(expect.objectContaining({symbol: instrumentInSearch.symbol}));
+    expect(store.getState()
+                .instruments
+                .marketfeedInstruments[0]).toEqual(expect.objectContaining({symbol: instrumentInSearch.symbol}));
   });
 
   it("should submit ticket value to orderbook when buying and selling", () => {
@@ -98,9 +105,13 @@ describe("App Integration Test - Standard tests", () => {
       clickAndVerify(component.find(InstrumentsMarketfeed),
                      "div[children='" + nextSelect.symbol + "']",
                      () => {
-                       component.find(Ticket).find("div#" + buySellId).simulate("click", {target: {innerText: buySell}});
-                       expect(toJson(component.find(Orderbook).find("div[children='" + orderId + "']"))).not.toBeNull();
-                       expect(toJson(component.find(Orderbook).find("div[children='" + buySell + "']"))).not.toBeNull();
+                       component.find(Ticket)
+                                .find("div#" + buySellId)
+                                .simulate("click", {target: {innerText: buySell}});
+                       expect(toJson(component.find(Orderbook)
+                                              .find("div[children='" + orderId + "']"))).not.toBeNull();
+                       expect(toJson(component.find(Orderbook)
+                                              .find("div[children='" + buySell + "']"))).not.toBeNull();
       });
     }
 
@@ -115,7 +126,9 @@ describe("App Integration Test - handling marketfeed instrument select", () => {
   mockModule.generateMarketfeedMovement = jest.fn(expectedInstrument => {
     return {
       ...expectedInstrument,
-      delete: <img id={getDeleteId(expectedInstrument)} src="img/delete.png" alt="delete"/>
+      delete: <img id={getDeleteId(expectedInstrument)}
+                   src="img/delete.png"
+                   alt="delete"/>
     }
   });
   let component = undefined;
@@ -132,7 +145,12 @@ describe("App Integration Test - handling marketfeed instrument select", () => {
     }, rootReducer, rootEpic);
     act(() => {
       component = mount(appWithProvider(store));
-      nextSelect = getNextSelectedMarketfeed(store.getState().instruments.marketfeedInstruments, store.getState().instruments.selected);
+      nextSelect = getNextSelectedMarketfeed(store.getState()
+                                                  .instruments
+                                                  .marketfeedInstruments,
+                                             store.getState()
+                                                  .instruments
+                                                  .selected);
     });
   });
 
@@ -143,46 +161,63 @@ describe("App Integration Test - handling marketfeed instrument select", () => {
   });
 
   it("should update ticket symbol for selected instrument", () => {
-    clickAndVerify(component.find(InstrumentsMarketfeed), "div[children='" + nextSelect.symbol + "']", () => {
-      expect(component.find(Ticket).find("label").find({name: "symbol"}).props().value).toEqual(nextSelect.symbol);
-
-    });
+    clickAndVerify(component.find(InstrumentsMarketfeed),
+                   "div[children='" + nextSelect.symbol + "']",
+                   () => expect(component.find(Ticket)
+                                         .find("label")
+                                         .find({name: "symbol"})
+                                         .props().value).toEqual(nextSelect.symbol));
   });
 
   it("should update intraday prices tab for selected instrument", () => {
-    clickAndVerify(component.find(InstrumentsMarketfeed), "div[children='" + nextSelect.symbol + "']", () => {
-      const matchText = "Intraday Prices " + nextSelect.symbol;
-      expect(component.find(Tab).find("li[children='" + matchText + "']").text()).toMatch(matchText);
-      expect(store.getState().timeSeries.symbol).toEqual(nextSelect.symbol);
-    });
+    clickAndVerify(component.find(InstrumentsMarketfeed),
+                   "div[children='" + nextSelect.symbol + "']",
+                   () => {
+                     const matchText = "Intraday Prices " + nextSelect.symbol;
+                     expect(component.find(Tab)
+                                     .find("li[children='" + matchText + "']")
+                                     .text()).toMatch(matchText);
+                     expect(store.getState()
+                                 .timeSeries.symbol).toEqual(nextSelect.symbol)});
   });
 
   it("should update daily prices tab for selected instrument", () => {
-    clickAndVerify(component.find(InstrumentsMarketfeed), "div[children='" + nextSelect.symbol + "']", () => {
-      const matchText = "Daily Prices " + nextSelect.symbol;
-      expect(component.find(Tab).find("li[children='" + matchText + "']").text()).toMatch(matchText);
-      expect(store.getState().timeSeries.symbol).toEqual(nextSelect.symbol);
-    });
+    clickAndVerify(component.find(InstrumentsMarketfeed),
+                  "div[children='" + nextSelect.symbol + "']",
+                  () => {const matchText = "Daily Prices " + nextSelect.symbol;
+                         expect(component.find(Tab)
+                                         .find("li[children='" + matchText + "']")
+                                         .text()).toMatch(matchText);
+                         expect(store.getState()
+                                     .timeSeries.symbol).toEqual(nextSelect.symbol)});
   });
 
   it("should update ticket prices if selected marketfeed instrument prices change", () => {
-    clickAndVerify(component.find(InstrumentsMarketfeed), "div[children='" + nextSelect.symbol + "']", () => {
-      const select = {
-        ...nextSelect,
-        bidPrice: "1.99",
-        askPrice: "1.95"
-      };
-      store.dispatch(updateMarketfeedInstrument(select));
-      expect(component.find("div#sellButton").find("label").text()).toEqual(select.bidPrice);
-      expect(component.find("div#buyButton").find("label").text()).toEqual(select.askPrice);
-    });
+    clickAndVerify(component.find(InstrumentsMarketfeed),
+                   "div[children='" + nextSelect.symbol + "']",
+                   () => {
+                     const select = {...nextSelect,
+                                     bidPrice: "1.99",
+                                     askPrice: "1.95"};
+                    store.dispatch(updateMarketfeedInstrument(select));
+                    expect(component.find("div#sellButton")
+                                    .find("label")
+                                    .text()).toEqual(select.bidPrice);
+                    expect(component.find("div#buyButton")
+                                    .find("label")
+                                    .text()).toEqual(select.askPrice)});
   });
 
   it("should delete marketfeed and add to searchInstruments", () => {
-    clickAndVerify(component.find(InstrumentsMarketfeed), "img#" + getDeleteId(nextSelect), () => {
-      expect(store.getState().instruments.searchInstruments[0].symbol).toStrictEqual(nextSelect.symbol);
-      expect(toJson(component.find(InstrumentsMarketfeed).find("img#" + getDeleteId(nextSelect)))).toBeNull();
-    });
+    clickAndVerify(component.find(InstrumentsMarketfeed),
+                   "img#" + getDeleteId(nextSelect),
+                   () => {
+                     expect(store.getState()
+                                 .instruments
+                                 .searchInstruments[0]
+                                 .symbol).toStrictEqual(nextSelect.symbol);
+                     expect(toJson(component.find(InstrumentsMarketfeed)
+                                            .find("img#" + getDeleteId(nextSelect)))).toBeNull()});
   });
 
 });

@@ -41,7 +41,7 @@ export function BottomLayout({
 }
 
 const mapStateToProps = state => ({
-  symbol: state.instruments.selected === undefined? "": state.instruments.selected.symbol,
+  symbol: state.instruments.selected.symbol,
   orders: state.orders,
   intradayTimeSeries: state.timeSeries.intradayTimeSeries,
   dailyTimeSeries: state.timeSeries.dailyTimeSeries

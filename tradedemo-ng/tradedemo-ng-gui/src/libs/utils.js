@@ -38,7 +38,7 @@ export function getDateString(date, format) {
   } else {
     return dateTimeMills;
   }
-};
+}
 
 /**
  * [toggleOpacity toggle display opacity]
@@ -53,7 +53,7 @@ export function toggleOpacity(selectedValue, opacityValue, equalsCompare) {
   } else {
     return selectedValue === opacityValue ? 1.0 : 0.5;
   }
-};
+}
 
 /**
  * [getRandomInt determine a random value between min and max inclusive]
@@ -68,7 +68,7 @@ export function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+}
 
 /**
  * [roundValue round number to a given specification]

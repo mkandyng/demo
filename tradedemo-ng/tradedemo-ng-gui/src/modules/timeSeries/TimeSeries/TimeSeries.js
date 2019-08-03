@@ -26,7 +26,8 @@ export default function TimeSeries({timeSeries, childElements}) {
       <LineChart data={timeSeries.chartData} margin={margin}>
         <CartesianGrid strokeDasharray="3 3"/>
         <XAxis dataKey="name"/>
-        <YAxis interval="preserveStartEnd" domain={[timeSeries.minValue, timeSeries.maxValue]}/>
+        <YAxis interval="preserveStartEnd"
+               domain={[timeSeries.minValue, timeSeries.maxValue]}/>
         <Tooltip/>
         <Legend/> {childElements}
       </LineChart>

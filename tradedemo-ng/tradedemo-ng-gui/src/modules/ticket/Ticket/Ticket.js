@@ -15,7 +15,6 @@ import "./ticket.css";
  */
 
 export default function Ticket({
-    enableDemo,
     instrument,
     placeOrder,
     updateOrder
@@ -149,7 +148,6 @@ function useTicketForm(instrument, placeOrder, updateOrder) {
 }
 
 Ticket.propTypes = {
-  enableDemo: PropTypes.bool.isRequired,
   instrument: PropTypes.object.isRequired,
   placeOrder: PropTypes.func.isRequired,
   updateOrder: PropTypes.func.isRequired

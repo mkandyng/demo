@@ -46,7 +46,7 @@ You can create React component using pure function or using class syntax. Some p
   <li><b>Less boiler plate,</b> No constructor, no life cycles, pure function takes props as input and return JSX.</li>
   <li><b>Testability</b>, As a function, same input will produces the same output.</li>
   <li><b>Interface</b>, Functional component can use destruct props to make input interface clear.</li>
-  <li><b>Strategically</b>, React was originally created using functional language <a href="https://en.wikipedia.org/wiki/Standard_ML">SML</a>. Here is the <a href="https://reasonml.github.io/docs/en/what-and-why">Reason</a> why its creator wants to strategically move back to its root.
+  <li><b>Strategically</b>, React was originally created using functional language <a href="https://en.wikipedia.org/wiki/Standard_ML">SML</a>. Here is the <a href="https://reasonml.github.io/docs/en/what-and-why">Reason</a> why its creator wants to strategically move back to its functional root.
 </ol>
 </p>
 
