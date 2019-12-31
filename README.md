@@ -13,10 +13,10 @@ A number of popular data streaming API was used to demonstrate the ability to st
 * (SpringBatch) https://spring.io/projects/spring-batch
 
 ## tradedemo-ng
-A React front-end with Springboot microservice to demonstrate a Single Page Application of a trading system with orderbook, marketfeed, and pricing history.
+A React front-end with Springboot microservice to demonstrate a Single Page Application of a trading system with order blotter, marketfeed, and pricing history.
 
 
-![Alt TradeDemo-NG GUI](TradeDemo-NG-OrderBook.png?raw=true "React JS Demo OrderBook")
+![Alt TradeDemo-NG GUI](TradeDemo-NG-OrderBlotter.png?raw=true "React JS Demo Order Blotter")
 
 
 ![Alt TradeDemo-NG GUI](TradeDemo-NG-PriceHistory.png?raw=true "React JS Demo Price History")
