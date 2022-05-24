@@ -41,4 +41,4 @@ jobs:
         run: kubectl get pods -A
       # Build an nginx image  
       - name: Build the Docker image
-        run: docker build . --file ./docker/Dockerfile -t local/example .
+        run: docker build . --file docker/Dockerfile --tag my-image-name:$(date +%s)
